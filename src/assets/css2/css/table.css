@@ -1,0 +1,130 @@
+.table-custom th,
+.table-custom td {
+  padding: 0.75rem;
+  vertical-align: middle;
+}
+
+.table-custom thead tr {
+  background: #c4c4c4;
+  /* border: 1px solid #FFFFFF; */
+  box-shadow: inset 0px 0px 0px 2px #fff, inset 0px 4px 4px rgb(0 0 0 / 25%);
+  /* border: 1px solid #FFFFFF; */
+  text-align: center;
+}
+
+.table-custom thead th,
+.custom-table tbody td {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+  /* border: unset; */
+  vertical-align: middle;
+}
+
+.table-custom tbody tr {
+  background: #ffffff;
+  /* border: 1px solid #7A7A7A; */
+  box-shadow: inset 0px 1px 0px 2px #7a7a7a;
+  text-align: center;
+  color: #000;
+  font-weight: 400;
+  /* border-top: 1px solid rgba(229, 229, 229, 0.5); */
+}
+
+.table.border {
+  border: 1px solid #000000;
+}
+
+.member-table th,
+.member-table td {
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+.member-table thead tr {
+  background: #c4c4c4;
+  border: 1px solid #ffffff;
+  box-shadow: inset 0px -3px 3px rgb(0 0 0 / 25%);
+  border-top: 1px solid rgba(229, 229, 229, 0.5);
+  /* text-align: center; */
+}
+
+.member-table thead th,
+.custom-table tbody td {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+  /* border: unset; */
+  vertical-align: middle;
+}
+
+.member-table tbody tr {
+  background: #ffffff;
+  box-shadow: inset 0px -3px 3px rgb(0 0 0 / 25%);
+  /* border-top: 1px solid rgba(229, 229, 229, 0.5); */
+}
+
+.margin-r {
+  margin-right: 0.2rem;
+  width: 140px;
+  margin-top: -1rem;
+}
+
+.border-tab-top {
+  border-top: 1px solid rgba(122, 122, 122, 0.5);
+}
+
+.padding-line {
+  padding: 1rem 0;
+}
+
+.margin-customer {
+  margin-left: -3rem;
+}
+
+.text-radio {
+  margin-left: -1rem;
+}
+
+.btn-branch {
+  margin-left: 16rem;
+}
+
+.padding-acc {
+  padding: 0 4rem;
+}
+
+.label-view {
+  display: block;
+  text-align: left;
+}
+
+.label-left {
+  margin-left: auto;
+}
+
+.margin-card {
+  margin-left: 5rem;
+}
+
+.overall-branch {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  row-gap: 2rem;
+  /* margin: 3rem 0; */
+}
+
+.overall-branch .overall-item-branch {
+  background: #f8f7ff;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 50%);
+  padding: 1rem;
+  height: 150px;
+}
