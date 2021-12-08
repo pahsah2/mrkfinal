@@ -67,9 +67,11 @@ import Test from './Setting/test';
 
 import Job from './Job/Index';
 import Job_Inside from './Job/Inside';
+import Job_Order from './Job/Order';
 import Job_Inside_Data from './Job/InsideData';
 import Job_B2b_ShowRoom from './Job/CompanyB2BShowRoom';
 import Job_B2b_Member from './Job/CompanyB2BMember';
+
 function App() {
   return (
     <BrowserRouter basename="/mrklean/">
@@ -162,6 +164,8 @@ function App() {
         <Route path="/job" component={Job} exact />
         <Route path="/job/inside-data" component={Job_Inside_Data} />
         <Route path="/job/inside-create" component={Job_Inside} />
+        <Route path="/job/order" component={Job_Order} />
+
         <Route path="/job/company-b2b-show-room" component={Job_B2b_ShowRoom} />
         <Route path="/job/company-b2b-member" component={Job_B2b_Member} />
       </Switch>

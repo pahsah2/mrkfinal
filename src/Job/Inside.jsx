@@ -32,9 +32,9 @@ import Package_Component from '../Components/Job/Package';
 
 export default function Inside() {
   const history = useHistory();
-  const [product, setProduct] = useState(null);
-  const [service, setService] = useState(null);
-  const [Package, setPackage] = useState(null);
+  const [product, setProduct] = useState(true);
+  const [service, setService] = useState(false);
+  const [Package, setPackage] = useState(false);
 
   function onChange(date, dateString) {
     console.log(date, dateString);
@@ -43,7 +43,21 @@ export default function Inside() {
     let path = `/`;
     history.push(path);
   }
-
+  const handleProduct = () => {
+    setProduct(true);
+    setService(false);
+    setPackage(false);
+  };
+  const handleService = () => {
+    setProduct(false);
+    setService(true);
+    setPackage(false);
+  };
+  const handlePackage = () => {
+    setProduct(false);
+    setService(false);
+    setPackage(true);
+  };
   return (
     <>
       <NavbarTop />
@@ -104,7 +118,7 @@ export default function Inside() {
                               name="group1"
                               type={type}
                               id={`inline-${type}-1`}
-                              onChange={(e) => setProduct(e.target.value)}
+                              onChange={handleProduct}
                               checked={product}
                             />
                             <Form.Check
@@ -113,7 +127,7 @@ export default function Inside() {
                               name="group1"
                               type={type}
                               id={`inline-${type}-2`}
-                              onChange={(e) => setService(e.target.value)}
+                              onChange={handleService}
                               checked={service}
                             />
                             <Form.Check
@@ -122,7 +136,7 @@ export default function Inside() {
                               name="group1"
                               type={type}
                               id={`inline-${type}-3`}
-                              onChange={(e) => setPackage(e.target.value)}
+                              onChange={handlePackage}
                               checked={Package}
                             />
                           </div>

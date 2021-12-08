@@ -13,6 +13,7 @@ export default function Product() {
               className="text-left select-style"
               aria-label="Default select example"
               placeholder="ค้นหาสินค้าด้วยรหัสสินค้า, ชื่อสินค้า"
+              search
               options={product}
             />
           </Col>
