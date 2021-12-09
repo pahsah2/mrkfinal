@@ -82,7 +82,7 @@ export default function Order() {
                 <Row className="g-0 tabsicon justify-content-center ">
                   <TabsIcon />
                 </Row>
-                <Row className="g-0 justify-content-center">
+                <Row className="g-0 justify-content-center ">
                   <Col>
                     <Tabs
                       id="controlled-tab-example"

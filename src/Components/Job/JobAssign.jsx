@@ -124,7 +124,7 @@ export default function JobAssign() {
   };
   return (
     <>
-      <Container fluid>
+      <Container fluid className="set-height-order">
         <Form>
           <Row>
             <Col xs={{ order: 'last' }} md={{ order: 'first' }} lg={10}>
@@ -239,10 +239,7 @@ export default function JobAssign() {
               </Col>
             </Col>
           </Row>
-          <Row
-            className="mt-4 "
-            style={{ height: '200px', overflow: 'scroll' }}
-          >
+          <Row className="mt-4 ">
             <Col sm={12} lg={12}>
               <Row>
                 <Col xs={5} sm={3}>

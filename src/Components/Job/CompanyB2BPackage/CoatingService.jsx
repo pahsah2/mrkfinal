@@ -2,11 +2,19 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 import Delete from '../../../assets/icon/flat-style-circle-delete.png';
-export default function WashPart() {
+export default function CoatingService() {
   const [serviceMore, setServiceMore] = useState(true);
   const [fastService, setFastService] = useState(true);
+  const [sprayCoating, setSprayCoating] = useState(true);
+  const [renewalClaim, setRenewalClaim] = useState(true);
   const [service, setService] = useState([{ value: '', label: '' }]);
 
+  const handleSprayCoating = () => {
+    setSprayCoating(!sprayCoating);
+  };
+  const handleRenewalClaim = () => {
+    setRenewalClaim(!renewalClaim);
+  };
   const handleServiceMore = () => {
     setServiceMore(!serviceMore);
   };
@@ -15,16 +23,10 @@ export default function WashPart() {
   };
 
   const optionService = [
-    { value: 'บริการทำความสะอาดรถ', label: 'บริการทำความสะอาดรถ' },
+    { value: 'เคลือบคริสตัล', label: 'เคลือบคริสตัล' },
     {
-      value: 'แพคเกจล้างรถ (ระยะเวลา 1 ปี)',
-      label: 'แพคเกจล้างรถ (ระยะเวลา 1 ปี)',
-    },
-    { value: 'เหมาบริการ + เคลือบ Wax', label: 'เหมาบริการ + เคลือบ Wax' },
-    { value: 'แพคเกจล้างรถ + เคลือบ Wax', label: 'แพคเกจล้างรถ + เคลือบ Wax' },
-    {
-      value: 'กล่องสุดคุ้ม น้ำยา Wax+PCS+SC',
-      label: 'กล่องสุดคุ้ม น้ำยา Wax+PCS+SC',
+      value: 'เคลือบเซรามิก',
+      label: 'เคลือบเซรามิก',
     },
   ];
   function SetService(data) {
@@ -40,7 +42,7 @@ export default function WashPart() {
                 <Col lg={10}>
                   <Select
                     options={optionService}
-                    placeholder=""
+                    placeholder="เลือกประเภทการเคลือบ"
                     isClearable={false}
                     isSearchable={false}
                     onChange={(data) => SetService(data)}
@@ -66,7 +68,25 @@ export default function WashPart() {
             </Col>
           </Row>
           <Row className="g-0 justify-content-start">
-            <Col xs={6} sm={5} md={4} lg={4} xl={3} className="mt-4 ">
+            <Col xs={8} sm={5} md={4} lg={3} xl={3} className="mt-4 p-0">
+              <Form.Check
+                type="checkbox"
+                label="พ่นเคลือบหลังติดตั้ง"
+                onChange={handleSprayCoating}
+                checked={sprayCoating}
+                className="checkbox-input"
+              />
+            </Col>
+            <Col xs={8} sm={5} md={4} lg={3} xl={3} className="mt-4 p-0">
+              <Form.Check
+                type="checkbox"
+                label="เคลมต่ออายุประกัน"
+                onChange={handleRenewalClaim}
+                checked={renewalClaim}
+                className="checkbox-input"
+              />
+            </Col>
+            <Col xs={8} sm={5} md={4} lg={3} xl={3} className="mt-4 p-0">
               <Form.Check
                 type="checkbox"
                 label="บริการต่อเนื่อง"
@@ -75,7 +95,14 @@ export default function WashPart() {
                 className="checkbox-input"
               />
             </Col>
-            <Col xs={6} sm={5} md={4} lg={4} xl={3} className="mt-4 d-lg-none">
+            <Col
+              xs={8}
+              sm={5}
+              md={4}
+              lg={3}
+              xl={3}
+              className="mt-4  d-lg-none p-0"
+            >
               <Form.Check
                 type="checkbox"
                 label="บริการทันที"
@@ -112,7 +139,7 @@ export default function WashPart() {
                   <tr>
                     <td>1</td>
                     <td>0406010300002</td>
-                    <td>แพคเกจล้างรถ (ระยะเวลา 1 ปี) 1/3</td>
+                    <td>เคลือบคริสตัล</td>
                     <td>
                       <Form.Control className="input-table"></Form.Control>
                     </td>
@@ -125,7 +152,7 @@ export default function WashPart() {
                   <tr>
                     <td>2</td>
                     <td>0406010300002</td>
-                    <td>เหมาบริการ + เคลือบ Wax</td>
+                    <td>เคลือบเซรามิก</td>
                     <td>
                       <Form.Control className="input-table"></Form.Control>
                     </td>

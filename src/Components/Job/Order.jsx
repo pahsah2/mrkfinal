@@ -6,13 +6,44 @@ import { Switch } from 'antd';
 import Save from '../../assets/icon/flat-style-circle-save.png';
 import print from '../../assets/icon/print.png';
 import Return from '../../assets/icon/flat-style-circle-turn-on.png';
+import Delete from '../../assets/icon/delete-button.png';
+
+import Product_Component from './Order/Product';
+import Service_Component from './Order/Service';
+import Package_Component from './Order/Package';
 export default function Order(props) {
   const [statusService, setStatusService] = useState(false);
   const [tax, setTax] = useState([{ value: '', label: '' }]);
   const [statusJob, setStatusJob] = useState([{ value: '', label: '' }]);
+
   const statusServiceToggler = () => {
     statusService ? setStatusService(false) : setStatusService(true);
   };
+
+  const [product, setProduct] = useState(true);
+  const [service, setService] = useState(false);
+  const [Package, setPackage] = useState(false);
+
+  function onChange(date, dateString) {
+    console.log(date, dateString);
+  }
+
+  const handleProduct = () => {
+    setProduct(true);
+    setService(false);
+    setPackage(false);
+  };
+  const handleService = () => {
+    setProduct(false);
+    setService(true);
+    setPackage(false);
+  };
+  const handlePackage = () => {
+    setProduct(false);
+    setService(false);
+    setPackage(true);
+  };
+
   const optionTax = [
     { value: '1', label: '1%' },
     { value: '2', label: '2%' },
@@ -45,10 +76,73 @@ export default function Order(props) {
   const handleDropDownSelect = (event, data) => {
     console.log(data.value);
   };
+
+  // Uploadimage ////////////////////////////////
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [selectedFilesAfter, setSelectedFilesAfter] = useState([]);
+  const handleImageChange = (e) => {
+    // console.log(e.target.files[])
+    if (e.target.files) {
+      const filesArray = Array.from(e.target.files).map((file) =>
+        URL.createObjectURL(file)
+      );
+      // console.log("filesArray: ", filesArray);
+      setSelectedFiles((prevImages) => prevImages.concat(filesArray));
+      Array.from(e.target.files).map(
+        (file) => URL.revokeObjectURL(file) // avoid memory leak
+      );
+    }
+  };
+  const removeImage = (photo) => {
+    setSelectedFiles((selectedFiles) =>
+      selectedFiles.splice(
+        selectedFiles.findIndex((item) => item === photo),
+        1
+      )
+    );
+    console.log('photo: ', selectedFiles);
+  };
+  const renderPhotos = (source) => {
+    console.log('source: ', source);
+    return source.map((photo) => {
+      return (
+        <div key={photo} className="setting-upload">
+          <button onClick={() => removeImage(photo)}>
+            <img src={Delete} />
+          </button>
+          <img src={photo} alt="" className="setting-image" />
+        </div>
+      );
+    });
+  };
+
+  const handleImageChangeAfter = (e) => {
+    // console.log(e.target.files[])
+    if (e.target.files) {
+      const filesArrayAfter = Array.from(e.target.files).map((file) =>
+        URL.createObjectURL(file)
+      );
+
+      // console.log("filesArray: ", filesArray);
+
+      setSelectedFilesAfter((prevImages) => prevImages.concat(filesArrayAfter));
+      Array.from(e.target.files).map(
+        (file) => URL.revokeObjectURL(file) // avoid memory leak
+      );
+    }
+  };
+  const renderPhotosAfter = (source) => {
+    console.log('source: ', source);
+    return source.map((photo) => {
+      return <img src={photo} alt="" key={photo} className="setting-image" />;
+    });
+  };
+  //////////////////////////////////////
+
   return (
     <>
       <Form>
-        <Container fluid>
+        <Container fluid className="set-height-order">
           <Row className="g-0 bg-white">
             <Col
               xs={12}
@@ -124,14 +218,18 @@ export default function Order(props) {
                 </Col>
               </Row>
               <Row className="justify-content-center">
-                <Col xs={12} className="text-left">
+                <Col xs={12} className="text-left mt-3 mb-3 ">
                   <Form.Label>ลูกค้าไม่ได้ชำระเอง</Form.Label> &nbsp;
                   <Switch onClick={statusServiceToggler} />
                 </Col>
-                <Col xs={12}>dropdown search</Col>
-                <Col xs={12}>dropdown search</Col>
+                <Col xs={12} className="mt-3 mb-3">
+                  <Form.Control></Form.Control>
+                </Col>
+                <Col xs={12} className="mt-3 mb-3">
+                  <Form.Control></Form.Control>
+                </Col>
                 <Col xs={11} className="bg-data-order">
-                  <Row>
+                  <Row className="p-2">
                     <Col xs={12}>
                       <Row>
                         <Col className="text-right mt-3 mb-2">
@@ -252,6 +350,48 @@ export default function Order(props) {
                 รายละเอียดสินค้า
               </Form.Label>
             </Col>
+            <Col xs={12}>
+              <Row className="mt-4 mb-4 justify-content-center">
+                <Col className="d-flex justify-content-start set-position-radio">
+                  {['radio'].map((type) => (
+                    <div key={`inline-${type}`} className="mb-3">
+                      <Form.Check
+                        inline
+                        label="สินค้า"
+                        name="group1"
+                        type={type}
+                        id={`inline-${type}-1`}
+                        onChange={handleProduct}
+                        checked={product}
+                      />
+                      <Form.Check
+                        inline
+                        label="บริการ"
+                        name="group1"
+                        type={type}
+                        id={`inline-${type}-2`}
+                        onChange={handleService}
+                        checked={service}
+                      />
+                      <Form.Check
+                        inline
+                        label="แพคเกจ"
+                        name="group1"
+                        type={type}
+                        id={`inline-${type}-3`}
+                        onChange={handlePackage}
+                        checked={Package}
+                      />
+                    </div>
+                  ))}
+                </Col>
+              </Row>
+              <Row>
+                {product && !service && !Package ? <Product_Component /> : ''}
+                {!product && service && !Package ? <Service_Component /> : ''}
+                {!product && !service && Package ? <Package_Component /> : ''}
+              </Row>
+            </Col>
           </Row>
           <Row className="g-0 bg-white">
             <Col
@@ -263,10 +403,74 @@ export default function Order(props) {
               </Form.Label>
             </Col>
             <Col xs={12} className="mt-3 mb-3">
-              รูปก่อนถ่าย
+              <Row>
+                <Col
+                  xs={12}
+                  className="text-left ml-3 mt-3 mb-3 d-flex align-items-center"
+                >
+                  <Form.Label className=" font-weight-bold">ก่อนทำ</Form.Label>
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={10} className="d-flex justify-content-start">
+                  <div className="scale-image multi-preview">
+                    <div className="result">
+                      <Row>{renderPhotos(selectedFiles)}</Row>
+                    </div>
+                  </div>
+                </Col>
+                <Col
+                  lg={2}
+                  className="d-flex justify-content-center align-items-center  mt-3 mb-3"
+                >
+                  <input
+                    type="file"
+                    id="file"
+                    multiple
+                    onChange={handleImageChange}
+                  />
+                  <div className="label-holder">
+                    <label htmlFor="file" className="label">
+                      อัพโหลดภาพ
+                    </label>
+                  </div>
+                </Col>
+              </Row>
             </Col>
             <Col xs={12} className="mt-3 mb-3">
-              รูปหลังถ่าย
+              <Row>
+                <Col
+                  xs={12}
+                  className="text-left ml-3 mt-3 mb-3 d-flex align-items-center"
+                >
+                  <Form.Label className=" font-weight-bold">หลังทำ</Form.Label>
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={10} className="d-flex justify-content-start">
+                  <div className="scale-image multi-preview">
+                    <div className="result">
+                      {renderPhotosAfter(selectedFilesAfter)}
+                    </div>
+                  </div>
+                </Col>
+                <Col
+                  lg={2}
+                  className="d-flex justify-content-center align-items-center mt-3 mb-3"
+                >
+                  <input
+                    type="file"
+                    id="fileAfter"
+                    multiple
+                    onChange={handleImageChangeAfter}
+                  />
+                  <div className="label-holder">
+                    <label htmlFor="fileAfter" className="label">
+                      อัพโหลดภาพ
+                    </label>
+                  </div>
+                </Col>
+              </Row>
             </Col>
             <Col xs={12} className="mt-3 mb-3">
               <Row className="align-items-center">

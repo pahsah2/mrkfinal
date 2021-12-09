@@ -63,6 +63,8 @@ import Setting_Bank from './Setting/Bank';
 import Setting_Edit_Bank from './Setting/EditBank';
 import Setting_Add_Level from './Setting/AddLevel';
 import Setting_Edit_Bank2 from './Setting/EditBank2';
+import Setting_Add_Car_Setting from './Setting/AddCarSetting';
+import Setting_Edit_Car_Setting from './Setting/EditCarSetting';
 import Test from './Setting/test';
 
 import Job from './Job/Index';
@@ -71,7 +73,9 @@ import Job_Order from './Job/Order';
 import Job_Inside_Data from './Job/InsideData';
 import Job_B2b_ShowRoom from './Job/CompanyB2BShowRoom';
 import Job_B2b_Member from './Job/CompanyB2BMember';
+import Job_B2B_Package from './Job/CompanyB2BPackage';
 
+import TestImage from './test';
 function App() {
   return (
     <BrowserRouter basename="/mrklean/">
@@ -80,6 +84,7 @@ function App() {
         {/* <Route path="/" component={login} /> */}
 
         <Route path="/" component={Dashbroad} exact />
+        <Route path="/test" component={TestImage} />
         <Route path="/package" component={Package} exact />
         <Route path="/productmanage" component={ProductManage} />
         <Route path="/member" component={Member} />
@@ -153,12 +158,21 @@ function App() {
         <Route path="/setting/segment" component={Setting_Segment} />
         <Route path="/setting/unit" component={Setting_Unit} />
         <Route path="/setting/setup" component={Setting_SetUp} />
-        <Route path="/setting/brand-car" component={Setting_BrandCar} />
+        <Route path="/setting/brand-car" component={Setting_BrandCar} exact />
+        <Route
+          path="/setting/brand-car/add-car"
+          component={Setting_Add_Car_Setting}
+        />
+        <Route
+          path="/setting/brand-car/edit-car"
+          component={Setting_Edit_Car_Setting}
+        />
         <Route path="/setting/bank" component={Setting_Bank} exact />
         {/* dynamic component */}
         <Route path="/setting/bank/edit-bank" component={Setting_Edit_Bank} />
         <Route path="/setting/bank/edit-bank2" component={Setting_Edit_Bank2} />
         <Route path="/setting/add-level" component={Setting_Add_Level} />
+
         <Route path="/setting/test" component={Test} />
 
         <Route path="/job" component={Job} exact />
@@ -168,6 +182,7 @@ function App() {
 
         <Route path="/job/company-b2b-show-room" component={Job_B2b_ShowRoom} />
         <Route path="/job/company-b2b-member" component={Job_B2b_Member} />
+        <Route path="/job/company-b2b-package" component={Job_B2B_Package} />
       </Switch>
     </BrowserRouter>
   );

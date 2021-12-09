@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Select from 'react-select';
-import Delete from '../../assets/icon/flat-style-circle-delete.png';
+import Delete from '../../../assets/icon/flat-style-circle-delete.png';
 export default function Service() {
   const [product, setProduct] = useState([{ value: '', label: '' }]);
   return (
@@ -58,45 +58,6 @@ export default function Service() {
                 </tr>
               </tbody>
             </table>
-          </Col>
-        </Row>
-        <Row className="mt-3 mb-5">
-          <Col lg={6}>
-            <Row>
-              <Col lg={3} className="text-left">
-                <Form.Label>หมายเหตุ</Form.Label>
-              </Col>
-              <Col>
-                <Form.Control
-                  as="textarea"
-                  placeholder=""
-                  className="input-area"
-                  rows={5}
-                />
-              </Col>
-            </Row>
-          </Col>
-          <Col lg={6}>
-            <Row>
-              <Col lg={3} className="text-left">
-                <Form.Label>โน้ตภายใน</Form.Label>
-              </Col>
-              <Col>
-                <Form.Control
-                  as="textarea"
-                  placeholder=""
-                  className="input-area"
-                  rows={5}
-                />
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-        <Row className="set-row-button-create justify-content-center">
-          <Col sm={4} lg={2}>
-            <Button type="button" className="button">
-              สร้าง
-            </Button>
           </Col>
         </Row>
       </Container>

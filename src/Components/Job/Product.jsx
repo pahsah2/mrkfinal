@@ -18,8 +18,8 @@ export default function Product() {
             />
           </Col>
         </Row>
-        <Row className="mt-3 mb-3">
-          <Col className="set-table-inside">
+        <Row className="mt-3 mb-3 m-0">
+          <Col className="set-table-inside p-0">
             <table className="table table-responsive table-wash-part ">
               <thead>
                 <tr className="t-header-package">

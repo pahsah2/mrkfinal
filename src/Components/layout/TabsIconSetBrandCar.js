@@ -47,9 +47,11 @@ export default function TabsIconSetBrandCar() {
           <Button>
             <img src={chart1_4} alt="" />
           </Button>
-          <Button type="button" className="button-add-car">
-            <p>เพิ่มรายการรถ</p>
-          </Button>
+          <a href="/setting/brand-car/add-car">
+            <Button type="button" className="button-add-car">
+              <p>เพิ่มรายการรถ</p>
+            </Button>
+          </a>
         </div>
       </Col>
     </Row>

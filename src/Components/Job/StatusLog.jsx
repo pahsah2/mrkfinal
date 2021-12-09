@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 export default function StatusLog() {
   return (
     <>
-      <Container fluid>
+      <Container fluid className="set-height-order">
         <Row>
           <Col className="set-table" style={{ padding: 0 }}>
             <table className="table table-responsive table-wash-part ">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 import Delete from '../../../assets/icon/flat-style-circle-delete.png';
-export default function WashPart() {
+export default function SpecialPackage() {
   const [serviceMore, setServiceMore] = useState(true);
   const [fastService, setFastService] = useState(true);
   const [service, setService] = useState([{ value: '', label: '' }]);
@@ -40,7 +40,7 @@ export default function WashPart() {
                 <Col lg={10}>
                   <Select
                     options={optionService}
-                    placeholder=""
+                    placeholder="เลือกบริการ"
                     isClearable={false}
                     isSearchable={false}
                     onChange={(data) => SetService(data)}
@@ -76,13 +76,13 @@ export default function WashPart() {
               />
             </Col>
             <Col xs={6} sm={5} md={4} lg={4} xl={3} className="mt-4 d-lg-none">
-              <Form.Check
-                type="checkbox"
-                label="บริการทันที"
-                onChange={handleFastService}
-                checked={fastService}
-                className="checkbox-input"
-              />
+            <Form.Check
+                      type="checkbox"
+                      label="บริการทันที"
+                      onChange={handleFastService}
+                      checked={fastService}
+                      className="checkbox-input"
+                    />
             </Col>
           </Row>
           <Row>

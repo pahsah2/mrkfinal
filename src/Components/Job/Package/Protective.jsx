@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 import Delete from '../../../assets/icon/flat-style-circle-delete.png';
-export default function WashPart() {
+export default function Protective() {
   const [serviceMore, setServiceMore] = useState(true);
   const [fastService, setFastService] = useState(true);
+  const [sprayCoating, setSprayCoating] = useState(true);
   const [service, setService] = useState([{ value: '', label: '' }]);
+  const [typeCoating, setTypeCoating] = useState([{ value: '', label: '' }]);
+  const [pointCoating, setPointCoating] = useState([{ value: '', label: '' }]);
+
+  const handleSprayCoating = () => {
+    setSprayCoating(!sprayCoating);
+  };
 
   const handleServiceMore = () => {
     setServiceMore(!serviceMore);
@@ -27,8 +34,17 @@ export default function WashPart() {
       label: 'กล่องสุดคุ้ม น้ำยา Wax+PCS+SC',
     },
   ];
+  const optionTypeCoating = [{ value: '', label: '' }];
+  const optionPointCoating = [{ value: '', label: '' }];
+
   function SetService(data) {
     setService({ value: data.value, label: data.value });
+  }
+  function SetTypeCoating(data) {
+    setTypeCoating({ value: data.value, label: data.value });
+  }
+  function SetPointCoating(data) {
+    setPointCoating({ value: data.value, label: data.value });
   }
   return (
     <>
@@ -37,7 +53,7 @@ export default function WashPart() {
           <Row className="g-0 justify-content-start">
             <Col lg={6}>
               <Row>
-                <Col lg={10}>
+                {/* <Col lg={10}>
                   <Select
                     options={optionService}
                     placeholder=""
@@ -46,7 +62,7 @@ export default function WashPart() {
                     onChange={(data) => SetService(data)}
                     className="select-list"
                   />
-                </Col>
+                </Col> */}
               </Row>
             </Col>
             <Col lg={6} className="">
@@ -65,23 +81,45 @@ export default function WashPart() {
               </Row>
             </Col>
           </Row>
-          <Row className="g-0 justify-content-start">
-            <Col xs={6} sm={5} md={4} lg={4} xl={3} className="mt-4 ">
+          <Row className="g-0 justify-content-start align-items-start">
+            <Col xs={6} sm={5} md={4} lg={4} xl={3} className="">
               <Form.Check
                 type="checkbox"
-                label="บริการต่อเนื่อง"
-                onChange={handleServiceMore}
-                checked={service}
+                label=" พ่นเคลือบหลังติดตั้ง"
+                onChange={handleSprayCoating}
+                checked={sprayCoating}
                 className="checkbox-input"
               />
             </Col>
-            <Col xs={6} sm={5} md={4} lg={4} xl={3} className="mt-4 d-lg-none">
+            <Col xs={6} sm={5} md={4} lg={4} xl={3} className=" d-lg-none">
               <Form.Check
                 type="checkbox"
                 label="บริการทันที"
                 onChange={handleFastService}
                 checked={fastService}
                 className="checkbox-input"
+              />
+            </Col>
+          </Row>
+          <Row className="g-0 justify-content-start mt-2">
+            <Col lg={5} className="mt-2 mb-2">
+              <Select
+                options={optionTypeCoating}
+                placeholder="เลือกประเภทการเคลือบ"
+                isClearable={false}
+                isSearchable={false}
+                onChange={(data) => SetTypeCoating(data)}
+                className="select-list"
+              />
+            </Col>
+            <Col lg={5} className="mt-2 mb-2">
+              <Select
+                options={optionPointCoating}
+                placeholder="เลือกจุดที่ต้องการเคลือบ"
+                isClearable={false}
+                isSearchable={false}
+                onChange={(data) => SetPointCoating(data)}
+                className="select-list"
               />
             </Col>
           </Row>

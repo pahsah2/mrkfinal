@@ -158,10 +158,12 @@ export default function BrandCar() {
                         lg={3}
                         className="mt-3 set-hidden-add"
                       >
-                        <Button type="" className="button">
-                          <img src={Add} />
-                          &nbsp; เพิ่มรายการ
-                        </Button>
+                        
+                          <Button type="" className="button">
+                            <img src={Add} />
+                            &nbsp; เพิ่มรายการ
+                          </Button>
+                        
                       </Col>
                     </Row>
                   </Col>

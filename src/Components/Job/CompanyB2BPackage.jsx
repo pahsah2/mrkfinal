@@ -3,15 +3,15 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 
 import Delete from '../../assets/icon/flat-style-circle-delete.png';
-import MainComponent from './Package/Index';
-import WashPart from './Package/WashPart';
-import Lightfilter from './Package/Lightfilter';
-import CoatingService from './Package/CoatingService';
-import Protective from './Package/Protective';
-import ServiceFilter from './Package/ServiceFilter';
-import SpecialPackage from './Package/SpecialPackage';
+import MainComponent from './CompanyB2BPackage/Index';
+import WashPart from './CompanyB2BPackage/WashPart';
+import Lightfilter from './CompanyB2BPackage/Lightfilter';
+import CoatingService from './CompanyB2BPackage/CoatingService';
+import Protective from './CompanyB2BPackage/Protective';
+import ServiceFilter from './CompanyB2BPackage/ServiceFilter';
+import SpecialPackage from './CompanyB2BPackage/SpecialPackage';
 
-export default function Package() {
+export default function CompanyB2BPackage() {
   const [typepackage, setTypePackage] = useState([{ value: '', label: '' }]);
   const [serviceMore, setServiceMore] = useState(false);
 
