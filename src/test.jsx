@@ -1,122 +1,108 @@
-import React, { useRef, useState } from 'react';
+import React , {useState} from 'react'
 import {
-  FileUploadContainer,
-  FormField,
-  DragDropText,
-  UploadFileBtn,
-  FilePreviewContainer,
-  ImagePreview,
-  PreviewContainer,
-  PreviewList,
-  FileMetaData,
-  RemoveFileIcon,
-  InputLabel,
-} from './file-upload.styles';
+  Container,
+  Row,
+  Col,
+  Button,
+  Pagination,
+  Modal,
+  
+  
+} from 'react-bootstrap';
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
+import CreatableSelect from 'react-select/creatable';
+import { ActionMeta, OnChangeValue } from 'react-select';
 
-const KILO_BYTES_PER_BYTE = 1000;
-const DEFAULT_MAX_FILE_SIZE_IN_BYTES = 500000;
 
-const convertNestedObjectToArray = (nestedObj) =>
-  Object.keys(nestedObj).map((key) => nestedObj[key]);
+import ReactTagInput from '@pathofdev/react-tag-input';
+import { colourOptions , ColourOption } from './data.ts';
+import 'semantic-ui-css/semantic.min.css';
+import { Form } from 'semantic-ui-react';
 
-const convertBytesToKB = (bytes) => Math.round(bytes / KILO_BYTES_PER_BYTE);
 
-const FileUpload = ({
-  label,
-  updateFilesCb,
-  maxFileSizeInBytes = DEFAULT_MAX_FILE_SIZE_IN_BYTES,
-  ...otherProps
-}) => {
-  const fileInputField = useRef(null);
-  const [files, setFiles] = useState({});
 
-  const handleUploadBtnClick = () => {
-    fileInputField.current.click();
-  };
+export default function Test() {
+  const [isDisabled , setDisabled] = useState(false)
+  const [isClearable , setClearable] = useState(true)
+  const [isLoading , setLoading] = useState(false)
+  const [isRtl , setRtl] = useState(false)
+  const [isSearchable , setSearchable] = useState(true);
+  const [phone, setPhone] = React.useState([]);
 
-  const addNewFiles = (newFiles) => {
-    for (let file of newFiles) {
-      if (file.size < maxFileSizeInBytes) {
-        if (!otherProps.multiple) {
-          return { file };
-        }
-        files[file.name] = file;
-      }
-    }
-    return { ...files };
-  };
+  const [input, setInput] = useState('');
+  const [tags, setTags] = useState([]);
 
-  const callUpdateFilesCb = (files) => {
-    const filesAsArray = convertNestedObjectToArray(files);
-    updateFilesCb(filesAsArray);
-  };
+const animatedComponents = makeAnimated();
 
-  const handleNewFileUpload = (e) => {
-    const { files: newFiles } = e.target;
-    if (newFiles.length) {
-      let updatedFiles = addNewFiles(newFiles);
-      setFiles(updatedFiles);
-      callUpdateFilesCb(updatedFiles);
-    }
-  };
+   const handleDelete = (i) => {
+    this.setState({
+      tags: this.state.tags.filter((tag, index) => index !== i),
+    });
+  }
 
-  const removeFile = (fileName) => {
-    delete files[fileName];
-    setFiles({ ...files });
-    callUpdateFilesCb({ ...files });
+  const handleChange = () => (
+    newValue: OnChangeValue<ColourOption, true>,
+    actionMeta: ActionMeta<ColourOption>
+  ) => {
+    console.group('Value Changed');
+    console.log(newValue);
+    console.log(`action: ${actionMeta.action}`);
+    console.groupEnd();
   };
 
   return (
     <>
-      <FileUploadContainer>
-        <InputLabel>{label}</InputLabel>
-        <DragDropText>Drag and drop your files anywhere or</DragDropText>
-        <UploadFileBtn type="button" onClick={handleUploadBtnClick}>
-          <i className="fas fa-file-upload" />
-          <span> Upload {otherProps.multiple ? 'files' : 'a file'}</span>
-        </UploadFileBtn>
-        <FormField
-          type="file"
-          ref={fileInputField}
-          onChange={handleNewFileUpload}
-          title=""
-          value=""
-          {...otherProps}
+    <Container fluid>
+    <Select
+    defaultValue={[colourOptions[2], colourOptions[3]]}
+    isMulti
+    name="colors"
+    options={colourOptions}
+    className="basic-multi-select"
+    classNamePrefix="select"
+  />
+  <p>{isSearchable}</p>
+        <Select
+          className="basic-single"
+          classNamePrefix="select"
+          defaultValue={colourOptions[0]}
+          isDisabled={isDisabled}
+          isLoading={isLoading}
+          isClearable={isClearable}
+          isRtl={isRtl}
+          isSearchable={isSearchable}
+          name="color"
+          options={colourOptions}
         />
-      </FileUploadContainer>
-      <FilePreviewContainer>
-        <span>To Upload</span>
-        <PreviewList>
-          {Object.keys(files).map((fileName, index) => {
-            let file = files[fileName];
-            let isImageFile = file.type.split('/')[0] === 'image';
-            return (
-              <PreviewContainer key={fileName}>
-                <div>
-                  {isImageFile && (
-                    <ImagePreview
-                      src={URL.createObjectURL(file)}
-                      alt={`file preview ${index}`}
-                    />
-                  )}
-                  <FileMetaData isImageFile={isImageFile}>
-                    <span>{file.name}</span>
-                    <aside>
-                      <span>{convertBytesToKB(file.size)} kb</span>
-                      <RemoveFileIcon
-                        className="fas fa-trash-alt"
-                        onClick={() => removeFile(fileName)}
-                      />
-                    </aside>
-                  </FileMetaData>
-                </div>
-              </PreviewContainer>
-            );
-          })}
-        </PreviewList>
-      </FilePreviewContainer>
-    </>
-  );
-};
 
-export default FileUpload;
+  <ReactTagInput
+                  placeholder="กรุณากรอกเบอร์โทรศัพท์"
+                  editable={true}
+                  readOnly={false}
+                  removeOnBackspace={true}
+                  maxTags={2}
+                  tags={phone}
+                  onChange={(e) => setPhone(e)}
+                  className="input-tage"
+                  options={colourOptions}
+                />
+                
+<Select
+      closeMenuOnSelect={false}
+      components={animatedComponents}
+      defaultValue={[colourOptions[4], colourOptions[5]]}
+      isMulti
+      onChange={(opt, meta) => console.log(opt, meta)}
+      options={colourOptions}
+    />
+
+ <CreatableSelect
+        isMulti
+        onChange={handleChange}
+        options={colourOptions}
+      />
+  </Container>
+    </>
+  )
+}

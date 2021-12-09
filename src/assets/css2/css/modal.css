@@ -243,7 +243,7 @@ Label {
   border-radius: unset !important;
 }
 
-.css-tlfecz-indicatorContainer,
+.select__dropdown-indicator,
 .css-1gtu0rj-indicatorContainer,
 .css-1gtu0rj-indicatorContainer:hover {
   background: #c4c4c4;

@@ -113,13 +113,13 @@
 .input-body .css-1pahdxg-control:hover,
 .input-body .css-1pahdxg-control,
 .input-body .css-1gtu0rj-indicatorContainer:hover,
-.input-body .css-tlfecz-indicatorContainer:hover {
+.input-body .select__dropdown-indicator:hover {
   box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%) !important;
   border: unset;
   border-radius: unset;
 }
 
-.input-body .css-tlfecz-indicatorContainer {
+.input-body .select__dropdown-indicator {
   height: 100%;
   align-items: center;
 }
@@ -237,7 +237,7 @@
   box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-.select-style .css-tlfecz-indicatorContainer,
+.select-style .select__dropdown-indicator,
 .select-style .css-1gtu0rj-indicatorContainer,
 .select-style .css-1gtu0rj-indicatorContainer:hover,
 .btn-secondary:focus {
@@ -349,9 +349,9 @@
 }
 
 .css-1hb7zxy-IndicatorsContainer,
-.css-tlfecz-indicatorContainer {
+.select__dropdown-indicator {
   /* background-color: #c4c4c4 !important; */
-  border-left: 1px solid rgba(229, 229, 229, 0.5) !important;
+  
 }
 
 .css-1pahdxg-control:hover,
