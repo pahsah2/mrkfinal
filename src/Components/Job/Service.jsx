@@ -3,17 +3,40 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import Delete from '../../assets/icon/flat-style-circle-delete.png';
 export default function Service() {
-  const [product, setProduct] = useState([{ value: '', label: '' }]);
+  const [isDisabled, setDisabled] = useState(false);
+  const [isClearable, setClearable] = useState(true);
+  const [isLoading, setLoading] = useState(false);
+  const [isRtl, setRtl] = useState(false);
+  const [isSearchable, setSearchable] = useState(true);
+  const [service, setService] = useState([{ value: '', label: '' }]);
+
+  const optionService = [
+    { value: 'บริการล้างและเคลือบแว๊กซ์', label: 'บริการล้างและเคลือบแว๊กซ์' },
+    { value: 'บริการฟิล์มกรองแสง', label: 'บริการฟิล์มกรองแสง' },
+    { value: 'บริการเคลือบเหมา', label: 'บริการเคลือบเหมา' },
+    { value: 'บริการเคลือบเฉพาะจุด', label: 'บริการเคลือบเฉพาะจุด' },
+    { value: 'บริการฟิล์มกันรอย', label: 'บริการฟิล์มกันรอย' },
+    { value: 'แพ็คเกจพิเศษ', label: 'แพ็คเกจพิเศษ' },
+  ];
+  function SetService(data) {
+    setService({ value: data.value, label: data.value });
+  }
   return (
     <>
       <Container fluid>
         <Row>
           <Col>
             <Select
-              className="text-left select-style"
-              aria-label="Default select example"
+              className="basic-single"
+              classNamePrefix="select"
               placeholder="ค้นหาสินค้าด้วยรหัสบริการ, ชื่อบริการ"
-              options={product}
+              isDisabled={isDisabled}
+              isLoading={isLoading}
+              isClearable={isClearable}
+              isRtl={isRtl}
+              name="color"
+              options={optionService}
+              onChange={(data) => SetService(data)}
             />
           </Col>
         </Row>

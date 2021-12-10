@@ -34,6 +34,11 @@ import Service_Component from '../Components/Job/Service';
 import Package_Component from '../Components/Job/Package';
 
 export default function CompanyB2BShowRoom() {
+  const [isDisabled, setDisabled] = useState(false);
+  const [isClearable, setClearable] = useState(true);
+  const [isLoading, setLoading] = useState(false);
+  const [isRtl, setRtl] = useState(false);
+  const [isSearchable, setSearchable] = useState(true);
   const [member, setMember] = useState([
     { value: 'นภาวรรณ ยั่งยืน (คุณมิว)', label: ' นภาวรรณ ยั่งยืน (คุณมิว)' },
     { value: 'นภาพร วิบูลกิจ (คุณนัท)', label: ' นภาพร วิบูลกิจ (คุณนัท)' },
@@ -63,7 +68,7 @@ export default function CompanyB2BShowRoom() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock Job">
+      <Container fluid className="package-container Service Stock Job " >
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
@@ -97,7 +102,7 @@ export default function CompanyB2BShowRoom() {
                   JOB &gt; Company (B2B)
                 </h5>
               </div>
-              <div className="modal-body">
+              <div className="modal-body ">
                 <Row className="g-0 tabsicon justify-content-center ">
                   <TabsIcon />
                 </Row>
@@ -105,7 +110,7 @@ export default function CompanyB2BShowRoom() {
                 {/* <Row className="g-0 justify-content-center">
                   <GroupButtonStock />
                 </Row> */}
-                <Row className="justify-content-center">
+                <Row className="justify-content-center set-height-order">
                   <Col lg={11}>
                     <Row className="mt-4 mb-4 justify-content-center">
                       <Col xs={12} lg={6}>
@@ -174,9 +179,11 @@ export default function CompanyB2BShowRoom() {
                       <Col sm={12} className="mt-3 mb-3">
                         <Row className="justify-content-center">
                           <Col xs={4} lg={3}>
-                            <Button type="button" className="button">
-                              ถัดไป
-                            </Button>
+                            <a href="/job/company-b2b-member">
+                              <Button type="button" className="button">
+                                ถัดไป
+                              </Button>
+                            </a>
                           </Col>
                         </Row>
                       </Col>

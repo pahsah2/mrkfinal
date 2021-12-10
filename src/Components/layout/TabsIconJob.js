@@ -77,15 +77,19 @@ export default function TabsIconJob() {
         <Modal.Body>
           <Row className="justify-content-center set-modal-body-job">
             <Col lg={3}>
-              <Button type="button" className="button">
-                หน้าร้าน
-              </Button>
+              <a href="/job/inside-data">
+                <Button type="button" className="button">
+                  หน้าร้าน
+                </Button>
+              </a>
             </Col>
 
             <Col lg={3}>
-              <Button type="button" className="button">
-                Showroom (B2B)
-              </Button>
+              <a href="/job/company-b2b-show-room">
+                <Button type="button" className="button">
+                  Showroom (B2B)
+                </Button>
+              </a>
             </Col>
           </Row>
         </Modal.Body>

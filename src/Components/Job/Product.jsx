@@ -2,19 +2,40 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import Delete from '../../assets/icon/flat-style-circle-delete.png';
+
 export default function Product() {
-  const [product, setProduct] = useState([{ value: 's', label: 's' }]);
+  const [isDisabled, setDisabled] = useState(false);
+  const [isClearable, setClearable] = useState(true);
+  const [isLoading, setLoading] = useState(false);
+  const [isRtl, setRtl] = useState(false);
+  const [isSearchable, setSearchable] = useState(true);
+  const [product, setProduct] = useState([{ value: '', label: '' }]);
+
+  const optionProduct = [
+    { value: 'ฟ', label: 'ฟ' },
+    { value: 'ฟฟ', label: 'ฟ' },
+    { value: 'ฟ', label: 'ฟ' },
+  ];
+  function SetProduct(data) {
+    setProduct({ value: data.value, label: data.value });
+  }
+
   return (
     <>
       <Container fluid>
         <Row>
           <Col>
             <Select
-              className="text-left select-style"
-              aria-label="Default select example"
+              className="basic-single"
+              classNamePrefix="select"
               placeholder="ค้นหาสินค้าด้วยรหัสสินค้า, ชื่อสินค้า"
-              search
-              options={product}
+              isDisabled={isDisabled}
+              isLoading={isLoading}
+              isRtl={isRtl}
+              isSearchable={isSearchable}
+              name="color"
+              options={optionProduct}
+              onChange={(data) => SetProduct(data)}
             />
           </Col>
         </Row>

@@ -114,7 +114,7 @@ export default function CompanyB2BMember() {
                 {/* <Row className="g-0 justify-content-center">
                   <GroupButtonStock />
                 </Row> */}
-                <Row className="justify-content-center">
+                <Row className="justify-content-center set-height-order">
                   <Col lg={11}>
                     <Row className="mt-4 mb-4 justify-content-center">
                       <Col xs={12} lg={6}>

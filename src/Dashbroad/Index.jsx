@@ -21,11 +21,12 @@ import LogoutModal from '../Components/LogoutModal';
 import { Link } from 'react-router-dom';
 import '../assets/scss/style.scss';
 import NavbarTop from '../Components/NavbarTop';
+
 export default function Index() {
   const dispatch = useDispatch();
 
   useEffect(() => {}, []);
-  
+
   return (
     <>
       <NavbarTop />
@@ -148,7 +149,14 @@ export default function Index() {
                   </div>
                 </Link>
               </Col>
-              <Col lg={3} className="set-col"></Col>
+              <Col lg={3} className="set-col">
+                <Link to="/job" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/appwizard_list.png" className="icon" />
+                    <p className="p-1">Job</p>
+                  </div>
+                </Link>
+              </Col>
             </Row>
           </Col>
           <Col lg={5} xl={5} className="align-items-right">

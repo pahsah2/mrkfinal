@@ -66,42 +66,58 @@ export default function Navbar() {
         <Modal.Body>
           <Row className="justify-content-center mt-3">
             <Col lg={4}>
-              <Button className="button">ตั้งค่า (ประเภทรถ)</Button>
+              <a href="/setting/type-cars">
+                <Button className="button">ตั้งค่า (ประเภทรถ)</Button>
+              </a>
             </Col>
           </Row>
           <Row className="justify-content-center mt-3">
             <Col lg={4}>
-              <Button className="button">ตั้งค่า (ยี่ห้อรถ/รุ่นรถ)</Button>
+              <a href="/setting/brand-car">
+                <Button className="button">ตั้งค่า (ยี่ห้อรถ/รุ่นรถ)</Button>
+              </a>
             </Col>
           </Row>
           <Row className="justify-content-center mt-3">
             <Col lg={4}>
-              <Button className="button">ตั้งค่า (แผนก)</Button>
+              <a href="/setting/division">
+                <Button className="button">ตั้งค่า (แผนก)</Button>
+              </a>
             </Col>
           </Row>
           <Row className="justify-content-center mt-3">
             <Col lg={4}>
-              <Button className="button">ตั้งค่า (หน่วย)</Button>
+              <a href="/setting/unit">
+                <Button className="button">ตั้งค่า (หน่วย)</Button>
+              </a>
             </Col>
           </Row>
           <Row className="justify-content-center mt-3">
             <Col lg={4}>
-              <Button className="button">ตั้งค่า (หมวดหมู่สินค้า)</Button>
+              <a href="/setting/category-and-service">
+                <Button className="button">ตั้งค่า (หมวดหมู่สินค้า)</Button>
+              </a>
             </Col>
           </Row>
           <Row className="justify-content-center mt-3">
             <Col lg={4}>
-              <Button className="button">ตั้งค่าการใช้งาน</Button>
+              <a href="/setting/setup">
+                <Button className="button">ตั้งค่าการใช้งาน</Button>
+              </a>
             </Col>
           </Row>
           <Row className="justify-content-center mt-3">
             <Col lg={4}>
-              <Button className="button">ตั้งค่าธนาคาร</Button>
+              <a href="/setting/bank">
+                <Button className="button">ตั้งค่าธนาคาร</Button>
+              </a>
             </Col>
           </Row>
           <Row className="justify-content-center mt-3 mb-3">
             <Col lg={4}>
-              <Button className="button">ตั้งค่า Segment</Button>
+              <a href="/setting/segment">
+                <Button className="button">ตั้งค่า Segment</Button>
+              </a>
             </Col>
           </Row>
         </Modal.Body>

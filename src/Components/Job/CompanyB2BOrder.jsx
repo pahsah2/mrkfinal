@@ -10,10 +10,10 @@ import Delete from '../../assets/icon/delete-button.png';
 import Calendar from '../../assets/icon/calendar-bg.png';
 import { DatePicker, Space } from 'antd';
 
-import Product_Component from './Order/Product';
-import Service_Component from './Order/Service';
-import Package_Component from './Order/Package';
-export default function Order(props) {
+import Product_Component from './CompanyB2BOrder/Product';
+import Service_Component from './CompanyB2BOrder/Service';
+import Package_Component from './CompanyB2BOrder/Package';
+export default function CompanyB2BOrder(props) {
   const [isDisabled, setDisabled] = useState(false);
   const [isClearable, setClearable] = useState(true);
   const [isLoading, setLoading] = useState(false);

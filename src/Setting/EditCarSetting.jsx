@@ -32,8 +32,18 @@ import Add from '../assets/icon/add_menu.png';
 import Delete from '../assets/icon/flat-style-circle-delete.png';
 import DeleteForm from '../assets/icon/new-re-turn.png';
 import increate from '../assets/icon/increase.png';
+import ReactTagInput from '@pathofdev/react-tag-input';
+import CreatableSelect from 'react-select/creatable';
+import { ActionMeta, OnChangeValue } from 'react-select';
+
 export default function EditCarSetting() {
   const history = useHistory();
+  const [car, setCar] = React.useState([]);
+  const [model, setModel] = useState({ value: 'a', label: '' });
+  const [modelCode, setModelCode] = useState({ value: 'a', label: '' });
+  const [type, setType] = useState({ value: '', label: '' });
+  const [size, setSize] = useState({ value: '', label: '' });
+  const [year, setYear] = useState({ value: '', label: '' });
 
   function close() {
     let path = `/`;
@@ -43,6 +53,47 @@ export default function EditCarSetting() {
     mainField: '',
     operation: '',
     value: [],
+  };
+
+  const OptionModel = [{ value: 'a', label: 'a' }];
+  const OptionModelCode = [{ value: 'a', label: 'a' }];
+  const OptionType = [{ value: 'mini', label: 'mini' }];
+  const OptionSize = [{ value: 'XL', label: 'XL' }];
+  const OptionYear = [{ value: '1998', label: '1998' }];
+
+  function SetModel(data) {
+    setModel({ value: data.value, label: data.value });
+  }
+  function SetModelCode(data) {
+    setModelCode({ value: data.value, label: data.value });
+  }
+  function SetType(data) {
+    setModel({ value: data.value, label: data.value });
+  }
+  function SetSize(data) {
+    setModel({ value: data.value, label: data.value });
+  }
+  function SetYear(data) {
+    setModel({ value: data.value, label: data.value });
+  }
+  const handleChange = (
+    newValue: OnChangeValue<OptionModel, true>,
+    actionMeta: ActionMeta<OptionModel>
+  ) => {
+    console.group('Value Changed');
+    console.log(newValue);
+    console.log(`action: ${actionMeta.action}`);
+    console.groupEnd();
+  };
+
+  const handleChangeModelCode = (
+    newValue: OnChangeValue<OptionModelCode, true>,
+    actionMeta: ActionMeta<OptionModelCode>
+  ) => {
+    console.group('Value Changed');
+    console.log(newValue);
+    console.log(`action: ${actionMeta.action}`);
+    console.groupEnd();
   };
   return (
     <>
@@ -99,7 +150,16 @@ export default function EditCarSetting() {
                         </Form.Label>
                       </Col>
                       <Col lg={5} className="text-left  mb-3">
-                        <Form.Control></Form.Control>
+                        <ReactTagInput
+                          placeholder="ยี่ห้อรถ"
+                          editable={true}
+                          readOnly={false}
+                          removeOnBackspace={true}
+                          maxTags={5}
+                          tags={car}
+                          onChange={(e) => setCar(e)}
+                          className="input-tage"
+                        />
                       </Col>
                     </Row>
                     <Row>
@@ -140,7 +200,16 @@ export default function EditCarSetting() {
                                           <Form.Label className="text-size ml-3">
                                             รุ่นรถ
                                           </Form.Label>
-                                          <Form.Control></Form.Control>
+
+                                          <Row>
+                                            <CreatableSelect
+                                              isMulti
+                                              onChange={(data) => {
+                                                handleChange && SetModel(data);
+                                              }}
+                                              options={OptionModel}
+                                            />
+                                          </Row>
                                         </Col>
                                         <Col
                                           xs={12}
@@ -150,7 +219,14 @@ export default function EditCarSetting() {
                                           <Form.Label className="text-size ml-3">
                                             รหัสรุ่นรถ
                                           </Form.Label>
-                                          <Form.Control></Form.Control>
+                                          <CreatableSelect
+                                            isMulti
+                                            onChange={(data) => {
+                                              handleChangeModelCode &&
+                                                setModelCode(data);
+                                            }}
+                                            options={OptionModelCode}
+                                          />
                                         </Col>
                                         <Col
                                           xs={12}
@@ -160,7 +236,13 @@ export default function EditCarSetting() {
                                           <Form.Label className="text-size ml-3">
                                             ประเภทรถ
                                           </Form.Label>
-                                          <Form.Control></Form.Control>
+                                          <Select
+                                            className="text-left select-style"
+                                            aria-label="Default select example"
+                                            placeholder=""
+                                            onChange={(data) => SetType(data)}
+                                            options={OptionType}
+                                          />
                                         </Col>
                                         <Col
                                           xs={12}
@@ -170,7 +252,13 @@ export default function EditCarSetting() {
                                           <Form.Label className="text-size ml-3">
                                             ขนาดรถ
                                           </Form.Label>
-                                          <Form.Control></Form.Control>
+                                          <Select
+                                            className="text-left select-style"
+                                            aria-label="Default select example"
+                                            placeholder=""
+                                            onChange={(data) => SetSize(data)}
+                                            options={OptionSize}
+                                          />
                                         </Col>
                                         <Col
                                           xs={12}
@@ -180,7 +268,13 @@ export default function EditCarSetting() {
                                           <Form.Label className="text-size ml-3">
                                             ปี
                                           </Form.Label>
-                                          <Form.Control></Form.Control>
+                                          <Select
+                                            className="text-left select-style"
+                                            aria-label="Default select example"
+                                            placeholder=""
+                                            onChange={(data) => SetYear(data)}
+                                            options={OptionYear}
+                                          />
                                         </Col>
                                         <Col xs={6} sm={6} md={1}>
                                           {values.rows.length !== 1 && (

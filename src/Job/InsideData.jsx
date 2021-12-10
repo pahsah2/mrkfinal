@@ -234,9 +234,11 @@ export default function InsideData() {
                       <Col sm={12} className="mt-3 mb-3">
                         <Row className="justify-content-center">
                           <Col xs={4} lg={3}>
-                            <Button type="button" className="button">
-                              ถัดไป
-                            </Button>
+                            <a href="/job/inside-create">
+                              <Button type="button" className="button">
+                                ถัดไป
+                              </Button>
+                            </a>
                           </Col>
                         </Row>
                       </Col>

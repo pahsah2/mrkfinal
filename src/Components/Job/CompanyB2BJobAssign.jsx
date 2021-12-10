@@ -9,7 +9,7 @@ import { Formik, FieldArray, Field } from 'formik';
 import Delete from '../../assets/icon/flat-style-circle-delete.png';
 import increate from '../../assets/icon/increase.png';
 
-export default function JobAssign() {
+export default function CompanyB2BJobAssign() {
   const onChange = () => {};
   const [hour, setHour] = useState([{ value: '', label: '' }]);
   const [minute, setMinute] = useState([{ value: '', label: '' }]);

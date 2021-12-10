@@ -962,10 +962,11 @@
         margin-right: 11px;
       }
       .react-tag-input {
-        height: 40px;
+        height: 44px;
       }
       .react-tag-input__tag {
         background: rgba(229, 229, 229, 0.5);
+        height: 25px;
       }
       .react-tag-input__tag__content {
       }
@@ -1152,13 +1153,14 @@
         display: none;
       }
       .react-tag-input {
-        height: 40px;
+        height: 44px;
         .react-tag-input__input {
           box-shadow: none;
         }
       }
       .react-tag-input__tag {
         background: rgba(229, 229, 229, 0.5);
+        width: 25px;
       }
       .react-tag-input__tag__content {
       }
@@ -1302,13 +1304,14 @@
         display: none;
       }
       .react-tag-input {
-        height: 40px;
+        height: 44px;
         .react-tag-input__input {
           box-shadow: none;
         }
       }
       .react-tag-input__tag {
         background: rgba(229, 229, 229, 0.5);
+        height: 25px;
       }
       .react-tag-input__tag__content {
       }
@@ -2603,6 +2606,7 @@
       max-width: 100%;
       width: 100%;
       height: 44px;
+
       border-radius: 0;
       background: #ffffff;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
@@ -3789,7 +3793,22 @@
       .modal-body {
         padding-left: 20px;
         padding-right: 20px;
-
+        label {
+          margin: 0;
+          font-size: 16px;
+        }
+        .ant-picker {
+          max-width: 100%;
+          width: 100%;
+          height: 44px;
+          border-radius: 0 !important;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+            0px 4px 4px rgba(0, 0, 0, 0.25) inset !important;
+          padding: 0;
+        }
+        .ant-picker-input input {
+          padding: 15px;
+        }
         .button {
           max-width: 100%;
           width: 100%;
@@ -3800,6 +3819,15 @@
           border-radius: 0;
           color: black;
           font-size: 16px;
+        }
+        .form-control-order {
+          max-width: 100% !important;
+          width: 100% !important;
+          height: 44px !important;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+            0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+          margin-top: 10px !important;
+          margin-bottom: 10px !important;
         }
         .form-control {
           width: 65%;
@@ -3965,6 +3993,14 @@
       inset 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
     border: none !important;
   }
+  .css-1s2u09g-control {
+    height: auto !important;
+    min-height: 44px;
+  }
+  .css-1pahdxg-control {
+    height: auto !important;
+    min-height: 44px;
+  }
   .css-1s2u09g-control:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
       inset 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
@@ -4071,6 +4107,22 @@
     height: 520px;
     overflow: scroll;
   }
+  .react-tag-input {
+    height: 44px !important;
+    border-radius: 0 !important;
+  }
+  .react-tag-input__tag {
+    height: 25px;
+    border-radius: 0;
+  }
+  .react-tag-input__tag__remove {
+    margin-right: 3px;
+    background: #c4c4c4;
+    border: 1px solid rgba(229, 229, 229, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .input-tage {
+  }
 }
 
 .Job {
@@ -4079,7 +4131,7 @@
     box-shadow: none;
   }
   .set-height-package {
-    height: 500px;
+    height: 620px;
     overflow-y: scroll;
   }
   .set-row-add {
@@ -4132,7 +4184,7 @@
     overflow: scroll !important;
   }
   .set-height-order {
-    height: 500px;
+    height: 600px;
     overflow-y: scroll;
   }
   .set-table {
@@ -4383,6 +4435,15 @@
     border-radius: 0 !important;
     border: 1px solid white !important;
     margin: 0;
+  }
+  .css-14el2xx-placeholder {
+    text-align: left;
+  }
+  .css-qc6sy-singleValue {
+    text-align: left;
+  }
+  .css-6j8wv5-Input {
+    text-align: left;
   }
 }
 
@@ -5188,38 +5249,45 @@
 
 //dropdow/////
 
-#react-select-2-input {
-  display: none !important;
+// #react-select-6-input {
+//   display: none !important;
+// }
+// #react-select-7-input {
+//   display: none !important;
+// }
+// #react-select-8-input {
+//   display: none !important;
+// }
+// #react-select-9-input {
+//   display: none !important;
+// }
+// #react-select-10-input {
+//   display: none !important;
+// }
+// #react-select-11-input {
+//   display: none !important;
+// }
+// #react-select-12-input {
+//   display: none !important;
+// }
+
+.css-1pahdxg-control {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 4px rgba(0, 0, 0, 0.25) inset;
 }
-#react-select-3-input {
-  display: none !important;
+.css-14el2xx-placeholder {
+  text-align: left;
 }
-#react-select-4-input {
-  display: none !important;
+.css-qc6sy-singleValue {
+  text-align: left;
 }
-#react-select-5-input {
-  display: none !important;
+.css-6j8wv5-Input {
+  text-align: left;
 }
-#react-select-6-input {
-  display: none !important;
-}
-#react-select-7-input {
-  display: none !important;
-}
-#react-select-8-input {
-  display: none !important;
-}
-#react-select-9-input {
-  display: none !important;
-}
-#react-select-10-input {
-  display: none !important;
-}
-#react-select-11-input {
-  display: none !important;
-}
-#react-select-12-input {
-  display: none !important;
+.css-1pahdxg-control:hover,
+.css-1pahdxg-control {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 4px rgba(0, 0, 0, 0.25) inset !important;
 }
 .css-1s2u09g-control {
   height: 44px;
@@ -5256,7 +5324,7 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
-.css-tlfecz-indicatorContainer:nth-child(2){
+.css-tlfecz-indicatorContainer:nth-child(2) {
   width: 44px;
   height: 44px;
   background: #c4c4c4;
@@ -5264,14 +5332,22 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
-.css-1rhbuit-multiValue{
+.css-tlfecz-indicatorContainer:nth-child(1) {
+  width: auto;
+  height: 44px;
+  background-image: url('../icon/close-icon.png');
+  background-position: center center;
+  background-repeat: no-repeat !important;
+  background-size: auto;
+}
+.css-1rhbuit-multiValue {
   border-radius: 0 !important;
 }
-.css-xb97g8{
+.css-xb97g8 {
   width: 20px;
   height: 20px;
   border: 1px solid rgba(229, 229, 229, 0.5);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0;
   background: #c4c4c4;
   margin: auto;
@@ -5282,7 +5358,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-repeat: no-repeat !important;
   background-size: auto !important;
 }
-.css-tlfecz-indicatorContainer:nth-child(3){
+.css-tlfecz-indicatorContainer:nth-child(3) {
   width: 44px;
   height: 44px;
   background: #c4c4c4;
@@ -5296,7 +5372,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 //   background-repeat: no-repeat ;
 //   background-size: auto ;
 // }
-.select__clear-indicator{
+.select__clear-indicator {
   border: none !important;
   width: 44px;
   background: none !important;
@@ -5305,12 +5381,42 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-repeat: no-repeat !important;
   background-size: auto !important;
 }
-.css-1pahdxg-control {
-        max-width: 100%;
-        width: 100%;
-        height: 44px !important;
-      }
 
+.css-1gtu0rj-indicatorContainer:nth-child(3) {
+  width: 44px;
+  height: 44px;
+  background: #c4c4c4;
+  background-image: url('../../assets/icon/TriangleArrow.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.css-1gtu0rj-indicatorContainer:nth-child(2) {
+  width: 44px;
+  height: 44px;
+  background: #c4c4c4;
+  background-image: url('../../assets/icon/TriangleArrow.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.css-1gtu0rj-indicatorContainer:nth-child(1) {
+  border: none !important;
+  width: auto;
+  height: 44px;
+  background: none !important;
+  background-image: url('../icon/close-icon.png') !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: auto !important;
+}
+.css-1pahdxg-control {
+  max-width: 100%;
+  width: 100%;
+  height: 44px !important;
+}
+.css-1s2u09g-control {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+}
 .button-cancel {
   background-color: #c4c4c4 !important;
 }

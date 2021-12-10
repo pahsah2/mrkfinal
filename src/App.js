@@ -74,6 +74,8 @@ import Job_Inside_Data from './Job/InsideData';
 import Job_B2b_ShowRoom from './Job/CompanyB2BShowRoom';
 import Job_B2b_Member from './Job/CompanyB2BMember';
 import Job_B2B_Package from './Job/CompanyB2BPackage';
+import Job_B2B_Order from './Job/CompanyB2BOrder';
+
 
 import TestImage from './test';
 function App() {
@@ -183,6 +185,8 @@ function App() {
         <Route path="/job/company-b2b-show-room" component={Job_B2b_ShowRoom} />
         <Route path="/job/company-b2b-member" component={Job_B2b_Member} />
         <Route path="/job/company-b2b-package" component={Job_B2B_Package} />
+        <Route path="/job/company-b2b-order" component={Job_B2B_Order} />
+        
       </Switch>
     </BrowserRouter>
   );

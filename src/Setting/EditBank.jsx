@@ -33,6 +33,9 @@ import Save from '../assets/icon/save.png';
 import Delete from '../assets/icon/new-re-turn.png';
 import Out from '../assets/icon/out.png';
 import 'semantic-ui-css/semantic.min.css';
+import ReactTagInput from '@pathofdev/react-tag-input';
+import CreatableSelect from 'react-select/creatable';
+import { ActionMeta, OnChangeValue } from 'react-select';
 
 export default function EditBank() {
   const [statusService, setStatusService] = useState(false);
@@ -42,31 +45,25 @@ export default function EditBank() {
   const [takeOut, setTakeOut] = useState(true);
   const [count, setCount] = useState([{ value: '', label: '' }]);
 
-  const [nameBank, setNameBank] = useState({ options });
+  const [nameBank, setNameBank] = useState({ value: '', label: '' });
   const statusServiceToggler = () => {
     statusService ? setStatusService(false) : setStatusService(true);
   };
-  function onChange(date, dateString) {
-    console.log(date, dateString);
-  }
+
   function close() {
     let path = `/`;
     history.push(path);
   }
-  const options = [
-    { key: 'English', text: 'English', value: 'English' },
-    { key: 'French', text: 'French', value: 'French' },
-    { key: 'Spanish', text: 'Spanish', value: 'Spanish' },
-    { key: 'German', text: 'German', value: 'German' },
-    { key: 'Chinese', text: 'Chinese', value: 'Chinese' },
+  const optionsBank = [
+    { value: 'ธนาคารกสิกรไทย', label: 'ธนาคารกสิกรไทย' },
+    { value: 'ธนาคารกรุงไทย', label: 'ธนาคารกรุงไทย' },
+    { value: 'ธนาคารกรุงเทพ', label: 'ธนาคารกรุงเทพ' },
   ];
-  const handleAddition = (e, { value }) => {
-    setNameBank((prevState) => ({
-      options: [{ text: value, value }, ...prevState.options],
-    }));
-  };
-  const handleChange = (e, { value }) => setNameBank({ currentValues: value });
-  const { currentValues } = nameBank;
+
+  function SetฺBank(data) {
+    setNameBank({ value: data.value, label: data.value });
+  }
+
   return (
     <>
       <NavbarTop />
@@ -117,17 +114,14 @@ export default function EditBank() {
                             <Form.Label className="pl-3">ชื่อธนาคาร</Form.Label>
                           </Col>
                           <Col lg={12}>
-                            <Dropdown
-                              options={options}
-                              placeholder="ธนาคาร"
-                              search
-                              selection
-                              fluid
-                              multiple
-                              allowAdditions
-                              value={currentValues}
-                              onAddItem={handleAddition}
-                              onChange={handleChange}
+                            <Select
+                              defaultValue={[optionsBank[0]]}
+                              isMulti
+                              placeholder=""
+                              options={optionsBank}
+                              onChange={(data) => SetฺBank(data)}
+                              className="basic-multi-select"
+                              classNamePrefix="select"
                             />
                           </Col>
                         </Row>

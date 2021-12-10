@@ -29,10 +29,10 @@ import Search from '../assets/icon/eyes-search.png';
 import Save from '../assets/icon/flat-style-circle-save.png';
 import Return from '../assets/icon/flat-style-circle-turn-on.png';
 
-import OrderComponent from '../Components/Job/Order';
-import StatusLog from '../Components/Job/StatusLog';
-import JobAssign from '../Components/Job/JobAssign';
-export default function Order() {
+import OrderComponent from '../Components/Job/CompanyB2BOrder';
+import StatusLog from '../Components/Job/CompanyB2BStatusLog';
+import JobAssign from '../Components/Job/CompanyB2BJobAssign';
+export default function CompanyB2BOrder() {
   const history = useHistory();
   const [key, setKey] = useState('Order');
 
@@ -51,7 +51,7 @@ export default function Order() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB &gt; ภายในร้าน &gt; Order
+                  JOB &gt; Company (B2B) &gt; Order
                 </h5>
                 <button
                   type="button"
@@ -75,7 +75,7 @@ export default function Order() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB &gt; ภายในร้าน &gt; Order
+                  JOB &gt; Company (B2B) &gt; Order
                 </h5>
               </div>
               <div className="modal-body">
