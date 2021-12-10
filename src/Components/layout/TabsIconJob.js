@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import address_book_home from '../../assets/icon/address_book_home.png';
 import appwizard_list from '../../assets/icon/appwizard_list.png';
@@ -77,19 +77,19 @@ export default function TabsIconJob() {
         <Modal.Body>
           <Row className="justify-content-center set-modal-body-job">
             <Col lg={3}>
-              <a href="/job/inside-data">
+              <Link href="/job/inside-data">
                 <Button type="button" className="button">
                   หน้าร้าน
                 </Button>
-              </a>
+              </Link>
             </Col>
 
             <Col lg={3}>
-              <a href="/job/company-b2b-show-room">
+              <Link href="/job/company-b2b-show-room">
                 <Button type="button" className="button">
                   Showroom (B2B)
                 </Button>
-              </a>
+              </Link>
             </Col>
           </Row>
         </Modal.Body>
