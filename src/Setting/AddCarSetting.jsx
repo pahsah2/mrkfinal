@@ -62,9 +62,11 @@ export default function AddcarSetting() {
   function SetModel(data) {
     setModel({ value: data.value, label: data.value });
   }
+
   function SetModelCode(data) {
     setModelCode({ value: data.value, label: data.value });
   }
+
   function SetType(data) {
     setModel({ value: data.value, label: data.value });
   }
@@ -74,7 +76,14 @@ export default function AddcarSetting() {
   function SetYear(data) {
     setModel({ value: data.value, label: data.value });
   }
-  
+
+  useEffect(() => {
+    // Update the document title using the browser API
+
+    console.group('Value Changed', OptionModel);
+    console.group('model', model.value);
+  });
+
   const handleChange = (
     newValue: OnChangeValue<OptionModel, true>,
     actionMeta: ActionMeta<OptionModel>
@@ -94,6 +103,7 @@ export default function AddcarSetting() {
     console.log(`action: ${actionMeta.action}`);
     console.groupEnd();
   };
+
   return (
     <>
       <NavbarTop />
@@ -151,7 +161,7 @@ export default function AddcarSetting() {
                           ยี่ห้อ
                         </Form.Label>
                       </Col>
-                      <Col lg={5} className="text-left  mb-3">
+                      <Col lg={5} className="text-left  mb-3 style-input-tag">
                         <ReactTagInput
                           placeholder="ยี่ห้อรถ"
                           editable={true}
@@ -206,9 +216,7 @@ export default function AddcarSetting() {
                                           <Row>
                                             <CreatableSelect
                                               isMulti
-                                              onChange={(data) => {
-                                                handleChange && SetModel(data);
-                                              }}
+                                              onChange={handleChange}
                                               options={OptionModel}
                                             />
                                           </Row>

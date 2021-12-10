@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 import '../assets/scss/style.scss';
 import LogoutModal from './LogoutModal';
 import Mr1 from '../assets/icon/Mr1.png';
@@ -66,51 +67,51 @@ export default function Footer() {
             </Row>
             <Row className="justify-content-center mt-3">
               <Col lg={4}>
-                <a href="/setting/brand-car">
+                <Link href="/setting/brand-car">
                   <Button className="button">ตั้งค่า (ยี่ห้อรถ/รุ่นรถ)</Button>
-                </a>
+                </Link>
               </Col>
             </Row>
             <Row className="justify-content-center mt-3">
               <Col lg={4}>
-                <a href="/setting/division">
+                <Link href="/setting/division">
                   <Button className="button">ตั้งค่า (แผนก)</Button>
-                </a>
+                </Link>
               </Col>
             </Row>
             <Row className="justify-content-center mt-3">
               <Col lg={4}>
-                <a href="/setting/unit">
+                <Link href="/setting/unit">
                   <Button className="button">ตั้งค่า (หน่วย)</Button>
-                </a>
+                </Link>
               </Col>
             </Row>
             <Row className="justify-content-center mt-3">
               <Col lg={4}>
-                <a href="/setting/category-and-service">
+                <Link href="/setting/category-and-service">
                   <Button className="button">ตั้งค่า (หมวดหมู่สินค้า)</Button>
-                </a>
+                </Link>
               </Col>
             </Row>
             <Row className="justify-content-center mt-3">
               <Col lg={4}>
-                <a href="/setting/setup">
+                <Link href="/setting/setup">
                   <Button className="button">ตั้งค่าการใช้งาน</Button>
-                </a>
+                </Link>
               </Col>
             </Row>
             <Row className="justify-content-center mt-3">
               <Col lg={4}>
-                <a href="/setting/bank">
+                <Link href="/setting/bank">
                   <Button className="button">ตั้งค่าธนาคาร</Button>
-                </a>
+                </Link>
               </Col>
             </Row>
             <Row className="justify-content-center mt-3 mb-3">
               <Col lg={4}>
-                <a href="/setting/segment">
+                <Link href="/setting/segment">
                   <Button className="button">ตั้งค่า Segment</Button>
-                </a>
+                </Link>
               </Col>
             </Row>
           </Modal.Body>
