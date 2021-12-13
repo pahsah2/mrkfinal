@@ -26,7 +26,7 @@ import Document from '../assets/icon/document.png';
 import Search from '../assets/icon/eyes-search.png';
 import Save from '../assets/icon/flat-style-circle-save.png';
 import Return from '../assets/icon/flat-style-circle-turn-on.png';
-
+import Money from '../assets/icon/money-bill.png';
 export default function Index() {
   const history = useHistory();
   const [showCutStock, setShowCutStock] = useState(false);
@@ -129,10 +129,9 @@ export default function Index() {
                           <td className="text-left">4500</td>
                           <td className="text-left">รอชำระ</td>
                           <td className="text-left">
-                            <Button
-                              type="button"
-                              className="button-image"
-                            ></Button>
+                            <Button type="button" className="button-image">
+                              <img src={Money} />
+                            </Button>
                           </td>
                         </tr>
                       </tbody>

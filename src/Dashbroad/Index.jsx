@@ -156,6 +156,18 @@ export default function Index() {
                     <p className="p-1">Job</p>
                   </div>
                 </Link>
+                <Link to="/bill" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/appwizard_list.png" className="icon" />
+                    <p className="p-1">Bill</p>
+                  </div>
+                </Link>
+                <Link to="/notification" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/notification.png" className="icon" />
+                    <p className="p-1">Notification</p>
+                  </div>
+                </Link>
               </Col>
             </Row>
           </Col>

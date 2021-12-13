@@ -77,8 +77,11 @@ import Job_B2B_Package from './Job/CompanyB2BPackage';
 import Job_B2B_Order from './Job/CompanyB2BOrder';
 
 import Bill from './Bill/Index';
-
+import AcceptPayment from './Bill/AcceptPayment';
+import Report from './Report/Index';
+import Notification from './Notification/Index';
 import TestImage from './test';
+
 function App() {
   return (
     <BrowserRouter basename="/mrklean/">
@@ -188,7 +191,11 @@ function App() {
         <Route path="/job/company-b2b-package" component={Job_B2B_Package} />
         <Route path="/job/company-b2b-order" component={Job_B2B_Order} />
 
-        <Route path="/bill" component={Bill} />
+        <Route path="/bill" component={Bill} exact />
+        <Route path="/bill/accept-payment" component={AcceptPayment} />
+
+        <Route path="/report" component={Report} />
+        <Route path="/notification" component={Notification} />
       </Switch>
     </BrowserRouter>
   );

@@ -174,6 +174,7 @@
     color: #c4c4c4c4;
     @media only screen and (max-width: 419px) {
       font-size: 16px;
+      margin: 0;
     }
   }
   .modal-body {
@@ -3790,6 +3791,7 @@
           border-radius: 0 !important;
         }
       }
+
       .modal-body {
         padding-left: 20px;
         padding-right: 20px;
@@ -3824,6 +3826,15 @@
           max-width: 100% !important;
           width: 100% !important;
           height: 44px !important;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+            0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+          margin-top: 10px !important;
+          margin-bottom: 10px !important;
+        }
+        .form-control-area {
+          max-width: 100% !important;
+          width: 100% !important;
+          height: auto !important;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
             0px 4px 4px rgba(0, 0, 0, 0.25) inset;
           margin-top: 10px !important;
@@ -4452,6 +4463,114 @@
   }
   .css-6j8wv5-Input {
     text-align: left;
+  }
+}
+.Bill {
+  .bg-white {
+    background-color: white;
+  }
+  .bg-gray {
+    background: rgba(122, 122, 122, 0.1);
+    border-radius: 20px;
+  }
+  .form-label {
+    margin: 0;
+    font-size: 16px;
+  }
+  .col-title {
+    background: #c4c4c4;
+    border: 2px solid #ffffff;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 43px;
+  }
+  .col-text {
+    height: 57px;
+
+    background: #ffffff;
+    border: 1px solid #7a7a7a;
+    box-sizing: border-box;
+  }
+  .set-body-height {
+    height: 600px;
+    overflow-y: scroll;
+  }
+  .set-height {
+    overflow: scroll;
+  }
+  .button {
+    height: 44px;
+    max-width: 100%;
+    width: 100%;
+    background: #c4c4c4 !important;
+    border: 1px solid rgba(229, 229, 229, 0.5) !important;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    color: black;
+    font-size: 16px;
+  }
+  .form-control {
+    height: 44px;
+    max-width: 100%;
+    width: 100%;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 0;
+    font-size: 16px;
+  }
+  .checkbox-input {
+    .form-check-input {
+      width: 20px;
+      height: 20px;
+      border-radius: 0;
+      background: white;
+      margin: 0;
+    }
+    .form-check-input:checked {
+      background-image: url('../icon/check.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .form-check-label {
+      margin-left: 10px;
+      font-size: 16px;
+    }
+  }
+}
+.Notification {
+  .border-title {
+    width: 121px;
+    height: 37px;
+    left: 0px;
+    top: 0px;
+
+    background: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .col-body-text {
+    height: 98px;
+
+    background: #ffffff;
+    border: 1px solid #7a7a7a;
+    box-sizing: border-box;
+  }
+  .button-delete {
+    width: 20.9px;
+    height: 20.9px;
+
+    background: #c4c4c4 !important;
+    border: 1px solid rgba(229, 229, 229, 0.5) !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 0;
+    background-image: url('../icon/close-icon.png') !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
   }
 }
 

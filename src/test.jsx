@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Student from './test1';
 import {
   Container,
   Row,
@@ -17,6 +18,17 @@ import ReactTagInput from '@pathofdev/react-tag-input';
 import { colourOptions, ColourOption } from './data.ts';
 
 export default function Test() {
+  const [studentsState, setStudentsState] = useState({
+    students: [{ id: 1, name: 'Jeerawuth' }],
+  });
+  const deleteItemHandler = (deleteIndex) => {
+    const data = [...studentsState.students];
+    data.splice(deleteIndex, 1);
+    setStudentsState({
+      students: data,
+    });
+  };
+
   const [isDisabled, setDisabled] = useState(false);
   const [isClearable, setClearable] = useState(true);
   const [isLoading, setLoading] = useState(false);
@@ -100,6 +112,19 @@ export default function Test() {
         />
 
         <Form.Control id="formControlsFile" type="file" multiple label="File" />
+
+        <div className="row">
+          {studentsState.students.map((item, index) => {
+            return (
+              <div key={item.id} className="col-lg-3">
+                <Student
+                  data={item}
+                  deleteStudent={deleteItemHandler.bind(this, index)}
+                />
+              </div>
+            );
+          })}
+        </div>
       </Container>
     </>
   );
