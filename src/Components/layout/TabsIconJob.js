@@ -77,7 +77,7 @@ export default function TabsIconJob() {
         <Modal.Body>
           <Row className="justify-content-center set-modal-body-job">
             <Col lg={3}>
-              <Link href="/job/inside-data">
+              <Link to="/job/inside-data">
                 <Button type="button" className="button">
                   หน้าร้าน
                 </Button>
@@ -85,7 +85,7 @@ export default function TabsIconJob() {
             </Col>
 
             <Col lg={3}>
-              <Link href="/job/company-b2b-show-room">
+              <Link to="/job/company-b2b-show-room">
                 <Button type="button" className="button">
                   Showroom (B2B)
                 </Button>
