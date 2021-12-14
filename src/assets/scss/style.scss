@@ -4573,6 +4573,13 @@
     background-size: contain !important;
   }
 }
+.Appointment {
+  .set-row-export {
+    @media only screen and (max-width: 992px) {
+      justify-content: center !important;
+    }
+  }
+}
 
 .input-dropdown {
   height: 40px;

@@ -80,6 +80,7 @@ import Bill from './Bill/Index';
 import AcceptPayment from './Bill/AcceptPayment';
 import Report from './Report/Index';
 import Notification from './Notification/Index';
+import Appointment from './Appointment/Index';
 import TestImage from './test';
 
 function App() {
@@ -196,6 +197,7 @@ function App() {
 
         <Route path="/report" component={Report} />
         <Route path="/notification" component={Notification} />
+        <Route path="/appointment" component={Appointment} />
       </Switch>
     </BrowserRouter>
   );
