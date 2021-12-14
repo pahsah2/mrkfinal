@@ -84,11 +84,13 @@
   text-align: center;
   border: 1px solid rgba(229, 229, 229, 0.5) !important;
   color: black !important;
+  font-size: 16px;
   &:hover {
     color: black !important;
   }
   p {
     margin: 0;
+    font-size: 16px;
   }
 }
 
@@ -118,11 +120,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  font-size: 16px;
+  color: black;
   p {
     margin: 0;
     color: black;
     margin-left: 5%;
+    font-size: 16px;
   }
 }
 .set-dropdown-division {

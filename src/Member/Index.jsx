@@ -1,439 +1,216 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-  Modal,
   Container,
   Row,
   Col,
-  ModalBody,
+  Button,
   Pagination,
+  Modal,
   Form,
-  Dropdown,
 } from 'react-bootstrap';
-import { Table, Button, Label, Input, FormGroup } from 'reactstrap';
-import {} from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
-import axios from 'axios';
-import Select, { components } from 'react-select';
-import '../assets/css/app.css';
-import '../assets/css2/css/app.css';
-
-import '../assets/css2/css/modal.css';
-import '../assets/css2/css/employee.css';
-import '../assets/css2/css/responsive.css';
-import '../assets/css2/css/input.css';
-import '../assets/css2/css/table.css';
-import '../assets/css2/css/mr.kleane.css';
-import '../assets/scss/style.scss';
-import { useHistory } from 'react-router-dom';
-import NavbarTop from '../Components/NavbarTop';
+import Service from '../assets/icon/management.png';
 import Footer from '../Components/Footer';
-import $ from 'jquery';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
-library.add(faCaretDown);
+import NavbarTop from '../Components/NavbarTop';
+import { useHistory } from 'react-router-dom';
+import GroupButtonStock from '../Components/layout/GroupButtonStock';
+import { DatePicker, Space } from 'antd';
+import Calendar from '../assets/icon/calendar-bg.png';
 
+import Back from '../assets/icon/back.png';
+import Select, { components } from 'react-select';
+import MenuUser from '../Components/layout/MenuUser';
+import Write from '../assets/icon/flat-style-circle-write.png';
+import Arrow from '../assets/icon/arrow.png';
+import Document from '../assets/icon/document.png';
+import Search from '../assets/icon/eyes-search.png';
+import Save from '../assets/icon/flat-style-circle-save.png';
+import Return from '../assets/icon/flat-style-circle-turn-on.png';
+import Note from '../assets/icon/address_book.png';
+import TriangleArrow from '../assets/icon/TriangleArrow.png';
+import TabsIconMember from '../Components/layout/TabsIconMember';
+import MenuMember from '../Components/layout/MenuMember';
+import Eyes from '../assets/icon/search_file_2_cool-4 1.png';
 export default function Index() {
   const history = useHistory();
-  const [allSerach, setAllSerach] = useState('');
+  const [showCutStock, setShowCutStock] = useState(false);
+  const [admit, setAdmit] = useState(true);
+  const [takeOut, setTakeOut] = useState(true);
+  const [count, setCount] = useState([{ value: '', label: '' }]);
+  const handleCutStockClose = () => setShowCutStock(false);
+  const handleCutStockShow = () => setShowCutStock(true);
 
-  const [segment, setSegment] = useState('');
+  const [showAdjustStock, setShowAdjustStock] = useState(false);
 
-  const [statemodel, setStatemodel] = useState('');
-  const [statebrand, setStatebrand] = useState('');
-  const [licenseplate, setLicenseplate] = useState('');
+  const handleAdjustStockClose = () => setShowAdjustStock(false);
+  const handleAdjustStockShow = () => setShowAdjustStock(true);
+
   const [statepage, setStatepage] = useState('');
-
-  const [stateplateSearch, setStateplateSearch] = useState({
-    plateSearch: 'not plate',
-  });
-
-  const handleSelectSegment = (e) => setSegment(e);
-  const handleSelectฺBrand = (e) => setStatebrand(e);
-  const handleSelectModel = (e) => setStatemodel(e);
+  const [page, setPage] = useState([
+    { value: 'ทั้งหมด', label: 'ทั้งหมด' },
+    { value: '10', label: '10' },
+    { value: '15', label: '15' },
+  ]);
+  const [unit, setUnit] = useState([
+    { value: 'ซื้อ', label: 'ซื้อ' },
+    { value: 'ขาย', label: 'ขาย' },
+  ]);
+  const [cause, setCause] = useState([
+    { value: 'สินค้าหาย', label: 'สินค้าหาย' },
+    { value: 'สินค้าเกิน', label: 'สินค้าเกิน' },
+    { value: 'อื่น ๆ โปรดระบุ', label: 'อื่น ๆ โปรดระบุ' },
+  ]);
+  const [causeAdjust, setCauseAdjust] = useState([
+    { value: 'สินค้าหาย', label: 'สินค้าหาย' },
+    { value: 'สินค้าเกิน', label: 'สินค้าเกิน' },
+    { value: 'อื่น ๆ โปรดระบุ', label: 'อื่น ๆ โปรดระบุ' },
+  ]);
   const handleSelectPage = (e) => setStatepage(e);
-
-  useEffect(() => {}, []);
-
-  function closePage() {
+  function closeCutStock() {
+    setShowCutStock(false);
+  }
+  function closeAdjustStock() {
+    setShowAdjustStock(false);
+  }
+  function onChange(date, dateString) {
+    console.log(date, dateString);
+  }
+  function closePackage() {
     let path = `/`;
     history.push(path);
   }
-  const onClear = (e) => {
-    setAllSerach('');
-    // selectSegment.current.select.clearValue();
-  };
-  const search = () => {};
   return (
     <>
       <NavbarTop />
-      <Container fluid>
-        <div className="member">
+      <Container fluid className="package-container Service Stock User">
+        <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  <img className="logo pr-2" src="icon/management.png" />
-                  รายชื่อลูกค้า
+                  <img className="logo pr-2" src={Service} />
+                  User &gt; รายชื่อผู้ใช้ระบบ
                 </h5>
                 <button
                   type="button"
                   className="btn-close"
                   data-dismiss="modal"
                   aria-label="Close"
-                  onClick={closePage}
+                  onClick={closePackage}
                 >
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+              <div className="modal-header-mobile">
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  onClick={closePackage}
+                >
+                  <img src={Back} />
+                </button>
+                <h5 className="modal-title" id="exampleModalLabel">
+                  <img className="logo pr-2" src={Service} />
+                  User &gt; รายชื่อผู้ใช้ระบบ
+                </h5>
+              </div>
               <div className="modal-body">
-                <Col className="justify-content-start  " style={{ padding: 0 }}>
-                  <div className="tabs-icon d-flex">
-                    <Button>
-                      <img src="icon/address_book_home.png" alt="" />
-                    </Button>
-                    <Button>
-                      <img src="icon/appwizard_list.png" alt="" />
-                    </Button>
-                    <Button>
-                      <img
-                        src="icon/directory_open_file_mydocs_cool-1.png"
-                        alt=""
-                      />
-                    </Button>
-                    <Button>
-                      <img src="icon/directory_closed-4.png" alt="" />
-                    </Button>
-                    <Button>
-                      <img src="icon/management.png" alt="" />
-                    </Button>
-                    <Button>
-                      <img src="icon/briefcase-4.png" alt="" />
-                    </Button>
-                    <Button>
-                      <img src="icon/message_file-0.png" alt="" />
-                    </Button>
-                    <Button>
-                      <img src="icon/users_key-4.png" alt="" />
-                    </Button>
-                    <Button>
-                      <img src="icon/network_normal_two_pcs-4.png" alt="" />
-                    </Button>
-                    <Button>
-                      <img src="icon/chart1-4.png" alt="" />
-                    </Button>
-                    <Link to="/membercreate">
-                      <Button className="up-member">
-                        <img src="icon/file_blue_grad_paint-0 2.png" alt="" />
-                        <p>เพิ่มรายชื่อ</p>
-                      </Button>
-                    </Link>
-                  </div>
-                </Col>
-                <Col
-                  lg={12}
-                  className="justify-content-center"
-                  style={{ padding: 0 }}
-                >
-                  <Form>
-                    <div className="mt-4">
-                      <Row className="set-search-row">
-                        <Form.Control
-                          id="_input_search"
-                          className="search-btn-top"
-                          type="text"
-                          placeholder="ค้นหารหัสลูกค้า,ทะเบียนรถ,เบอร์โทรศัพท์"
-                          value={allSerach}
-                          onChange={(e) => setAllSerach(e.target.value)}
-                        ></Form.Control>
+                <Row className="g-0 tabsicon justify-content-center ">
+                  <TabsIconMember />
+                </Row>
+                <Row className="g-0 justify-content-center mb-3">
+                  <MenuMember />
+                </Row>
 
-                        <div className="input-dropdown-member">
-                          <Form.Control
-                            type="text"
-                            placeholder="Segment"
-                            // defaultValue={statepage[0]}
-                            value={segment}
-                            onChange={(e) => setSegment(e.target.value)}
-                            disabled
-                          ></Form.Control>
-                          <Col
-                            className="d-flex justify-content-end set-dropdown"
-                            style={{ padding: 0 }}
-                          >
-                            <Dropdown
-                              onSelect={handleSelectSegment}
-                              className="dropdown"
-                            >
-                              <Dropdown.Toggle
-                                variant="secondary "
-                                id="dropdown-basic"
-                              >
-                                {/* {value} */}
-                              </Dropdown.Toggle>
-                              <Dropdown.Menu
-                                style={{ backgroundColor: '#73a47' }}
-                              >
-                                <Dropdown.Item eventKey="MC">MC</Dropdown.Item>
-                                <Dropdown.Item eventKey="MB">MB</Dropdown.Item>
-                                <Dropdown.Item eventKey="MC">MC</Dropdown.Item>
-                              </Dropdown.Menu>
-                            </Dropdown>
-                          </Col>
-                        </div>
-
-                        <div className="input-dropdown-member">
-                          <Form.Control
-                            type="text"
-                            placeholder="ยี่ห้อรถ"
-                            // defaultValue={statepage[0]}
-                            value={statebrand}
-                            onChange={(e) => setStatebrand(e.target.value)}
-                            disabled
-                          ></Form.Control>
-                          <Col
-                            className="d-flex justify-content-end set-dropdown"
-                            style={{ padding: 0 }}
-                          >
-                            <Dropdown
-                              onSelect={handleSelectฺBrand}
-                              className="dropdown"
-                            >
-                              <Dropdown.Toggle
-                                variant="secondary "
-                                id="dropdown-basic"
-                              >
-                                {/* {value} */}
-                              </Dropdown.Toggle>
-                              <Dropdown.Menu
-                                style={{ backgroundColor: '#73a47' }}
-                              >
-                                <Dropdown.Item eventKey="เบ๊นซ์">
-                                  เบ้นซ์
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="ฮอนด้า">
-                                  ฮอนด้า
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="โตโยต้า">
-                                  โตโยต้า
-                                </Dropdown.Item>
-                              </Dropdown.Menu>
-                            </Dropdown>
-                          </Col>
-                        </div>
-
-                        <div className="input-dropdown-member">
-                          <Form.Control
-                            type="text"
-                            placeholder="รุ่นรถ"
-                            // defaultValue={statepage[0]}
-                            value={statemodel}
-                            onChange={(e) => setStatemodel(e.target.value)}
-                            disabled
-                          ></Form.Control>
-                          <Col
-                            className="d-flex justify-content-end set-dropdown"
-                            style={{ padding: 0 }}
-                          >
-                            <Dropdown
-                              onSelect={handleSelectModel}
-                              className="dropdown"
-                            >
-                              <Dropdown.Toggle
-                                variant="secondary "
-                                id="dropdown-basic"
-                              >
-                                {/* {value} */}
-                              </Dropdown.Toggle>
-                              <Dropdown.Menu
-                                style={{ backgroundColor: '#73a47' }}
-                              >
-                                <Dropdown.Item eventKey="Cxx">
-                                  Cxx
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="TO">TO</Dropdown.Item>
-                                <Dropdown.Item eventKey="MK">MK</Dropdown.Item>
-                              </Dropdown.Menu>
-                            </Dropdown>
-                          </Col>
-                        </div>
-
-                        <div className="input-dropdown-member">
-                          <Form.Control
-                            type="text"
-                            placeholder="ป้ายทะเบียน"
-                            // defaultValue={statepage[0]}
-                            value={licenseplate}
-                            onChange={(e) => setLicenseplate(e.target.value)}
-                            disabled
-                          ></Form.Control>
-                          <Col
-                            className="d-flex justify-content-end set-dropdown"
-                            style={{ padding: 0 }}
-                          >
-                            <Dropdown
-                              onSelect={handleSelectModel}
-                              className="dropdown"
-                            >
-                              <Dropdown.Toggle
-                                variant="secondary "
-                                id="dropdown-basic"
-                              >
-                                {/* {value} */}
-                              </Dropdown.Toggle>
-                              <Dropdown.Menu
-                                style={{ backgroundColor: '#73a47' }}
-                              >
-                                <Dropdown.Item eventKey="สีแดง">
-                                  สีแดง
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="สีขาว">
-                                  สีขาว
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="ไม่มีป้าย">
-                                  ไม่มีป้าย
-                                </Dropdown.Item>
-                              </Dropdown.Menu>
-                            </Dropdown>
-                          </Col>
-                        </div>
-
-                        <Button className="btn-block " onClick={onClear}>
-                          คืนค่า
-                        </Button>
-
-                        <Button
-                          className="btn-block "
-                          style={{ padding: 0, margin: 0 }}
-                          onClick={() => search()}
-                        >
-                          ค้นหา{' '}
-                          <img src="icon/magnifying_glass_4-1 2.png" alt="" />
-                        </Button>
-                      </Row>
-                      <Table
-                        responsive
-                        className="table-custom text-nowrap mt-4"
-                      >
-                        <thead>
-                          <tr>
-                            <th>รหัสสมาชิก</th>
-                            <th>ชื่อสมาชิก</th>
-                            <th>โทรศัพท์</th>
-                            <th>ยี่ห้อ</th>
-                            <th>รุ่น</th>
-                            <th>ทะเบียน</th>
-                            <th>สี</th>
-                            <th>ใช้บริการล่าสุด</th>
-                            <th>ยอดใช้บริการ</th>
-                            <th>อายุสมาชิก</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>0406010300002</td>
-                            <td>นภาวรรณ ยั่งยืน (คุณมิว)</td>
-                            <td>
-                              0816659494 <br /> 0635284746
-                            </td>
-                            <td>
-                              Honda <br /> Honda <br /> Honda
-                            </td>
-                            <td>
-                              Civic <br /> Jazz <br /> City
-                            </td>
-                            <td>
-                              กด-252 เชียงใหม่ <br /> งจ-2544 เชียงใหม่ <br />{' '}
-                              กต-4614 เชียงใหม่
-                            </td>
-                            <td>
-                              ขาว <br /> แดง <br /> ดำ
-                            </td>
-                            <td>11/06/2564</td>
-                            <td>4500 บาท</td>
-                            <td>2 ปี 6 เดือน</td>
-                            <td>
-                              <Link to="/information">
-                                <Button
-                                  type="button"
-                                  className="button-detail-member"
-                                ></Button>
-                              </Link>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </Table>
-                    </div>
-                  </Form>
-                </Col>
-                <Col
-                  lg={12}
-                  className="justify-content-center"
-                  style={{ padding: 0 }}
-                >
-                  <div className="">
+                <Row className="g-0 justify-content-center m-0">
+                  <Col className="set-table-stock p-0">
+                    <table className="table table-responsive table-wash-part ">
+                      <thead>
+                        <tr className="t-header-package">
+                          <th>รหัสสมาชิก</th>
+                          <th>ชื่อสมาชิก</th>
+                          <th>โทรศัพท์</th>
+                          <th>ยี่ห้อ</th>
+                          <th>รุ่น</th>
+                          <th>ทะเบียน</th>
+                          <th>สี</th>
+                          <th>ใช้บริการล่าสุด</th>
+                          <th>ยอดใช้บริการ</th>
+                          <th>อายุสมาชิก</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody className="t-body-package ">
+                        <tr>
+                          <td>0406010300002</td>
+                          <td>นภาวรรณ ยั่งยืน (คุณมิว)</td>
+                          <td>
+                            0816659494 <br /> 0816659494
+                          </td>
+                          <td>
+                            Honda <br /> Honda <br /> Honda
+                          </td>
+                          <td>
+                            Civic <br /> Jazz <br /> City
+                          </td>
+                          <td>
+                            กด-252 เชียงใหม่ <br /> งจ-2544 เชียงใหม่ <br />
+                            กต-4614 เชียงใหม่
+                          </td>
+                          <td>
+                            ขาว <br /> ขาว <br /> ขาว
+                          </td>
+                          <td>11/06/2564</td>
+                          <td>4500 บาท</td>
+                          <td>2 ปี 6 เดือน</td>
+                          <td>
+                            <Button>
+                              <img src={Eyes} />
+                            </Button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </Col>
+                </Row>
+                <Row className="g-0 mt-3 mb-3">
+                  <Col lg={4} className=" set-page">
                     <Row>
-                      <Col className="box-left">
-                        <p>แสดง</p>
-
-                        <div className="input-dropdown">
-                          <Form.Control
-                            type="text"
-                            placeholder="ทั้งหมด"
-                            // defaultValue={statepage[0]}
-                            value={statepage}
-                            onChange={(e) => setStatepage(e.target.value)}
-                            disabled
-                          ></Form.Control>
-                          <Col
-                            className="d-flex justify-content-end set-dropdown"
-                            style={{ padding: 0 }}
-                          >
-                            <Dropdown
-                              onSelect={handleSelectPage}
-                              className="dropdown"
-                            >
-                              <Dropdown.Toggle
-                                variant="secondary "
-                                id="dropdown-basic"
-                              >
-                                {/* {value} */}
-                              </Dropdown.Toggle>
-                              <Dropdown.Menu
-                                style={{ backgroundColor: '#73a47' }}
-                              >
-                                <Dropdown.Item eventKey="ทั้งหมด">
-                                  ทั้งหมด
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="10">10</Dropdown.Item>
-                                <Dropdown.Item eventKey="15">15</Dropdown.Item>
-                              </Dropdown.Menu>
-                            </Dropdown>
-                          </Col>
-                        </div>
-                        <p>รายการ</p>
+                      <Col className="d-flex justify-content-center align-items-center">
+                        <p style={{ margin: 0 }}>แสดง</p>
                       </Col>
-                      <Col className="box-right ">
-                        <div className="box-paginate">
-                          <Pagination>
-                            <Pagination.Prev />
-                            <Pagination.Item>{1}</Pagination.Item>
-
-                            <Pagination.Item>{2}</Pagination.Item>
-                            <Pagination.Item>{3}</Pagination.Item>
-                            <Pagination.Item active>{4}</Pagination.Item>
-                            <Pagination.Item>{5}</Pagination.Item>
-                            <Pagination.Item>{6}</Pagination.Item>
-
-                            <Pagination.Ellipsis />
-                            <Pagination.Item>{10}</Pagination.Item>
-                            <Pagination.Next />
-                          </Pagination>
-                        </div>
+                      <Col lg={7}>
+                        <Select
+                          className="text-left select-style"
+                          aria-label="Default select example"
+                          placeholder=""
+                          options={page}
+                        />
+                      </Col>
+                      <Col className="d-flex justify-content-center align-items-center">
+                        <p style={{ margin: 0 }}>รายการ</p>
                       </Col>
                     </Row>
-                  </div>
-                </Col>
+                  </Col>
+
+                  <Col className="d-flex justify-content-end set-paginate">
+                    <div className="box-paginate">
+                      <Pagination>
+                        <Pagination.Prev />
+                        <Pagination.Item>{1}</Pagination.Item>
+
+                        <Pagination.Item>{2}</Pagination.Item>
+                        <Pagination.Item active>{3}</Pagination.Item>
+
+                        <Pagination.Ellipsis />
+                        <Pagination.Item>{10}</Pagination.Item>
+                        <Pagination.Next />
+                      </Pagination>
+                    </div>
+                  </Col>
+                </Row>
               </div>
             </div>
           </div>

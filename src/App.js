@@ -42,6 +42,7 @@ import DataProperty from './Property/DataProperty';
 import AddStorageProperty from './Property/AddStorage';
 
 import Stock from './Stock/Index';
+import Stock_History from './Stock/History';
 import Receipt_Order from './Stock/ReceiptOrder';
 import RequestOrder from './Stock/RequestOrder/Index';
 import RequestOrder_Branch from './Stock/RequestOrder/RequestOrderBranch';
@@ -52,6 +53,7 @@ import CutStock from './Stock/CutStock';
 import AdjustStock from './Stock/Adjust';
 import PurchaseOrder from './Stock/PurchaseOrder/Index';
 import DataPurchaseOrder from './Stock/PurchaseOrder/DataPurchaseOrder';
+
 import Setting_TypeCars from './Setting/TypeCars';
 import Setting_Division from './Setting/Division';
 import Setting_CategoryAndService from './Setting/CategoryAndService';
@@ -81,6 +83,7 @@ import AcceptPayment from './Bill/AcceptPayment';
 import Report from './Report/Index';
 import Notification from './Notification/Index';
 import Appointment from './Appointment/Index';
+import Appointment_ID from './Appointment/AppointmentByID';
 import TestImage from './test';
 
 function App() {
@@ -136,6 +139,7 @@ function App() {
 
         <Route path="/property/add-storage" component={AddStorageProperty} />
         <Route path="/stock" component={Stock} exact />
+        <Route path="/stock/history" component={Stock_History} />
         <Route path="/stock/receipt-order" component={Receipt_Order} />
         <Route path="/stock/request-order" component={RequestOrder} />
         <Route
@@ -197,7 +201,8 @@ function App() {
 
         <Route path="/report" component={Report} />
         <Route path="/notification" component={Notification} />
-        <Route path="/appointment" component={Appointment} />
+        <Route path="/appointment" component={Appointment} exact />
+        <Route path="/appointment/:id" component={Appointment_ID} />
       </Switch>
     </BrowserRouter>
   );

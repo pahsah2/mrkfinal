@@ -20,60 +20,62 @@ export default function AllLists() {
     <>
       <Container
         fluid
-        className="package-container Service Stock Job Notification"
+        className="package-container Service Stock Job Notification "
       >
-        <Row className="justify-content-center">
-          <Col xs={12} className="text-left mt-3 ">
-            <div className="border-title">
-              <Form.Label>วันนี้</Form.Label>
-            </div>
-          </Col>
+        <div className="set-height-notification">
+          <Row className="justify-content-center">
+            <Col xs={12} className="text-left mt-3 ">
+              <div className="border-title">
+                <Form.Label>วันนี้</Form.Label>
+              </div>
+            </Col>
 
-          {aletsState.notifications.map((item, index) => {
-            return (
-              <Col key={item.id} xs={11} className="">
-                <Alert
-                  data={item}
-                  deleteAlert={deleteItemHandler.bind(this, index)}
-                />
-              </Col>
-            );
-          })}
-        </Row>
-        <Row className="justify-content-center">
-          <Col xs={12} className="text-left mt-3 ">
-            <div className="border-title">
-              <Form.Label>เมื่อวาน</Form.Label>
-            </div>
-          </Col>
-          {aletsState.notifications.map((item, index) => {
-            return (
-              <Col key={item.id} xs={11} className="">
-                <Alert
-                  data={item}
-                  deleteAlert={deleteItemHandler.bind(this, index)}
-                />
-              </Col>
-            );
-          })}
-        </Row>
-        <Row className="justify-content-center">
-          <Col xs={12} className="text-left mt-3 ">
-            <div className="border-title">
-              <Form.Label>12/08/2021</Form.Label>
-            </div>
-          </Col>
-          {aletsState.notifications.map((item, index) => {
-            return (
-              <Col key={item.id} xs={11} className="">
-                <Alert
-                  data={item}
-                  deleteAlert={deleteItemHandler.bind(this, index)}
-                />
-              </Col>
-            );
-          })}
-        </Row>
+            {aletsState.notifications.map((item, index) => {
+              return (
+                <Col key={item.id} xs={11} className="">
+                  <Alert
+                    data={item}
+                    deleteAlert={deleteItemHandler.bind(this, index)}
+                  />
+                </Col>
+              );
+            })}
+          </Row>
+          <Row className="justify-content-center">
+            <Col xs={12} className="text-left mt-3 ">
+              <div className="border-title">
+                <Form.Label>เมื่อวาน</Form.Label>
+              </div>
+            </Col>
+            {aletsState.notifications.map((item, index) => {
+              return (
+                <Col key={item.id} xs={11} className="">
+                  <Alert
+                    data={item}
+                    deleteAlert={deleteItemHandler.bind(this, index)}
+                  />
+                </Col>
+              );
+            })}
+          </Row>
+          <Row className="justify-content-center ">
+            <Col xs={12} className="text-left mt-3 ">
+              <div className="border-title">
+                <Form.Label>12/08/2021</Form.Label>
+              </div>
+            </Col>
+            {aletsState.notifications.map((item, index) => {
+              return (
+                <Col key={item.id} xs={11} className="">
+                  <Alert
+                    data={item}
+                    deleteAlert={deleteItemHandler.bind(this, index)}
+                  />
+                </Col>
+              );
+            })}
+          </Row>
+        </div>
         <Row className="justify-content-center mt-5">
           <Col className="d-flex justify-content-center set-paginate">
             <div className="box-paginate">
