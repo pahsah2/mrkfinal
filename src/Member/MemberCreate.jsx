@@ -3,18 +3,11 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { Input } from 'reactstrap';
 import 'antd/dist/antd.css';
 import { Select } from 'antd';
+import Service from '../assets/icon/management.png';
 
 import AddJuristicPart from './AddJuristicPart';
 import AddOrdinaryPart from './AddOrdinaryPart';
-import '../assets/css/app.css';
-import '../assets/css2/css/app.css';
-
-import '../assets/css2/css/modal.css';
-import '../assets/css2/css/employee.css';
-import '../assets/css2/css/responsive.css';
-import '../assets/css2/css/input.css';
-import '../assets/css2/css/table.css';
-import '../assets/css2/css/mr.kleane.css';
+import Back from '../assets/icon/back.png';
 
 import { useHistory } from 'react-router-dom';
 import NavbarTop from '../Components/NavbarTop';
@@ -49,14 +42,15 @@ export default function MemberCreate() {
   return (
     <>
       <NavbarTop />
-      <Container fluid>
-        <div className="member-create">
+      <Container fluid className="package-container Service Stock User Member">
+        <div className=" package">
           <div>
             <div className="modal-dialog modal-xl" role="document">
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
-                    <img src="icon/management.png" alt="" /> ลูกค้า &#62; สร้าง
+                    <img className="logo pr-2" src={Service} />
+                    รายชื่อลูกค้า
                   </h5>
                   <button
                     type="button"
@@ -67,6 +61,21 @@ export default function MemberCreate() {
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
+                </div>
+                <div className="modal-header-mobile">
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                    onClick={close}
+                  >
+                    <img src={Back} />
+                  </button>
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    <img className="logo pr-2" src={Service} />
+                    รายชื่อลูกค้า
+                  </h5>
                 </div>
                 <div className="modal-body ">
                   <Row>
@@ -107,57 +116,41 @@ export default function MemberCreate() {
                         </Button>
                       </div>
                     </Col>
-                    <Col lg={12} md={12} className="justify-content-start">
-                      <div className="box-typecar">
-                        <div className="row align-items-center">
-                          <div className="col-md-3 col-lg-1 mr-2 ml-2 text-add">
-                            <label>ประเภทสมาชิก</label>
-                          </div>
-                          <div className="col-md-3 col-lg-1 ml-2 text-add">
-                            <Input
-                              className="form-check-input"
-                              name="member-check"
-                              type="radio"
-                              id="flexRadioDefault1"
-                              defaultChecked
+                    <Col xs={12} className="  mt-3 mb-3 m-0">
+                      <Row className="set-line m-0 align-items-center">
+                        {['radio'].map((type) => (
+                          <Col key={`inline-${type}`} className="text-left">
+                            <Form.Label className="mr-3">
+                              ประเภทสมาชิก
+                            </Form.Label>
+                            <Form.Check
+                              inline
+                              label="1"
+                              name="group1"
+                              placeholder="บุคลคธรรมดา"
+                              type={type}
+                              id={`inline-${type}-1`}
                               onClick={() => ordinary()}
-                            />{' '}
-                            บุคลธรรมดา
-                          </div>
-                          <div className="col-md-1 text-add">
-                            <Input
-                              className="form-check-input"
-                              name="member-check"
-                              type="radio"
-                              id="flexRadioDefault2"
+                            />
+                            <Form.Check
+                              inline
+                              label="2"
+                              placeholder="นิติบุคคล"
+                              name="group1"
+                              type={type}
+                              id={`inline-${type}-2`}
                               onClick={() => juristic()}
-                            />{' '}
-                            นิติบุคคล
-                          </div>
-                          <br />
-                        </div>
-                      </div>
+                            />
+                          </Col>
+                        ))}
+                      </Row>
                     </Col>
+
                     <Col>
                       <Form>
                         {state1.showOrdinary ? <AddOrdinaryPart /> : null}
                         {state2.showJuristic ? <AddJuristicPart /> : null}
                       </Form>
-                    </Col>
-                    <Col lg={12} md={12}>
-                      <button
-                        className="btn-modal mr-4 float-left"
-                        align="center"
-                      >
-                        <img src="icon/system_restore-2 1.png" /> บันทึก
-                      </button>
-                      <button
-                        className="btn-modal float-right"
-                        align="center"
-                        onClick={return_member.bind(this)}
-                      >
-                        <img src="icon/unplug_storage-0 1.png" /> ออก
-                      </button>
                     </Col>
                   </Row>
                 </div>

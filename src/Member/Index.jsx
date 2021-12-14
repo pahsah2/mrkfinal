@@ -75,7 +75,7 @@ export default function Index() {
   function onChange(date, dateString) {
     console.log(date, dateString);
   }
-  function closePackage() {
+  function close() {
     let path = `/`;
     history.push(path);
   }
@@ -89,14 +89,14 @@ export default function Index() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  User &gt; รายชื่อผู้ใช้ระบบ
+                  รายชื่อลูกค้า
                 </h5>
                 <button
                   type="button"
                   className="btn-close"
                   data-dismiss="modal"
                   aria-label="Close"
-                  onClick={closePackage}
+                  onClick={close}
                 >
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -107,13 +107,13 @@ export default function Index() {
                   className="btn-close"
                   data-dismiss="modal"
                   aria-label="Close"
-                  onClick={closePackage}
+                  onClick={close}
                 >
                   <img src={Back} />
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  User &gt; รายชื่อผู้ใช้ระบบ
+                  รายชื่อลูกค้า
                 </h5>
               </div>
               <div className="modal-body">
