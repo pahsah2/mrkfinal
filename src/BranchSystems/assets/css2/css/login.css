@@ -1,0 +1,51 @@
+.box-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box-login .card-header {
+  border-radius: unset;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.box-login .card-header img {
+  width: auto;
+  height: 26px;
+}
+
+.box-login .card-body {
+  background: #c4c4c4;
+  border: 1px solid rgba(122, 122, 122, 0.5);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: unset;
+  padding: 0rem 2rem 3rem;
+}
+
+.box-login .btn-submit {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.box-login .data-input {
+  color: #000;
+  margin: auto;
+}
+
+@media (max-width: 767.98px) {
+  .box-login .card-header {
+    display: none;
+  }
+  .box-login .card-body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

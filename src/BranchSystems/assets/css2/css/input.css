@@ -1,0 +1,438 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.is-invalid {
+  border: 1px solid #e3342f;
+}
+
+.fa-caret-down {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.box-input {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 1rem 0;
+  color: #000;
+}
+
+.box-input .input-head {
+  background: #c4c4c4;
+  border-top: 1px solid rgba(229, 229, 229, 0.5);
+  box-shadow: inset 0px -4px 4px 0px rgb(0 0 0 / 25%);
+  padding: 1rem;
+}
+
+.box-input .input-body {
+  font-size: 1rem;
+  /* overflow-y: auto;
+  height: 55vh; */
+  margin: 1rem -1rem;
+}
+
+.box-input .row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.box-input label {
+  margin-bottom: unset;
+}
+
+.box-input h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: unset;
+}
+
+.box-input input,
+.box-input button {
+  height: 43px;
+}
+
+.box-input input,
+.form-control:focus {
+  background: #ffffff;
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+  border: unset;
+  border-radius: unset;
+}
+
+.serakapoy {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 1rem 1rem;
+}
+
+.serakapoy button {
+  width: 150px;
+  max-width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serakapoy button img {
+  width: 30px;
+  margin-right: 0.5rem;
+}
+
+.group-add-list {
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+}
+
+.group-add-list .del-row {
+  width: 30px;
+  margin-right: 0.25rem;
+  cursor: pointer;
+}
+
+.input-body .css-yk16xz-control {
+  background: #fff;
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+  border: unset;
+}
+
+.input-body .css-g1d714-ValueContainer {
+  justify-content: flex-start;
+}
+
+.input-body .css-b8ldur-Input {
+  margin: unset;
+  background: transparent;
+}
+
+.input-body .css-b8ldur-Input input {
+  height: fit-content;
+  box-shadow: unset;
+}
+
+.input-body .css-1pahdxg-control:hover,
+.input-body .css-1pahdxg-control,
+.input-body .css-1gtu0rj-indicatorContainer:hover,
+.input-body .select__dropdown-indicator:hover {
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%) !important;
+  border: unset;
+  border-radius: unset;
+}
+
+.input-body .select__dropdown-indicator {
+  height: 100%;
+  align-items: center;
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+  border: 1px solid #e3342f;
+}
+
+.select-status {
+  color: #1e972a;
+  outline: unset !important;
+  background: transparent;
+}
+
+.select-status option[value='on'] {
+  /* background: green; */
+  color: #1e972a;
+}
+
+.select-status option[value='off'] {
+  color: #971e1e;
+  /* background: red; */
+}
+
+.search-btn-top,
+.search-btn-top:focus {
+  border: 1px solid #7a7a7a !important;
+  transform: translateY(0);
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: unset;
+}
+
+.top-title {
+  background: #a6a6a6;
+  border: 2px solid rgba(229, 229, 229, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  padding: 0.5rem 2rem;
+  width: fit-content;
+}
+
+.gender-color {
+  color: #7a7a7a;
+  padding-top: 0.5rem;
+}
+
+.css-1gtu0rj-indicatorContainer {
+  height: 100%;
+  align-items: center;
+}
+
+.form-information {
+  align-items: flex-start;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.form-information .info-col {
+  padding: 0;
+}
+
+.form-information .info-col:first-child {
+  text-align: left;
+}
+
+.form-information label {
+  margin-bottom: unset;
+  padding-top: 0.5rem;
+}
+
+.form-information .box-gender {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-style,
+.input-style:focus,
+.input-style:active,
+.input-style:hover,
+.react-tag-input {
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%) inset;
+  border: unset;
+  border-radius: unset;
+  position: relative;
+}
+
+.select-style .css-g1d714-ValueContainer {
+  justify-content: flex-start;
+}
+
+.select-style .css-b8ldur-Input {
+  margin: unset;
+  background: transparent;
+}
+
+.select-style .css-b8ldur-Input input {
+  height: fit-content;
+  box-shadow: unset;
+}
+
+.select-style .css-1pahdxg-control,
+.select-style .css-1pahdxg-control:hover,
+.select-style .css-yk16xz-control,
+.select-style .css-yk16xz-control:hover,
+.select-style .css-1fhf3k1-control,
+.select-style .css-1fhf3k1-control:hover {
+  border: 1px solid rgb(0 0 0 / 25%);
+  border-radius: unset;
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.select-style .select__dropdown-indicator,
+.select-style .css-1gtu0rj-indicatorContainer,
+.select-style .css-1gtu0rj-indicatorContainer:hover,
+.btn-secondary:focus {
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.select-style .css-26l3qy-menu {
+  z-index: 999;
+  text-align: left;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%) !important;
+}
+
+.react-tag-input__input {
+  width: 0;
+}
+
+.form-check-input {
+  box-shadow: unset !important;
+}
+
+.star-platinum {
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  background: #a6a6a6;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  color: #000;
+  font-weight: 600;
+  border: 2px solid rgba(229, 229, 229, 0.5);
+}
+
+.profile-form {
+  padding: 2rem 3rem;
+}
+
+.profile-form h1 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #000;
+  margin-bottom: 1.5rem;
+}
+
+.profile-form p {
+  color: #7a7a7a !important;
+}
+
+.btn-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-footer button {
+  width: 100% !important;
+  max-width: 150px;
+  padding: 5px 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.crazy-diamond {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+.crazy-diamond .tabs-item {
+  padding: 0.5rem 2rem;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border: 2px solid rgba(229, 229, 229, 0.5);
+  background-color: #c4c4c4;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.crazy-diamond .tabs-item.active,
+.crazy-diamond .tabs-item:hover,
+.crazy-diamond .tabs-item:focus {
+  background-color: rgb(0 0 0 / 15%);
+  color: #000 !important;
+  font-weight: 700;
+  border-color: rgba(229, 229, 229, 0.5);
+}
+
+.status-paid {
+  color: #22b030 !important;
+  font-weight: 700 !important;
+}
+
+.status-pending {
+  color: #fe8718 !important;
+  font-weight: 700 !important;
+}
+
+.group-btn-tabs {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+
+.switch {
+  transform: scale(0.7);
+}
+
+.css-1hb7zxy-IndicatorsContainer,
+.select__dropdown-indicator {
+  /* background-color: #c4c4c4 !important; */
+  
+}
+
+.css-1pahdxg-control:hover,
+.css-1pahdxg-control {
+  box-shadow: unset !important;
+  border-color: hsl(0, 0%, 70%) !important;
+  border-radius: unset !important;
+}
+
+.react-datepicker__input-container::before {
+  content: url('../../icon/Calendar.png');
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #c4c4c4;
+  width: 44px;
+  height: 44px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.react-datepicker-popper {
+  z-index: 99 !important;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  padding: 5px 1rem;
+  height: 100%;
+  /* width: 200px; */
+  justify-content: center;
+}
+
+.logout-btn img {
+  width: auto;
+  height: 25px;
+  margin-right: 1rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+.file,
+.profile {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+}
+
+.browse:focus {
+  box-shadow: unset !important;
+}
+
+.search-box {
+  position: relative;
+}
+.search-box svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(122, 122, 122, 0.5);
+}
+.btn-primary {
+  background-color: none !important;
+  border-color: none !important;
+}
+.btn-primary:active {
+  background-color: none !important;
+  border-color: none !important;
+}
+.btn-primary:focus {
+  background-color: none !important;
+  border-color: none !important;
+}

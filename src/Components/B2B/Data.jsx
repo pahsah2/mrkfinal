@@ -46,220 +46,183 @@ export default function Data() {
       >
         <Form onSubmit={submithandler}>
           <Row>
-            <Col
-              lg={4}
-              className="d-flex justify-content-center"
-              style={{ padding: 0 }}
-            >
-              <Col
-                lg={3}
-                className="d-flex justify-content-start"
-                style={{ paddingLeft: 0 }}
-              >
-                <Form.Label>ชื่อองค์กร</Form.Label>
-              </Col>
-              <Form.Control
-                type="text"
-                name="company"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-                placeholder=""
-                className="text-left search-btn-top"
-              ></Form.Control>
+            <Col lg={4} className="mt-3 mb-3">
+              <Row className="align-items-center">
+                <Col xs={12} lg={3} className="text-left ">
+                  <Form.Label>ชื่อองค์กร</Form.Label>
+                </Col>
+                <Col className="">
+                  <Form.Control
+                    type="text"
+                    name="company"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    placeholder=""
+                    className="text-left search-btn-top"
+                  ></Form.Control>
+                </Col>
+              </Row>
             </Col>
-            <Col
-              lg={3}
-              className="d-flex justify-content-start"
-              style={{ padding: 0 }}
-            >
-              <Col lg={3}>
-                <Form.Label>สาขา</Form.Label>
-              </Col>
-              <Form.Control
-                type="text"
-                name="branch"
-                value={branch}
-                onChange={(e) => setBranch(e.target.value)}
-                placeholder=""
-                className="text-left search-btn-top"
-              ></Form.Control>
+            <Col lg={3} className="mt-3 mb-3">
+              <Row className="align-items-center">
+                <Col xs={12} lg={3} className="text-left ">
+                  <Form.Label>สาขา</Form.Label>
+                </Col>
+                <Col>
+                  <Form.Control
+                    type="text"
+                    name="branch"
+                    value={branch}
+                    onChange={(e) => setBranch(e.target.value)}
+                    placeholder=""
+                    className="text-left search-btn-top"
+                  ></Form.Control>
+                </Col>
+              </Row>
             </Col>
-            <Col
-              lg={5}
-              className="d-flex justify-content-start "
-              style={{ padding: 0 }}
-            >
-              <Col lg={5}>
-                <Form.Label>เลขประจำตัวผู้เสียภาษี</Form.Label>
-              </Col>
-              <Form.Control
-                type="text"
-                name="TaxpayerIdentificationNo"
-                value={TaxpayerIdentificationNo}
-                onChange={(e) => setTaxpayerIdentificationNo(e.target.value)}
-                placeholder=""
-                className="text-left search-btn-top"
-              ></Form.Control>
+            <Col lg={5} className="mt-3 mb-3">
+              <Row className="align-items-center">
+                <Col xs={12} lg={5} className="text-left ">
+                  <Form.Label>เลขประจำตัวผู้เสียภาษี</Form.Label>
+                </Col>
+                <Col>
+                  <Form.Control
+                    type="text"
+                    name="TaxpayerIdentificationNo"
+                    value={TaxpayerIdentificationNo}
+                    onChange={(e) =>
+                      setTaxpayerIdentificationNo(e.target.value)
+                    }
+                    placeholder=""
+                    className="text-left search-btn-top"
+                  ></Form.Control>
+                </Col>
+              </Row>
             </Col>
           </Row>
-          <Row className="mt-3">
-            <Col
-              className="d-flex justify-content-start"
-              style={{ padding: 0 }}
-            >
-              <Col
-                lg={2}
-                className="d-flex justify-content-start"
-                style={{ padding: 0 }}
-              >
-                <Form.Label>ที่อยู่ออกใบกำกับภาษี</Form.Label>
-              </Col>
-              <Form.Control
-                type="text"
-                name="taxinvoice"
-                value={taxinvoice}
-                onChange={(e) => setTaxinvoice(e.target.value)}
-                placeholder=""
-                className="text-left search-btn-top"
-              ></Form.Control>
+          <Row className="">
+            <Col className="mt-3 mb-3">
+              <Row className="align-items-center">
+                <Col xs={12} lg={2} className="text-left ">
+                  <Form.Label>ที่อยู่ออกใบกำกับภาษี</Form.Label>
+                </Col>
+                <Col lg={5}>
+                  <Form.Control
+                    type="text"
+                    name="taxinvoice"
+                    value={taxinvoice}
+                    onChange={(e) => setTaxinvoice(e.target.value)}
+                    placeholder=""
+                    className="text-left search-btn-top"
+                  ></Form.Control>
+                </Col>
+              </Row>
             </Col>
           </Row>
-          <Row className="mt-3">
-            <Col
-              lg={3}
-              className="d-flex justify-content-start"
-              style={{ padding: 0 }}
-            >
-              <Col
-                lg={4}
-                className="d-flex justify-content-start"
-                style={{ padding: 0 }}
-              >
-                จังหวัด
-              </Col>
-              <Select
-                className="text-left select-style"
-                aria-label="Default select example"
-                placeholder="ยี่ห้อรถ"
-                options={provinces}
-              />
+          <Row className="">
+            <Col lg={4} className="mt-3 mb-3">
+              <Row className="align-items-center">
+                <Col lg={4} className="text-left">
+                  <Form.Label>จังหวัด</Form.Label>
+                </Col>
+                <Col lg={8}>
+                  <Select
+                    className="text-left select-style"
+                    aria-label="Default select example"
+                    placeholder="ยี่ห้อรถ"
+                    options={provinces}
+                  />
+                </Col>
+              </Row>
             </Col>
-            <Col
-              lg={3}
-              className="d-flex justify-content-start"
-              style={{ padding: 0 }}
-            >
-              <Col
-                lg={3}
-                className="d-flex justify-content-center"
-                style={{ padding: 0 }}
-              >
-                อำเภอ
-              </Col>
-              <Select
-                className="text-left select-style"
-                aria-label="Default select example"
-                placeholder="อำเภอ"
-                options={districts}
-              />
+            <Col lg={4} className="mt-3 mb-3">
+              <Row className="align-items-center">
+                <Col lg={3} className="text-left">
+                  <Form.Label>อำเภอ</Form.Label>
+                </Col>
+                <Col lg={8}>
+                  <Select
+                    className="text-left select-style"
+                    aria-label="Default select example"
+                    placeholder="อำเภอ"
+                    options={districts}
+                  />
+                </Col>
+              </Row>
             </Col>
-            <Col
-              lg={3}
-              className="d-flex justify-content-start"
-              style={{ padding: 0 }}
-            >
-              <Col
-                lg={4}
-                className="d-flex justify-content-start"
-                style={{ padding: 0 }}
-              >
-                <Form.Label>รหัสไปรษณีย์</Form.Label>
-              </Col>
-              <Form.Control
-                type="text"
-                name="postcode"
-                value={postcode}
-                onChange={(e) => setPostcode(e.target.value)}
-                placeholder=""
-                className="text-left search-btn-top"
-              ></Form.Control>
+            <Col lg={4} className="mt-3 mb-3">
+              <Row className="align-items-center">
+                <Col lg={4} className="text-left">
+                  <Form.Label>รหัสไปรษณีย์</Form.Label>
+                </Col>
+                <Col>
+                  <Form.Control
+                    type="text"
+                    name="postcode"
+                    value={postcode}
+                    onChange={(e) => setPostcode(e.target.value)}
+                    placeholder=""
+                    className="text-left search-btn-top"
+                  ></Form.Control>
+                </Col>
+              </Row>
             </Col>
           </Row>
-          <Row className="mt-3">
-            <Col
-              lg={6}
-              className="d-flex justify-content-start"
-              style={{ padding: 0 }}
-            >
-              <Col
-                lg={2}
-                className="d-flex justify-content-start"
-                style={{ padding: 0 }}
-              >
-                E-mail
-              </Col>
-              <Form.Control
-                type="text"
-                name="postcode"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder=""
-                className="text-left search-btn-top"
-              ></Form.Control>
+          <Row className="">
+            <Col lg={6} className="mt-3 mb-3">
+              <Row className="align-items-center">
+                <Col lg={2} className="text-left">
+                  <Form.Label>E-mail</Form.Label>
+                </Col>
+                <Col>
+                  <Form.Control
+                    type="text"
+                    name="postcode"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder=""
+                    className="text-left search-btn-top"
+                  ></Form.Control>
+                </Col>
+              </Row>
             </Col>
-            <Col
-              lg={4}
-              className="d-flex justify-content-start"
-              style={{ padding: 0 }}
-            >
-              <Col
-                lg={4}
-                className="d-flex justify-content-center"
-                style={{ padding: 0 }}
-              >
-                วันเริ่มติดต่อ
-              </Col>
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                className="input-style form-control"
-              />
+            <Col lg={4} className="mt-3 mb-3">
+              <Row className="align-items-center">
+                <Col lg={4} className="text-left">
+                  <Form.Label> วันเริ่มติดต่อ </Form.Label>
+                </Col>
+                <Col>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    className="input-style form-control"
+                  />
+                </Col>
+              </Row>
             </Col>
           </Row>
           <Row className=" increase-contract">
             <Col lg={10} className="set-increase-contract">
               <Row>
-                <Col
-                  lg={4}
-                  className="d-flex justify-content-start mb-3"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={3}
-                    className="d-flex justify-content-start mr-3"
-                    style={{ padding: 0 }}
-                  >
-                    <Form.Label>ชื่อผู้ติดต่อ</Form.Label>
-                  </Col>
-                  <Form.Control
-                    type="text"
-                    name="nameContract"
-                    value={nameContract}
-                    onChange={(e) => setNameContract(e.target.value)}
-                    placeholder=""
-                    className="text-left search-btn-top"
-                  ></Form.Control>
+                <Col lg={4} className="mt mb-3">
+                  <Row>
+                    <Col lg={3} className="text-left">
+                      <Form.Label>ชื่อผู้ติดต่อ</Form.Label>
+                    </Col>
+                    <Col>
+                      <Form.Control
+                        type="text"
+                        name="nameContract"
+                        value={nameContract}
+                        onChange={(e) => setNameContract(e.target.value)}
+                        placeholder=""
+                        className="text-left search-btn-top"
+                      ></Form.Control>
+                    </Col>
+                  </Row>
                 </Col>
-                <Col
-                  lg={4}
-                  className="d-flex justify-content-start"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={4}
-                    className="d-flex justify-content-center "
-                    style={{ padding: 0 }}
-                  >
+                <Col lg={4} className="d-flex justify-content-start">
+                  <Col lg={4} className="d-flex justify-content-center ">
                     <Form.Label>เบอร์โทรศัพท์</Form.Label>
                   </Col>
                   <Form.Control
@@ -272,16 +235,8 @@ export default function Data() {
                   ></Form.Control>
                 </Col>
                 <Col lg={4}></Col>
-                <Col
-                  lg={4}
-                  className="d-flex justify-content-start"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={3}
-                    className="d-flex justify-content-start mr-3"
-                    style={{ padding: 0 }}
-                  >
+                <Col lg={4} className="d-flex justify-content-start">
+                  <Col lg={3} className="d-flex justify-content-start mr-3">
                     <Form.Label>ธนาคาร</Form.Label>
                   </Col>
                   <Form.Control
@@ -293,16 +248,8 @@ export default function Data() {
                     className="text-left search-btn-top"
                   ></Form.Control>
                 </Col>
-                <Col
-                  lg={4}
-                  className="d-flex justify-content-start"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={4}
-                    className="d-flex justify-content-center "
-                    style={{ padding: 0 }}
-                  >
+                <Col lg={4} className="d-flex justify-content-start">
+                  <Col lg={4} className="d-flex justify-content-center ">
                     <Form.Label>ชื่อบัญชี</Form.Label>
                   </Col>
                   <Form.Control
@@ -314,16 +261,8 @@ export default function Data() {
                     className="text-left search-btn-top"
                   ></Form.Control>
                 </Col>
-                <Col
-                  lg={3}
-                  className="d-flex justify-content-start"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={4}
-                    className="d-flex justify-content-center"
-                    style={{ padding: 0 }}
-                  >
+                <Col lg={3} className="d-flex justify-content-start">
+                  <Col lg={4} className="d-flex justify-content-center">
                     เลขที่บัญชี
                   </Col>
                   <Select
@@ -333,48 +272,32 @@ export default function Data() {
                     options={account_number}
                   />
                 </Col>
-                <Col
-                  lg={1}
-                  className="d-flex justify-content-center"
-                  style={{ padding: 0 }}
-                >
+                <Col lg={1} className="d-flex justify-content-center">
                   <Button className="delete-button"></Button>
                 </Col>
               </Row>
             </Col>
             <Col lg={10} className="set-increase-contract">
               <Row>
-                <Col
-                  lg={4}
-                  className="d-flex justify-content-start mb-3"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={3}
-                    className="d-flex justify-content-start mr-3"
-                    style={{ padding: 0 }}
-                  >
-                    <Form.Label>ชื่อผู้ติดต่อ</Form.Label>
-                  </Col>
-                  <Form.Control
-                    type="text"
-                    name="nameContract"
-                    value={nameContract}
-                    onChange={(e) => setNameContract(e.target.value)}
-                    placeholder=""
-                    className="text-left search-btn-top"
-                  ></Form.Control>
+                <Col lg={4} className="mt-3 mb-3">
+                  <Row>
+                    <Col lg={3} className="text-left">
+                      <Form.Label>ชื่อผู้ติดต่อ</Form.Label>
+                    </Col>
+                    <Col>
+                      <Form.Control
+                        type="text"
+                        name="nameContract"
+                        value={nameContract}
+                        onChange={(e) => setNameContract(e.target.value)}
+                        placeholder=""
+                        className="text-left search-btn-top"
+                      ></Form.Control>
+                    </Col>
+                  </Row>
                 </Col>
-                <Col
-                  lg={4}
-                  className="d-flex justify-content-start"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={4}
-                    className="d-flex justify-content-center "
-                    style={{ padding: 0 }}
-                  >
+                <Col lg={4} className="d-flex justify-content-start">
+                  <Col lg={4} className="d-flex justify-content-center ">
                     <Form.Label>เบอร์โทรศัพท์</Form.Label>
                   </Col>
                   <Form.Control
@@ -387,16 +310,8 @@ export default function Data() {
                   ></Form.Control>
                 </Col>
                 <Col lg={4}></Col>
-                <Col
-                  lg={4}
-                  className="d-flex justify-content-start"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={3}
-                    className="d-flex justify-content-start mr-3"
-                    style={{ padding: 0 }}
-                  >
+                <Col lg={4} className="d-flex justify-content-start">
+                  <Col lg={3} className="d-flex justify-content-start mr-3">
                     <Form.Label>ธนาคาร</Form.Label>
                   </Col>
                   <Form.Control
@@ -408,16 +323,8 @@ export default function Data() {
                     className="text-left search-btn-top"
                   ></Form.Control>
                 </Col>
-                <Col
-                  lg={4}
-                  className="d-flex justify-content-start"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={4}
-                    className="d-flex justify-content-center "
-                    style={{ padding: 0 }}
-                  >
+                <Col lg={4} className="d-flex justify-content-start">
+                  <Col lg={4} className="d-flex justify-content-center ">
                     <Form.Label>ชื่อบัญชี</Form.Label>
                   </Col>
                   <Form.Control
@@ -429,16 +336,8 @@ export default function Data() {
                     className="text-left search-btn-top"
                   ></Form.Control>
                 </Col>
-                <Col
-                  lg={3}
-                  className="d-flex justify-content-start"
-                  style={{ padding: 0 }}
-                >
-                  <Col
-                    lg={4}
-                    className="d-flex justify-content-center"
-                    style={{ padding: 0 }}
-                  >
+                <Col lg={3} className="d-flex justify-content-start">
+                  <Col lg={4} className="d-flex justify-content-center">
                     เลขที่บัญชี
                   </Col>
                   <Select
@@ -448,21 +347,13 @@ export default function Data() {
                     options={account_number}
                   />
                 </Col>
-                <Col
-                  lg={1}
-                  className="d-flex justify-content-center"
-                  style={{ padding: 0 }}
-                >
+                <Col lg={1} className="d-flex justify-content-center">
                   <Button className="delete-button"></Button>
                 </Col>
               </Row>
             </Col>
 
-            <Col
-              lg={2}
-              className="d-flex justify-content-center set-increase"
-              style={{ padding: 0 }}
-            >
+            <Col lg={2} className="d-flex justify-content-center set-increase">
               <Button type="button" className="increase">
                 <img src={Increase} />
                 <span>เพิ่มผู้ติดต่อ</span>
@@ -470,16 +361,9 @@ export default function Data() {
             </Col>
           </Row>
           <Row>
-            <Col
-              className="d-flex justify-content-start"
-              style={{ padding: 0 }}
-            >
-              <Col
-                lg={1}
-                className="d-flex justify-content-start "
-                style={{ padding: 0 }}
-              >
-                <Form.Label class="align-top">ชื่อผู้ติดต่อ</Form.Label>
+            <Col className="mt-3 mb-3">
+              <Col lg={1} className="text-left">
+                <Form.Label class="">หมายเหตุ</Form.Label>
               </Col>
               <Form.Control
                 as="textarea"
@@ -490,16 +374,13 @@ export default function Data() {
           </Row>
 
           <Row className="mt-3 mb-2">
-            <Col
-              className="d-flex justify-content-start"
-              style={{ padding: 0 }}
-            >
+            <Col className="d-flex justify-content-start">
               <Button type="button" className="increase">
                 <img src={Save} />
                 <span>บันทึก</span>
               </Button>
             </Col>
-            <Col className="d-flex justify-content-end" style={{ padding: 0 }}>
+            <Col className="d-flex justify-content-end">
               <Button type="button" className="increase">
                 <img src={Out} />
                 <span>ออก</span>

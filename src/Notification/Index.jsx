@@ -29,6 +29,9 @@ import Search from '../assets/icon/eyes-search.png';
 import Save from '../assets/icon/flat-style-circle-save.png';
 import Return from '../assets/icon/flat-style-circle-turn-on.png';
 import All from '../Components/Notification/AllLists';
+import AlmostOutStock from '../Components/Notification/AlmostOutStock';
+import OutStock from '../Components/Notification/OutStock';
+import OrderRequest from '../Components/Notification/OrderRequest';
 export default function Index() {
   const history = useHistory();
   const [key, setKey] = useState('all');
@@ -90,15 +93,15 @@ export default function Index() {
                       <Tab eventKey="all" title="ทั้งหมด">
                         <All />
                       </Tab>
-                      <Tab eventKey="pick up" title="รับสินค้า"></Tab>
-                      <Tab
-                        eventKey="approve withdrawal"
-                        title="อนุมัติเบิก"
-                      ></Tab>
-                      <Tab
-                        eventKey="cancel withdrawal"
-                        title="ยกเลิกเบิก"
-                      ></Tab>
+                      <Tab eventKey="คำขอสั่งซื้อ" title="คำขอสั่งซื้อ">
+                        <OrderRequest />
+                      </Tab>
+                      <Tab eventKey="สินค้าใกล้หมด" title="สินค้าใกล้หมด">
+                        <AlmostOutStock />
+                      </Tab>
+                      <Tab eventKey="สินค้าหมด" title="สินค้าหมด">
+                        <OutStock />
+                      </Tab>
                     </Tabs>
                   </Col>
                 </Row>

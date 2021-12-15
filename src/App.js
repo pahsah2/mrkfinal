@@ -82,10 +82,21 @@ import Bill from './Bill/Index';
 import AcceptPayment from './Bill/AcceptPayment';
 import Report from './Report/Index';
 import Notification from './Notification/Index';
+import Order_Discount from './Notification/Order';
 import Appointment from './Appointment/Index';
 import Appointment_ID from './Appointment/AppointmentByID';
 import TestImage from './test';
 
+// ///////// สาขา โฟลเดอร์ branch/////////////
+import Profile_Branch from './BranchSystems/Profile/Index';
+import Appointment_Branch from './BranchSystems/Appointment/Index';
+import Appointment_ID_Branch from './BranchSystems/Appointment/AppointmentByID';
+import User_Branch from './BranchSystems/User/Index';
+import UserCreate_Branch from './BranchSystems/User/UserCreate';
+import B2B_Branch from './BranchSystems/B2B/Index';
+import B2B_Detail_Branch from './BranchSystems/B2B/DetailB2B';
+import Member_branch from './BranchSystems/Member/Index';
+import Member_add_Branch from './BranchSystems/Member/MemberCreate';
 function App() {
   return (
     <BrowserRouter basename="/mrklean/">
@@ -97,16 +108,19 @@ function App() {
         <Route path="/test" component={TestImage} />
         <Route path="/package" component={Package} exact />
         <Route path="/productmanage" component={ProductManage} />
-        <Route path="/member" component={Member} />
+        <Route path="/member" component={Member} exact />
         <Route path="/user" component={User} />
         <Route path="/usercreate" component={UserCreate} />
         <Route path="/edituser" component={EditUser} />
-        <Route path="/information" component={MemberInformation} />
+        <Route path="/member/information" component={MemberInformation} />
         <Route path="/addcar" component={AddCar} />
-        <Route path="/justic-information" component={JusticInformation} />
+        <Route
+          path="/member/justic-information"
+          component={JusticInformation}
+        />
         <Route path="/membercreate" component={MemberCreate} />
-        <Route path="/b2b" component={B2BCompany} />
-        <Route path="/detail-b2b" component={DetailB2B} />
+        <Route path="/b2b" component={B2BCompany} exact/>
+        <Route path="/b2b/detail" component={DetailB2B} />
         <Route path="/package/add-wash-part" component={AddWashPart} />
         <Route
           path="/package/add-light-filter-part"
@@ -200,9 +214,28 @@ function App() {
         <Route path="/bill/accept-payment" component={AcceptPayment} />
 
         <Route path="/report" component={Report} />
-        <Route path="/notification" component={Notification} />
+        <Route path="/notification" component={Notification} exact />
+        <Route path="/notification/:id" component={Order_Discount} />
         <Route path="/appointment" component={Appointment} exact />
         <Route path="/appointment/:id" component={Appointment_ID} />
+
+        {/* ///////// Branch สาขา */}
+        <Route path="/branch/profile" component={Profile_Branch} />
+        <Route
+          path="/branch/appointment"
+          component={Appointment_Branch}
+          exact
+        />
+        <Route
+          path="/branch/appointment/:id"
+          component={Appointment_ID_Branch}
+        />
+        <Route path="/branch/user" component={User_Branch} exact />
+        <Route path="/branch/user/add" component={UserCreate_Branch} />
+        <Route path="/branch/b2b" component={B2B_Branch} exact />
+        <Route path="/branch/b2b/detail" component={B2B_Detail_Branch} />
+        <Route path="/branch/member" component={Member_branch} exact />
+        <Route path="/branch/member/add" component={Member_add_Branch} />
       </Switch>
     </BrowserRouter>
   );

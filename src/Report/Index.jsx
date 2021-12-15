@@ -94,11 +94,35 @@ export default function Index() {
                   <TabsIcon />
                 </Row>
                 <Row className="g-0 set-body-height">
-                  <Col className="">
+                  <Col xs={12} className="">
                     <div className="bg-white mt-3 mb-3">
                       <Col className="col-title text-left d-flex align-items-center">
                         <Form.Label className="font-weight-bold">
-                          ข้อมูลเจ้าของรถ
+                          รายงานรวมทุกสาขา
+                        </Form.Label>
+                      </Col>
+                      <Col className="col-text text-left d-flex align-items-center">
+                        <Form.Label className="font-weight-bold">
+                          สรุปยอดขายรายวัน
+                        </Form.Label>
+                      </Col>
+                      <Col className="col-text text-left d-flex align-items-center">
+                        <Form.Label className="font-weight-bold">
+                          รายรับตามช่วงเวลา
+                        </Form.Label>
+                      </Col>
+                      <Col className="col-text text-left d-flex align-items-center">
+                        <Form.Label className="font-weight-bold">
+                          แพ็คเกจยอดนิยม
+                        </Form.Label>
+                      </Col>
+                    </div>
+                  </Col>
+                  <Col xs={12} className="">
+                    <div className="bg-white mt-3 mb-3">
+                      <Col className="col-title text-left d-flex align-items-center">
+                        <Form.Label className="font-weight-bold">
+                        รายงานแยกตามสาขา
                         </Form.Label>
                       </Col>
                       <Col className="col-text text-left d-flex align-items-center">

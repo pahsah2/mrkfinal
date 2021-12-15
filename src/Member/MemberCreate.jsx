@@ -14,8 +14,8 @@ import NavbarTop from '../Components/NavbarTop';
 import Footer from '../Components/Footer';
 import $ from 'jquery';
 export default function MemberCreate() {
-  const [state1, setState1] = useState({ showOrdinary: true });
-  const [state2, setState2] = useState({ showJuristic: false });
+  const [state1, setState1] = useState(true);
+  const [state2, setState2] = useState(false);
   const history = useHistory();
   const { Option } = Select;
 
@@ -29,12 +29,12 @@ export default function MemberCreate() {
   }
 
   function ordinary() {
-    setState1({ showOrdinary: true });
-    setState2({ showJuristic: false });
+    setState1(true);
+    setState2(false);
   }
   function juristic() {
-    setState1({ showOrdinary: false });
-    setState2({ showJuristic: true });
+    setState2(true);
+    setState1(false);
   }
   function handleChange(value) {
     console.log(`selected ${value}`);
@@ -116,30 +116,33 @@ export default function MemberCreate() {
                         </Button>
                       </div>
                     </Col>
-                    <Col xs={12} className="  mt-3 mb-3 m-0">
+                    <Col xs={12} className="   mb-3 m-0">
                       <Row className="set-line m-0 align-items-center">
                         {['radio'].map((type) => (
-                          <Col key={`inline-${type}`} className="text-left">
+                          <Col
+                            key={`inline-${type}`}
+                            className=" mt-3 text-left"
+                          >
                             <Form.Label className="mr-3">
                               ประเภทสมาชิก
                             </Form.Label>
                             <Form.Check
                               inline
-                              label="1"
+                              label="บุคลคธรรมดา"
                               name="group1"
-                              placeholder="บุคลคธรรมดา"
                               type={type}
                               id={`inline-${type}-1`}
                               onClick={() => ordinary()}
+                              checked={state1}
                             />
                             <Form.Check
                               inline
-                              label="2"
-                              placeholder="นิติบุคคล"
+                              label="นิติบุคคล"
                               name="group1"
                               type={type}
                               id={`inline-${type}-2`}
                               onClick={() => juristic()}
+                              checked={state2}
                             />
                           </Col>
                         ))}
@@ -148,8 +151,8 @@ export default function MemberCreate() {
 
                     <Col>
                       <Form>
-                        {state1.showOrdinary ? <AddOrdinaryPart /> : null}
-                        {state2.showJuristic ? <AddJuristicPart /> : null}
+                        {state1 === true ? <AddOrdinaryPart /> : null}
+                        {state2 === true ? <AddJuristicPart /> : null}
                       </Form>
                     </Col>
                   </Row>
