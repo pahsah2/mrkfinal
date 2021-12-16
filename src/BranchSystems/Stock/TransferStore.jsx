@@ -13,18 +13,20 @@ import Write from '../assets/icon/flat-style-circle-write.png';
 import Arrow from '../assets/icon/arrow.png';
 import Document from '../assets/icon/document.png';
 import Search from '../assets/icon/eyes-search.png';
-import Delete from '../assets/icon/flat-style-circle-delete.png';
+import Delete from '../assets/icon/delete.png';
 import Increase from '../assets/icon/increase.png';
 import Save from '../assets/icon/flat-style-circle-save.png';
 import Return from '../assets/icon/flat-style-circle-turn-on.png';
 import { DatePicker, Space } from 'antd';
 import Calendar from '../assets/icon/calendar-bg.png';
 
-export default function CutStock() {
+export default function TransferStore() {
   const history = useHistory();
 
   const [statepage, setStatepage] = useState('');
-  const [products, setproducts] = useState('');
+  const [products, setProducts] = useState([{ value: '', label: '' }]);
+
+  const [transferBy, setTransferBy] = useState([{ value: '', label: '' }]);
   const handleSelectPage = (e) => setStatepage(e);
 
   function onChange(date, dateString) {
@@ -35,6 +37,16 @@ export default function CutStock() {
     let path = `/`;
     history.push(path);
   }
+  function SetTransferBy(data) {
+    setTransferBy([{ value: data.value, label: data.value }]);
+  }
+  const OptionTransferBy = [{ value: 't1', label: 't1' }];
+
+  function SetProducts(data) {
+    setProducts([{ value: data.value, label: data.value }]);
+  }
+  const OptionProduct = [{ value: 'น้ำยา', label: 'น้ำยา' }];
+
   return (
     <>
       <NavbarTop />
@@ -45,7 +57,7 @@ export default function CutStock() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; ตัดสต็อก
+                  สต็อก &gt; โอนไปหน้าร้าน
                 </h5>
                 <button
                   type="button"
@@ -69,7 +81,7 @@ export default function CutStock() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; ตัดสต็อก
+                  สต็อก &gt; โอนไปหน้าร้าน
                 </h5>
               </div>
               <div className="modal-body">
@@ -113,17 +125,19 @@ export default function CutStock() {
                             <Col
                               xs={3}
                               sm={3}
-                              lg={3}
+                              lg={2}
                               className="d-flex align-items-center justify-content-end set-Label"
                             >
                               <Form.Label>ชื่อสินค้า</Form.Label>
                             </Col>
                             <Col xs={9} lg={5}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={OptionProduct}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={false}
+                                onChange={(data) => SetProducts(data)}
+                                className="select-list"
                               />
                             </Col>
                             <Col
@@ -141,65 +155,47 @@ export default function CutStock() {
                           <Row className="align-items-center">
                             <Col
                               xs={3}
-                              lg={3}
+                              lg={2}
                               className="d-flex align-items-center justify-content-end set-Label"
                             >
-                              <Form.Label>นำออก</Form.Label>
+                              <Form.Label>จำนวน</Form.Label>
                             </Col>
-                            <Col xs={9} lg={4}>
+                            <Col xs={9} lg={4} xl={2}>
                               <Form.Control className="input-form"></Form.Control>
                             </Col>
-                            <Col xs={3} lg={1} className="set-Label">
-                              <Form.Label>หน่วย</Form.Label>
+                            <Col xs={3} lg={2} className="set-Label">
+                              <Form.Label>วันที่โอน</Form.Label>
                             </Col>
-                            <Col xs={9} lg={4}>
-                              <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
-                                placeholder=""
-                                options={products}
-                              />
-                            </Col>
-                          </Row>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col lg={9}>
-                          <Row className="align-items-center">
-                            <Col
-                              xs={4}
-                              lg={3}
-                              className="d-flex justify-content-end set-Label text-left"
-                            >
-                              <Form.Label>วันที่นำสินค้าออก</Form.Label>
-                            </Col>
-                            <Col xs={8} lg={4}>
+                            <Col xs={9} lg={4} xl={2}>
                               <DatePicker
                                 onChange={onChange}
                                 placeholder=""
                                 suffixIcon={<img src={Calendar} />}
                               />
                             </Col>
-                            <Col xs={3} lg={1} className="set-Label">
-                              <Form.Label>เหตุผล</Form.Label>
+                            <Col xs={3} lg={2} className="set-Label">
+                              <Form.Label>โอนโดย</Form.Label>
                             </Col>
-                            <Col xs={9} lg={4}>
+                            <Col xs={9} lg={4} xl={2}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={OptionTransferBy}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={false}
+                                onChange={(data) => SetTransferBy(data)}
+                                className="select-list"
                               />
                             </Col>
                           </Row>
                         </Col>
                       </Row>
+
                       <Row className="mt-2 mb-2">
                         <Col lg={9}>
                           <Row>
                             <Col
                               xs={3}
-                              lg={3}
+                              lg={2}
                               className="d-flex justify-content-end set-Label"
                             >
                               <Form.Label>หมายเหตุ</Form.Label>
@@ -232,17 +228,19 @@ export default function CutStock() {
                             <Col
                               xs={3}
                               sm={3}
-                              lg={3}
+                              lg={2}
                               className="d-flex align-items-center justify-content-end set-Label"
                             >
                               <Form.Label>ชื่อสินค้า</Form.Label>
                             </Col>
                             <Col xs={9} lg={5}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={OptionProduct}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={false}
+                                onChange={(data) => SetProducts(data)}
+                                className="select-list"
                               />
                             </Col>
                             <Col
@@ -260,65 +258,47 @@ export default function CutStock() {
                           <Row className="align-items-center">
                             <Col
                               xs={3}
-                              lg={3}
+                              lg={2}
                               className="d-flex align-items-center justify-content-end set-Label"
                             >
-                              <Form.Label>นำออก</Form.Label>
+                              <Form.Label>จำนวน</Form.Label>
                             </Col>
-                            <Col xs={9} lg={4}>
+                            <Col xs={9} lg={4} xl={2}>
                               <Form.Control className="input-form"></Form.Control>
                             </Col>
-                            <Col xs={3} lg={1} className="set-Label">
-                              <Form.Label>หน่วย</Form.Label>
+                            <Col xs={3} lg={2} className="set-Label">
+                              <Form.Label>วันที่โอน</Form.Label>
                             </Col>
-                            <Col xs={9} lg={4}>
-                              <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
-                                placeholder=""
-                                options={products}
-                              />
-                            </Col>
-                          </Row>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col lg={9}>
-                          <Row className="align-items-center">
-                            <Col
-                              xs={4}
-                              lg={3}
-                              className="d-flex justify-content-end set-Label text-left"
-                            >
-                              <Form.Label>วันที่นำสินค้าออก</Form.Label>
-                            </Col>
-                            <Col xs={8} lg={4}>
+                            <Col xs={9} lg={4} xl={2}>
                               <DatePicker
                                 onChange={onChange}
                                 placeholder=""
                                 suffixIcon={<img src={Calendar} />}
                               />
                             </Col>
-                            <Col xs={3} lg={1} className="set-Label">
-                              <Form.Label>เหตุผล</Form.Label>
+                            <Col xs={3} lg={2} className="set-Label">
+                              <Form.Label>โอนโดย</Form.Label>
                             </Col>
-                            <Col xs={9} lg={4}>
+                            <Col xs={9} lg={4} xl={2}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={OptionTransferBy}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={false}
+                                onChange={(data) => SetTransferBy(data)}
+                                className="select-list"
                               />
                             </Col>
                           </Row>
                         </Col>
                       </Row>
+
                       <Row className="mt-2 mb-2">
                         <Col lg={9}>
                           <Row>
                             <Col
                               xs={3}
-                              lg={3}
+                              lg={2}
                               className="d-flex justify-content-end set-Label"
                             >
                               <Form.Label>หมายเหตุ</Form.Label>
@@ -351,6 +331,7 @@ export default function CutStock() {
                       </Row>
                     </Col>
                   </Row>
+
                   <Row className="justify-content-between">
                     <Col lg={2}>
                       <Button

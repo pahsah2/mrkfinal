@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Dropdown, Button } from 'react-bootstrap';
 import '../../assets/scss/style-component.scss';
-import Search from '../../assets/icon/iconfinder-search.png';
-import Return from '../../assets/icon/undo_icon.png';
+import Search from '../../assets/icon/search.png';
+import Return from '../../assets/icon/return-value.png';
 import Increase from '../../assets/icon/increase.png';
 import Select, { components } from 'react-select';
-import Arrow from '../../assets/icon/arrow.png';
-import Document from '../../assets/icon/document.png';
-import PurchaseOrder from '../../assets/icon/order.png';
-import MenuSend from '../../assets/icon/send-file.png';
+import Arrow from '../../assets/stock/adjust-stock.png';
+import Document from '../../assets/stock/cut-stock.png';
+import PurchaseOrder from '../../assets/stock/purchase-order.png';
+import MenuSend from '../../assets/stock/accept-orders.png';
+import Transfer from '../../assets/stock/storefront-transfer.png';
+
 export default function MenuStock() {
   const [search, setSearch] = useState('');
   const [type, setType] = useState('');
@@ -17,24 +19,6 @@ export default function MenuStock() {
   const handleSelectType = (e) => setType(e);
   const handleSelectCategory = (e) => setCategory(e);
 
-  const [display, setDisplay] = useState([
-    {
-      value: 'สินค้าใกล้หมด',
-      label: 'สินค้าใกล้หมด',
-    },
-    {
-      value: 'สินค้าหมดแล้ว',
-      label: 'สินค้าหมดแล้ว',
-    },
-    {
-      value: 'ใหม่-เก่า',
-      label: 'ใหม่-เก่า',
-    },
-    {
-      value: 'เก่า-ใหม่',
-      label: 'เก่า-ใหม่',
-    },
-  ]);
   const reset_value = () => {
     setSearch('');
     setType('');
@@ -52,14 +36,6 @@ export default function MenuStock() {
           className="input"
         ></Form.Control>
       </Col>
-      <Col xs={12} sm={6} md={4} lg={3} xl={3} className=" mt-2 mb-2">
-        <Select
-          className=""
-          aria-label="Default select example"
-          placeholder="การแสดงผล"
-          options={display}
-        />
-      </Col>
 
       <Col
         xs={12}
@@ -70,8 +46,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={Search} />
-          <p>ค้นหา</p>
+          <img src={Search} /> &nbsp; ค้นหา
         </Button>
       </Col>
       <Col
@@ -83,8 +58,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu" onClick={reset_value}>
-          <img src={Return} />
-          <p>คืนค่า</p>
+          <img src={Return} /> &nbsp; คืนค่า
         </Button>
       </Col>
       <Col
@@ -96,8 +70,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={Arrow} />
-          <p>ปรับสต๊อก</p>
+          <img src={Arrow} /> &nbsp; ปรับสต๊อก
         </Button>
       </Col>
       <Col
@@ -109,8 +82,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={Document} />
-          <p>ตัดสต็อก</p>
+          <img src={Document} /> &nbsp; ตัดสต็อก
         </Button>
       </Col>
       <Col
@@ -122,8 +94,20 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={PurchaseOrder} />
-          <p>ใบสั่งซื้อ</p>
+          <img src={Transfer} /> &nbsp; โอนไปหน้าร้าน
+        </Button>
+      </Col>
+      <Col
+        xs={6}
+        sm={6}
+        md={4}
+        lg={2}
+        xl={2}
+        className="d-flex justify-content-center mt-2 mb-2"
+      >
+        <Button className="button-menu">
+          {/* <img src={PurchaseOrder} /> &nbsp;  */}
+          สั่งเข้าสต็อก
         </Button>
       </Col>
 
@@ -137,19 +121,7 @@ export default function MenuStock() {
       >
         <Button className="button-menu">
           <img src={MenuSend} />
-          <p>รายการรับเข้า/สั่งซื้อ</p>
-        </Button>
-      </Col>
-      <Col
-        xs={6}
-        sm={6}
-        md={4}
-        lg={2}
-        xl={2}
-        className="d-flex justify-content-center mt-2 mb-2"
-      >
-        <Button className="button-menu">
-          <p>คำร้องสั่งสินค้า</p>
+          รายการรับเข้า/สั่งซื้อ
         </Button>
       </Col>
     </Row>

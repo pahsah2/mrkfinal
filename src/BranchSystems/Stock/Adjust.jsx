@@ -237,7 +237,7 @@ export default function Adjust() {
                               <Form.Control
                                 as="textarea"
                                 rows={3}
-                                className="input-area "
+                                className="text-area "
                               ></Form.Control>
                             </Col>
                             <Col lg={4} xl={3}>
@@ -384,7 +384,7 @@ export default function Adjust() {
                               <Form.Control
                                 as="textarea"
                                 rows={3}
-                                className="input-area "
+                                className="text-area "
                               ></Form.Control>
                             </Col>
                             <Col lg={4} xl={3}>

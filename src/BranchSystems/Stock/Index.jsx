@@ -21,11 +21,13 @@ import Back from '../assets/icon/back.png';
 import Select, { components } from 'react-select';
 import MenuStock from '../Components/layout/MenuStock';
 import Write from '../assets/icon/flat-style-circle-write.png';
-import Arrow from '../assets/icon/arrow.png';
-import Document from '../assets/icon/document.png';
+import Arrow from '../assets/stock/adjust-stock.png';
+import Document from '../assets/stock/cut-stock.png';
 import Search from '../assets/icon/eyes-search.png';
 import Save from '../assets/icon/flat-style-circle-save.png';
 import Return from '../assets/icon/flat-style-circle-turn-on.png';
+import Transfer from '../assets/stock/storefront-transfer.png';
+
 export default function Index() {
   const history = useHistory();
   const [showCutStock, setShowCutStock] = useState(false);
@@ -39,6 +41,10 @@ export default function Index() {
 
   const handleAdjustStockClose = () => setShowAdjustStock(false);
   const handleAdjustStockShow = () => setShowAdjustStock(true);
+
+  const [showTransfer, setShowTransfer] = useState(false);
+  const handleTransferClose = () => setShowTransfer(false);
+  const handleTransferShow = () => setShowTransfer(true);
 
   const [statepage, setStatepage] = useState('');
   const [page, setPage] = useState([
@@ -55,6 +61,13 @@ export default function Index() {
     { value: 'สินค้าเกิน', label: 'สินค้าเกิน' },
     { value: 'อื่น ๆ โปรดระบุ', label: 'อื่น ๆ โปรดระบุ' },
   ]);
+
+  const [transferBy, setTransferBy] = useState([
+    { value: 'สินค้าหาย', label: 'สินค้าหาย' },
+    { value: 'สินค้าเกิน', label: 'สินค้าเกิน' },
+    { value: 'อื่น ๆ โปรดระบุ', label: 'อื่น ๆ โปรดระบุ' },
+  ]);
+
   const [causeAdjust, setCauseAdjust] = useState([
     { value: 'สินค้าหาย', label: 'สินค้าหาย' },
     { value: 'สินค้าเกิน', label: 'สินค้าเกิน' },
@@ -131,11 +144,13 @@ export default function Index() {
                         <tr className="t-header-package">
                           <th>รหัสสินค้า</th>
                           <th>ชื่อสินค้า</th>
-                          <th>จุดสั่งซื้อ</th>
-                          <th>จุดต่ำสุด</th>
+                          <th>คลังสินค้า</th>
+                          <th>หน้าร้าน</th>
                           <th>คงเหลือ</th>
                           <th>หน่วยซื้อ</th>
                           <th style={{ textAlign: 'left' }}>อัพเดทล่าสุด</th>
+                          <th></th>
+                          <th></th>
                           <th></th>
                           <th></th>
                           <th></th>
@@ -145,8 +160,8 @@ export default function Index() {
                         <tr>
                           <td>0406010300002</td>
                           <td>น้ำยาเคลือบรถ</td>
-                          <td>15</td>
-                          <td>5</td>
+                          <td>10</td>
+                          <td>10</td>
                           <td>10</td>
                           <td>ขวด</td>
                           <td>11/06/2564</td>
@@ -167,6 +182,15 @@ export default function Index() {
                               onClick={handleAdjustStockShow}
                             >
                               <img src={Document} />
+                            </Button>
+                          </td>
+                          <td>
+                            <Button
+                              type=""
+                              className="button-package"
+                              onClick={handleTransferShow}
+                            >
+                              <img src={Transfer} />
                             </Button>
                           </td>
                           <td>
@@ -557,6 +581,160 @@ export default function Index() {
                 <Row className="mt-2 mb-2">
                   <Col xs={6} sm={6} lg={6} className="d-flex text-left">
                     <Form.Label>วันที่ปรับ</Form.Label>
+                  </Col>
+                  <Col xs={6} sm={6} lg={6} className="d-flex text-left">
+                    <p>: 11/06/2564</p>
+                  </Col>
+                </Row>
+                <Row className="mt-2 mb-2">
+                  <Col xs={6} sm={6} lg={6} className="d-flex text-left">
+                    <Form.Label>ผู้บันทึก</Form.Label>
+                  </Col>
+                  <Col xs={6} sm={6} lg={6} className="d-flex text-left">
+                    <p>: นภาวรรณ ยั่งยืน</p>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+            <Row className="justify-content-center">
+              <Col xs={11} lg={8}>
+                <Row className="justify-content-between">
+                  <Col xs={6}>
+                    <Button type="button" className="button">
+                      <img src={Save} /> &nbsp; บันทึก
+                    </Button>
+                  </Col>
+                  <Col xs={6}>
+                    <Button type="button" className="button">
+                      <img src={Return} /> &nbsp; ออก
+                    </Button>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Modal.Body>
+        </Modal>
+
+        <Modal
+          className="modal-cutstock"
+          centered
+          show={showTransfer}
+          onHide={handleTransferClose}
+        >
+          <Modal.Header className="modal-header-cutstock">
+            <p>
+              <b>โอนไปหน้าร้าน</b>
+            </p>
+            <button
+              type="button"
+              className="btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+              onClick={handleTransferClose}
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </Modal.Header>
+          <Modal.Body>
+            <Row className="justify-content-center mb-3">
+              <Col xs={12}>
+                <Row className="mt-3 mb-3">
+                  <Col
+                    xs={6}
+                    lg={3}
+                    className="d-flex align-items-center text-left"
+                  >
+                    <Form.Label>0410300002</Form.Label>
+                  </Col>
+                  <Col xs={6} lg={3} className="text-left">
+                    <p>น้ำยาเคลือบรถ</p>
+                  </Col>
+                </Row>
+                <Row className="mt-3 mb-3">
+                  <Col
+                    xs={6}
+                    lg={3}
+                    className="d-flex align-items-center text-left"
+                  >
+                    <Form.Label>ยอดปัจุบัน :</Form.Label>
+                  </Col>
+                  <Col xs={6} lg={3} className="text-left">
+                    <p>10 ขวด</p>
+                  </Col>
+                </Row>
+                <Row className="mt-2 mb-2">
+                  <Col
+                    xs={6}
+                    lg={3}
+                    className="d-flex align-items-center text-left"
+                  >
+                    <Form.Label>จำนวน</Form.Label>
+                  </Col>
+                  <Col xs={6} lg={3}>
+                    <Form.Control className="form-input"></Form.Control>
+                  </Col>
+                </Row>
+
+                <Row className="mt-2 mb-2">
+                  <Col
+                    xs={6}
+                    lg={3}
+                    className="d-flex align-items-center text-left"
+                  >
+                    <Form.Label>วันที่โอน</Form.Label>
+                  </Col>
+                  <Col xs={6} lg={3}>
+                    <DatePicker
+                      onChange={onChange}
+                      placeholder=""
+                      suffixIcon={<img src={Calendar} />}
+                    />
+                  </Col>
+                </Row>
+                <Row className="mt-2 mb-2">
+                  <Col
+                    xs={6}
+                    lg={3}
+                    className="d-flex align-items-center text-left"
+                  >
+                    <Form.Label>โอนโดย</Form.Label>
+                  </Col>
+                  <Col xs={6} lg={3}>
+                    <Select
+                      className="text-left select-style"
+                      aria-label="Default select example"
+                      placeholder=""
+                      options={transferBy}
+                    />
+                  </Col>
+                </Row>
+                <Row className="mt-2 mb-2">
+                  <Col xs={6} lg={3} className="d-flex">
+                    <Form.Label>หมายเหตุ</Form.Label>
+                  </Col>
+                  <Col xs={6} lg={6}>
+                    <Form.Control
+                      as="textarea"
+                      rows={3}
+                      className="form-area"
+                    />
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+            <Row className="justify-content-center set-row">
+              <Col xs={12} lg={12}>
+                <Row className="mt-2 mb-2">
+                  <Col xs={6} sm={6} lg={6} className="d-flex  text-left">
+                    <Form.Label>เอกสารหมายเลข</Form.Label>
+                  </Col>
+                  <Col xs={6} sm={6} lg={6} className="d-flex text-left">
+                    <p>: DC983435</p>
+                  </Col>
+                </Row>
+                <Row className="mt-2 mb-2">
+                  <Col xs={6} sm={6} lg={6} className="d-flex text-left">
+                    <Form.Label>วันที่โอน</Form.Label>
                   </Col>
                   <Col xs={6} sm={6} lg={6} className="d-flex text-left">
                     <p>: 11/06/2564</p>

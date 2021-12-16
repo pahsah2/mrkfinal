@@ -98,7 +98,10 @@ import B2B_Detail_Branch from './BranchSystems/B2B/DetailB2B';
 import Member_branch from './BranchSystems/Member/Index';
 import Member_add_Branch from './BranchSystems/Member/MemberCreate';
 import Stock_Branch from './BranchSystems/Stock/Index';
-
+import Stock_History_Branch from './BranchSystems/Stock/History';
+import Stock_Adjust_Branch from './BranchSystems/Stock/Adjust';
+import Stock_CutStock_Branch from './BranchSystems/Stock/CutStock';
+import Stock_TransferStore_Branch from './BranchSystems/Stock/TransferStore'
 function App() {
   return (
     <BrowserRouter basename="/mrklean/">
@@ -238,7 +241,15 @@ function App() {
         <Route path="/branch/b2b/detail" component={B2B_Detail_Branch} />
         <Route path="/branch/member" component={Member_branch} exact />
         <Route path="/branch/member/add" component={Member_add_Branch} />
-        <Route path="/branch/stock" component={Stock_Branch} />
+        <Route path="/branch/stock" component={Stock_Branch} exact />
+        <Route path="/branch/stock/adjust" component={Stock_Adjust_Branch} />
+        <Route path="/branch/stock/transfer-store" component={Stock_TransferStore_Branch} />
+        
+        <Route
+          path="/branch/stock/cutstock"
+          component={Stock_CutStock_Branch}
+        />
+        <Route path="/branch/stock/:id" component={Stock_History_Branch} />
       </Switch>
     </BrowserRouter>
   );

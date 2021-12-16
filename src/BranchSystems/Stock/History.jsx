@@ -207,6 +207,7 @@ export default function History() {
                       <Col className="mt-2 mb-3">
                         <Select
                           options={OptionUpdate}
+                          placeholder=""
                           isClearable={false}
                           isSearchable={false}
                           onChange={(data) => SetUpdate(data)}
@@ -239,35 +240,24 @@ export default function History() {
                     <table className="table table-responsive table-wash-part ">
                       <thead>
                         <tr className="t-header-package">
-                          <th>รหัสสินค้า</th>
-                          <th>ชื่อสินค้า</th>
-                          <th>จุดสั่งซื้อ</th>
-                          <th>จุดต่ำสุด</th>
+                          <th className="text-left">วันเวลา</th>
+                          <th>เลขที่เอกสาร</th>
+                          <th>ประเภทการอัพเดท</th>
+                          <th>จำนวน</th>
                           <th>คงเหลือ</th>
-                          <th>หน่วยซื้อ</th>
-                          <th style={{ textAlign: 'left' }}>อัพเดทล่าสุด</th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
+                          <th>หมายเหตุ</th>
+                          <th className="text-left">ผู้อัพเดท</th>
                         </tr>
                       </thead>
                       <tbody className="t-body-package ">
                         <tr>
-                          <td>0406010300002</td>
-                          <td>น้ำยาเคลือบรถ</td>
-                          <td>15</td>
+                          <td className="text-left">11/06/2564 10:10</td>
+                          <td>A12345678</td>
+                          <td>รับเข้า</td>
                           <td>5</td>
                           <td>10</td>
-                          <td>ขวด</td>
-                          <td>11/06/2564</td>
-                          <td>นภาวรรณ ยั่งยืน</td>
-                          <td></td>
-                          <td></td>
-                          <td>
-                            <Button type="" className="button-package">
-                              <img src={Search} />
-                            </Button>
-                          </td>
+                          <td>ต้องการใช้ด่วน</td>
+                          <td className="text-left">นภาวรรณ ยั่งยืน</td>
                         </tr>
                       </tbody>
                     </table>
