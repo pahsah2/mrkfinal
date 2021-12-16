@@ -260,6 +260,7 @@
         border-radius: 0;
         margin: 1px;
         color: black;
+        font-size: 16px;
       }
       .nav-link.active {
         background: #a1a1a1;
@@ -270,6 +271,10 @@
       @media only screen and (max-width: 419px) {
         display: flex;
         justify-content: center;
+        .nav-tabs {
+          display: flex !important;
+          justify-content: center !important;
+        }
         .nav-link {
           max-width: 100%;
           width: 190px;
@@ -629,6 +634,12 @@
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+.package .nav-tabs {
+  @media only screen and (max-width: 419px) {
+    display: flex;
+    justify-content: center;
   }
 }
 .productmanage-container {
@@ -1325,7 +1336,7 @@
     height: 48px;
 
     background: #ffffff;
-    border: 1px solid #7a7a7a;
+
     box-sizing: border-box;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
@@ -1493,7 +1504,7 @@
     width: 440px;
     height: 48px;
     background: #ffffff;
-    border: 1px solid #7a7a7a;
+
     box-sizing: border-box;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
@@ -1816,6 +1827,14 @@
   .select {
     width: 179px !important;
   }
+  .text-area {
+    height: auto !important;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 0;
+  }
   .increase-contract {
     height: auto;
     display: flex;
@@ -1839,7 +1858,7 @@
     border-color: none !important;
     background-color: none !important;
     background: none !important;
-    background-image: url('../icon/delete-button.png') !important;
+    background-image: url('../icon/delete.png') !important;
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1851,6 +1870,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .button-image {
+    border: none;
+    box-shadow: none;
   }
   .increase {
     border: none !important;
@@ -1875,6 +1898,9 @@
   .input-area {
     width: 817px;
     height: 130px;
+  }
+  .search-btn-top {
+    border: none !important;
   }
 }
 .history-b2b {
@@ -3080,6 +3106,14 @@
       display: none;
     }
   }
+  .text-area {
+    height: auto !important;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 0;
+  }
   .set-paginate {
     @media only screen and (max-width: 768px) {
       justify-content: center !important;
@@ -3133,6 +3167,7 @@
       //   justify-content: left !important;
       // }
     }
+
     .form-label {
       margin: 0;
       font-size: 16px;
@@ -3157,6 +3192,7 @@
           0px 4px 4px rgba(0, 0, 0, 0.25) inset !important;
       }
     }
+    
     .button {
       max-width: 100%;
       width: 100%;

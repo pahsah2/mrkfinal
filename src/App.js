@@ -97,6 +97,8 @@ import B2B_Branch from './BranchSystems/B2B/Index';
 import B2B_Detail_Branch from './BranchSystems/B2B/DetailB2B';
 import Member_branch from './BranchSystems/Member/Index';
 import Member_add_Branch from './BranchSystems/Member/MemberCreate';
+import Stock_Branch from './BranchSystems/Stock/Index';
+
 function App() {
   return (
     <BrowserRouter basename="/mrklean/">
@@ -119,7 +121,7 @@ function App() {
           component={JusticInformation}
         />
         <Route path="/membercreate" component={MemberCreate} />
-        <Route path="/b2b" component={B2BCompany} exact/>
+        <Route path="/b2b" component={B2BCompany} exact />
         <Route path="/b2b/detail" component={DetailB2B} />
         <Route path="/package/add-wash-part" component={AddWashPart} />
         <Route
@@ -236,6 +238,7 @@ function App() {
         <Route path="/branch/b2b/detail" component={B2B_Detail_Branch} />
         <Route path="/branch/member" component={Member_branch} exact />
         <Route path="/branch/member/add" component={Member_add_Branch} />
+        <Route path="/branch/stock" component={Stock_Branch} />
       </Switch>
     </BrowserRouter>
   );

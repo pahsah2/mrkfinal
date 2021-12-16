@@ -1,0 +1,19 @@
+<Form.Check
+                        inline
+                        label="บริการ"
+                        name="group1"
+                        type={type}
+                        id={`inline-${type}-2`}
+                        onChange={handleService}
+                        checked={service}
+                      />
+
+  const handleService = () => {
+    setProduct(false);
+    setService(true);
+    setPackage(false);
+  };
+
+const [product, setProduct] = useState(true);
+  const [service, setService] = useState(false);
+  const [Package, setPackage] = useState(false);

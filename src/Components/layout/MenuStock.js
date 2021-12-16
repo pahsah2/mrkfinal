@@ -70,8 +70,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={Search} />
-          <p>ค้นหา</p>
+          <img src={Search} /> &nbsp; ค้นหา
         </Button>
       </Col>
       <Col
@@ -83,8 +82,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu" onClick={reset_value}>
-          <img src={Return} />
-          <p>คืนค่า</p>
+          <img src={Return} /> &nbsp; คืนค่า
         </Button>
       </Col>
       <Col
@@ -96,8 +94,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={Arrow} />
-          <p>ปรับสต๊อก</p>
+          <img src={Arrow} /> &nbsp; ปรับสต๊อก
         </Button>
       </Col>
       <Col
@@ -109,8 +106,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={Document} />
-          <p>ตัดสต็อก</p>
+          <img src={Document} /> &nbsp; ตัดสต็อก
         </Button>
       </Col>
       <Col
@@ -122,8 +118,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={PurchaseOrder} />
-          <p>ใบสั่งซื้อ</p>
+          <img src={PurchaseOrder} /> &nbsp; ใบสั่งซื้อ
         </Button>
       </Col>
 
@@ -136,8 +131,7 @@ export default function MenuStock() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={MenuSend} />
-          <p>รายการรับเข้า/สั่งซื้อ</p>
+          <img src={MenuSend} /> &nbsp; รายการรับเข้า/สั่งซื้อ
         </Button>
       </Col>
       <Col
