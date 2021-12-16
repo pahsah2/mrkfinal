@@ -14,9 +14,9 @@ import Arrow from '../assets/icon/arrow.png';
 import Document from '../assets/icon/document.png';
 import Search from '../assets/icon/eyes-search.png';
 import Delete from '../assets/icon/delete.png';
-import Increase from '../assets/icon/increase.png';
-import Save from '../assets/icon/flat-style-circle-save.png';
-import Return from '../assets/icon/flat-style-circle-turn-on.png';
+import Increase from '../assets/icon/add_menu.png';
+import Save from '../assets/icon/save.png';
+import Return from '../assets/icon/out.png';
 import { DatePicker, Space } from 'antd';
 import Calendar from '../assets/icon/calendar-bg.png';
 

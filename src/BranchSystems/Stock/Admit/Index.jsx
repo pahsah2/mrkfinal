@@ -22,11 +22,12 @@ import Arrow from '../../assets/icon/arrow.png';
 import Document from '../../assets/icon/document.png';
 import Search from '../../assets/icon/eyes-search.png';
 import Save from '../../assets/icon/new-save.png';
-import Getout from '../../assets/icon/getout.png';
+import Getout from '../../assets/icon/out.png';
 import Print from '../../assets/icon/print.png';
 import CanCel from '../../assets/icon/new-cancel.png';
-
-import Return from '../../assets/icon/new-re-turn.png';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
+import Return from '../../assets/icon/out.png';
 import { DatePicker, Space } from 'antd';
 import Calendar from '../../assets/icon/calendar-bg.png';
 import MenuStock_Request_Order from '../../Components/layout/MenuStock_Request_Order';
@@ -37,6 +38,10 @@ export default function Index() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [showReturn, setShowReturn] = useState(false);
+  const handleCloseReturn = () => setShowReturn(false);
+  const handleShowReturn = () => setShowReturn(true);
 
   const [statepage, setStatepage] = useState('');
   const [tax, setTax] = useState([
@@ -59,6 +64,9 @@ export default function Index() {
   }
   function close() {
     setShow(false);
+  }
+  function closeReturn() {
+    setShowReturn(false);
   }
   return (
     <>
@@ -102,7 +110,7 @@ export default function Index() {
                   <TabsIcon />
                 </Row>
                 <Form className="Stock-Request-Order-Branch mt-2 mb-2">
-                  <Row className="g-0 justify-content-center">
+                  <Row className="g-0 justify-content-start">
                     <Col md={12} lg={6} className="">
                       <Row className="set-row-admit">
                         <Col
@@ -110,7 +118,55 @@ export default function Index() {
                           sm={4}
                           md={4}
                           lg={3}
-                          className="d-flex  set-label"
+                          className="set-label text-right d-lg-none "
+                        >
+                          <Form.Label className="mr-3">สถานะเอกสาร:</Form.Label>
+                        </Col>
+                        <Col
+                          xs={6}
+                          sm={6}
+                          md={6}
+                          lg={5}
+                          className="ml-3 text-left d-lg-none"
+                        >
+                          <p>รับเข้า</p>
+                        </Col>
+                      </Row>
+                      <Row className="set-row-admit">
+                        <Col
+                          xs={4}
+                          sm={4}
+                          md={4}
+                          lg={3}
+                          className="set-label text-right"
+                        >
+                          <Form.Label>เลขที่ใบสั่งซื้อ</Form.Label>
+                        </Col>
+                        <Col xs={6} sm={6} md={6} lg={5} className="text-left">
+                          <p>PO2021070001</p>
+                        </Col>
+                      </Row>
+                      <Row className="set-row-admit">
+                        <Col
+                          xs={4}
+                          sm={4}
+                          md={4}
+                          lg={3}
+                          className="set-label text-right"
+                        >
+                          <Form.Label>วันที่สั่ง</Form.Label>
+                        </Col>
+                        <Col xs={6} sm={6} md={6} lg={5} className="text-left">
+                          <p>11/06/2564</p>
+                        </Col>
+                      </Row>
+                      <Row className="set-row-admit">
+                        <Col
+                          xs={4}
+                          sm={4}
+                          md={4}
+                          lg={3}
+                          className="set-label text-right"
                         >
                           <Form.Label>สั่งโดย</Form.Label>
                         </Col>
@@ -124,12 +180,12 @@ export default function Index() {
                           sm={4}
                           md={4}
                           lg={3}
-                          className="d-flex  set-label"
+                          className="set-label text-right"
                         >
-                          <Form.Label>ผู้จัดจำหน่าย</Form.Label>
+                          <Form.Label>ผู้บันทึก</Form.Label>
                         </Col>
                         <Col xs={6} sm={6} md={6} lg={5} className="text-left">
-                          <p>นิยมพาณิช</p>
+                          <p>นภาวรรณ ยั่งยืน</p>
                         </Col>
                       </Row>
                       <Row className="set-row-admit">
@@ -138,151 +194,69 @@ export default function Index() {
                           sm={4}
                           md={4}
                           lg={3}
-                          className="d-flex align-items-center  set-label"
+                          className="set-label text-right"
                         >
                           <Form.Label>การใช้งาน</Form.Label>
                         </Col>
                         <Col xs={6} sm={6} md={6} lg={5} className="text-left">
-                          <Select
-                            className="text-left select-style"
-                            aria-label="Default select example"
-                            placeholder=""
-                            options={use}
-                          />
+                          <p>เข้าสต็อก</p>
                         </Col>
                       </Row>
                     </Col>
-                    <Col md={12} lg={6} className="set-div-position ">
-                      <Row className="justify-content-end set-row-status">
-                        <Col xs={12} md={12} lg={8} xl={8} className="bg-admit">
-                          <Row>
-                            <Col
-                              xs={4}
-                              lg={5}
-                              className="d-flex align-items-center"
-                            >
-                              <Form.Label>เลขที่ใบสั่งซื้อ</Form.Label>
-                            </Col>
-                            <Col className="d-flex">
-                              <p>PO2021070001</p>
-                            </Col>
-                          </Row>
-                          <Row>
-                            <Col
-                              xs={4}
-                              lg={5}
-                              className="d-flex align-items-center"
-                            >
-                              <Form.Label>วันรับเข้าระบบ</Form.Label>
-                            </Col>
-                            <Col>
-                              <DatePicker
-                                onChange={onChange}
-                                placeholder=""
-                                suffixIcon={<img src={Calendar} />}
-                              />
-                            </Col>
-                          </Row>
-                          <Row>
-                            <Col
-                              xs={4}
-                              lg={5}
-                              className="d-flex align-items-center"
-                            >
-                              <Form.Label>วันที่บันทึก</Form.Label>
-                            </Col>
-                            <Col className="d-flex">
-                              <p>06/05/2563</p>
-                            </Col>
-                          </Row>
-                          <Row>
-                            <Col
-                              xs={4}
-                              lg={5}
-                              className="d-flex align-items-center"
-                            >
-                              <Form.Label>ผู้บันทึก</Form.Label>
-                            </Col>
-                            <Col className="d-flex">
-                              <p className="text-p">: นภาวรรณ ยั่งยืน</p>
-                            </Col>
-                          </Row>
-                          <Row>
-                            <Col
-                              xs={4}
-                              lg={5}
-                              className="d-flex align-items-center"
-                            >
-                              <Form.Label>ชนิดภาษี</Form.Label>
-                            </Col>
-                            <Col>
-                              <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
-                                placeholder=""
-                                options={tax}
-                              />
-                            </Col>
-                          </Row>
+                    <Col sm={12} lg={6} className="set-hidden-status">
+                      <Row className="justify-content-end">
+                        <Col className="text-right">
+                          <Form.Label>สถานะเอกสาร: </Form.Label>
+                        </Col>
+                        <Col xs={6} lg={3} className="text-left">
+                          <p>รับเข้า</p>
                         </Col>
                       </Row>
                     </Col>
                   </Row>
-
-                  <Row className="g-0 justify-content-center">
-                    <Row
-                      className=" mt-3"
-                      style={{ overflow: 'scroll', height: 'auto' }}
+                  <Row className="g-0 justify-content-center m-0">
+                    <Col
+                      xs={12}
+                      className=" mt-3 p-0"
+                      style={{ overflow: 'scroll', height: '200px' }}
                     >
                       <table className="table table-responsive table-wash-part ">
                         <thead>
                           <tr className="t-header-package">
-                            <th>รหัสสินค้า</th>
-                            <th>ชื่อสินค้า</th>
-                            <th>จำนวน</th>
-                            <th>หน่วย</th>
-                            <th>ราคาต่อหน่วย</th>
-                            <th>ราคารวม</th>
+                            <th className="text-left" width="20%">
+                              รหัสสินค้า
+                            </th>
+                            <th className="text-left" width="20%">
+                              ชื่อสินค้า
+                            </th>
+                            <th width="5%">จำนวน</th>
+                            <th width="5%">หน่วย</th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody className="t-body-package ">
                           <tr>
-                            <td>0406010300002</td>
-                            <td>น้ำยาเคลือบรถ</td>
+                            <td className="text-left">0406010300002</td>
+                            <td className="text-left">น้ำยาเคลือบรถ</td>
                             <td>1</td>
                             <td>ขวด</td>
-                            <td>50</td>
-                            <td>50</td>
-                          </tr>
-                          <tr>
-                            <td>0406010300002</td>
-                            <td>น้ำยาเคลือบรถ</td>
-                            <td>1</td>
-                            <td>ขวด</td>
-                            <td>50</td>
-                            <td>50</td>
+                            <th></th>
                           </tr>
                         </tbody>
                       </table>
-                    </Row>
+                    </Col>
                   </Row>
-                  <Row className="mt-2 mb-2">
+                  <Row className="mt-4 mb-4">
                     <Col lg={5}>
                       <Row>
-                        <Col
-                          xs={4}
-                          sm={4}
-                          md={4}
-                          lg={3}
-                          className="d-flex align-items-center"
-                        >
+                        <Col xs={4} sm={4} md={4} lg={3} className="text-left">
                           <Form.Label>หมายเหตุ</Form.Label>
                         </Col>
                         <Col>
                           <Form.Control
                             as="textarea"
-                            row={3}
-                            className=""
+                            rows={5}
+                            className="text-area"
                           ></Form.Control>
                         </Col>
                       </Row>
@@ -297,25 +271,20 @@ export default function Index() {
                           </Button>
                         </Col>
                         <Col xs={6} lg={4} xl={3} className="mt-2">
-                          <Button className="button">
-                            <img src={Print} /> &nbsp; พิมพ์เอกสาร
+                          <Button className="button" onClick={handleShowReturn}>
+                            <img src={CanCel} /> &nbsp; ตีกลับ
                           </Button>
                         </Col>
-                        <Col
-                          xs={6}
-                          lg={4}
-                          xl={3}
-                          className="set-hidden-return-mobile   mt-2"
-                        >
+                        <Col xs={6} lg={4} xl={3} className="mt-2">
                           <Button className="button">
-                            <img src={Getout} /> &nbsp; ออก
+                            <img src={Print} /> &nbsp; พิมพ์เอกสาร
                           </Button>
                         </Col>
                       </Row>
                     </Col>
                     <Col lg={3}>
                       <Row className="d-flex justify-content-end">
-                        <Col className="set-hidden-return mt-2">
+                        <Col className=" mt-2">
                           <Button className="button">
                             <img src={Getout} /> &nbsp; ออก
                           </Button>
@@ -385,9 +354,11 @@ export default function Index() {
             <Col lg={8} className="mt-2 mb-2">
               <Row className="justify-content-center">
                 <Col xs={7} lg={6} className="mt-2 mb-2">
-                  <Button className="button">
-                    <img src={Save} /> &nbsp; ยันยันการรับเข้า
-                  </Button>
+                  <LinkContainer to="/branch/stock/receive/admit/:id">
+                    <Button className="button">
+                      <img src={Save} /> &nbsp; ยืนยันการรับเข้า
+                    </Button>
+                  </LinkContainer>
                 </Col>
                 <Col xs={7} lg={6} className="mt-2 mb-2">
                   <Button className="button">
@@ -397,6 +368,81 @@ export default function Index() {
               </Row>
             </Col>
           </Row>
+        </Modal.Body>
+      </Modal>
+
+      <Modal
+        className="modal-Confirm-Admit"
+        centered
+        show={showReturn}
+        onHide={handleCloseReturn}
+      >
+        <Modal.Header className="modal-header-Confirm-Admit">
+          <p>
+            <b>ตีกลับ</b>
+          </p>
+          <button
+            type="button"
+            className="btn-close"
+            data-dismiss="modal"
+            aria-label="Close"
+            onClick={closeReturn}
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Row
+              className="justify-content-center mt-3"
+              style={{ overflow: 'scroll', height: 'auto' }}
+            >
+              <table
+                className="table table-responsive table-wash-part "
+                style={{ width: '80%' }}
+              >
+                <thead>
+                  <tr className="t-header-package">
+                    <th>รหัสสินค้า</th>
+                    <th>ชื่อสินค้า</th>
+                    <th>จำนวน</th>
+                    <th>หน่วย</th>
+                    <th>ที่ได้รับ</th>
+                  </tr>
+                </thead>
+                <tbody className="t-body-package ">
+                  <tr>
+                    <td>0406010300002</td>
+                    <td>น้ำยาเคลือบรถ</td>
+                    <td>1</td>
+                    <td>ขวด</td>
+                    <td>
+                      <Form.Control className="text-input"></Form.Control>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>0406010300002</td>
+                    <td>น้ำยาเคลือบรถ</td>
+                    <td>1</td>
+                    <td>ขวด</td>
+                    <td>
+                      <Form.Control className="text-input"></Form.Control>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </Row>
+
+            <Row className="justify-content-center">
+              <Col lg={8} className="mt-2 mb-2">
+                <Row className="justify-content-center">
+                  <Col xs={7} lg={6} className="mt-2 mb-2">
+                    <Button className="button">ยืนยัน</Button>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Form>
         </Modal.Body>
       </Modal>
     </>

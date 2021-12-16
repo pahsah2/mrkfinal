@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Dropdown, Button } from 'react-bootstrap';
 import '../../assets/scss/style-component.scss';
+import { Link } from 'react-router-dom';
 import Search from '../../assets/icon/iconfinder-search.png';
 import Return from '../../assets/icon/undo_icon.png';
 import Increase from '../../assets/icon/increase.png';
@@ -62,43 +63,21 @@ export default function MenuStockReceiptOrder() {
           options={display}
         />
       </Col>
-      <Col
-        xs={6}
-        sm={6}
-        md={4}
-        lg={2}
-        xl={2}
-        className="d-flex justify-content-center mt-2 mb-2"
-      >
+      <Col xs={6} sm={6} md={4} lg={2} xl={2} className=" mt-2 mb-2">
+        <Link to="">
+          <Button className="button-menu">
+            <img src={PurchaseOrder} /> &nbsp; สั่งเข้าสต๊อก
+          </Button>
+        </Link>
+      </Col>
+      <Col xs={6} sm={6} md={4} lg={2} xl={2} className=" mt-2 mb-2">
         <Button className="button-menu">
-          <img src={PurchaseOrder} />
-          <p>ใบสั่งซื้อ</p>
+          <img src={Search} /> &nbsp; ค้นหา
         </Button>
       </Col>
-      <Col
-        xs={6}
-        sm={6}
-        md={4}
-        lg={2}
-        xl={2}
-        className="d-flex justify-content-center mt-2 mb-2"
-      >
-        <Button className="button-menu">
-          <img src={Search} />
-          <p>ค้นหา</p>
-        </Button>
-      </Col>
-      <Col
-        xs={6}
-        sm={6}
-        md={4}
-        lg={2}
-        xl={2}
-        className="d-flex justify-content-center mt-2 mb-2"
-      >
+      <Col xs={6} sm={6} md={4} lg={2} xl={2} className=" mt-2 mb-2">
         <Button className="button-menu" onClick={reset_value}>
-          <img src={Return} />
-          <p>คืนค่า</p>
+          <img src={Return} /> &nbsp; คืนค่า
         </Button>
       </Col>
     </Row>

@@ -101,7 +101,12 @@ import Stock_Branch from './BranchSystems/Stock/Index';
 import Stock_History_Branch from './BranchSystems/Stock/History';
 import Stock_Adjust_Branch from './BranchSystems/Stock/Adjust';
 import Stock_CutStock_Branch from './BranchSystems/Stock/CutStock';
-import Stock_TransferStore_Branch from './BranchSystems/Stock/TransferStore'
+import Stock_TransferStore_Branch from './BranchSystems/Stock/TransferStore';
+import Stock_Recive_Branch from './BranchSystems/Stock/ReceiptOrder';
+import Stock_OrderToStock_branch from './BranchSystems/Stock/OrderToStock/Index';
+import Stock_OrderToStock_Data_Branch from './BranchSystems/Stock/OrderToStock/Data';
+import Stock_Admit_Branch from './BranchSystems/Stock/Admit/Index';
+import Stock_Admit_Data_Branch from './BranchSystems/Stock/Admit/Data';
 function App() {
   return (
     <BrowserRouter basename="/mrklean/">
@@ -242,12 +247,41 @@ function App() {
         <Route path="/branch/member" component={Member_branch} exact />
         <Route path="/branch/member/add" component={Member_add_Branch} />
         <Route path="/branch/stock" component={Stock_Branch} exact />
+        <Route
+          path="/branch/stock/receive"
+          component={Stock_Recive_Branch}
+          exact
+        />
+
         <Route path="/branch/stock/adjust" component={Stock_Adjust_Branch} />
-        <Route path="/branch/stock/transfer-store" component={Stock_TransferStore_Branch} />
-        
+        <Route
+          path="/branch/stock/transfer-store"
+          component={Stock_TransferStore_Branch}
+        />
+
         <Route
           path="/branch/stock/cutstock"
           component={Stock_CutStock_Branch}
+        />
+
+        <Route
+          path="/branch/stock/receive/order-to-stock"
+          component={Stock_OrderToStock_branch}
+          exact
+        />
+        <Route
+          path="/branch/stock/receive/admit"
+          component={Stock_Admit_Branch}
+          exact
+        />
+        <Route
+          path="/branch/stock/receive/admit/:id"
+          component={Stock_Admit_Data_Branch}
+        />
+
+        <Route
+          path="/branch/stock/receive/order-to-stock/:id"
+          component={Stock_OrderToStock_Data_Branch}
         />
         <Route path="/branch/stock/:id" component={Stock_History_Branch} />
       </Switch>
