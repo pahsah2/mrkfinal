@@ -15,8 +15,8 @@ import '../../assets/scss/style-component.scss';
 
 export default function TabsIconB2B() {
   return (
-    <Row className="g-0 d-flex justify-content-start m-0">
-      <Col className="d-flex tabs-icon mb-4">
+    <Row className="g-0 justify-content-start m-0">
+      <Col className="text-left tabs-icon mb-4">
         <Button>
           <img src={address_book_home} alt="" />
         </Button>

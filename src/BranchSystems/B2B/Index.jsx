@@ -30,7 +30,7 @@ import '../assets/scss/style.scss';
 import TabsIconB2B from '../Components/layout/TabsIconB2B';
 import B2B from '../assets/icon/users_key-4.png';
 import Back from '../assets/icon/back.png';
-
+import view from '../assets/icon/view-id.png';
 export default function Index({ match }) {
   const history = useHistory();
   const [keyword, setKeyword] = useState('');
@@ -128,10 +128,10 @@ export default function Index({ match }) {
                   className="justify-content-center"
                   style={{ padding: 0 }}
                 >
-                  <div className="box-typecar mt-4">
+                  <div className="box-typecar ">
                     <Form onSubmit={submitHandler}>
                       <Row>
-                        <Col md={3} className="set-col-b2b">
+                        <Col lg={3} className="set-col-b2b mt-2 mb-2">
                           <Form.Control
                             type="text"
                             name="q"
@@ -141,7 +141,7 @@ export default function Index({ match }) {
                             className="text-left search-btn-top"
                           ></Form.Control>
                         </Col>
-                        <Col className="set-col-b2b">
+                        <Col xs={12} lg={2} className="set-col-b2b mt-2 mb-2">
                           <Select
                             options={carband}
                             placeholder="ยี่ห้อรถ"
@@ -151,7 +151,7 @@ export default function Index({ match }) {
                             className="select-list"
                           />
                         </Col>
-                        <Col className="set-col-b2b">
+                        <Col xs={12} lg={2} className="set-col-b2b mt-2 mb-2">
                           <Select
                             options={carmodel}
                             placeholder="รุ่นรถ"
@@ -161,7 +161,7 @@ export default function Index({ match }) {
                             className="select-list"
                           />
                         </Col>
-                        <Col className="set-col-b2b">
+                        <Col xs={12} lg={2} className="set-col-b2b mt-2 mb-2">
                           <Select
                             options={licenseplate}
                             placeholder="ป้ายทะเบียน"
@@ -171,18 +171,33 @@ export default function Index({ match }) {
                             className="select-list"
                           />
                         </Col>
-                        <Col className="set-col-b2b">
-                          <Button className="button">
-                            {/* onClick={onClear} */}
-                            คืนค่า
-                          </Button>
-                        </Col>
-                        <Col className="set-col-b2b">
+                        <Col
+                          xs={12}
+                          className="set-col-b2b mt-2 mb-2 d-md-none"
+                        >
                           <Button className="button">
                             {/* onClick={() => search()} */}
                             ค้นหา
                             <img src="icon/magnifying_glass_4-1 2.png" alt="" />
                           </Button>
+                        </Col>
+                        <Col className="set-col-b2b mt-2 mb-2">
+                          <Button className="button">
+                            {/* onClick={onClear} */}
+                            คืนค่า
+                          </Button>
+                        </Col>
+                        <Col className="set-col-b2b mt-2 mb-2 set-hidden-b2b">
+                          <Button className="button">
+                            {/* onClick={() => search()} */}
+                            ค้นหา &nbsp;
+                            <img src="icon/magnifying_glass_4-1 2.png" alt="" />
+                          </Button>
+                        </Col>
+                        <Col className="set-col-b2b mt-2 mb-2 d-sm-none">
+                          <Link to="/b2b/detail">
+                            <Button className="button">เพิ่มรายชื่อ</Button>
+                          </Link>
                         </Col>
                       </Row>
                     </Form>
@@ -202,23 +217,45 @@ export default function Index({ match }) {
                         <th>ใช้บริการล่าสุด</th>
                         <th>ยอดใช้บริการ</th>
                         <th>อายุสมาชิก</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
-                        <td>s</td>
+                        <td>0406010300002</td>
+                        <td>บริษัท นภาวรรณ กรุ๊ป </td>
                         <td>
-                          <LinkContainer to={`/deshbord`} className="link">
-                            <Button className="view-member"></Button>
+                          0816659494 <br />
+                          0635284746
+                        </td>
+                        <td>
+                          Honda <br />
+                          Honda <br />
+                          Honda <br />
+                        </td>
+                        <td>
+                          Civic <br />
+                          Jazz <br />
+                          City <br />
+                        </td>
+                        <td>
+                          กด-252 เชียงใหม่ <br />
+                          งจ-2544 เชียงใหม่ <br />
+                          กต-4614 เชียงใหม่ <br />
+                        </td>
+                        <td>
+                          ขาว <br />
+                          แดง <br />
+                          ดำ <br />
+                        </td>
+                        <td>11/06/2564</td>
+                        <td>4500 บาท</td>
+                        <td>2 ปี 6 เดือน</td>
+                        <td>
+                          <LinkContainer to={`/b2b/detail`} className="link">
+                            <Button className="view-b2b">
+                              <img src={view} alt="" />
+                            </Button>
                           </LinkContainer>
                         </td>
                       </tr>

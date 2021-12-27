@@ -358,7 +358,7 @@ export default function Viewall() {
                 </Space>
               </Col>
             </Row>
-            <Row classNam="">
+            <Row className="">
               <Col className="d-flex justify-content-center">
                 <div className="set-apex" id="chart">
                   <ReactApexChart

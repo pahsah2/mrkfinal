@@ -10,6 +10,8 @@ import AddOrdinaryPart from './AddOrdinaryPart';
 import Back from '../assets/icon/back.png';
 
 import { useHistory } from 'react-router-dom';
+import TabsIcon from '../Components/layout/TabsIcon';
+
 import NavbarTop from '../Components/NavbarTop';
 import Footer from '../Components/Footer';
 import $ from 'jquery';
@@ -81,39 +83,7 @@ export default function MemberCreate() {
                   <Row>
                     <Col lg={12} className="d-flex justify-content-start">
                       <div className="tabs-icon mb-4">
-                        <Button>
-                          <img src="icon/address_book_home.png" alt="" />
-                        </Button>
-                        <Button>
-                          <img src="icon/appwizard_list.png" alt="" />
-                        </Button>
-                        <Button>
-                          <img
-                            src="icon/directory_open_file_mydocs_cool-1.png"
-                            alt=""
-                          />
-                        </Button>
-                        <Button>
-                          <img src="icon/directory_closed-4.png" alt="" />
-                        </Button>
-                        <Button>
-                          <img src="icon/management.png" alt="" />
-                        </Button>
-                        <Button>
-                          <img src="icon/briefcase-4.png" alt="" />
-                        </Button>
-                        <Button>
-                          <img src="icon/message_file-0.png" alt="" />
-                        </Button>
-                        <Button>
-                          <img src="icon/users_key-4.png" alt="" />
-                        </Button>
-                        <Button>
-                          <img src="icon/network_normal_two_pcs-4.png" alt="" />
-                        </Button>
-                        <Button>
-                          <img src="icon/chart1-4.png" alt="" />
-                        </Button>
+                        <TabsIcon />
                       </div>
                     </Col>
                     <Col xs={12} className="   mb-3 m-0">

@@ -219,6 +219,13 @@
       vertical-align: middle;
       font-size: 16px;
     }
+    .view-b2b {
+      box-shadow: none !important;
+      img {
+        width: 34px;
+        height: 33px;
+      }
+    }
     .table th {
       font-weight: normal;
     }
@@ -247,38 +254,48 @@
       border: none !important;
       background: none !important;
       border-radius: 20px;
+      box-shadow: none;
     }
-    .tabs-package {
+
+    .nav-tabs {
       border: none;
 
-      .nav-link {
-        background: rgba(229, 229, 229, 0.5);
-        box-shadow: 0px 4px 4px rgba(119, 118, 118, 0.25),
-          0px 4px 4px rgba(100, 100, 100, 0.25) inset;
-
-        border: 2px solid rgb(211, 209, 209);
-        border-radius: 0;
-        margin: 1px;
-        color: black;
-        font-size: 16px;
+      .nav-item {
+        width: 171px;
+        height: 42px;
+        background: #c4c4c4;
+        border: 1px solid rgba(229, 229, 229, 0.5);
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        .nav-link {
+          color: black;
+          width: 170px;
+          height: 42px;
+          background: rgba(196, 196, 196, 0.5);
+          border: 2px solid rgba(229, 229, 229, 0.5);
+          box-sizing: border-box;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .nav-link.active {
+          width: 170px;
+          height: 42px;
+          margin: 0 !important;
+          border-radius: 0px;
+          background: rgba(77, 76, 76, 0.185);
+          border: 2px solid rgba(229, 229, 229, 0.5);
+          box-sizing: border-box;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          color: black;
+          font-weight: bold;
+        }
       }
-      .nav-link.active {
-        background: #a1a1a1;
-        box-shadow: 0px 4px 4px rgba(119, 118, 118, 0.25),
-          0px 4px 4px rgba(100, 100, 100, 0.25) inset;
-        font-weight: bold;
-      }
-      @media only screen and (max-width: 419px) {
+      @media only screen and (max-width: 576px) {
         display: flex;
         justify-content: center;
-        .nav-tabs {
-          display: flex !important;
-          justify-content: center !important;
-        }
-        .nav-link {
-          max-width: 100%;
-          width: 190px;
-        }
       }
     }
   }
@@ -3111,8 +3128,12 @@
     max-width: 100%;
     width: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-      0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+      0px 4px 4px rgba(0, 0, 0, 0.25) inset !important;
     border-radius: 0;
+  }
+  .text-area:focus {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25) inset !important;
   }
   .set-paginate {
     @media only screen and (max-width: 768px) {
@@ -3122,6 +3143,10 @@
   .css-4ljt47-MenuList {
     padding: 0;
     z-index: 2000;
+  }
+  .css-1pahdxg-control {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25) inset !important;
   }
   .form-label {
     margin: 0;
@@ -3148,6 +3173,10 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
       0px 4px 4px rgba(0, 0, 0, 0.25) inset;
   }
+  .form-control:focus {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+  }
   .button {
     max-width: 100%;
     width: 100%;
@@ -3159,6 +3188,11 @@
     border-radius: 0 !important;
     color: black;
     font-size: 16px;
+  }
+  .set-hidden-b2b {
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
   .Stock-Request-Order-Branch {
     .set-label {
@@ -3192,7 +3226,7 @@
           0px 4px 4px rgba(0, 0, 0, 0.25) inset !important;
       }
     }
-    
+
     .button {
       max-width: 100%;
       width: 100%;
@@ -3279,6 +3313,11 @@
       max-width: 100%;
       width: 100%;
     }
+    .set-hidden-status {
+      @media only screen and (max-width: 991px) {
+        display: none;
+      }
+    }
   }
   .set-position {
     @media only screen and (max-width: 992px) {
@@ -3304,7 +3343,8 @@
     }
   }
   .input-in-table {
-    width: 60%;
+    width: 120px !important;
+
     height: 44px;
     margin: auto;
     border: 1px solid #c4c4c4;
@@ -3390,6 +3430,7 @@
         }
         .form-label {
           margin: 0;
+          font-size: 16px;
         }
         .form-input {
           height: 44px;
@@ -3418,6 +3459,7 @@
         }
         p {
           margin: 0;
+          font-size: 16px;
         }
       }
       .modal-footer {
@@ -3666,6 +3708,14 @@
         }
         .table th {
           font-weight: normal;
+        }
+        .text-input {
+          width: 100px;
+          height: 44px;
+          border: 1px solid #c4c4c4;
+          box-sizing: border-box;
+          box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 0;
         }
       }
       .modal-footer {

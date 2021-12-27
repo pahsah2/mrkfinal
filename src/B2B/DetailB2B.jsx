@@ -49,7 +49,7 @@ export default function DetailB2B() {
     <>
       <NavbarTop />
       <Container fluid className="package-container Service Stock User B2B">
-        <div className=" package">
+        <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
@@ -87,27 +87,26 @@ export default function DetailB2B() {
                   <TabsIcon />
                 </Col>
                 <Col className="justify-content-start  " style={{ padding: 0 }}>
-                  <div className="box-typecar mt-3 ">
-                    <Tabs
-                      id="controlled-tab-example"
-                      activeKey={key}
-                      onSelect={(k) => setKey(k)}
-                      className="mb-4 mt-2"
-                    >
-                      <Tab eventKey="data" title="ข้อมูล">
-                        <DataB2B />
-                      </Tab>
-                      <Tab eventKey="history-service" title="ประวัติรับบริการ">
-                        <History />
-                      </Tab>
-                      <Tab eventKey="view-all" title="ภาพรวม">
-                        <ViewAll />
-                      </Tab>
-                      <Tab eventKey="damagereport" title="บันทึกความเสียหาย">
-                        <DamageReport />
-                      </Tab>
-                    </Tabs>
-                  </div>
+                  <div className="box-typecar "></div>
+                  <Tabs
+                    id="controlled-tab-example"
+                    activeKey={key}
+                    onSelect={(k) => setKey(k)}
+                    className="mb-4"
+                  >
+                    <Tab eventKey="data" title="ข้อมูล">
+                      <DataB2B />
+                    </Tab>
+                    <Tab eventKey="history-service" title="ประวัติรับบริการ">
+                      <History />
+                    </Tab>
+                    <Tab eventKey="view-all" title="ภาพรวม">
+                      <ViewAll />
+                    </Tab>
+                    <Tab eventKey="damagereport" title="บันทึกความเสียหาย">
+                      <DamageReport />
+                    </Tab>
+                  </Tabs>
                 </Col>
               </div>
             </div>

@@ -123,12 +123,12 @@ function App() {
         <Route path="/usercreate" component={UserCreate} />
         <Route path="/edituser" component={EditUser} />
         <Route path="/member/information" component={MemberInformation} />
-        <Route path="/addcar" component={AddCar} />
+        <Route path="/member/addcar" component={AddCar} />
         <Route
           path="/member/justic-information"
           component={JusticInformation}
         />
-        <Route path="/membercreate" component={MemberCreate} />
+        <Route path="/member/add" component={MemberCreate} />
         <Route path="/b2b" component={B2BCompany} exact />
         <Route path="/b2b/detail" component={DetailB2B} />
         <Route path="/package/add-wash-part" component={AddWashPart} />

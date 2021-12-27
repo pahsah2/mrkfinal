@@ -11,7 +11,7 @@ import {
 import '../../assets/scss/style-component.scss';
 import Search from '../../assets/icon/iconfinder-search.png';
 import Return from '../../assets/icon/undo_icon.png';
-import Increase from '../../assets/icon/increase.png';
+import Increase from '../../assets/icon/add_menu.png';
 import Select, { components } from 'react-select';
 import Arrow from '../../assets/icon/arrow.png';
 import Document from '../../assets/icon/document.png';

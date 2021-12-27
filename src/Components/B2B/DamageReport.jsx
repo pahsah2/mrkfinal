@@ -36,8 +36,8 @@ export default function DamageReport() {
         <Row className="section1">
           <Col lg={6} className="justify-content-start">
             <Form>
-              <Row>
-                <Col xs={12} lg={5} className="d-flex justify-content-start">
+              <Row className="align-items-center">
+                <Col xs={12} lg={6} className="justify-content-start mt-2 mb-2">
                   <Select
                     className="text-left select-style"
                     aria-label="Default select example"
@@ -46,7 +46,7 @@ export default function DamageReport() {
                   />
                 </Col>
 
-                <Col lg={4} className="d-flex justify-content-start">
+                <Col lg={6} className=" justify-content-start mt-2 ">
                   <DatePicker
                     onChange={onChange}
                     placeholder=""
@@ -108,14 +108,14 @@ export default function DamageReport() {
           <Col lg={6} className="d-flex justify-content-end">
             <div className="view-damage-hour">
               <Row>
-                <Col lg={6} className="d-flex justify-content-center">
+                <Col xs={6} lg={6} className="d-flex justify-content-center">
                   <Row>
                     <p className="title">มูลค่าความเสียหาย</p>
                     <p className="point">2,700</p>
                     <p className="unit">บาท</p>
                   </Row>
                 </Col>
-                <Col lg={6} className="d-flex justify-content-center">
+                <Col xs={6} lg={6} className="d-flex justify-content-center">
                   <Row>
                     <p className="title">ระยะเวลา </p>
                     <p className="point">4.5</p>
@@ -129,19 +129,16 @@ export default function DamageReport() {
 
         <Row className="">
           <Col lg={12}>
-            <Row>
-              <Col lg={2} className="d-flex justify-content-start">
+            <Row className="align-items-center">
+              <Col xs={6} lg={3} className="justify-content-start">
                 <DatePicker
                   onChange={onChange}
                   placeholder=""
                   suffixIcon={<img src={Calendar} />}
                 />
               </Col>
-              <Col
-                lg={2}
-                className="d-flex justify-content-start align-items-center set-button-position"
-              >
-                <Button type="button" className="increase search-button">
+              <Col xs={6} lg={3} className="justify-content-start ">
+                <Button type="button" className="button m-0">
                   <img src={Search} />
                   <span> ค้นหา </span>
                 </Button>

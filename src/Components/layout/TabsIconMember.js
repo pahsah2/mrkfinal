@@ -47,7 +47,7 @@ export default function TabsIconMember() {
         <Button>
           <img src={chart1_4} alt="" />
         </Button>
-        <Link to="/membercreate">
+        <Link to="/member/add">
           <Button className="button-icon">เพิ่มรายชื่อ</Button>
         </Link>
       </Col>
