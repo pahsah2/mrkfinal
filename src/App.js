@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Dashbroad from './Dashbroad/Index';
+import Dashboard_data from './Dashbroad/Dashboard'
 import Package from './Package/Index';
 import ProductManage from './ProductManage/Index';
 import Member from './Member/Index';
@@ -114,8 +115,9 @@ function App() {
       <Switch>
         {/* <Route path="/" component={Login} /> */}
         {/* <Route path="/" component={login} /> */}
-
         <Route path="/" component={Dashbroad} exact />
+        <Route path="/dashboard" component={Dashboard_data} />
+
         <Route path="/test" component={TestImage} />
         <Route path="/package" component={Package} exact />
         <Route path="/productmanage" component={ProductManage} />
@@ -162,7 +164,6 @@ function App() {
         <Route path="/property" component={Property} exact />
         {/*    property  > :id */}
         <Route path="/property/data-property" component={DataProperty} />
-
         <Route path="/property/add-storage" component={AddStorageProperty} />
         <Route path="/stock" component={Stock} exact />
         <Route path="/stock/history" component={Stock_History} />
@@ -185,7 +186,6 @@ function App() {
           path="/stock/data-purchase-order"
           component={DataPurchaseOrder}
         />
-
         <Route path="/setting/type-cars" component={Setting_TypeCars} />
         <Route path="/setting/division" component={Setting_Division} />
         <Route
@@ -209,28 +209,22 @@ function App() {
         <Route path="/setting/bank/edit-bank" component={Setting_Edit_Bank} />
         <Route path="/setting/bank/edit-bank2" component={Setting_Edit_Bank2} />
         <Route path="/setting/add-level" component={Setting_Add_Level} />
-
         <Route path="/setting/test" component={Test} />
-
         <Route path="/job" component={Job} exact />
         <Route path="/job/inside-data" component={Job_Inside_Data} />
         <Route path="/job/inside-create" component={Job_Inside} />
         <Route path="/job/order" component={Job_Order} />
-
         <Route path="/job/company-b2b-show-room" component={Job_B2b_ShowRoom} />
         <Route path="/job/company-b2b-member" component={Job_B2b_Member} />
         <Route path="/job/company-b2b-package" component={Job_B2B_Package} />
         <Route path="/job/company-b2b-order" component={Job_B2B_Order} />
-
         <Route path="/bill" component={Bill} exact />
         <Route path="/bill/accept-payment" component={AcceptPayment} />
-
         <Route path="/report" component={Report} />
         <Route path="/notification" component={Notification} exact />
         <Route path="/notification/:id" component={Order_Discount} />
         <Route path="/appointment" component={Appointment} exact />
         <Route path="/appointment/:id" component={Appointment_ID} />
-
         {/* ///////// Branch สาขา */}
         <Route path="/branch/profile" component={Profile_Branch} />
         <Route
@@ -254,18 +248,15 @@ function App() {
           component={Stock_Recive_Branch}
           exact
         />
-
         <Route path="/branch/stock/adjust" component={Stock_Adjust_Branch} />
         <Route
           path="/branch/stock/transfer-store"
           component={Stock_TransferStore_Branch}
         />
-
         <Route
           path="/branch/stock/cutstock"
           component={Stock_CutStock_Branch}
         />
-
         <Route
           path="/branch/stock/receive/order-to-stock"
           component={Stock_OrderToStock_branch}
@@ -280,7 +271,6 @@ function App() {
           path="/branch/stock/receive/admit/:id"
           component={Stock_Admit_Data_Branch}
         />
-
         <Route
           path="/branch/stock/receive/order-to-stock/:id"
           component={Stock_OrderToStock_Data_Branch}
