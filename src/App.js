@@ -36,6 +36,7 @@ import AddStaff from './Staff/AddStaff';
 import EditStaff from './Staff/EditStaff';
 import Management from './Management/Index';
 import ManagementEdit from './Management/Edit';
+import ManageMentDashBoard from './Management/Dashboard';
 import Profile from './Profile/Index';
 import Property from './Property/Index';
 import DataProperty from './Property/DataProperty';
@@ -156,6 +157,7 @@ function App() {
         <Route path="/staff/edit-staff" component={EditStaff} />
         <Route path="/management" component={Management} exact />
         <Route path="/management/edit" component={ManagementEdit} />
+        <Route path="/management/dashboard" component={ManageMentDashBoard} />
         <Route path="/profile" component={Profile} />
         <Route path="/property" component={Property} exact />
         {/*    property  > :id */}

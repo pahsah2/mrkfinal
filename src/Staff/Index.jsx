@@ -18,7 +18,6 @@ import Staff from '../assets/icon/staff.png';
 import Service from '../assets/icon/management.png';
 import Write from '../assets/icon/flat-style-circle-write.png';
 import Key_staff from '../assets/icon/key-fix.png';
-
 export default function Index() {
   const history = useHistory();
 
@@ -72,9 +71,9 @@ export default function Index() {
                 <Row className="g-0 justify-content-center">
                   <MenuStaff />
                 </Row>
-                <Row className="g-0 justify-content-center">
-                  <Row
-                    className=" mt-3"
+                <Row className="g-0 justify-content-center m-0">
+                  <Col
+                    className=" mt-3 p-0"
                     style={{ overflow: 'scroll', height: '500px' }}
                   >
                     <table className="table table-responsive table-wash-part ">
@@ -103,7 +102,7 @@ export default function Index() {
                         </tr>
                       </tbody>
                     </table>
-                  </Row>
+                  </Col>
                 </Row>
                 <Row className="g-0 mt-3 mb-3">
                   <Col className="d-flex justify-content-start set-page-service">

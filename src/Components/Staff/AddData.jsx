@@ -246,6 +246,7 @@ export default function AddData() {
                   onChange={onChange}
                   placeholder=""
                   suffixIcon={<img src={Calendar} />}
+                  style={{ borderRadius: '0' }}
                 />
               </Col>
             </Row>

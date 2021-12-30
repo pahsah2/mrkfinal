@@ -25,6 +25,7 @@ import Key_staff from '../assets/icon/key-fix.png';
 import DamageReport from '../Components/Staff/DamageReport';
 import Log from '../Components/Staff/Log';
 import Data from '../Components/Staff/Data';
+import Dashboard from '../Components/Staff/Dashboard';
 export default function Index() {
   const history = useHistory();
 
@@ -96,7 +97,9 @@ export default function Index() {
                         <Tab eventKey="Log" title="Log">
                           <Log />
                         </Tab>
-                        <Tab eventKey="Dashboard" title="Dashboard"></Tab>
+                        <Tab eventKey="Dashboard" title="Dashboard">
+                          <Dashboard />
+                        </Tab>
                       </Tabs>
                     </div>
                   </Col>

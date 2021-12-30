@@ -242,19 +242,19 @@ export default function Viewall() {
     <>
       <Container fluid className="view-all-b2b">
         <Row className="set-row-b2b">
-          <Col lg={6} className="set-col-b2b title-view-all">
+          <Col lg={6} className="set-col-b2b title-view-all mt-3 mb-3">
             <div className="set-div div-name">
               <p>ภาพรวม</p>
               <p>บริษัท เจริญมอเตอร์เบนซ์ จำกัด</p>
             </div>
           </Col>
-          <Col lg={3} className="set-col-b2b income">
+          <Col xs={6} lg={3} className="set-col-b2b income mt-3 mb-3">
             <div className="set-div">
               <p>รายรับ</p>
               <p>5,300,000 บาท</p>
             </div>
           </Col>
-          <Col lg={3} className="set-col-b2b number-car">
+          <Col xs={6} lg={3} className="set-col-b2b number-car mt-3 mb-3">
             <div className="set-div">
               <p>จำนวนรถ</p>
               <p>150 คัน</p>
@@ -262,34 +262,38 @@ export default function Viewall() {
           </Col>
         </Row>
         <Row className="set-row-chart">
-          <div className="set-div-chart  bar-chart">
+          <div className="set-div-chart  ">
             <Row>
-              <Col lg={6} className="d-flex justify-content-start">
+              <Col xs={12} lg={6} className="text-left">
                 <p className="sales-title">
                   ยอดขาย บริษัท เจริญมอเตอร์เบนซ์ จำกัด
                 </p>
               </Col>
-              <Col lg={6} className="d-flex justify-content-end ">
-                <span className="annual-text">รายรับประจำปี</span>
-                <Space direction="vertical" size={12}>
-                  <DatePicker
-                    onChange={onChange_year}
-                    picker="year"
-                    suffixIcon={<img src={Down} />}
-                  />
-                </Space>
+              <Col xs={12} lg={6} className="">
+                <Row>
+                  <Col className="d-flex justify-content-end align-items-center">
+                    <p className="annual-text">รายรับประจำปี</p>
+                  </Col>
+                  <Col>
+                    <DatePicker
+                      onChange={onChange_year}
+                      picker="year"
+                      suffixIcon={<img src={Down} />}
+                    />
+                  </Col>
+                </Row>
               </Col>
             </Row>
-            <Row>
-              <Col className="d-flex justify-content-center">
-                <div className="set-apex" id="chart">
+            <Row className="">
+              <Col className="">
+                <center>
                   <ReactApexChart
                     options={optionsLine}
                     series={seriesLine}
                     type="line"
-                    width={800}
+                    width="60%"
                   />
-                </div>
+                </center>
               </Col>
             </Row>
           </div>
@@ -297,40 +301,49 @@ export default function Viewall() {
         <Row className="set-row-chart">
           <div className="set-div-chart">
             <Row>
-              <Col lg={6} className="d-flex justify-content-start">
+              <Col sm={6} lg={6} className="text-left">
                 <p className="sales-title">เปรียบเทียบยอดขายแต่ละบริการ</p>
               </Col>
-              <Col lg={6} className="d-flex justify-content-end ">
-                <Space direction="vertical" size={12}>
-                  <RangePicker
-                    ranges={{
-                      Today: [moment(), moment()],
-                      'This Month': [
-                        moment().startOf('month'),
-                        moment().endOf('month'),
-                      ],
-                    }}
-                    onChange={onChange}
-                    suffixIcon={<img src={Calendar} />}
-                    separator="-"
-                  />
-                </Space>
+              <Col sm={6} lg={3} className="">
+                <Row>
+                  <Col></Col>
+                  <Col>
+                    <RangePicker
+                      ranges={{
+                        Today: [moment(), moment()],
+                        'This Month': [
+                          moment().startOf('month'),
+                          moment().endOf('month'),
+                        ],
+                      }}
+                      onChange={onChange}
+                      suffixIcon={<img src={Calendar} />}
+                      separator="-"
+                    />
+                  </Col>
+                </Row>
               </Col>
             </Row>
             <Row>
-              <Col className="d-flex justify-content-center">
-                <div className="set-apex" id="pie">
-                  <Pie
-                    options={options}
-                    series={series}
-                    type="pie"
-                    width={580}
-                  />
-                  <div className="sum-all">
-                    <p className="sum-sales">รวมยอดขาย 6,121,000 บาท</p>
-                    <p className="sum-sales">จำนวน 310 คัน</p>
-                  </div>
-                </div>
+              <Col className="">
+                <Row className="justify-content-center">
+                  <Col lg={10}>
+                    <center>
+                      <Pie
+                        options={options}
+                        series={series}
+                        type="pie"
+                        width="60%"
+                      />
+                    </center>
+                  </Col>
+                  <Col className="d-flex align-items-center">
+                    <div className="sum-all text-left">
+                      <p className="sum-sales">รวมยอดขาย 6,121,000 บาท</p>
+                      <p className="sum-sales">จำนวน 310 คัน</p>
+                    </div>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </div>
@@ -338,36 +351,39 @@ export default function Viewall() {
         <Row className="set-row-chart ">
           <div className="set-div-chart bar-chart">
             <Row>
-              <Col lg={6} className="d-flex justify-content-start">
+              <Col sm={6} lg={6} className="d-flex justify-content-start">
                 <p className="sales-title">ภาพรวมยอดขายพนักงาน</p>
               </Col>
-              <Col lg={6} className="d-flex justify-content-end ">
-                <Space direction="vertical" size={12}>
-                  <RangePicker
-                    ranges={{
-                      Today: [moment(), moment()],
-                      'This Month': [
-                        moment().startOf('month'),
-                        moment().endOf('month'),
-                      ],
-                    }}
-                    onChange={onChange}
-                    suffixIcon={<img src={Calendar} />}
-                    separator="-"
-                  />
-                </Space>
+              <Col sm={6} lg={6} className="d-flex justify-content-end ">
+                <Row>
+                  <Col></Col>
+                  <Col>
+                    <RangePicker
+                      ranges={{
+                        Today: [moment(), moment()],
+                        'This Month': [
+                          moment().startOf('month'),
+                          moment().endOf('month'),
+                        ],
+                      }}
+                      onChange={onChange}
+                      suffixIcon={<img src={Calendar} />}
+                      separator="-"
+                    />
+                  </Col>
+                </Row>
               </Col>
             </Row>
             <Row className="">
-              <Col className="d-flex justify-content-center">
-                <div className="set-apex" id="chart">
+              <Col className="">
+                <center>
                   <ReactApexChart
                     options={optionsColum}
                     series={seriesColum}
                     type="bar"
-                    width={820}
+                    width="80%"
                   />
-                </div>
+                </center>
               </Col>
             </Row>
           </div>
@@ -382,7 +398,7 @@ export default function Viewall() {
                 <Row>
                   <Col
                     lg={6}
-                    className="d-flex justify-content-end set-text-chart-line"
+                    className="d-flex justify-content-end set-text-chart-line mt-3 mb-3"
                   >
                     <Col lg={5}>
                       <p className="text-chart-line">พนักงานขาย</p>
@@ -399,7 +415,7 @@ export default function Viewall() {
                   </Col>
                   <Col
                     lg={6}
-                    className="d-flex justify-content-end set-text-chart-line"
+                    className="d-flex justify-content-end set-text-chart-line mt-3 mb-3"
                   >
                     <Col lg={5}>
                       <p className="text-chart-line">รายรับประจำปี</p>
@@ -415,14 +431,14 @@ export default function Viewall() {
               </Col>
             </Row>
             <Row>
-              <div className="set-apex" id="chart">
+              <Col>
                 <ReactApexChart
                   options={optionsLine2}
                   series={seriesLine2}
                   type="line"
-                  height={350}
+                  height="80%"
                 />
-              </div>
+              </Col>
             </Row>
           </div>
         </Row>

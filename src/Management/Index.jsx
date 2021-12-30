@@ -73,9 +73,9 @@ export default function Index() {
                 <Row className="g-0 justify-content-center">
                   <MenuManagement />
                 </Row>
-                <Row className="g-0 justify-content-center">
-                  <Row
-                    className=" mt-3"
+                <Row className="g-0 justify-content-center m-0">
+                  <Col
+                    className=" mt-3 p-0"
                     style={{ overflow: 'scroll', height: '500px' }}
                   >
                     <table className="table table-responsive table-wash-part ">
@@ -110,7 +110,7 @@ export default function Index() {
                         </tr>
                       </tbody>
                     </table>
-                  </Row>
+                  </Col>
                 </Row>
                 <Row className="g-0 mt-3 mb-3">
                   <Col className="d-flex justify-content-start set-page-service">

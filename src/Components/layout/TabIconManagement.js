@@ -14,7 +14,7 @@ import network_normal_two_pcs_4 from '../../assets/icon/network_normal_two_pcs-4
 import chart1_4 from '../../assets/icon/chart1-4.png';
 import AddUser from '../../assets/icon/increase.png';
 import '../../assets/scss/style-component.scss';
-export default function TabIconManagement() {
+export default function TabIconManagement(props) {
   return (
     <Row className="">
       <Col
@@ -53,7 +53,7 @@ export default function TabIconManagement() {
           <Button>
             <img src={chart1_4} alt="" />
           </Button>
-          <Link to="/">
+          <Link to="/management/edit">
             <Button type="button" className="button-icon">
               <p>เพิ่มสาขา</p>
             </Button>

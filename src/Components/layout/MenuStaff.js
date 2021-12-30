@@ -78,14 +78,12 @@ export default function MenuStaff() {
       </Col>
       <Col className="d-flex justify-content-center mt-2 mb-2">
         <Button className="button-menu">
-          <img src={Search} />
-          <p>ค้นหา</p>
+          <img src={Search} /> &nbsp; ค้นหา
         </Button>
       </Col>
       <Col className="d-flex justify-content-center mt-2 mb-2">
         <Button className="button-menu" onClick={reset_value}>
-          <img src={Return} />
-          <p>คืนค่า</p>
+          <img src={Return} /> &nbsp; คืนค่า
         </Button>
       </Col>
     </Row>
