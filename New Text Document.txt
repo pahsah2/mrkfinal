@@ -17,3 +17,17 @@
 const [product, setProduct] = useState(true);
   const [service, setService] = useState(false);
   const [Package, setPackage] = useState(false);
+
+ const [city, setCity] = useState([{ value: '', label: '' }]);
+  const [district, setDistrict] = useState([{ value: '', label: '' }]);
+
+const SetCity = (data) => {
+    setCity([{ value: data.value, label: data.value }]);
+  };
+
+const SetDistrict = (data) => {
+    setDistrict([{ value: data.value, label: data.value }]);
+  };
+
+  const OptionCity = [{ value: 'เชียงใหม่', label: 'เชียงใหม่' }];
+  const OptionDistrict = [{ value: 'เมือง', label: 'เมือง' }];

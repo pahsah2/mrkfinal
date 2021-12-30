@@ -15,6 +15,8 @@ import TabIconManagement from '../Components/layout/TabIconManagement';
 import MenuManagement from '../Components/layout/MenuManagement';
 import Back from '../assets/icon/back.png';
 import Staff from '../assets/icon/staff.png';
+import DRefresh from '../assets/icon/d-refresh.png';
+import DSearch from '../assets/icon/d-search.png';
 import Service from '../assets/icon/management.png';
 import Branch_manage from '../assets/icon/branch-manage.png';
 import Write from '../assets/icon/flat-style-circle-write.png';
@@ -32,7 +34,7 @@ export default function Dashboard() {
   const { RangePicker } = DatePicker;
 
   const [optionsArea, setOptionsArea] = useState({
-    colors: ['#4E79A7', '#5D00A4'],
+    colors: ['#422F8A', '#b4a7d6'],
     chart: {
       height: 350,
       type: 'area',
@@ -46,18 +48,29 @@ export default function Dashboard() {
     xaxis: {
       type: 'datetime',
       categories: [
-        '2018-09-19T00:00:00.000Z',
-        '2018-09-19T01:30:00.000Z',
-        '2018-09-19T02:30:00.000Z',
-        '2018-09-19T03:30:00.000Z',
-        '2018-09-19T04:30:00.000Z',
-        '2018-09-19T05:30:00.000Z',
-        '2018-09-19T06:30:00.000Z',
+        '2018-09-01T',
+        '2018-09-02T',
+        '2018-09-03T',
+        '2018-09-04T',
+        '2018-09-05T',
+        '2018-09-06T',
+        '2018-09-07T',
+        '2018-09-08T',
+        '2018-09-09T',
+        '2018-09-10T',
+        '2018-09-11T',
+        '2018-09-12T',
+        '2018-09-13T',
+        '2018-09-14T',
+        '2018-09-15T',
+        '2018-09-16T',
+        '2018-09-17T',
+        '2018-09-18T',
       ],
     },
     tooltip: {
       x: {
-        format: 'dd/MM/yy HH:mm',
+        format: 'dd/MM/yy',
       },
     },
   });
@@ -72,13 +85,166 @@ export default function Dashboard() {
     },
   ]);
 
+  const [seriesBranch, setSeriesBranch] = useState([
+    {
+      name: 'สาขาสวนดอก',
+      data: [267000, 560200, 280000, 510000, 820000, 109000],
+    },
+    {
+      name: 'สาขาอาเขต',
+      data: [500, 1002, 2500, 3200, 340000, 520],
+    },
+    {
+      name: 'สาขาสันทราย',
+      data: [1500, 20002, 41500, 6200, 34000, 5200],
+    },
+  ]);
   const [options, setOptions] = useState({
-    colors: ['#4E79A7', '#F28E2B', '#E15759'],
+    colors: ['#ABA2D2', '#5943BA', '#422F8A'],
     chart: {
       width: 380,
       type: 'pie',
     },
-    labels: ['แพคเกจ', 'บริการ', 'สินค้า'],
+    labels: ['แพคเกจ', 'สินค้า', 'บริการ'],
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: 'bottom',
+          },
+        },
+      },
+    ],
+  });
+  const [optionsBranch, setOptionsBranch] = useState({
+    colors: ['#422F8A', '#ABA2D2', '#5943BA'],
+    chart: {
+      width: 380,
+      type: 'pie',
+    },
+    stroke: { curve: 'line' },
+    labels: [
+      'แพคเกจ A',
+      'แพคเกจ B',
+      'แพคเกจ C',
+      'แพคเกจ D',
+      'แพคเกจ E',
+      'แพคเกจ F',
+    ],
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: 'bottom',
+          },
+        },
+      },
+    ],
+  });
+  const [optionsTotalBranch, setOptionsTotalBranch] = useState({
+    colors: ['#422F8A', '#ABA2D2', '#5943BA'],
+    chart: {
+      height: 350,
+      type: 'line',
+      zoom: {
+        enabled: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: 'smooth',
+    },
+    title: {
+      text: '',
+      align: 'left',
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5,
+      },
+    },
+    xaxis: {
+      type: 'datetime',
+      categories: [
+        '2018-09-01T',
+        '2018-09-02T',
+        '2018-09-03T',
+        '2018-09-04T',
+        '2018-09-05T',
+        '2018-09-06T',
+        '2018-09-07T',
+        '2018-09-08T',
+        '2018-09-09T',
+        '2018-09-10T',
+        '2018-09-11T',
+        '2018-09-12T',
+        '2018-09-13T',
+        '2018-09-14T',
+        '2018-09-15T',
+        '2018-09-16T',
+        '2018-09-17T',
+        '2018-09-18T',
+      ],
+    },
+    tooltip: {
+      x: {
+        format: 'dd/MM/yy',
+      },
+    },
+  });
+  const [optionsProductBranch, setOptionsProductBranch] = useState({
+    colors: ['#422F8A', '#ABA2D2', '#5943BA'],
+    chart: {
+      width: 380,
+      type: 'pie',
+    },
+    labels: [
+      'สินค้า A',
+      'สินค้า B',
+      'สินค้า C',
+      'สินค้า D',
+      'สินค้า E',
+      'สินค้า F',
+    ],
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: 'bottom',
+          },
+        },
+      },
+    ],
+  });
+  const [optionsServiceBranch, setOptionsServiceBranch] = useState({
+    colors: ['#422F8A', '#ABA2D2', '#5943BA'],
+    chart: {
+      width: 380,
+      type: 'pie',
+    },
+    labels: [
+      'บริการ A',
+      'บริการ B',
+      'บริการ C',
+      'บริการ D',
+      'บริการ E',
+      'บริการ F',
+    ],
     responsive: [
       {
         breakpoint: 480,
@@ -159,6 +325,39 @@ export default function Dashboard() {
   });
 
   const [series, setSeries] = useState([20, 20, 60]);
+  const [seriesBar, setSeriesBar] = useState([
+    {
+      data: [400, 430, 448, 470, 540, 580, 690, 1100],
+    },
+  ]);
+  const [optionsBar, setOptionsBar] = useState({
+    colors: ['#5D00A4'],
+    chart: {
+      type: 'bar',
+      height: 350,
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        horizontal: true,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    xaxis: {
+      categories: [
+        'HONDA',
+        'BENZ',
+        'TOYOTA',
+        'BMW ',
+        'MAZDA',
+        'PORSCHE ',
+        'ISUZU',
+        'OTHER',
+      ],
+    },
+  });
   const [seriesPackage, setSeriesPackage] = useState([20, 20, 60]);
   const [seriesService, setSeriesService] = useState([20, 20, 60]);
   const [seriesProduct, setSeriesProduct] = useState([20, 20, 60]);
@@ -222,7 +421,7 @@ export default function Dashboard() {
                 </Row>
                 <div className="bg-dashboard ">
                   <Row className="justify-content-end ">
-                    <Col className="mt-3 mb-3 d-flex justify-content-end">
+                    <Col className="mt-4 mb-3 d-flex justify-content-end">
                       <RangePicker
                         ranges={{
                           Today: [moment(), moment()],
@@ -242,21 +441,228 @@ export default function Dashboard() {
                         }}
                       />
                     </Col>
-                    <Col lg={2} className="mt-3 mb-3">
-                      <Button className="button-image"></Button>
+                    <Col lg={1} className="mt-4 mb-3 p-0">
+                      <Button
+                        className="button-image"
+                        style={{ boxshadown: 'none' }}
+                      >
+                        <img src={DRefresh} />
+                      </Button>
                     </Col>
-                    <Col lg={2} className="mt-3 mb-3">
-                      <Button className="button-image"></Button>
+                    <Col lg={1} className="mt-4 mb-3 p-0">
+                      <Button className="button-image">
+                        <img src={DSearch} />
+                      </Button>
                     </Col>
+                  </Row>
+                  <Row className="set-row-chart p-0">
+                    <div className="set-div-chart">
+                      <Col xs={12} className="p-0">
+                        <Row>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <h3 className="text-size-appointment">รายรับ</h3>
+                              <p className="text-size-appointment">
+                                189,256 บาท
+                              </p>
+                            </div>
+                          </Col>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>ระหว่างดำเนินการ</p>
+                              </Col>
+                              <Col>
+                                <Row>
+                                  <Col xs={12}>
+                                    <p>89</p>
+                                  </Col>
+                                  <Col xs={12}>
+                                    <p>รายการ</p>
+                                  </Col>
+                                </Row>
+                              </Col>
+                              <Col>
+                                <p>มูลค่างาน 45,564 บาท</p>
+                              </Col>
+                            </div>
+                          </Col>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>รอชำระ</p>
+                              </Col>
+                              <Col>
+                                <Row>
+                                  <Col xs={12}>
+                                    <p>13</p>
+                                  </Col>
+                                  <Col xs={12}>
+                                    <p>รายการ</p>
+                                  </Col>
+                                </Row>
+                              </Col>
+                              <Col>
+                                <p>มูลค่างาน 35,564 บาท</p>
+                              </Col>
+                            </div>
+                          </Col>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>ชำระแล้ว</p>
+                              </Col>
+                              <Col>
+                                <Row>
+                                  <Col xs={12}>
+                                    <p>120</p>
+                                  </Col>
+                                  <Col xs={12}>
+                                    <p>รายการ</p>
+                                  </Col>
+                                </Row>
+                              </Col>
+                              <Col>
+                                <p>มูลค่างาน 95,564 บาท</p>
+                              </Col>
+                            </div>
+                          </Col>
+                        </Row>
+                      </Col>
+                    </div>
+                  </Row>
+                  <Row className="set-row-chart p-0 mt-4">
+                    <div className="set-div-chart">
+                      <Col xs={12} className="p-0">
+                        <Row>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>ลูกค้า</p>
+                              </Col>
+                              <Col>
+                                <p>15,889</p>
+                              </Col>
+                              <Col>
+                                <p>ราย</p>
+                              </Col>
+                            </div>
+                          </Col>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>ลูกค้าใหม่</p>
+                              </Col>
+                              <Col>
+                                <p>158</p>
+                              </Col>
+                              <Col>
+                                <p>ราย</p>
+                              </Col>
+                            </div>
+                          </Col>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>ลูกค้าเก่า</p>
+                              </Col>
+                              <Col>
+                                <p>320</p>
+                              </Col>
+                              <Col>
+                                <p>ราย</p>
+                              </Col>
+                            </div>
+                          </Col>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>ไม่มีความเคลื่อนไหว </p>
+                              </Col>
+                              <Col>
+                                <p>120</p>
+                              </Col>
+                              <Col>
+                                <p>ราย</p>
+                              </Col>
+                            </div>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col xs={12} className="p-0">
+                        <Row>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>จำนวนรถ</p>
+                              </Col>
+                              <Col>
+                                <p>15,889</p>
+                              </Col>
+                              <Col>
+                                <p>คัน</p>
+                              </Col>
+                            </div>
+                          </Col>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>รถใหม่</p>
+                              </Col>
+                              <Col>
+                                <p>158</p>
+                              </Col>
+                              <Col>
+                                <p>คัน</p>
+                              </Col>
+                            </div>
+                          </Col>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>ใช้บริการ</p>
+                              </Col>
+                              <Col>
+                                <p>320</p>
+                              </Col>
+                              <Col>
+                                <p>คัน</p>
+                              </Col>
+                            </div>
+                          </Col>
+                          <Col xs={6} md={3} className="mt-3 mb-3">
+                            <div className="set-div">
+                              <Col>
+                                <p>ไม่มีความเคลื่อนไหว </p>
+                              </Col>
+                              <Col>
+                                <p>120</p>
+                              </Col>
+                              <Col>
+                                <p>ราย</p>
+                              </Col>
+                            </div>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col xs={12}>
+                        <ReactApexChart
+                          options={optionsBar}
+                          series={seriesBar}
+                          type="bar"
+                          height={500}
+                        />
+                      </Col>
+                    </div>
                   </Row>
                   <Row className="set-row-chart p-0 mt-4 mb-4">
                     <div className="set-div-chart  ">
                       <Row>
                         <Col xs={12} lg={6} className="text-left">
-                          <p className="sales-title">ยอดขายสาขาสวนดอก</p>
+                          <p className="sales-title">ยอดขายรวม</p>
                         </Col>
                         <Col xs={12} lg={6} className="">
-                          <Row>
+                          {/* <Row>
                             <Col className="d-flex justify-content-end align-items-center">
                               <p className="annual-text">รายรับประจำปี</p>
                             </Col>
@@ -280,7 +686,7 @@ export default function Dashboard() {
                                 }}
                               />
                             </Col>
-                          </Row>
+                          </Row> */}
                         </Col>
                       </Row>
                       <Row className="">
@@ -291,6 +697,28 @@ export default function Dashboard() {
                               series={seriesArea}
                               type="area"
                               width="100%"
+                            />
+                          </center>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Row>
+                  <Row className="set-row-chart p-0 mt-4 mb-4">
+                    <div className="set-div-chart  ">
+                      <Row>
+                        <Col xs={12} lg={6} className="text-left">
+                          <p className="sales-title">ยอดขายแต่ละสาขา</p>
+                        </Col>
+                        <Col xs={12} lg={6} className=""></Col>
+                      </Row>
+                      <Row className="">
+                        <Col className="">
+                          <center>
+                            <ReactApexChart
+                              options={optionsTotalBranch}
+                              series={seriesBranch}
+                              type="line"
+                              height={350}
                             />
                           </center>
                         </Col>
@@ -309,7 +737,7 @@ export default function Dashboard() {
                           <Row>
                             <Col></Col>
                             <Col>
-                              <RangePicker
+                              {/* <RangePicker
                                 ranges={{
                                   Today: [moment(), moment()],
                                   'This Month': [
@@ -326,7 +754,7 @@ export default function Dashboard() {
                                   boxShadow: 'none ',
                                   height: '50px',
                                 }}
-                              />
+                              /> */}
                             </Col>
                           </Row>
                         </Col>
@@ -469,6 +897,77 @@ export default function Dashboard() {
                       <Col xs={12} className="p-0">
                         <Row className="align-items-center mb-3">
                           <Col className="text-left">
+                            <p className="sales-title">ยอดขายแพคเกจแต่ละสาขา</p>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col xs={12} className="p-0">
+                        <ReactApexChart
+                          options={optionsBranch}
+                          series={seriesBranch}
+                          type="line"
+                          height={350}
+                        />
+                      </Col>
+                    </div>
+                  </Row>
+                  <Row className="set-row-chart">
+                    <div className="set-div-chart">
+                      <Col xs={12} className="p-0">
+                        <Row className="align-items-center mb-3">
+                          <Col className="text-left">
+                            <p className="sales-title">ยอดขายสินค้าแต่ละสาขา</p>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col xs={12} className="p-0">
+                        <ReactApexChart
+                          options={optionsProductBranch}
+                          series={seriesBranch}
+                          type="line"
+                          height={350}
+                        />
+                      </Col>
+                    </div>
+                  </Row>
+                  <Row className="set-row-chart">
+                    <div className="set-div-chart">
+                      <Col xs={12} className="p-0">
+                        <Row className="align-items-center mb-3">
+                          <Col className="text-left">
+                            <p className="sales-title">ยอดใช้บริการแต่ละสาขา</p>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col xs={12} className="p-0">
+                        <ReactApexChart
+                          options={optionsServiceBranch}
+                          series={seriesBranch}
+                          type="line"
+                          height={350}
+                        />
+                      </Col>
+                    </div>
+                  </Row>
+                  <Row className="set-row-chart">
+                    <div className="set-div-chart">
+                      <Col xs={12} className="p-0">
+                        <Row className="align-items-center mb-3">
+                          <Col className="text-left">
+                            <p className="sales-title">
+                              ฐานลูกค้าแยกพื้นที่อำเภอ
+                            </p>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col xs={12} className="p-0"></Col>
+                    </div>
+                  </Row>
+                  <Row className="set-row-chart">
+                    <div className="set-div-chart">
+                      <Col xs={12} className="p-0">
+                        <Row className="align-items-center mb-3">
+                          <Col className="text-left">
                             <p className="sales-title">นัดหมาย</p>
                           </Col>
                           <Col>
@@ -521,6 +1020,73 @@ export default function Dashboard() {
                           </Col>
                         </Row>
                       </Col>
+                    </div>
+                  </Row>
+                  <Row className="set-row-chart">
+                    <div className="set-div-chart">
+                      <Row>
+                        <Col xs={6}>
+                          <Row>
+                            <Col xs={12}>
+                              <p>สินค้าที่ใกล้หมด</p>
+                            </Col>
+                            <Col xs={12}>line</Col>
+                            <Col xs={12}>
+                              <Row>
+                                <Col>
+                                  <div>
+                                    <p>น้ำยาล้างรถ</p>
+                                  </div>
+                                </Col>
+                                <Col>
+                                  <div>
+                                    <p>น้ำยาเช็ดกระจก</p>
+                                  </div>
+                                </Col>
+                                <Col>
+                                  <div>
+                                    <p>น้ำยาเช็ดคราบ</p>
+                                  </div>
+                                </Col>
+                              </Row>
+                            </Col>
+                          </Row>
+                        </Col>
+                        <Col xs={6}>
+                          <Row>
+                            <Col xs={12}>
+                              <p>สินค้าหมด</p>
+                            </Col>
+                            <Col xs={12}>line</Col>
+                            <Col xs={12}>
+                              <Row>
+                                <Col>
+                                  <div>
+                                    <p>น้ำยาเคลือบเงา</p>
+                                  </div>
+                                </Col>
+                                <Col>
+                                  <div>
+                                    <p>ฟองน้ำเช็ดรถ</p>
+                                  </div>
+                                </Col>
+                              </Row>
+                            </Col>
+                          </Row>
+                        </Col>
+                      </Row>
+                    </div>
+                  </Row>
+                  <Row className="set-row-chart">
+                    <div className="set-div-chart">
+                      <Col xs={12} className="p-0">
+                        <Row className="align-items-center mb-3">
+                          <Col className="text-left">
+                            <p className="sales-title">Reorder Point</p>
+                          </Col>
+                        </Row>
+                      </Col>
+                      <Col xs={12} className="p-0"></Col>
                     </div>
                   </Row>
                 </div>
