@@ -23,8 +23,8 @@ export default function AddJuristicPart() {
   const [organization, setOrganization] = useState('');
   const [iD_card, setID_card] = useState('');
   const [address_tax_invoices, setAddress_tax_invoices] = useState('');
-  const [city, setCity] = useState('');
-  const [district, setDistrict] = useState('');
+  const [city, setCity] = useState([{ value: '', label: '' }]);
+  const [district, setDistrict] = useState([{ value: '', label: '' }]);
   const [postcode, setPostcode] = useState('');
   const [email, setEmail] = useState('');
   const [recommender, setRecommender] = useState('');
@@ -37,10 +37,13 @@ export default function AddJuristicPart() {
     { value: 'Autumn', label: 'Autumn', color: '#da3b01' },
     { value: 'Winter', label: 'Winter', color: '#004e8c' },
   ];
+  const OptionCity = [{ value: 'เชียงใหม่', label: 'เชียงใหม่' }];
+  const OptionDistrict = [{ value: 'เมือง', label: 'เมือง' }];
   const [loop, setLoop] = useState({
     sss: [{ count: 0 }],
   });
   const [value, setValue] = useState('');
+
   const handleSelect = (e) => {
     console.log(e);
     setValue(e);
@@ -55,6 +58,13 @@ export default function AddJuristicPart() {
     setDistrict(e);
   };
   const initialValues = {};
+  const SetCity = (data) => {
+    setCity([{ value: data.value, label: data.value }]);
+  };
+
+  const SetDistrict = (data) => {
+    setDistrict([{ value: data.value, label: data.value }]);
+  };
   return (
     <>
       <Container fluid className="component-create-member">
@@ -114,7 +124,16 @@ export default function AddJuristicPart() {
                 <Col lg={4} className="text-left">
                   <Form.Label>จังหวัด</Form.Label>
                 </Col>
-                <Col className="">ss</Col>
+                <Col className="">
+                  <Select
+                    options={OptionCity}
+                    placeholder=""
+                    isClearable={false}
+                    isSearchable={false}
+                    onChange={(data) => SetCity(data)}
+                    className="select-list"
+                  />
+                </Col>
               </Row>
             </Col>
             <Col lg={3} className="mt-3 mb-3">
@@ -122,7 +141,16 @@ export default function AddJuristicPart() {
                 <Col className="text-left" lg={3}>
                   <Form.Label>อำเภอ</Form.Label>
                 </Col>
-                <Col className="">ss</Col>
+                <Col className="">
+                  <Select
+                    options={OptionDistrict}
+                    placeholder=""
+                    isClearable={false}
+                    isSearchable={false}
+                    onChange={(data) => SetDistrict(data)}
+                    className="select-list"
+                  />
+                </Col>
               </Row>
             </Col>
             <Col lg={4} className="mt-3 mb-3">
@@ -256,19 +284,21 @@ export default function AddJuristicPart() {
             )}
           </Formik>
           <Row className="row-form-create-memeber comment-row mt-5">
-            <Col lg={4} className="d-flex justify-content-start">
-              <Col lg={3} className="d-flex justify-content-start">
-                <Form.Label>หมายเหตุ </Form.Label>
-              </Col>
-              <Col className="d-flex justify-content-start ">
-                <Form.Control
-                  as="textarea"
-                  placeholder=""
-                  style={{ height: '121px' }}
-                  value={comment}
-                  onChange={(e) => setComment(e.target.value)}
-                />
-              </Col>
+            <Col lg={4} className="">
+              <Row>
+                <Col lg={3} className="text-left">
+                  <Form.Label>หมายเหตุ </Form.Label>
+                </Col>
+                <Col className="">
+                  <Form.Control
+                    as="textarea"
+                    placeholder=""
+                    style={{ height: '121px' }}
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                  />
+                </Col>
+              </Row>
             </Col>
           </Row>
           <Row className="justify-content-between mt-5 mb-5">
