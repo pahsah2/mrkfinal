@@ -83,7 +83,7 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock User">
+      <Container fluid className="package-container Service Stock User bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">

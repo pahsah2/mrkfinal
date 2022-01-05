@@ -44,7 +44,10 @@ export default function MemberCreate() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock User Member">
+      <Container
+        fluid
+        className="package-container Service Stock User Member bg-mrk"
+      >
         <div className=" package">
           <div>
             <div className="modal-dialog modal-xl" role="document">

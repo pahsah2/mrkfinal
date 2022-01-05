@@ -1,26 +1,72 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Label, Input, Modal, ModalHeader, ModalBody, Table } from 'reactstrap';
-import { Container, Row, Col, Button, Form, Dropdown } from 'react-bootstrap';
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Form,
+  Dropdow,
+  Pagination,
+} from 'react-bootstrap';
 
 import Select from 'react-select';
 import note_car from '../../assets/icon/note-car.png';
 import add_menu from '../../assets/icon/add_menu.png';
+import View from '../../assets/icon/eye.png';
 export default function MemberPackage() {
   const [allSerach, setAllSerach] = useState('');
 
-  const [statemodel, setStatemodel] = useState('');
-  const [statebrand, setStatebrand] = useState('');
-  const [statepage, setStatepage] = useState();
+  const [statemodel, setStatemodel] = useState([{ value: '', label: '' }]);
+  const [statebrand, setStatebrand] = useState([{ value: '', label: '' }]);
+  const [licenseplate, setLicenseplate] = useState([{ value: '', label: '' }]);
+  const [statepage, setStatepage] = useState([{ value: '', label: '' }]);
 
-  const handleSelectBrand = (e) => setStatebrand(e);
-  const handleSelectModel = (e) => setStatemodel(e);
-  const handleSelectPage = (e) => setStatepage(e);
-  const onClear = (e) => {
+  const [stateplateSearch, setStateplateSearch] = useState({
+    plateSearch: 'not plate',
+  });
+
+  useEffect(() => {}, []);
+
+  function SetNumberPerPage(data) {
+    setStatepage({ value: data.value, label: data.value });
+  }
+  function Setlicenseplate(data) {
+    setLicenseplate({ value: data.value, label: data.value });
+  }
+  function SetBrand(data) {
+    setStatebrand({ value: data.value, label: data.value });
+  }
+  function SetModel(data) {
+    setStatemodel({ value: data.value, label: data.value });
+  }
+  const onClear = (data) => {
     setAllSerach('');
     // selectSegment.current.select.clearValue();
   };
   const search = () => {};
+
+  const optionLicensePlate = [
+    { value: 'แดง', label: 'แดง' },
+    { value: 'ขาว', label: 'ขาว' },
+    { value: 'ไม่มี', label: 'ไม่มี' },
+  ];
+  const optionBrand = [
+    { value: '', label: '' },
+    { value: '', label: '' },
+    { value: '', label: '' },
+  ];
+  const optionModel = [
+    { value: '', label: '' },
+    { value: '', label: '' },
+    { value: '', label: '' },
+  ];
+
+  const optionPage = [
+    { value: 'all', label: 'ทั้งหมด' },
+    { value: '10', label: '10' },
+    { value: '15', label: '15' },
+  ];
 
   return (
     <>
@@ -28,148 +74,134 @@ export default function MemberPackage() {
         <br />
 
         <div className="align-items-center">
-          <Row>
-            <Col lg={12} className="set-col-car-package">
-              <Col className="set-padding-search">
-                <Form.Control
-                  id="_input_search"
-                  className="search-btn-top"
-                  type="text"
-                  placeholder="ค้นหารหัสลูกค้า,ทะเบียนรถ,เบอร์โทรศัพท์"
-                  value={allSerach}
-                  onChange={(e) => setAllSerach(e.target.value)}
-                ></Form.Control>
-              </Col>
+          <Row className="justify-content-start align-items-center mb-3 ">
+            <Col xs={12} xl={2} className="set-padding-search mt-2 mb-2">
+              <Form.Control
+                id="_input_search"
+                className="input"
+                type="text"
+                placeholder="ค้นหารหัสลูกค้า,ทะเบียนรถ,เบอร์โทรศัพท์"
+                value={allSerach}
+                onChange={(e) => setAllSerach(e.target.value)}
+              ></Form.Control>
+            </Col>
 
-              <Col>
-                <Label className="search-label d-block d-lg-none">
-                  ยี่ห้อรถ
-                </Label>
+            <Col xs={12} xl={2} className="mt-2 mb-2 text-left">
+              <Label className="search-label d-block d-lg-none">ยี่ห้อรถ</Label>
+              <Select
+                options={optionBrand}
+                placeholder="ยี่ห้อรถ"
+                isClearable={false}
+                isSearchable={false}
+                onChange={(data) => SetBrand(data)}
+                className="select-list"
+              />
+            </Col>
+            <Col xs={12} xl={2} className="mt-2 mb-2 text-left">
+              <Label className="search-label d-block d-lg-none">รุ่นรถ</Label>
+              <Select
+                options={optionModel}
+                placeholder="รุ่นรถ"
+                isClearable={false}
+                isSearchable={false}
+                onChange={(data) => SetModel(data)}
+                className="select-list"
+              />
+            </Col>
 
-                
-              </Col>
-              <Col>
-                <Label className="search-label d-block d-lg-none">รุ่นรถ</Label>
-
-                
-              </Col>
-
-              <Col style={{ padding: 0 }}>
-                <Button
-                  className="button-search "
-                  style={{ padding: 0, margin: 0 }}
-                  onClick={() => search()}
-                >
-                  ค้นหา <img src="icon/magnifying_glass_4-1 2.png" alt="" />
-                </Button>
-              </Col>
-              <Col style={{ padding: 0 }}>
-                <Button
-                  className="button-search "
-                  style={{ padding: 0, margin: 0 }}
-                  onClick={onClear}
-                >
-                  คืนค่า
-                </Button>
-              </Col>
+            <Col xs={12} xl={2} className="mt-2 mb-2">
+              <Button
+                className="button"
+                style={{ padding: 0, margin: 0 }}
+                onClick={() => search()}
+              >
+                ค้นหา <img src="icon/magnifying_glass_4-1 2.png" alt="" />
+              </Button>
+            </Col>
+            <Col xs={12} xl={2} className="mt-2 mb-2">
+              <Button className="button">
+                <img src={add_menu} alt="" /> &nbsp; เพิ่มรายการ
+              </Button>
             </Col>
           </Row>
         </div>
 
-        <Table responsive className="custom-table-pacekage text-nowrap ">
-          <thead>
-            <tr>
-              <th>ยี่ห้อ</th>
-              <th>รุ่น</th>
-              <th>ทะเบียน</th>
-              <th>สี</th>
-              <th>แพคเก็จ</th>
-              <th>รับประกัน</th>
-              <th>สถานะ</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Honda</td>
-              <td>Civic</td>
-              <td>กด-252 เชียงใหม่</td>
-              <td>ขาว</td>
-              <td>ล้างรถ 1 ปี</td>
-              <td>-</td>
-              <td>อยู่ในบริการ</td>
-              {/* <td>
+        <Row>
+          <Col className="" style={{ Overflow: 'scroll', height: '440px' }}>
+            <Table responsive className="custom-table-pacekage text-nowrap ">
+              <thead>
+                <tr>
+                  <th>ยี่ห้อ</th>
+                  <th>รุ่น</th>
+                  <th>ทะเบียน</th>
+                  <th>สี</th>
+                  <th>แพคเก็จ</th>
+                  <th>รับประกัน</th>
+                  <th>สถานะ</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Honda</td>
+                  <td>Civic</td>
+                  <td>กด-252 เชียงใหม่</td>
+                  <td>ขาว</td>
+                  <td>ล้างรถ 1 ปี</td>
+                  <td>-</td>
+                  <td>อยู่ในบริการ</td>
+                  {/* <td>
                 <Button style={addJobStyle}>
                   <img src="icon/add_icon.png" /> เพิ่มลง JOB
                 </Button>
               </td> */}
-              <td>
-                <Button type="" className="button-view">
-                  <img src="icon/iconfinder-eye-4341288_120560 2.png" />
-                </Button>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
-        <div className="set-paginate">
-          <div className="box-select-table">
-            <span className="box-select-text">แสดง</span>
-            <div className="input-dropdown">
-              <Form.Control
-                type="text"
-                placeholder="ทั้งหมด"
-                // defaultValue={statepage[0]}
-                value={statepage}
-                onChange={(e) => setStatepage(e.target.value)}
-                disabled
-              ></Form.Control>
-              <Col
-                className="d-flex justify-content-end set-dropdown"
-                style={{ padding: 0 }}
-              >
-                <Dropdown onSelect={handleSelectPage} className="dropdown">
-                  <Dropdown.Toggle variant="secondary " id="dropdown-basic">
-                    {/* {value} */}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu style={{ backgroundColor: '#73a47' }}>
-                    <Dropdown.Item eventKey="ทั้งหมด">ทั้งหมด</Dropdown.Item>
-                    <Dropdown.Item eventKey="10">10</Dropdown.Item>
-                    <Dropdown.Item eventKey="15">15</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
+                  <td>
+                    <Button type="" className="button-image">
+                      <img src={View} />
+                    </Button>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+          </Col>
+        </Row>
+        <Row className="g-0 mt-3 mb-3">
+          <Col lg={4} className=" set-page">
+            <Row>
+              <Col className="d-flex justify-content-center align-items-center">
+                <p style={{ margin: 0 }}>แสดง</p>
               </Col>
+              <Col lg={7}>
+                <Select
+                  className="text-left select-style"
+                  aria-label="Default select example"
+                  defaultValue={optionPage[0]}
+                  options={optionPage}
+                  onChange={(data) => SetNumberPerPage(data)}
+                />
+              </Col>
+              <Col className="d-flex justify-content-center align-items-center">
+                <p style={{ margin: 0 }}>รายการ</p>
+              </Col>
+            </Row>
+          </Col>
+
+          <Col className="d-flex justify-content-end set-paginate">
+            <div className="box-paginate">
+              <Pagination>
+                <Pagination.Prev />
+                <Pagination.Item>{1}</Pagination.Item>
+
+                <Pagination.Item>{2}</Pagination.Item>
+                <Pagination.Item active>{3}</Pagination.Item>
+
+                <Pagination.Ellipsis />
+                <Pagination.Item>{10}</Pagination.Item>
+                <Pagination.Next />
+              </Pagination>
             </div>
-            <span className="box-select-text">รายการ</span>
-          </div>
-          <div className="box-paginate">
-            <Pagination aria-label="Page navigation example">
-              <PaginationItem disabled>
-                <PaginationLink first href="#" />
-              </PaginationItem>
-              <PaginationItem active>
-                <PaginationLink href="#">1</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">2</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">3</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">4</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">5</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink next href="#" />
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink last href="#" />
-              </PaginationItem>
-            </Pagination>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
     </>
   );

@@ -8,6 +8,14 @@ body {
   height: 100%;
 }
 
-.bg-mrk{
-  
+.bg-mrk {
+  background-image: url('../../images/bg-desktop.jpg') !important;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
 }

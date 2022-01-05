@@ -90,6 +90,7 @@ import Appointment_ID from './Appointment/AppointmentByID';
 import TestImage from './test';
 
 // ///////// สาขา โฟลเดอร์ branch/////////////
+import Menu_Branch from './BranchSystems/Index';
 import Profile_Branch from './BranchSystems/Profile/Index';
 import Appointment_Branch from './BranchSystems/Appointment/Index';
 import Appointment_ID_Branch from './BranchSystems/Appointment/AppointmentByID';
@@ -119,7 +120,6 @@ function App() {
         {/* <Route path="/" component={login} /> */}
         <Route path="/" component={Dashbroad} exact />
         <Route path="/dashboard" component={Dashboard_data} />
-
         <Route path="/test" component={TestImage} />
         <Route path="/package" component={Package} exact />
         <Route path="/productmanage" component={ProductManage} />
@@ -228,6 +228,8 @@ function App() {
         <Route path="/appointment" component={Appointment} exact />
         <Route path="/appointment/:id" component={Appointment_ID} />
         {/* ///////// Branch สาขา */}
+
+        <Route path="/branch" component={Menu_Branch} exact />
         <Route path="/branch/profile" component={Profile_Branch} />
         <Route
           path="/branch/appointment"

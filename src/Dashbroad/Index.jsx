@@ -21,125 +21,53 @@ import LogoutModal from '../Components/LogoutModal';
 import { Link } from 'react-router-dom';
 import '../assets/scss/style.scss';
 import NavbarTop from '../Components/NavbarTop';
+import Setting from '../assets/icon/setting.png';
 
 export default function Index() {
   const dispatch = useDispatch();
 
   useEffect(() => {}, []);
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  function close() {
+    setShow(false);
+  }
   return (
     <>
       <NavbarTop />
       <Container fluid className="bg-mrk">
-        <Row className="mt-2">
-          <Col lg={5} xl={5} className="align-items-start">
+        <Row className="">
+          <Col lg={8} xl={7} className="align-items-start">
             <Row>
-              <Col lg={3} xl={3} className="set-col">
-                <Link to="/package" className="link">
-                  <div
-                    className="dash-icon"
-                    type="button"
-                    data-toggle="modal"
-                    data-target="#packageModal"
-                  >
-                    <img src="icon/package-manage.png" className="icon" />
-                    <p className="p-1">จัดการแพ็กเกจ</p>
+              <Col lg={2} xl={2} className="set-col">
+                <Link to="/" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/dashboard.png" className="icon" />
+                    <p className="p-1">Mr. Kleane Sky</p>
                   </div>
                 </Link>
-                <div
-                  className="dash-icon"
-                  type="button"
-                  data-toggle="modal"
-                  data-target="#serviceModal"
-                >
-                  <img src="icon/management.png" className="icon" />
-                  <p className="p-1">จัดการบริการ</p>
-                </div>
-                <Link to="/productmanage" className="link">
-                  <div
-                    className="dash-icon"
-                    type="button"
-                    data-toggle="modal"
-                    data-target="#productModal"
-                  >
-                    <img src="icon/product-manage.png" className="icon" />
-                    <p className="p-1">จัดการสินค้า</p>
-                  </div>
-                </Link>
-                <div
-                  className="dash-icon"
-                  type="button"
-                  data-toggle="modal"
-                  data-target="#"
-                >
-                  <img src="icon/glass-staff.png" className="icon" />
-                  <p className="p-1">คิวช่างกระจก</p>
-                </div>
-                <div
-                  className="dash-icon"
-                  type="button"
-                  data-toggle="modal"
-                  data-target="#"
-                >
-                  <img src="icon/dashboard.png" className="icon" />
-                  <p className="p-1">Dashboard</p>
-                </div>
-                <div
-                  className="dash-icon"
-                  type="button"
-                  data-toggle="modal"
-                  data-target="#assetModal"
-                >
-                  <img src="icon/asset.png" className="icon" />
-                  <p className="p-1">ทรัพย์สิน</p>
-                </div>
               </Col>
-              <Col lg={3} xl={2} className="set-col">
-                <div className="dash-icon" type="button">
-                  <img
-                    src="icon/report.png"
-                    className="icon"
-                    data-toggle="modal"
-                    data-target="#reportModal"
-                  />
-                  <p className="p-1">รายงาน</p>
-                </div>
-
-                <div
-                  className="dash-icon"
-                  type="button"
-                  data-toggle="modal"
-                  data-target="#"
-                >
-                  <img src="icon/notification.png" className="icon" />
-                  <p className="p-1">Notification</p>
-                </div>
-                <Link to="/member" className="link">
-                  <div
-                    className="dash-icon"
-                    type="button"
-                    data-toggle="modal"
-                    data-target="#"
-                  >
+              <Col lg={2} xl={2} className="set-col">
+                <Link to="/customer" className="link">
+                  <div className="dash-icon" type="button">
                     <img src="icon/member.png" className="icon" />
-                    <p className="p-1">Member</p>
+                    <p className="p-1">Customer(B2C)</p>
                   </div>
                 </Link>
-                <Link to="/user" className="link">
-                  <div
-                    className="dash-icon"
-                    type="button"
-                    data-toggle="modal"
-                    data-target="#"
-                  >
-                    <img src="icon/user.png" className="icon" />
-                    <p className="p-1">User</p>
-                  </div>
-                </Link>
-                <Link to="/b2b" className="link">
+                <Link to="/package" className="link">
                   <div className="dash-icon" type="button">
                     <img src="icon/address_book_home.png" className="icon" />
-                    <p className="p-1">B2B (Showroom)</p>
+                    <p className="p-1">Company(B2B)</p>
+                  </div>
+                </Link>
+              </Col>
+              <Col lg={2} xl={2} className="set-col">
+                <Link to="/user" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/user.png" className="icon" />
+                    <p className="p-1">User</p>
                   </div>
                 </Link>
                 <Link to="/stock" className="link">
@@ -148,24 +76,73 @@ export default function Index() {
                     <p className="p-1">Stock</p>
                   </div>
                 </Link>
+                <Link to="/property" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/asset.png" className="icon" />
+                    <p className="p-1">ทรัพย์สิน</p>
+                  </div>
+                </Link>
               </Col>
-              <Col lg={3} className="set-col">
-                <Link to="/job" className="link">
+              <Col lg={2} xl={2} className="set-col">
+                <Link to="/service" className="link">
                   <div className="dash-icon" type="button">
-                    <img src="icon/appwizard_list.png" className="icon" />
-                    <p className="p-1">Job</p>
+                    <img src="icon/management.png" className="icon" />
+                    <p className="p-1">จัดการบริการ</p>
                   </div>
                 </Link>
-                <Link to="/bill" className="link">
+                <Link to="/package" className="link">
                   <div className="dash-icon" type="button">
-                    <img src="icon/appwizard_list.png" className="icon" />
-                    <p className="p-1">Bill</p>
+                    <img src="icon/package-manage.png" className="icon" />
+                    <p className="p-1">จัดการแพ็คเกจ</p>
                   </div>
                 </Link>
+                <Link to="/product" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/product-manage.png" className="icon" />
+                    <p className="p-1">จัดการสินค้า</p>
+                  </div>
+                </Link>
+                <Link to="/management" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/branch-manage.png" className="icon" />
+                    <p className="p-1">จัดการสาขา</p>
+                  </div>
+                </Link>
+                <Link to="/staff" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/staff.png" className="icon" />
+                    <p className="p-1">ครอบครัว(MRKfam)</p>
+                  </div>
+                </Link>
+              </Col>
+
+              <Col lg={2} xl={2} className="set-col">
                 <Link to="/notification" className="link">
                   <div className="dash-icon" type="button">
                     <img src="icon/notification.png" className="icon" />
                     <p className="p-1">Notification</p>
+                  </div>
+                </Link>
+                <Link to="/" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/purchase.png" className="icon" />
+                    <p className="p-1">การนัดหมาย</p>
+                  </div>
+                </Link>
+                <Link to="/" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/glass-staff.png" className="icon" />
+                    <p className="p-1">คิวช่างกระจก</p>
+                  </div>
+                </Link>
+                <div className="dash-icon" type="button" onClick={handleShow}>
+                  <img src="icon/setting.png" className="icon" />
+                  <p className="p-1">ตั้งค่า</p>
+                </div>
+                <Link to="/report" className="link">
+                  <div className="dash-icon" type="button">
+                    <img src="icon/file_padlock 1.png" className="icon" />
+                    <p className="p-1">รายงาน</p>
                   </div>
                 </Link>
               </Col>
@@ -185,6 +162,86 @@ export default function Index() {
 
         <Navbar />
       </Container>
+      <Modal
+        className="modal-Confirm-Admit"
+        centered
+        show={show}
+        onHide={handleClose}
+      >
+        <Modal.Header className="modal-header-Confirm-Admit">
+          <img src={Setting} /> &nbsp;
+          <p>
+            <b>ตั้งค่า</b>
+          </p>
+          <button
+            type="button"
+            className="btn-close"
+            data-dismiss="modal"
+            aria-label="Close"
+            onClick={close}
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </Modal.Header>
+        <Modal.Body>
+          <Row className="justify-content-center mt-3">
+            <Col lg={4}>
+              <Link to="/setting/type-cars">
+                <Button className="button">ตั้งค่า (ประเภทรถ)</Button>
+              </Link>
+            </Col>
+          </Row>
+          <Row className="justify-content-center mt-3">
+            <Col lg={4}>
+              <Link to="/setting/brand-car">
+                <Button className="button">ตั้งค่า (ยี่ห้อรถ/รุ่นรถ)</Button>
+              </Link>
+            </Col>
+          </Row>
+          <Row className="justify-content-center mt-3">
+            <Col lg={4}>
+              <Link to="/setting/division">
+                <Button className="button">ตั้งค่า (แผนก)</Button>
+              </Link>
+            </Col>
+          </Row>
+          <Row className="justify-content-center mt-3">
+            <Col lg={4}>
+              <Link to="/setting/unit">
+                <Button className="button">ตั้งค่า (หน่วย)</Button>
+              </Link>
+            </Col>
+          </Row>
+          <Row className="justify-content-center mt-3">
+            <Col lg={4}>
+              <Link to="/setting/category-and-service">
+                <Button className="button">ตั้งค่า (หมวดหมู่สินค้า)</Button>
+              </Link>
+            </Col>
+          </Row>
+          <Row className="justify-content-center mt-3">
+            <Col lg={4}>
+              <Link to="/setting/setup">
+                <Button className="button">ตั้งค่าการใช้งาน</Button>
+              </Link>
+            </Col>
+          </Row>
+          <Row className="justify-content-center mt-3">
+            <Col lg={4}>
+              <Link to="/setting/bank">
+                <Button className="button">ตั้งค่าธนาคาร</Button>
+              </Link>
+            </Col>
+          </Row>
+          <Row className="justify-content-center mt-3 mb-3">
+            <Col lg={4}>
+              <Link to="/setting/segment">
+                <Button className="button">ตั้งค่า Segment</Button>
+              </Link>
+            </Col>
+          </Row>
+        </Modal.Body>
+      </Modal>
     </>
   );
 }

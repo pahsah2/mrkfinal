@@ -10,10 +10,11 @@ import AddOrdinaryPart from './AddOrdinaryPart';
 import Back from '../assets/icon/back.png';
 
 import { useHistory } from 'react-router-dom';
+import TabsIcon from '../Components/layout/TabsIcon';
+
 import NavbarTop from '../Components/NavbarTop';
 import Footer from '../Components/Footer';
 import $ from 'jquery';
-import TabsIcon from '../Components/layout/TabsIcon';
 export default function MemberCreate() {
   const [state1, setState1] = useState(true);
   const [state2, setState2] = useState(false);
@@ -43,7 +44,10 @@ export default function MemberCreate() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock User Member">
+      <Container
+        fluid
+        className="package-container Service Stock User Member bg-mrk"
+      >
         <div className=" package">
           <div>
             <div className="modal-dialog modal-xl" role="document">

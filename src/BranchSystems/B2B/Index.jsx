@@ -253,7 +253,7 @@ export default function Index({ match }) {
                         <td>2 ปี 6 เดือน</td>
                         <td>
                           <LinkContainer to={`/b2b/detail`} className="link">
-                            <Button className="view-b2b">
+                            <Button className="view-button">
                               <img src={view} alt="" />
                             </Button>
                           </LinkContainer>

@@ -30,7 +30,8 @@ import Note from '../assets/icon/address_book.png';
 import TriangleArrow from '../assets/icon/TriangleArrow.png';
 import TabsIconMember from '../Components/layout/TabsIconMember';
 import MenuMember from '../Components/layout/MenuMember';
-import Eyes from '../assets/icon/search_file_2_cool-4 1.png';
+import view from '../assets/icon/view-id.png';
+
 export default function Index() {
   const history = useHistory();
   const [showCutStock, setShowCutStock] = useState(false);
@@ -82,7 +83,7 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock User">
+      <Container fluid className="package-container Service Stock User bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
@@ -166,8 +167,8 @@ export default function Index() {
                           <td>4500 บาท</td>
                           <td>2 ปี 6 เดือน</td>
                           <td>
-                            <Button>
-                              <img src={Eyes} />
+                            <Button className="view-button">
+                              <img src={view} alt="" />
                             </Button>
                           </td>
                         </tr>

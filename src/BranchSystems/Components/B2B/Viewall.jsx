@@ -279,6 +279,11 @@ export default function Viewall() {
                       onChange={onChange_year}
                       picker="year"
                       suffixIcon={<img src={Down} />}
+                      style={{
+                        borderRadius: '20px',
+                        boxShadow: 'none ',
+                        height: '50px',
+                      }}
                     />
                   </Col>
                 </Row>
@@ -304,7 +309,7 @@ export default function Viewall() {
               <Col sm={6} lg={6} className="text-left">
                 <p className="sales-title">เปรียบเทียบยอดขายแต่ละบริการ</p>
               </Col>
-              <Col sm={6} lg={3} className="">
+              <Col sm={6} lg={6} className="">
                 <Row>
                   <Col></Col>
                   <Col>
@@ -319,6 +324,12 @@ export default function Viewall() {
                       onChange={onChange}
                       suffixIcon={<img src={Calendar} />}
                       separator="-"
+                      className="calendar-antd-dashboard"
+                      style={{
+                        borderRadius: '20px',
+                        boxShadow: 'none ',
+                        height: '50px',
+                      }}
                     />
                   </Col>
                 </Row>
@@ -354,7 +365,7 @@ export default function Viewall() {
               <Col sm={6} lg={6} className="d-flex justify-content-start">
                 <p className="sales-title">ภาพรวมยอดขายพนักงาน</p>
               </Col>
-              <Col sm={6} lg={6} className="d-flex justify-content-end ">
+              <Col sm={6} lg={6} className="">
                 <Row>
                   <Col></Col>
                   <Col>
@@ -369,6 +380,11 @@ export default function Viewall() {
                       onChange={onChange}
                       suffixIcon={<img src={Calendar} />}
                       separator="-"
+                      style={{
+                        borderRadius: '20px',
+                        boxShadow: 'none ',
+                        height: '50px',
+                      }}
                     />
                   </Col>
                 </Row>

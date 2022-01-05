@@ -241,223 +241,225 @@ export default function Viewall() {
   return (
     <>
       <Container fluid className="view-all-b2b">
-        <Row className="set-row-b2b">
-          <Col lg={6} className="set-col-b2b title-view-all mt-3 mb-3">
-            <div className="set-div div-name">
-              <p>ภาพรวม</p>
-              <p>บริษัท เจริญมอเตอร์เบนซ์ จำกัด</p>
-            </div>
-          </Col>
-          <Col xs={6} lg={3} className="set-col-b2b income mt-3 mb-3">
-            <div className="set-div">
-              <p>รายรับ</p>
-              <p>5,300,000 บาท</p>
-            </div>
-          </Col>
-          <Col xs={6} lg={3} className="set-col-b2b number-car mt-3 mb-3">
-            <div className="set-div">
-              <p>จำนวนรถ</p>
-              <p>150 คัน</p>
-            </div>
-          </Col>
-        </Row>
-        <Row className="set-row-chart">
-          <div className="set-div-chart  ">
-            <Row>
-              <Col xs={12} lg={6} className="text-left">
-                <p className="sales-title">
-                  ยอดขาย บริษัท เจริญมอเตอร์เบนซ์ จำกัด
-                </p>
-              </Col>
-              <Col xs={12} lg={6} className="">
-                <Row>
-                  <Col className="d-flex justify-content-end align-items-center">
-                    <p className="annual-text">รายรับประจำปี</p>
-                  </Col>
-                  <Col>
-                    <DatePicker
-                      onChange={onChange_year}
-                      picker="year"
-                      suffixIcon={<img src={Down} />}
-                      style={{
-                        borderRadius: '20px',
-                        boxShadow: 'none ',
-                        height: '50px',
-                      }}
-                    />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <Row className="">
-              <Col className="">
-                <center>
-                  <ReactApexChart
-                    options={optionsLine}
-                    series={seriesLine}
-                    type="line"
-                    width="60%"
-                  />
-                </center>
-              </Col>
-            </Row>
-          </div>
-        </Row>
-        <Row className="set-row-chart">
-          <div className="set-div-chart">
-            <Row>
-              <Col sm={6} lg={6} className="text-left">
-                <p className="sales-title">เปรียบเทียบยอดขายแต่ละบริการ</p>
-              </Col>
-              <Col sm={6} lg={6} className="">
-                <Row>
-                  <Col></Col>
-                  <Col>
-                    <RangePicker
-                      ranges={{
-                        Today: [moment(), moment()],
-                        'This Month': [
-                          moment().startOf('month'),
-                          moment().endOf('month'),
-                        ],
-                      }}
-                      onChange={onChange}
-                      suffixIcon={<img src={Calendar} />}
-                      separator="-"
-                      className="calendar-antd-dashboard"
-                      style={{
-                        borderRadius: '20px',
-                        boxShadow: 'none ',
-                        height: '50px',
-                      }}
-                    />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="">
-                <Row className="justify-content-center">
-                  <Col lg={10}>
-                    <center>
-                      <Pie
-                        options={options}
-                        series={series}
-                        type="pie"
-                        width="60%"
+        <div className="set-dashboard">
+          <Row className="set-row-b2b">
+            <Col lg={6} className="set-col-b2b title-view-all mt-3 mb-3">
+              <div className="set-div div-name">
+                <p>ภาพรวม</p>
+                <p>บริษัท เจริญมอเตอร์เบนซ์ จำกัด</p>
+              </div>
+            </Col>
+            <Col xs={6} lg={3} className="set-col-b2b income mt-3 mb-3">
+              <div className="set-div">
+                <p>รายรับ</p>
+                <p>5,300,000 บาท</p>
+              </div>
+            </Col>
+            <Col xs={6} lg={3} className="set-col-b2b number-car mt-3 mb-3">
+              <div className="set-div">
+                <p>จำนวนรถ</p>
+                <p>150 คัน</p>
+              </div>
+            </Col>
+          </Row>
+          <Row className="set-row-chart">
+            <div className="set-div-chart  ">
+              <Row>
+                <Col xs={12} lg={6} className="text-left">
+                  <p className="sales-title">
+                    ยอดขาย บริษัท เจริญมอเตอร์เบนซ์ จำกัด
+                  </p>
+                </Col>
+                <Col xs={12} lg={6} className="">
+                  <Row>
+                    <Col className="d-flex justify-content-end align-items-center">
+                      <p className="annual-text">รายรับประจำปี</p>
+                    </Col>
+                    <Col>
+                      <DatePicker
+                        onChange={onChange_year}
+                        picker="year"
+                        suffixIcon={<img src={Down} />}
+                        style={{
+                          borderRadius: '20px',
+                          boxShadow: 'none ',
+                          height: '50px',
+                        }}
                       />
-                    </center>
-                  </Col>
-                  <Col className="d-flex align-items-center">
-                    <div className="sum-all text-left">
-                      <p className="sum-sales">รวมยอดขาย 6,121,000 บาท</p>
-                      <p className="sum-sales">จำนวน 310 คัน</p>
-                    </div>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </div>
-        </Row>
-        <Row className="set-row-chart ">
-          <div className="set-div-chart bar-chart">
-            <Row>
-              <Col sm={6} lg={6} className="d-flex justify-content-start">
-                <p className="sales-title">ภาพรวมยอดขายพนักงาน</p>
-              </Col>
-              <Col sm={6} lg={6} className="">
-                <Row>
-                  <Col></Col>
-                  <Col>
-                    <RangePicker
-                      ranges={{
-                        Today: [moment(), moment()],
-                        'This Month': [
-                          moment().startOf('month'),
-                          moment().endOf('month'),
-                        ],
-                      }}
-                      onChange={onChange}
-                      suffixIcon={<img src={Calendar} />}
-                      separator="-"
-                      style={{
-                        borderRadius: '20px',
-                        boxShadow: 'none ',
-                        height: '50px',
-                      }}
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <Row className="">
+                <Col className="">
+                  <center>
+                    <ReactApexChart
+                      options={optionsLine}
+                      series={seriesLine}
+                      type="line"
+                      width="60%"
                     />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <Row className="">
-              <Col className="">
-                <center>
+                  </center>
+                </Col>
+              </Row>
+            </div>
+          </Row>
+          <Row className="set-row-chart">
+            <div className="set-div-chart">
+              <Row>
+                <Col sm={6} lg={6} className="text-left">
+                  <p className="sales-title">เปรียบเทียบยอดขายแต่ละบริการ</p>
+                </Col>
+                <Col sm={6} lg={6} className="">
+                  <Row>
+                    <Col></Col>
+                    <Col>
+                      <RangePicker
+                        ranges={{
+                          Today: [moment(), moment()],
+                          'This Month': [
+                            moment().startOf('month'),
+                            moment().endOf('month'),
+                          ],
+                        }}
+                        onChange={onChange}
+                        suffixIcon={<img src={Calendar} />}
+                        separator="-"
+                        className="calendar-antd-dashboard"
+                        style={{
+                          borderRadius: '20px',
+                          boxShadow: 'none ',
+                          height: '50px',
+                        }}
+                      />
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="">
+                  <Row className="justify-content-center">
+                    <Col lg={10}>
+                      <center>
+                        <Pie
+                          options={options}
+                          series={series}
+                          type="pie"
+                          width="60%"
+                        />
+                      </center>
+                    </Col>
+                    <Col className="d-flex align-items-center">
+                      <div className="sum-all text-left">
+                        <p className="sum-sales">รวมยอดขาย 6,121,000 บาท</p>
+                        <p className="sum-sales">จำนวน 310 คัน</p>
+                      </div>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+            </div>
+          </Row>
+          <Row className="set-row-chart ">
+            <div className="set-div-chart bar-chart">
+              <Row>
+                <Col sm={6} lg={6} className="d-flex justify-content-start">
+                  <p className="sales-title">ภาพรวมยอดขายพนักงาน</p>
+                </Col>
+                <Col sm={6} lg={6} className="">
+                  <Row>
+                    <Col></Col>
+                    <Col>
+                      <RangePicker
+                        ranges={{
+                          Today: [moment(), moment()],
+                          'This Month': [
+                            moment().startOf('month'),
+                            moment().endOf('month'),
+                          ],
+                        }}
+                        onChange={onChange}
+                        suffixIcon={<img src={Calendar} />}
+                        separator="-"
+                        style={{
+                          borderRadius: '20px',
+                          boxShadow: 'none ',
+                          height: '50px',
+                        }}
+                      />
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <Row className="">
+                <Col className="">
+                  <center>
+                    <ReactApexChart
+                      options={optionsColum}
+                      series={seriesColum}
+                      type="bar"
+                      width="80%"
+                    />
+                  </center>
+                </Col>
+              </Row>
+            </div>
+          </Row>
+          <Row className="set-row-chart ">
+            <div className="set-div-chart ">
+              <Row>
+                <Col lg={3} className="d-flex justify-content-start">
+                  <p className="sales-title">ยอดขายพนักงาน</p>
+                </Col>
+                <Col lg={9} className="d-flex justify-content-end mt-5">
+                  <Row>
+                    <Col
+                      lg={6}
+                      className="d-flex justify-content-end set-text-chart-line mt-3 mb-3"
+                    >
+                      <Col lg={5}>
+                        <p className="text-chart-line">พนักงานขาย</p>
+                      </Col>
+                      <Input.Group compact>
+                        <Select
+                          defaultValue="นายวันดี มีชัย"
+                          className="input-user"
+                        >
+                          <Option value="นาย อ">นาย อ</Option>
+                          <Option value="นาย ก">นาย ก</Option>
+                        </Select>
+                      </Input.Group>
+                    </Col>
+                    <Col
+                      lg={6}
+                      className="d-flex justify-content-end set-text-chart-line mt-3 mb-3"
+                    >
+                      <Col lg={5}>
+                        <p className="text-chart-line">รายรับประจำปี</p>
+                      </Col>
+                      <Input.Group compact>
+                        <Select defaultValue="2564" className="input-year">
+                          <Option value="2563">2563</Option>
+                          <Option value="2562">2562</Option>
+                        </Select>
+                      </Input.Group>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
                   <ReactApexChart
-                    options={optionsColum}
-                    series={seriesColum}
-                    type="bar"
-                    width="80%"
+                    options={optionsLine2}
+                    series={seriesLine2}
+                    type="line"
+                    height="80%"
                   />
-                </center>
-              </Col>
-            </Row>
-          </div>
-        </Row>
-        <Row className="set-row-chart ">
-          <div className="set-div-chart ">
-            <Row>
-              <Col lg={3} className="d-flex justify-content-start">
-                <p className="sales-title">ยอดขายพนักงาน</p>
-              </Col>
-              <Col lg={9} className="d-flex justify-content-end mt-5">
-                <Row>
-                  <Col
-                    lg={6}
-                    className="d-flex justify-content-end set-text-chart-line mt-3 mb-3"
-                  >
-                    <Col lg={5}>
-                      <p className="text-chart-line">พนักงานขาย</p>
-                    </Col>
-                    <Input.Group compact>
-                      <Select
-                        defaultValue="นายวันดี มีชัย"
-                        className="input-user"
-                      >
-                        <Option value="นาย อ">นาย อ</Option>
-                        <Option value="นาย ก">นาย ก</Option>
-                      </Select>
-                    </Input.Group>
-                  </Col>
-                  <Col
-                    lg={6}
-                    className="d-flex justify-content-end set-text-chart-line mt-3 mb-3"
-                  >
-                    <Col lg={5}>
-                      <p className="text-chart-line">รายรับประจำปี</p>
-                    </Col>
-                    <Input.Group compact>
-                      <Select defaultValue="2564" className="input-year">
-                        <Option value="2563">2563</Option>
-                        <Option value="2562">2562</Option>
-                      </Select>
-                    </Input.Group>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <ReactApexChart
-                  options={optionsLine2}
-                  series={seriesLine2}
-                  type="line"
-                  height="80%"
-                />
-              </Col>
-            </Row>
-          </div>
-        </Row>
+                </Col>
+              </Row>
+            </div>
+          </Row>
+        </div>
       </Container>
     </>
   );

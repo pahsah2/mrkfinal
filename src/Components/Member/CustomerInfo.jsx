@@ -359,15 +359,15 @@ export default function CustomerInfo() {
               </Row>
             </Col>
           </Row>
+          <Row className="set-row">
+            <Button type="" className="btn-modal">
+              <img src={save} /> บันทึก
+            </Button>
+            <Button type="" className="btn-modal">
+              <img src={cancel} /> ออก
+            </Button>
+          </Row>
         </Form>
-        <Row className="set-row">
-          <Button type="" className="btn-modal">
-            <img src={save} /> บันทึก
-          </Button>
-          <Button type="" className="btn-modal">
-            <img src={cancel} /> ออก
-          </Button>
-        </Row>
       </Container>
       <Modal
         className="modal-segment"

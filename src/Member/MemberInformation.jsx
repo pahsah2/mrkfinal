@@ -38,7 +38,7 @@ export default function MemberInformation() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock User">
+      <Container fluid className="package-container Service Stock User bg-mrk">
         <div className="package">
           <div className="memberinformation">
             <div className="modal-dialog modal-xl" role="document">
