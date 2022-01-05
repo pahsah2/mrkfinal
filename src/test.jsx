@@ -1,131 +1,150 @@
-import React, { useState } from 'react';
-import Student from './test1';
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Pagination,
-  Modal,
-  Form,
-} from 'react-bootstrap';
-import Select from 'react-select';
-import makeAnimated from 'react-select/animated';
-import CreatableSelect from 'react-select/creatable';
-import { ActionMeta, OnChangeValue } from 'react-select';
+import React, { PureComponent } from 'react';
+import ReactApexChart from 'react-apexcharts';
 
-import ReactTagInput from '@pathofdev/react-tag-input';
-import { colourOptions, ColourOption } from './data.ts';
+export class test extends PureComponent {
+  constructor(props) {
+    super(props);
 
-export default function Test() {
-  const [studentsState, setStudentsState] = useState({
-    students: [{ id: 1, name: 'Jeerawuth' }],
-  });
-  const deleteItemHandler = (deleteIndex) => {
-    const data = [...studentsState.students];
-    data.splice(deleteIndex, 1);
-    setStudentsState({
-      students: data,
-    });
-  };
-
-  const [isDisabled, setDisabled] = useState(false);
-  const [isClearable, setClearable] = useState(true);
-  const [isLoading, setLoading] = useState(false);
-  const [isRtl, setRtl] = useState(false);
-  const [isSearchable, setSearchable] = useState(true);
-  const [phone, setPhone] = React.useState([]);
-
-  const [input, setInput] = useState('');
-  const [tags, setTags] = useState([]);
-
-  const animatedComponents = makeAnimated();
-
-  const handleDelete = (i) => {
-    this.setState({
-      tags: this.state.tags.filter((tag, index) => index !== i),
-    });
-  };
-
-  const handleChange =
-    () =>
-    (
-      newValue: OnChangeValue<ColourOption, true>,
-      actionMeta: ActionMeta<ColourOption>
-    ) => {
-      console.group('Value Changed');
-      console.log(newValue);
-      console.log(`action: ${actionMeta.action}`);
-      console.groupEnd();
+    this.state = {
+      series: [
+        {
+          name: 'Income',
+          type: 'column',
+          data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6],
+        },
+        {
+          name: 'Cashflow',
+          type: 'column',
+          data: [1.1, 3, 3.1, 4, 4.1, 4.9, 6.5, 8.5],
+        },
+        {
+          name: 'Revenue',
+          type: 'line',
+          data: [20, 29, 37, 36, 44, 45, 50, 58],
+        },
+      ],
+      options: {
+        chart: {
+          type: 'bar',
+          height: 350,
+          stacked: true,
+          toolbar: {
+            show: true,
+          },
+          zoom: {
+            enabled: true,
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        stroke: {
+          width: [1, 1, 4],
+        },
+        title: {
+          text: 'XYZ - Stock Analysis (2009 - 2016)',
+          align: 'left',
+          offsetX: 110,
+        },
+        xaxis: {
+          categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
+        },
+        yaxis: [
+          {
+            axisTicks: {
+              show: true,
+            },
+            axisBorder: {
+              show: true,
+              color: '#008FFB',
+            },
+            labels: {
+              style: {
+                colors: '#008FFB',
+              },
+            },
+            title: {
+              text: 'Income (thousand crores)',
+              style: {
+                color: '#008FFB',
+              },
+            },
+            tooltip: {
+              enabled: true,
+            },
+          },
+          {
+            seriesName: 'Income',
+            opposite: true,
+            axisTicks: {
+              show: true,
+            },
+            axisBorder: {
+              show: true,
+              color: '#00E396',
+            },
+            labels: {
+              style: {
+                colors: '#00E396',
+              },
+            },
+            title: {
+              text: 'Operating Cashflow (thousand crores)',
+              style: {
+                color: '#00E396',
+              },
+            },
+          },
+          {
+            seriesName: 'Revenue',
+            opposite: true,
+            axisTicks: {
+              show: true,
+            },
+            axisBorder: {
+              show: true,
+              color: '#FEB019',
+            },
+            labels: {
+              style: {
+                colors: '#FEB019',
+              },
+            },
+            title: {
+              text: 'Revenue (thousand crores)',
+              style: {
+                color: '#FEB019',
+              },
+            },
+          },
+        ],
+        tooltip: {
+          fixed: {
+            enabled: true,
+            position: 'topLeft', // topRight, topLeft, bottomRight, bottomLeft
+            offsetY: 30,
+            offsetX: 60,
+          },
+        },
+        legend: {
+          horizontalAlign: 'left',
+          offsetX: 40,
+        },
+      },
     };
-
-  return (
-    <>
-      <Container fluid>
-        <Select
-          defaultValue={[colourOptions[2], colourOptions[3]]}
-          isMulti
-          name="colors"
-          options={colourOptions}
-          className="basic-multi-select"
-          classNamePrefix="select"
+  }
+  render() {
+    return (
+      <div id="chart">
+        <ReactApexChart
+          options={this.state.options}
+          series={this.state.series}
+          type="line"
+          height={350}
         />
-        <p>{isSearchable}</p>
-        <Select
-          className="basic-single"
-          classNamePrefix="select"
-          defaultValue={colourOptions[0]}
-          isDisabled={isDisabled}
-          isLoading={isLoading}
-          isClearable={isClearable}
-          isRtl={isRtl}
-          isSearchable={isSearchable}
-          name="color"
-          options={colourOptions}
-        />
-
-        <ReactTagInput
-          placeholder="กรุณากรอกเบอร์โทรศัพท์"
-          editable={true}
-          readOnly={false}
-          removeOnBackspace={true}
-          maxTags={2}
-          tags={phone}
-          onChange={(e) => setPhone(e)}
-          className="input-tage"
-          options={colourOptions}
-        />
-
-        <Select
-          closeMenuOnSelect={false}
-          components={animatedComponents}
-          defaultValue={[colourOptions[4], colourOptions[5]]}
-          isMulti
-          onChange={(opt, meta) => console.log(opt, meta)}
-          options={colourOptions}
-        />
-
-        <CreatableSelect
-          isMulti
-          onChange={handleChange}
-          options={colourOptions}
-        />
-
-        <Form.Control id="formControlsFile" type="file" multiple label="File" />
-
-        <div className="row">
-          {studentsState.students.map((item, index) => {
-            return (
-              <div key={item.id} className="col-lg-3">
-                <Student
-                  data={item}
-                  deleteStudent={deleteItemHandler.bind(this, index)}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </Container>
-    </>
-  );
+      </div>
+    );
+  }
 }
+
+export default test;

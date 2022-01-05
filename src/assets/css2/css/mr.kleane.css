@@ -2,11 +2,12 @@
 
 body {
   font-family: 'Prompt', sans-serif !important;
-  background-image: url('../../icon/bg-mrk.png') !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
+
   max-width: auto;
-  max-height: 1024px;
+  max-height: 100%;
   height: 100%;
+}
+
+.bg-mrk{
+  
 }

@@ -2919,7 +2919,7 @@
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    height: 137px !important;
+    height: 137px;
     padding: 30px;
     display: flex;
 
@@ -2929,6 +2929,12 @@
     p {
       margin: 0;
       padding: 0;
+      font-size: 18px;
+    }
+    .number {
+      font-weight: 500;
+      font-size: 35.6363px;
+      color: #5d00a4;
     }
     .text-size-appointment {
       font-size: 20px;
@@ -5685,4 +5691,67 @@
   background: #f7f8fc !important;
   padding-left: 1%;
   padding-right: 1%;
+}
+
+.Dashboard {
+  .set-revenue {
+    background: #dec9e7 !important;
+    border: 1.05385px solid rgba(0, 0, 0, 0.2) !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    height: auto !important;
+    h3 {
+      font-weight: 500 !important;
+      font-size: 33.8257px !important;
+      font-family: 'Nunito' !important;
+      line-height: 51px !important;
+    }
+    p {
+      font-weight: 500 !important;
+      font-size: 38.6579px !important;
+      color: #5d00a4 !important;
+      line-height: 58px !important;
+    }
+  }
+  .set-revenue-component {
+    height: auto !important;
+    .title {
+      font-size: 18.1576px !important;
+    }
+    .body {
+      background: rgba(196, 196, 196, 0.5) !important;
+      height: 100.41px !important;
+      .number {
+        font-size: 36.3152px !important;
+      }
+    }
+    .bottom {
+      font-size: 18.1576px !important;
+      background: none !important;
+      border: none !important;
+    }
+  }
+  .product-title {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .product-line {
+    border-bottom: 3px solid #5d00a4;
+  }
+  .bg-product {
+    border-radius: 10px;
+    background: #c4c4c4;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+
+    width: auto;
+    p {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+  .text-size-dashboard {
+    font-size: 32px !important;
+  }
 }

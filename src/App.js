@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Dashbroad from './Dashbroad/Index';
-import Dashboard_data from './Dashbroad/Dashboard'
+import Dashboard_data from './Dashbroad/Dashboard';
 import Package from './Package/Index';
 import ProductManage from './ProductManage/Index';
 import Member from './Member/Index';
@@ -109,6 +109,8 @@ import Stock_OrderToStock_branch from './BranchSystems/Stock/OrderToStock/Index'
 import Stock_OrderToStock_Data_Branch from './BranchSystems/Stock/OrderToStock/Data';
 import Stock_Admit_Branch from './BranchSystems/Stock/Admit/Index';
 import Stock_Admit_Data_Branch from './BranchSystems/Stock/Admit/Data';
+import Dashboard_Branch from './BranchSystems/Dashboard/Dashboard';
+
 function App() {
   return (
     <BrowserRouter basename="/mrklean/">
@@ -276,6 +278,7 @@ function App() {
           component={Stock_OrderToStock_Data_Branch}
         />
         <Route path="/branch/stock/:id" component={Stock_History_Branch} />
+        <Route path="/branch/dashboard" component={Dashboard_Branch} />
       </Switch>
     </BrowserRouter>
   );

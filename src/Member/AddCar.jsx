@@ -24,14 +24,21 @@ export default function AddCar(props) {
     { value: 'ป้ายขาว', label: 'ป้ายขาว' },
     { value: 'ไม่มีป้าย', label: 'ไม่มีป้าย' },
   ]);
-  const [regis_number, setRegis_number] = useState('');
-  const [city, setCity] = useState({ value: '', label: '' });
+  const [regis_number, setRegis_number] = useState([{ value: '', label: '' }]);
+  const [city, setCity] = useState([{ value: '', label: '' }]);
   const [bucket_number, setBucket_number] = useState('');
   const [mile, setMile] = useState('');
   const [paint_coating, setPaint_coating] = useState('');
   const [image_car, setImage_car] = useState('');
   const [note, setNote] = useState('');
   const history = useHistory();
+
+  function SetRegis_number(data) {
+    setRegis_number({ value: data.value, label: data.value });
+  }
+  function Setcity(data) {
+    setCity({ value: data.value, label: data.value });
+  }
 
   const [selectedFiles, setSelectedFiles] = useState([]);
 
@@ -229,89 +236,101 @@ export default function AddCar(props) {
                             </Col>
                           </Row>
                         </Col>
-                        <Col lg={4} className="mt-3 mb-3">
+                        <Col lg={4} className="mt-2 mb-2">
                           <Row className="align-items-center">
                             <Col lg={3} className="text-left">
                               <Form.Label>เลขทะเบียน</Form.Label>
                             </Col>
                             <Col>
                               <Select
-                                // ref={selectPage}
                                 options={regis_number}
                                 placeholder=""
-                                // defaultValue={city[0]}
-                                onChange={(e) => setRegis_number(regis_number)}
-                                className="select-add-member"
+                                isClearable={false}
+                                isSearchable={false}
+                                onChange={(data) => SetRegis_number(data)}
+                                className="select-list"
                               />
                             </Col>
                           </Row>
                         </Col>
-                        <Col lg={4} className="d-flex justify-content-start">
-                          <Col lg={3} className="d-flex justify-content-start">
-                            <Form.Label>จังหวัด</Form.Label>
-                          </Col>
-                          <Col>
-                            <Select
-                              // ref={selectPage}
-                              options={city}
-                              placeholder=""
-                              // defaultValue={city[0]}
-                              onChange={(e) => setCity(city)}
-                              className="select-add-member"
-                            />
-                          </Col>
+                        <Col lg={4} className="mt-2 mb-2">
+                          <Row className="align-items-center">
+                            <Col lg={3} className="text-left">
+                              <Form.Label>จังหวัด</Form.Label>
+                            </Col>
+                            <Col>
+                              <Select
+                                options={city}
+                                placeholder=""
+                                isClearable={false}
+                                isSearchable={false}
+                                onChange={(data) => Setcity(data)}
+                                className="select-list"
+                              />
+                            </Col>
+                          </Row>
                         </Col>
                       </Row>
                       <Row className="row-form-create-memeber">
-                        <Col lg={4} className="d-flex justify-content-start">
-                          <Col lg={3} className="d-flex justify-content-start">
-                            <Form.Label>หมายเลขตัวถัง</Form.Label>
-                          </Col>
-                          <Col>
-                            <Form.Control
-                              type="text"
-                              placeholder=""
-                              value={bucket_number}
-                              onChange={(e) => setBucket_number(e.target.value)}
-                            ></Form.Control>
-                          </Col>
+                        <Col lg={4} className="mt-2 mb-2">
+                          <Row>
+                            <Col lg={3} className="text-left">
+                              <Form.Label>หมายเลขตัวถัง</Form.Label>
+                            </Col>
+                            <Col>
+                              <Form.Control
+                                type="text"
+                                placeholder=""
+                                value={bucket_number}
+                                onChange={(e) =>
+                                  setBucket_number(e.target.value)
+                                }
+                              ></Form.Control>
+                            </Col>
+                          </Row>
                         </Col>
-                        <Col lg={4} className="d-flex justify-content-start">
-                          <Col lg={3} className="d-flex justify-content-start">
-                            <Form.Label>เลขไมล์</Form.Label>
-                          </Col>
-                          <Col>
-                            <Form.Control
-                              type="text"
-                              placeholder=""
-                              value={mile}
-                              onChange={(e) => setMile(e.target.value)}
-                            ></Form.Control>
-                          </Col>
+                        <Col lg={4} className="mt-2 mb-2">
+                          <Row>
+                            <Col lg={3} className="text-left">
+                              <Form.Label>เลขไมล์</Form.Label>
+                            </Col>
+                            <Col>
+                              <Form.Control
+                                type="text"
+                                placeholder=""
+                                value={mile}
+                                onChange={(e) => setMile(e.target.value)}
+                              ></Form.Control>
+                            </Col>
+                          </Row>
                         </Col>
-                        <Col lg={4} className="d-flex justify-content-start">
-                          <Col lg={3} className="d-flex justify-content-start">
-                            <Form.Label>ความหนาสีรถยนต์</Form.Label>
-                          </Col>
-                          <Col>
-                            <Form.Control
-                              type="text"
-                              placeholder=""
-                              value={paint_coating}
-                              onChange={(e) => setPaint_coating(e.target.value)}
-                            ></Form.Control>
-                          </Col>
+                        <Col lg={4} className="mt-2 mb-2">
+                          <Row>
+                            <Col lg={3} className="text-left">
+                              <Form.Label>ความหนาสีรถยนต์</Form.Label>
+                            </Col>
+                            <Col>
+                              <Form.Control
+                                type="text"
+                                placeholder=""
+                                value={paint_coating}
+                                onChange={(e) =>
+                                  setPaint_coating(e.target.value)
+                                }
+                              ></Form.Control>
+                            </Col>
+                          </Row>
                         </Col>
                       </Row>
                       <Row className="row-form-create-memeber">
-                        <Col lg={10} className="d-flex justify-content-start">
+                        <Col lg={9} className="d-flex justify-content-start">
                           <div className="scale-image multi-preview">
                             <div className="result">
                               {renderPhotos(selectedFiles)}
                             </div>
                           </div>
                         </Col>
-                        <Col lg={2} className="d-flex justify-content-center">
+                        <Col lg={3} className="d-flex justify-content-center">
                           <input
                             type="file"
                             id="file"
@@ -326,25 +345,28 @@ export default function AddCar(props) {
                         </Col>
                       </Row>
                       <Row className="row-form-create-memeber">
-                        <Col lg={4} className="d-flex justify-content-start">
-                          <Col lg={3} className="d-flex justify-content-start">
-                            <Form.Label>หมายเหตุ</Form.Label>
-                          </Col>
-                          <Col>
-                            <Form.Control
-                              as="textarea"
-                              placeholder=""
-                              value={note}
-                              onChange={(e) => setNote(e.target.value)}
-                              className="text-area"
-                            />
-                          </Col>
+                        <Col lg={4} className="mt-2 mb-2">
+                          <Row>
+                            <Col lg={3} className="text-left">
+                              <Form.Label>หมายเหตุ</Form.Label>
+                            </Col>
+                            <Col>
+                              <Form.Control
+                                as="textarea"
+                                placeholder=""
+                                value={note}
+                                onChange={(e) => setNote(e.target.value)}
+                                rows={3}
+                                className="text-area"
+                              />
+                            </Col>
+                          </Row>
                         </Col>
                       </Row>
-                      <Row className="row-form-create-memeber div-button-group">
-                        <Col lg={6} className="d-flex justify-content-start">
+                      <Row className="justify-content-between">
+                        <Col xs={12} lg={6} className="">
                           <Row>
-                            <Col>
+                            <Col xs={12} lg={6} xl={4} className="mt-2 mb-2">
                               <Button
                                 type="button"
                                 className="btn-upload-image"
@@ -353,7 +375,7 @@ export default function AddCar(props) {
                                 &nbsp; บันทึก
                               </Button>
                             </Col>
-                            <Col>
+                            <Col xs={12} lg={6} xl={4} className="mt-2 mb-2">
                               <Button
                                 type="button"
                                 className="btn-upload-image"
@@ -364,11 +386,18 @@ export default function AddCar(props) {
                             </Col>
                           </Row>
                         </Col>
-                        <Col lg={6} className="d-flex justify-content-end">
-                          <Button type="button" className="btn-upload-image">
-                            <img src={cancel} />
-                            &nbsp; ยกเลิก
-                          </Button>
+                        <Col xs={12} lg={6} className="">
+                          <Row className="justify-content-end">
+                            <Col lg={6} xl={4} className="mt-2 mb-2">
+                              <Button
+                                type="button"
+                                className="btn-upload-image"
+                              >
+                                <img src={cancel} />
+                                &nbsp; ยกเลิก
+                              </Button>
+                            </Col>
+                          </Row>
                         </Col>
                       </Row>
                     </Col>

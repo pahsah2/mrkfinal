@@ -69,98 +69,23 @@ export default function CarInfo(props) {
                   onChange={(e) => setAllSerach(e.target.value)}
                 ></Form.Control>
               </Col>
-
               <Col>
                 <Label className="search-label d-block d-lg-none">
                   ประเภทป้าย
                 </Label>
-                <div className="input-dropdown">
-                  <Form.Control
-                    type="text"
-                    placeholder="ประเภทป้าย"
-                    value={licenseplate}
-                    onChange={(e) => setLicenseplate(e.target.value)}
-                    disabled
-                  ></Form.Control>
-                  <Col
-                    className="d-flex justify-content-end set-dropdown"
-                    style={{ padding: 0 }}
-                  >
-                    <Dropdown
-                      onSelect={handleSelectlicenseplate}
-                      className="dropdown"
-                    >
-                      <Dropdown.Toggle variant="secondary " id="dropdown-basic">
-                        {/* {value} */}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu style={{ backgroundColor: '#73a47' }}>
-                        <Dropdown.Item eventKey="แดง">แดง</Dropdown.Item>
-                        <Dropdown.Item eventKey="ขาว">ขาว</Dropdown.Item>
-                        <Dropdown.Item eventKey="ไม่มี">ไม่มี</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Col>
-                </div>
+               
               </Col>
               <Col>
                 <Label className="search-label d-block d-lg-none">
                   ยี่ห้อรถ
                 </Label>
 
-                <div className="input-dropdown">
-                  <Form.Control
-                    type="text"
-                    placeholder="ยี่ห้อ"
-                    value={statebrand}
-                    onChange={(e) => setStatebrand(e.target.value)}
-                    disabled
-                  ></Form.Control>
-                  <Col
-                    className="d-flex justify-content-end set-dropdown"
-                    style={{ padding: 0 }}
-                  >
-                    <Dropdown onSelect={handleSelectBrand} className="dropdown">
-                      <Dropdown.Toggle variant="secondary " id="dropdown-basic">
-                        {/* {value} */}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu style={{ backgroundColor: '#73a47' }}>
-                        <Dropdown.Item eventKey="เบ้นซ์">เบ้นซ์</Dropdown.Item>
-                        <Dropdown.Item eventKey="ฮอนด้า">ฮอนด้า</Dropdown.Item>
-                        <Dropdown.Item eventKey="วีโก้">วีโก้</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Col>
-                </div>
+                
               </Col>
               <Col>
                 <Label className="search-label d-block d-lg-none">รุ่นรถ</Label>
 
-                <div className="input-dropdown">
-                  <Form.Control
-                    type="text"
-                    placeholder="รุ่นรถ"
-                    value={statemodel}
-                    onChange={(e) => setStatemodel(e.target.value)}
-                    disabled
-                  ></Form.Control>
-                  <Col
-                    className="d-flex justify-content-end set-dropdown"
-                    style={{ padding: 0 }}
-                  >
-                    <Dropdown onSelect={handleSelectModel} className="dropdown">
-                      <Dropdown.Toggle variant="secondary " id="dropdown-basic">
-                        {/* {value} */}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu style={{ backgroundColor: '#73a47' }}>
-                        <Dropdown.Item eventKey="CXXX">CXXX</Dropdown.Item>
-                        <Dropdown.Item eventKey="Skyline">
-                          Skyline
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="TY">TY</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Col>
-                </div>
+                
               </Col>
 
               <Col style={{ padding: 0 }}>

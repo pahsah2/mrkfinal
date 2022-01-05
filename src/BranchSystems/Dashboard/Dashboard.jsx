@@ -260,7 +260,7 @@ export default function Dashboard() {
   });
 
   const [optionsPackage, setOptionsPackage] = useState({
-    colors: ['#4E79A7', '#F28E2B', '#E15759'],
+    colors: ['#ABA2D2', '#5943BA', '#422F8A'],
     chart: {
       width: 380,
       type: 'pie',
@@ -281,7 +281,7 @@ export default function Dashboard() {
     ],
   });
   const [optionsService, setOptionsService] = useState({
-    colors: ['#4E79A7', '#F28E2B', '#E15759'],
+    colors: ['#ABA2D2', '#5943BA', '#422F8A'],
     chart: {
       width: 380,
       type: 'pie',
@@ -302,7 +302,7 @@ export default function Dashboard() {
     ],
   });
   const [optionsProduct, setOptionsProduct] = useState({
-    colors: ['#4E79A7', '#F28E2B', '#E15759'],
+    colors: ['#ABA2D2', '#5943BA', '#422F8A'],
     chart: {
       width: 380,
       type: 'pie',
@@ -666,35 +666,9 @@ export default function Dashboard() {
                     <div className="set-div-chart  ">
                       <Row>
                         <Col xs={12} lg={6} className="text-left">
-                          <p className="sales-title">ยอดขายรวม</p>
+                          <p className="sales-title">ยอดขาย</p>
                         </Col>
-                        <Col xs={12} lg={6} className="">
-                          {/* <Row>
-                            <Col className="d-flex justify-content-end align-items-center">
-                              <p className="annual-text">รายรับประจำปี</p>
-                            </Col>
-                            <Col className="">
-                              <RangePicker
-                                ranges={{
-                                  Today: [moment(), moment()],
-                                  'This Month': [
-                                    moment().startOf('month'),
-                                    moment().endOf('month'),
-                                  ],
-                                }}
-                                onChange={onChange}
-                                suffixIcon={<img src={Calendar} />}
-                                separator="-"
-                                className="calendar-antd-dashboard"
-                                style={{
-                                  borderRadius: '20px',
-                                  boxShadow: 'none ',
-                                  height: '50px',
-                                }}
-                              />
-                            </Col>
-                          </Row> */}
-                        </Col>
+                        <Col xs={12} lg={6} className=""></Col>
                       </Row>
                       <Row className="">
                         <Col className="">
@@ -704,28 +678,6 @@ export default function Dashboard() {
                               series={seriesArea}
                               type="area"
                               width="100%"
-                            />
-                          </center>
-                        </Col>
-                      </Row>
-                    </div>
-                  </Row>
-                  <Row className="set-row-chart p-0 mt-5 mb-5">
-                    <div className="set-div-chart  ">
-                      <Row>
-                        <Col xs={12} lg={6} className="text-left">
-                          <p className="sales-title">ยอดขายแต่ละสาขา</p>
-                        </Col>
-                        <Col xs={12} lg={6} className=""></Col>
-                      </Row>
-                      <Row className="">
-                        <Col className="">
-                          <center>
-                            <ReactApexChart
-                              options={optionsTotalBranch}
-                              series={seriesBranch}
-                              type="line"
-                              height={350}
                             />
                           </center>
                         </Col>
@@ -792,77 +744,112 @@ export default function Dashboard() {
                       </Row>
                     </div>
                   </Row>
-
-                  <Row className="set-row-chart mt-5">
-                    <div className="set-div-chart">
-                      <Col xs={12} className="p-0">
-                        <Row className="align-items-center ">
-                          <Col className="text-left">
-                            <p className="sales-title">ยอดขายแพคเกจแต่ละสาขา</p>
-                          </Col>
-                        </Row>
-                      </Col>
-                      <Col xs={12} className="p-0">
-                        <ReactApexChart
-                          options={optionsBranch}
-                          series={seriesBranch}
-                          type="line"
-                          height={350}
-                        />
-                      </Col>
-                    </div>
-                  </Row>
-                  <Row className="set-row-chart">
-                    <div className="set-div-chart">
-                      <Col xs={12} className="p-0">
-                        <Row className="align-items-center ">
-                          <Col className="text-left">
-                            <p className="sales-title">ยอดขายสินค้าแต่ละสาขา</p>
-                          </Col>
-                        </Row>
-                      </Col>
-                      <Col xs={12} className="p-0">
-                        <ReactApexChart
-                          options={optionsProductBranch}
-                          series={seriesBranch}
-                          type="line"
-                          height={350}
-                        />
-                      </Col>
-                    </div>
-                  </Row>
-                  <Row className="set-row-chart">
-                    <div className="set-div-chart">
-                      <Col xs={12} className="p-0">
-                        <Row className="align-items-center">
-                          <Col className="text-left">
-                            <p className="sales-title">ยอดใช้บริการแต่ละสาขา</p>
-                          </Col>
-                        </Row>
-                      </Col>
-                      <Col xs={12} className="p-0">
-                        <ReactApexChart
-                          options={optionsServiceBranch}
-                          series={seriesBranch}
-                          type="line"
-                          height={350}
-                        />
-                      </Col>
-                    </div>
-                  </Row>
-                  <Row className="set-row-chart">
-                    <div className="set-div-chart">
-                      <Col xs={12} className="p-0">
-                        <Row className="align-items-center mb-3">
-                          <Col className="text-left">
+                  <Row className="set-row-chart p-0">
+                    <Col xs={12} lg={4} className="mt-5 mb-5">
+                      <div className="set-div-chart">
+                        <Row>
+                          <Col className="text-left ">
                             <p className="sales-title">
-                              ฐานลูกค้าแยกพื้นที่อำเภอ
+                              เปรียบเทียบยอดขายแพคเกจ
                             </p>
                           </Col>
                         </Row>
-                      </Col>
-                      <Col xs={12} className="p-0"></Col>
-                    </div>
+                        <Row>
+                          <Col className="">
+                            <Row className="justify-content-center">
+                              <Col lg={10}>
+                                <center>
+                                  <Pie
+                                    options={optionsPackage}
+                                    series={seriesPackage}
+                                    type="pie"
+                                    width="90%"
+                                  />
+                                </center>
+                              </Col>
+                              <Col className="d-flex align-items-center">
+                                <div className="sum-all text-left">
+                                  <p className="sum-sales mt-3">
+                                    รวมยอดขาย 6,121,000 บาท
+                                  </p>
+                                  <p className="sum-sales">จำนวน 220 รายการ</p>
+                                </div>
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
+                      </div>
+                    </Col>
+                    <Col xs={12} lg={4} className="mt-5 mb-5">
+                      <div className="set-div-chart">
+                        <Row>
+                          <Col className="text-left">
+                            <p className="sales-title">
+                              เปรียบเทียบยอดใช้บริการ
+                            </p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="">
+                            <Row className="justify-content-center">
+                              <Col lg={10}>
+                                <center>
+                                  <Pie
+                                    options={optionsService}
+                                    series={seriesService}
+                                    type="pie"
+                                    width="90%"
+                                  />
+                                </center>
+                              </Col>
+                              <Col className="d-flex align-items-center">
+                                <div className="sum-all text-left">
+                                  <p className="sum-sales">
+                                    รวมยอดขาย 6,121,000 บาท
+                                  </p>
+                                  <p className="sum-sales">จำนวน 480 รายการ</p>
+                                </div>
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
+                      </div>
+                    </Col>
+                    <Col xs={12} lg={4} className="mt-5 mb-5">
+                      <div className="set-div-chart">
+                        <Row>
+                          <Col className="text-left">
+                            <p className="sales-title">
+                              เปรียบเทียบยอดขายสินค้า
+                            </p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col className="">
+                            <Row className="justify-content-center">
+                              <Col lg={10}>
+                                <center>
+                                  <Pie
+                                    options={optionsProduct}
+                                    series={seriesProduct}
+                                    type="pie"
+                                    width="90%"
+                                  />
+                                </center>
+                              </Col>
+                              <Col className="d-flex align-items-center">
+                                <div className="sum-all text-left">
+                                  <p className="sum-sales">
+                                    รวมยอดขาย 6,121,000 บาท
+                                  </p>
+                                  <p className="sum-sales">จำนวน 100 รายการ</p>
+                                </div>
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
+                      </div>
+                    </Col>
                   </Row>
                   <Row className="set-row-chart">
                     <div className="set-div-chart">
@@ -984,18 +971,6 @@ export default function Dashboard() {
                           </Row>
                         </Col>
                       </Row>
-                    </div>
-                  </Row>
-                  <Row className="set-row-chart">
-                    <div className="set-div-chart">
-                      <Col xs={12} className="p-0">
-                        <Row className="align-items-center mb-3">
-                          <Col className="text-left">
-                            <p className="sales-title">Reorder Point</p>
-                          </Col>
-                        </Row>
-                      </Col>
-                      <Col xs={12} className="p-0"></Col>
                     </div>
                   </Row>
                 </div>

@@ -30,7 +30,7 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid>
+      <Container fluid className="bg-mrk">
         <Row className="mt-2">
           <Col lg={5} xl={5} className="align-items-start">
             <Row>
