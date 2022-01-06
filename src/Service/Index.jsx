@@ -29,7 +29,7 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service">
+      <Container fluid className="package-container Service bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">

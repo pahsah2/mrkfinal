@@ -159,7 +159,6 @@ export default function Index() {
             <LogoutModal />
           </div>
         </Row>
-
         <Navbar />
       </Container>
       <Modal

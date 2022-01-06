@@ -67,7 +67,7 @@ export default function MenuInput() {
           </Col>
         </div>
       </Col>
-      <Col className="d-flex justify-content-center my-auto mt-2 mb-2 set-dropdown">
+      <Col className=" my-auto mt-2 mb-2 set-dropdown">
         <div className="input-dropdown-Menu">
           <Form.Control
             type="text"
@@ -109,13 +109,13 @@ export default function MenuInput() {
           </Col>
         </div>
       </Col>
-      <Col className="d-flex justify-content-center mt-2 mb-2">
+      <Col className=" mt-2 mb-2">
         <Button className="button-menu">
           <img src={Search} />
           <p>ค้นหา</p>
         </Button>
       </Col>
-      <Col className="d-flex justify-content-center mt-2 mb-2">
+      <Col className=" mt-2 mb-2">
         <Button className="button-menu" onClick={reset_value}>
           <img src={Return} />
           <p>คืนค่า</p>
