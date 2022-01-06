@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Select from 'react-select';
-import Delete from '../../../assets/icon/flat-style-circle-delete.png';
+import Delete from '../../../assets/icon/delete.png';
 export default function Product() {
   const [isDisabled, setDisabled] = useState(false);
   const [isClearable, setClearable] = useState(true);

@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 import { DatePicker, Space } from 'antd';
 import Calendar from '../../assets/icon/calendar-bg.png';
-import Save from '../../assets/icon/flat-style-circle-save.png';
+import Save from '../../assets/icon/save.png';
 export default function Data() {
   const [code_staff, setCode_staff] = useState('');
   const [prefix, setPrefix] = useState([
@@ -25,6 +25,12 @@ export default function Data() {
   const [date, setDate] = useState('');
   const [AKA, setAKA] = useState('');
   const [blood_type, setBlood_type] = useState([
+    {
+      value: '',
+      label: '',
+    },
+  ]);
+  const optionBloodType = [
     {
       value: 'A+',
       label: 'A+',
@@ -57,7 +63,10 @@ export default function Data() {
       value: 'AB-',
       label: 'AB-',
     },
-  ]);
+  ];
+  function SetBloodType(data) {
+    setBlood_type({ value: data.value, label: data.value });
+  }
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
   const [skin_color, setSkin_color] = useState('');
@@ -169,10 +178,12 @@ export default function Data() {
               </Col>
               <Col>
                 <Select
-                  className="text-left select-style"
-                  aria-label="Default select example"
-                  placeholder=""
                   options={prefix}
+                  placeholder=""
+                  isClearable={false}
+                  isSearchable={false}
+                  // onChange={(data) => SetNumberPerPage(data)}
+                  className="select-list"
                 />
               </Col>
             </Row>
@@ -265,10 +276,12 @@ export default function Data() {
               </Col>
               <Col>
                 <Select
-                  className="text-left select-style"
-                  aria-label="Default select example"
+                  options={optionBloodType}
                   placeholder=""
-                  options={blood_type}
+                  isClearable={false}
+                  isSearchable={false}
+                  onChange={(data) => SetBloodType(data)}
+                  className="select-list"
                 />
               </Col>
             </Row>
@@ -410,10 +423,12 @@ export default function Data() {
               </Col>
               <Col lg={9} xl={9}>
                 <Select
-                  className="text-left select-style"
-                  aria-label="Default select example"
-                  placeholder=""
                   options={personalities}
+                  placeholder=""
+                  isClearable={false}
+                  isSearchable={false}
+                  // onChange={(data) => SetNumberPerPage(data)}
+                  className="select-list"
                 />
               </Col>
             </Row>

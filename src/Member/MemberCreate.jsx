@@ -55,7 +55,7 @@ export default function MemberCreate() {
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
                     <img className="logo pr-2" src={Service} />
-                    รายชื่อลูกค้า
+                    <b>ลูกค้า &gt; สร้าง</b>
                   </h5>
                   <button
                     type="button"
@@ -79,7 +79,7 @@ export default function MemberCreate() {
                   </button>
                   <h5 className="modal-title" id="exampleModalLabel">
                     <img className="logo pr-2" src={Service} />
-                    รายชื่อลูกค้า
+                    <b>ลูกค้า &gt; สร้าง</b>
                   </h5>
                 </div>
                 <div className="modal-body ">

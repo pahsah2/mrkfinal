@@ -44,14 +44,14 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock Job">
+      <Container fluid className="package-container Service Stock Job bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  Notification
+                  <b>Notification</b>
                 </h5>
                 <button
                   type="button"
@@ -75,7 +75,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  Notification
+                  <b>Notification</b>
                 </h5>
               </div>
               <div className="modal-body">

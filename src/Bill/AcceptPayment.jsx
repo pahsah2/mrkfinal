@@ -16,9 +16,9 @@ import TabsIcon from '../Components/layout/TabsIcon';
 import Service from '../assets/icon/management.png';
 import Back from '../assets/icon/back.png';
 import Select, { components } from 'react-select';
-import Print from '../assets/icon/flat-style-circle-save.png';
-import Return from '../assets/icon/flat-style-circle-turn-on.png';
-import Money from '../assets/icon/money-bill.png';
+import Print from '../assets/icon/print.png';
+import Return from '../assets/icon/new-re-turn.png';
+import Money from '../assets/icon/pay-money.png';
 import { DatePicker, Space } from 'antd';
 import Calendar from '../assets/icon/calendar-bg.png';
 
@@ -140,14 +140,14 @@ export default function AcceptPayment() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock Bill">
+      <Container fluid className="package-container Service Stock Bill bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  Bill &gt; รับชำระ
+                  <b>Bill &gt; รับชำระ</b>
                 </h5>
                 <button
                   type="button"
@@ -171,7 +171,7 @@ export default function AcceptPayment() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  Bill &gt; รับชำระ
+                  <b>Bill &gt; รับชำระ</b>
                 </h5>
               </div>
               <div className="modal-body">

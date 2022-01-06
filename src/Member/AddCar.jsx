@@ -73,14 +73,14 @@ export default function AddCar(props) {
   return (
     <>
       <NavbarTop />
-      <Container fluid className=" package-container Service Stock User ">
+      <Container fluid className=" package-container Service Stock User bg-mrk">
         <div className="package ">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  รายชื่อลูกค้า
+                  <b>ลูกค้า &gt; สร้างข้อมูลรถ</b>
                 </h5>
                 <button
                   type="button"
@@ -104,11 +104,11 @@ export default function AddCar(props) {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  รายชื่อลูกค้า
+                  <b>ลูกค้า &gt; สร้างข้อมูลรถ</b>
                 </h5>
               </div>
               <div className="modal-body add-car">
-                <Row>
+                <Row className="m-0">
                   <TabsIcon />
                 </Row>
                 <Row>
@@ -119,7 +119,7 @@ export default function AddCar(props) {
                 <Form>
                   <Row className=" ">
                     <Col>
-                      <Row className="row-form-create-memeber">
+                      <Row className="row-form-create-memeber align-items-center">
                         <Col lg={4} className="mt-2 mb-2">
                           <Row className="align-items-center">
                             <Col lg={3} className="text-left">
@@ -171,7 +171,7 @@ export default function AddCar(props) {
                           </Row>
                         </Col>
                       </Row>
-                      <Row className="row-form-create-memeber">
+                      <Row className="row-form-create-memeber align-items-center">
                         <Col lg={4} className="mt-2 mb-2">
                           <Row className="align-items-center">
                             <Col lg={3} className="text-left">
@@ -218,7 +218,7 @@ export default function AddCar(props) {
                           </Row>
                         </Col>
                       </Row>
-                      <Row className="row-form-create-memeber">
+                      <Row className="row-form-create-memeber align-items-center">
                         <Col lg={4} className="mt-2 mb-2">
                           <Row className="align-items-center">
                             <Col lg={3} className="text-left">
@@ -271,9 +271,9 @@ export default function AddCar(props) {
                           </Row>
                         </Col>
                       </Row>
-                      <Row className="row-form-create-memeber">
+                      <Row className="row-form-create-memeber align-items-center ">
                         <Col lg={4} className="mt-2 mb-2">
-                          <Row>
+                          <Row className="align-items-center">
                             <Col lg={3} className="text-left">
                               <Form.Label>หมายเลขตัวถัง</Form.Label>
                             </Col>
@@ -290,7 +290,7 @@ export default function AddCar(props) {
                           </Row>
                         </Col>
                         <Col lg={4} className="mt-2 mb-2">
-                          <Row>
+                          <Row className="align-items-center">
                             <Col lg={3} className="text-left">
                               <Form.Label>เลขไมล์</Form.Label>
                             </Col>
@@ -305,7 +305,7 @@ export default function AddCar(props) {
                           </Row>
                         </Col>
                         <Col lg={4} className="mt-2 mb-2">
-                          <Row>
+                          <Row className="align-items-center">
                             <Col lg={3} className="text-left">
                               <Form.Label>ความหนาสีรถยนต์</Form.Label>
                             </Col>
@@ -322,7 +322,7 @@ export default function AddCar(props) {
                           </Row>
                         </Col>
                       </Row>
-                      <Row className="row-form-create-memeber">
+                      <Row className="row-form-create-memeber align-items-center">
                         <Col lg={9} className="d-flex justify-content-start">
                           <div className="scale-image multi-preview">
                             <div className="result">
@@ -344,7 +344,7 @@ export default function AddCar(props) {
                           </div>
                         </Col>
                       </Row>
-                      <Row className="row-form-create-memeber">
+                      <Row className="row-form-create-memeber align-items-center">
                         <Col lg={4} className="mt-2 mb-2">
                           <Row>
                             <Col lg={3} className="text-left">

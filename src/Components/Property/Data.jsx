@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import Save from '../../assets/icon/flat-style-circle-save.png';
+import Save from '../../assets/icon/save.png';
 import Test_Image from '../../assets/images/test-image.jpg';
 export default function Data() {
   const [selectedImage, setSelectedImage] = useState();

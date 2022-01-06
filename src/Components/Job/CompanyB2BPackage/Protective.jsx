@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import Select, { components } from 'react-select';
-import Delete from '../../../assets/icon/flat-style-circle-delete.png';
+import Delete from '../../../assets/icon/delete.png';
 export default function Protective() {
   const [serviceMore, setServiceMore] = useState(true);
   const [fastService, setFastService] = useState(true);

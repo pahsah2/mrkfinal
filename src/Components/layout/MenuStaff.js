@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Dropdown, Button } from 'react-bootstrap';
 import '../../assets/scss/style-component.scss';
-import Search from '../../assets/icon/iconfinder-search.png';
+import Search from '../../assets/icon/search.png';
 import Return from '../../assets/icon/undo_icon.png';
+import Select, { components } from 'react-select';
+import Add from '../../assets/icon/add-staff.png';
+import { Link } from 'react-router-dom';
+
 export default function MenuStaff() {
   const [search, setSearch] = useState('');
-  const [type, setType] = useState('');
+  const [type, setType] = useState([{ value: '', label: ' ' }]);
   const [division, setDivision] = useState('');
   const [category, setCategory] = useState('');
   const [button_Search, setButton_Search] = useState('');
@@ -18,6 +22,24 @@ export default function MenuStaff() {
     setType('');
     setCategory('');
   };
+  function SetType(data) {
+    setType({ value: data.value, label: data.value });
+  }
+
+  const optionServiceType = [
+    { value: ' บริการทำความสะอาดรถ', label: 'บริการทำความสะอาดรถ' },
+    {
+      value: 'แพคเกจล้างรถ (ระยะเวลา 1 ปี)',
+      label: 'แพคเกจล้างรถ (ระยะเวลา 1 ปี)',
+    },
+    { value: 'เหมาบริการ + เคลือบ Wax', label: 'เหมาบริการ + เคลือบ Wax' },
+    { value: 'แพคเกจล้างรถ + เคลือบ Wax', label: 'แพคเกจล้างรถ + เคลือบ Wax' },
+    {
+      value: 'กล่องสุดคุ้ม น้ำยา Wax+PCS+SC',
+      label: 'กล่องสุดคุ้ม น้ำยา Wax+PCS+SC',
+    },
+  ];
+
   return (
     <Row className="g-0">
       <Col lg={5} className="d-flex justify-content-center mt-2 mb-2">
@@ -30,61 +52,39 @@ export default function MenuStaff() {
           className="input"
         ></Form.Control>
       </Col>
-      <Col
-        xs={12}
-        sm="auto"
-        className="d-flex justify-content-center my-auto mt-2 mb-2 set-dropdown-division"
-      >
-        <div className="input-dropdown-Menu">
-          <Form.Control
-            type="text"
-            placeholder="แผนก"
-            // defaultValue={statepage[0]}
-            value={division}
-            onChange={(e) => setDivision(e.target.value)}
-            disabled
-          ></Form.Control>
-          <Col
-            className="d-flex justify-content-end set-dropdown"
-            style={{ padding: 0 }}
-          >
-            <Dropdown
-              onSelect={handleSelectDivision}
-              className="dropdown w-100"
-            >
-              <Dropdown.Toggle variant="secondary " id="dropdown-basic">
-                {/* {showroom} */}
-              </Dropdown.Toggle>
-              <Dropdown.Menu style={{ backgroundColor: '#73a47' }}>
-                <Dropdown.Item eventKey="บริการทำความสะอาดรถ">
-                  บริการทำความสะอาดรถ
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="แพคเกจล้างรถ (ระยะเวลา 1 ปี)">
-                  แพคเกจล้างรถ (ระยะเวลา 1 ปี)
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="เหมาบริการ + เคลือบ Wax">
-                  เหมาบริการ + เคลือบ Wax
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="แพคเกจล้างรถ + เคลือบ Wax">
-                  แพคเกจล้างรถ + เคลือบ Wax
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="กล่องสุดคุ้ม น้ำยา Wax+PCS+SC">
-                  กล่องสุดคุ้ม น้ำยา Wax+PCS+SC
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Col>
-        </div>
+      <Col xs={12} lg={3} className=" my-auto mt-2 mb-2 set-dropdown-division">
+        <Select
+          options={optionServiceType}
+          placeholder=""
+          isClearable={false}
+          isSearchable={false}
+          onChange={(data) => SetType(data)}
+          className="select-list"
+        />
       </Col>
-      <Col className="d-flex justify-content-center mt-2 mb-2">
+      <Col xs={12} lg={2} className="d-flex justify-content-center mt-2 mb-2">
         <Button className="button-menu">
           <img src={Search} /> &nbsp; ค้นหา
         </Button>
       </Col>
-      <Col className="d-flex justify-content-center mt-2 mb-2">
+      <Col xs={6} lg={2} className="d-flex justify-content-center mt-2 mb-2">
         <Button className="button-menu" onClick={reset_value}>
           <img src={Return} /> &nbsp; คืนค่า
         </Button>
+      </Col>
+      <Col xs={6} className=" mt-2 mb-2 d-md-none">
+        <Link to="/service/add-member">
+          <Button className="button-menu">
+            <Row className="justify-content-center align-items-center">
+              <Col className="p-0 d-flex justify-content-end">
+                <img src={Add} />
+              </Col>
+              <Col className="p-0 d-flex justify-content-start">
+                <p>เพิ่มรายชื่อ</p>
+              </Col>
+            </Row>
+          </Button>
+        </Link>
       </Col>
     </Row>
   );

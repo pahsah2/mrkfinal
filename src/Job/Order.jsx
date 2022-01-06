@@ -51,7 +51,7 @@ export default function Order() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB &gt; ภายในร้าน &gt; Order
+                  <b>JOB &gt; ภายในร้าน &gt; Order</b>
                 </h5>
                 <button
                   type="button"
@@ -75,7 +75,7 @@ export default function Order() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB &gt; ภายในร้าน &gt; Order
+                  <b>JOB &gt; ภายในร้าน &gt; Order</b>
                 </h5>
               </div>
               <div className="modal-body">

@@ -30,7 +30,7 @@ import Return from '../assets/icon/flat-style-circle-turn-on.png';
 import Note from '../assets/icon/address_book.png';
 import TriangleArrow from '../assets/icon/TriangleArrow.png';
 
-export default function Index() {
+export default function UserCreate() {
   const history = useHistory();
   const [hide, setHide] = useState(true);
   const [employee, setEmployee] = useState([{ value: '', label: ' ' }]);
@@ -73,14 +73,14 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock User">
+      <Container fluid className="package-container Service Stock User bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  User &gt; รายชื่อผู้ใช้ระบบ
+                  <b>User &gt; รายชื่อผู้ใช้ระบบ &gt; เพิ่มผู้ใช้งาน</b>
                 </h5>
                 <button
                   type="button"
@@ -104,7 +104,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  User &gt; รายชื่อผู้ใช้ระบบ
+                  <b>User &gt; รายชื่อผู้ใช้ระบบ &gt; เพิ่มผู้ใช้งาน</b>
                 </h5>
               </div>
               <div className="modal-body">

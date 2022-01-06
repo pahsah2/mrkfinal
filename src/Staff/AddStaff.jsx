@@ -46,7 +46,7 @@ export default function Index() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  พนักงาน &gt; รายชื่อพนักงาน &gt; เพิ่มพนักงาน
+                  <b>พนักงาน &gt; รายชื่อพนักงาน &gt; เพิ่มพนักงาน</b>
                 </h5>
                 <button
                   type="button"
@@ -70,7 +70,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  พนักงาน &gt; รายชื่อพนักงาน &gt; เพิ่มพนักงาน
+                  <b>พนักงาน &gt; รายชื่อพนักงาน &gt; เพิ่มพนักงาน</b>
                 </h5>
               </div>
               <div className="modal-body">

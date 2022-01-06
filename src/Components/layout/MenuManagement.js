@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Dropdown, Button } from 'react-bootstrap';
 import '../../assets/scss/style-component.scss';
-import Search from '../../assets/icon/iconfinder-search.png';
+import Search from '../../assets/icon/search.png';
 import Return from '../../assets/icon/undo_icon.png';
-import Increase from '../../assets/icon/increase.png';
+import Increase from '../../assets/icon/add-staff.png';
 export default function MenuManagement() {
   const [search, setSearch] = useState('');
   const [type, setType] = useState('');
@@ -60,7 +60,7 @@ export default function MenuManagement() {
         lg={2}
         lg={2}
         xl={2}
-        className="d-flex justify-content-center mt-2 mb-2 hide-increase"
+        className="d-flex justify-content-center mt-2 mb-2 d-md-none"
       >
         <Button className=" button-menu ">
           <img src={Increase} /> &nbsp; เพิ่มสาขา

@@ -26,9 +26,9 @@ import Property from '../Components/Property/Property';
 import ViewAll from '../Components/Property/ViewAll';
 import Data from '../Components/Property/Data';
 import Storage from '../Components/Property/Storage';
-import Increase from '../assets/icon/increase.png';
-import Save from '../assets/icon/flat-style-circle-save.png';
-import Turn_Off from '../assets/icon/flat-style-circle-turn-on.png';
+import Increase from '../assets/icon/add-staff.png';
+import Save from '../assets/icon/save.png';
+import Turn_Off from '../assets/icon/new-re-turn.png';
 import { DatePicker, Space } from 'antd';
 import Calendar from '../assets/icon/calendar-bg.png';
 
@@ -51,7 +51,7 @@ export default function AddStorage() {
       <NavbarTop />
       <Container
         fluid
-        className="package-container Staff   Property Property-data"
+        className="package-container Staff   Property Property-data bg-mrk"
       >
         <Form>
           <div className="package">
@@ -60,7 +60,7 @@ export default function AddStorage() {
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
                     <img className="logo pr-2" src={Service} />
-                    เพิ่มรายการจัดเก็บ
+                    <b>เพิ่มรายการจัดเก็บ</b>
                   </h5>
                   <button
                     type="button"
@@ -84,7 +84,7 @@ export default function AddStorage() {
                   </button>
                   <h5 className="modal-title" id="exampleModalLabel">
                     <img className="logo pr-2" src={Service} />
-                    เพิ่มรายการจัดเก็บ
+                    <b>เพิ่มรายการจัดเก็บ</b>
                   </h5>
                 </div>
                 <div className="modal-body">
@@ -110,6 +110,7 @@ export default function AddStorage() {
                                 onChange={onChange}
                                 placeholder=""
                                 suffixIcon={<img src={Calendar} />}
+                                style={{ borderRadius: '0px' }}
                               />
                             </Col>
                           </Row>

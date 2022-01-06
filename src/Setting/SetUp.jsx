@@ -20,8 +20,8 @@ import Calendar from '../assets/icon/calendar-bg.png';
 import Back from '../assets/icon/back.png';
 import Select, { components } from 'react-select';
 import MenuStock from '../Components/layout/MenuStock';
-import Write from '../assets/icon/flat-style-circle-write.png';
-import Delete from '../assets/icon/flat-style-circle-delete.png';
+import Write from '../assets/icon/add-staff.png';
+import Delete from '../assets/icon/delete.png';
 import Arrow from '../assets/icon/arrow.png';
 import Document from '../assets/icon/document.png';
 import Search from '../assets/icon/eyes-search.png';
@@ -63,14 +63,14 @@ export default function SetUp() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Stock Setting">
+      <Container fluid className="package-container Stock Setting bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่าการใช้งาน
+                  <b>ตั้งค่าการใช้งาน</b>
                 </h5>
                 <button
                   type="button"
@@ -94,7 +94,7 @@ export default function SetUp() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่าการใช้งาน
+                  <b>ตั้งค่าการใช้งาน</b>
                 </h5>
               </div>
               <div className="modal-body">

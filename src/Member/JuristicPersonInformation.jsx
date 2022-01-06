@@ -45,7 +45,7 @@ export default function JuristicInformation() {
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
                     <img className="logo pr-2" src={Service} />
-                    ลูกค้า &#62; บุคคลธรรมดา &#62; ข้อมูลนิติบุคล
+                    <b>ลูกค้า &#62; บุคคลธรรมดา &#62; ข้อมูลนิติบุคล</b>
                   </h5>
                   <button
                     type="button"
@@ -69,7 +69,7 @@ export default function JuristicInformation() {
                   </button>
                   <h5 className="modal-title" id="exampleModalLabel">
                     <img className="logo pr-2" src={Service} />
-                    ลูกค้า &#62; บุคคลธรรมดา &#62; ข้อมูลนิติบุคล
+                    <b>ลูกค้า &#62; บุคคลธรรมดา &#62; ข้อมูลนิติบุคล</b>
                   </h5>
                 </div>
                 <div className="modal-body ">

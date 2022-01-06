@@ -43,7 +43,7 @@ export default function DataProperty() {
       <NavbarTop />
       <Container
         fluid
-        className="package-container Staff   Property Property-data"
+        className="package-container Staff   Property Property-data bg-mrk"
       >
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
@@ -51,7 +51,7 @@ export default function DataProperty() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  รายการทรัพย์สิน &gt; ทีวี
+                  <b>รายการทรัพย์สิน &gt; ทีวี</b>
                 </h5>
                 <button
                   type="button"
@@ -75,7 +75,7 @@ export default function DataProperty() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  รายการทรัพย์สิน &gt; ทีวี
+                  <b>รายการทรัพย์สิน &gt; ทีวี</b>
                 </h5>
               </div>
               <div className="modal-body">

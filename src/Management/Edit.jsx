@@ -18,7 +18,7 @@ import Back from '../assets/icon/back.png';
 import Staff from '../assets/icon/staff.png';
 import Service from '../assets/icon/management.png';
 import Branch_manage from '../assets/icon/branch-manage.png';
-import Save from '../assets/icon/flat-style-circle-save.png';
+import Save from '../assets/icon/save.png';
 import Write from '../assets/icon/flat-style-circle-write.png';
 import Note from '../assets/icon/address_book.png';
 import View from '../assets/icon/view-member.png';
@@ -59,14 +59,14 @@ export default function Edit() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container  management-edit">
+      <Container fluid className="package-container  management-edit bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Branch_manage} />
-                  การจัดการสาขา &gt; แก้ไข
+                  <b>การจัดการสาขา &gt; แก้ไข</b>
                 </h5>
                 <button
                   type="button"
@@ -90,7 +90,7 @@ export default function Edit() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Branch_manage} />
-                  การจัดการสาขา &gt; แก้ไข
+                  <b>การจัดการสาขา &gt; แก้ไข</b>
                 </h5>
               </div>
               <div className="modal-body">
@@ -164,7 +164,7 @@ export default function Edit() {
                               lg={3}
                               className="d-flex justify-content-start"
                             >
-                              <Form.Label>ที่อยู่</Form.Label>
+                              <Form.Label className="mt-3">ที่อยู่</Form.Label>
                             </Col>
                             <Col className="d-flex justify-content-end">
                               <Form.Control
@@ -179,7 +179,7 @@ export default function Edit() {
                       </Row>
                       <Row>
                         <Col>
-                          <Row>
+                          <Row className="align-items-center">
                             <Col
                               lg={3}
                               className="d-flex justify-content-start"
@@ -217,15 +217,12 @@ export default function Edit() {
                         </Col>
                         <Col lg={5}></Col>
                       </Row>
-                      <Row className=" ">
+                      <Row className="align-items-center">
                         <Col lg={10}>
-                          <Row>
+                          <Row className="align-items-center">
                             <Col xs={12} sm={12} lg={6}>
-                              <Row>
-                                <Col
-                                  lg={4}
-                                  className="d-flex justify-content-start"
-                                >
+                              <Row className="align-items-center">
+                                <Col lg={4} className="text-left">
                                   <Form.Label>ชื่อผู้ติดต่อ</Form.Label>
                                 </Col>
                                 <Col>
@@ -234,11 +231,8 @@ export default function Edit() {
                               </Row>
                             </Col>
                             <Col xs={12} sm={12} lg={5}>
-                              <Row>
-                                <Col
-                                  lg={3}
-                                  className="d-flex justify-content-start align-items-center set-phone-wrong"
-                                >
+                              <Row className="align-items-center">
+                                <Col lg={3} className="text-left">
                                   <Form.Label>เบอร์โทรศัพท์</Form.Label>
                                 </Col>
                                 <Col lg={9}>
@@ -255,12 +249,7 @@ export default function Edit() {
                                 </Col>
                               </Row>
                             </Col>
-                            <Col
-                              xs={12}
-                              sm={12}
-                              lg={1}
-                              className="d-flex align-items-center justify-content-center"
-                            >
+                            <Col xs={12} sm={12} lg={1} className="">
                               <Button
                                 type="button"
                                 className="delete-button full-width-button"
@@ -273,10 +262,7 @@ export default function Edit() {
                             </Col>
                           </Row>
                         </Col>
-                        <Col
-                          lg={2}
-                          className="d-flex align-items-center justify-content-center"
-                        >
+                        <Col lg={2} className="">
                           <Button type="button" className="in-save ">
                             <img src={Increase} /> &nbsp; เพิ่มรายชื่อ
                           </Button>

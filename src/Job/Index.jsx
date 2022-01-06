@@ -20,7 +20,7 @@ import Calendar from '../assets/icon/calendar-bg.png';
 import Back from '../assets/icon/back.png';
 import Select, { components } from 'react-select';
 import MenuJob from '../Components/layout/MenuJob';
-import Write from '../assets/icon/flat-style-circle-write.png';
+import Write from '../assets/icon/add-staff.png';
 import Arrow from '../assets/icon/arrow.png';
 import Document from '../assets/icon/document.png';
 import Search from '../assets/icon/eyes-search.png';
@@ -86,7 +86,7 @@ export default function Index() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB
+                  <b>JOB</b>
                 </h5>
                 <button
                   type="button"
@@ -110,7 +110,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB
+                  <b>JOB</b>
                 </h5>
               </div>
               <div className="modal-body">
@@ -124,7 +124,7 @@ export default function Index() {
                   <GroupButtonStock />
                 </Row> */}
 
-                <Row className="g-0 justify-content-center mt-3">
+                <Row className="g-0 justify-content-center mt-3 m-0">
                   <Col className="set-table">
                     <table className="table table-responsive table-wash-part ">
                       <thead>

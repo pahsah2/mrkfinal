@@ -30,7 +30,7 @@ import Return from '../assets/icon/out.png';
 import Note from '../assets/icon/address_book.png';
 import Add from '../assets/icon/add_menu.png';
 import Delete from '../assets/icon/flat-style-circle-delete.png';
-import increate from '../assets/icon/increase.png';
+import increate from '../assets/icon/add-staff.png';
 import ReactTagInput from '@pathofdev/react-tag-input';
 import CreatableSelect from 'react-select/creatable';
 import { ActionMeta, OnChangeValue } from 'react-select';
@@ -108,14 +108,14 @@ export default function AddcarSetting() {
     <>
       <NavbarTop />
 
-      <Container fluid className="package-container Stock Setting">
+      <Container fluid className="package-container Stock Setting bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่า &gt; ยี่ห้อรถ/รุ่นรถ &gt; เพิ่มรายการรถ
+                  <b>ตั้งค่า &gt; ยี่ห้อรถ/รุ่นรถ &gt; เพิ่มรายการรถ</b>
                 </h5>
                 <button
                   type="button"
@@ -139,7 +139,7 @@ export default function AddcarSetting() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่า &gt; ยี่ห้อรถ/รุ่นรถ &gt; เพิ่มรายการรถ
+                  <b>ตั้งค่า &gt; ยี่ห้อรถ/รุ่นรถ &gt; เพิ่มรายการรถ</b>
                 </h5>
               </div>
               <div className="modal-body">

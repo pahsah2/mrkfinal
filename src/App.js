@@ -66,7 +66,6 @@ import Setting_BrandCar from './Setting/BrandCar';
 import Setting_Bank from './Setting/Bank';
 import Setting_Edit_Bank from './Setting/EditBank';
 import Setting_Add_Level from './Setting/AddLevel';
-import Setting_Edit_Bank2 from './Setting/EditBank2';
 import Setting_Add_Car_Setting from './Setting/AddCarSetting';
 import Setting_Edit_Car_Setting from './Setting/EditCarSetting';
 import Test from './Setting/test';
@@ -124,9 +123,9 @@ function App() {
         <Route path="/package" component={Package} exact />
         <Route path="/productmanage" component={ProductManage} />
         <Route path="/member" component={Member} exact />
-        <Route path="/user" component={User} />
-        <Route path="/usercreate" component={UserCreate} />
-        <Route path="/edituser" component={EditUser} />
+        <Route path="/user" component={User} exact />
+        <Route path="/user/add" component={UserCreate} />
+        <Route path="/user/edit" component={EditUser} />
         <Route path="/member/information" component={MemberInformation} />
         <Route path="/member/addcar" component={AddCar} />
         <Route
@@ -209,7 +208,7 @@ function App() {
         <Route path="/setting/bank" component={Setting_Bank} exact />
         {/* dynamic component */}
         <Route path="/setting/bank/edit-bank" component={Setting_Edit_Bank} />
-        <Route path="/setting/bank/edit-bank2" component={Setting_Edit_Bank2} />
+
         <Route path="/setting/add-level" component={Setting_Add_Level} />
         <Route path="/setting/test" component={Test} />
         <Route path="/job" component={Job} exact />

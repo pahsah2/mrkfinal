@@ -55,14 +55,17 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock Bill Report ">
+      <Container
+        fluid
+        className="package-container Service Stock Bill Report bg-mrk"
+      >
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  รายงาน
+                  <b> รายงาน</b>
                 </h5>
                 <button
                   type="button"
@@ -86,7 +89,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  รายงาน
+                  <b> รายงาน</b>
                 </h5>
               </div>
               <div className="modal-body">
@@ -122,7 +125,7 @@ export default function Index() {
                     <div className="bg-white mt-3 mb-3">
                       <Col className="col-title text-left d-flex align-items-center">
                         <Form.Label className="font-weight-bold">
-                        รายงานแยกตามสาขา
+                          รายงานแยกตามสาขา
                         </Form.Label>
                       </Col>
                       <Col className="col-text text-left d-flex align-items-center">

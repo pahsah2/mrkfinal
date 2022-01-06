@@ -13,7 +13,7 @@ import network_normal_two_pcs_4 from '../../assets/icon/network_normal_two_pcs-4
 import chart1_4 from '../../assets/icon/chart1-4.png';
 import '../../assets/scss/style-component.scss';
 
-export default function TabsIconMember() {
+export default function TabsIconProductManage() {
   return (
     <Row className="g-0 d-flex justify-content-start m-0">
       <Col className="d-flex tabs-icon mb-4">
@@ -47,8 +47,8 @@ export default function TabsIconMember() {
         <Button>
           <img src={chart1_4} alt="" />
         </Button>
-        <Link to="/member/add">
-          <Button className="increase">เพิ่มรายชื่อ</Button>
+        <Link to="/productmanage">
+          <Button className="button-icon">เพิ่มสินค้า</Button>
         </Link>
       </Col>
     </Row>

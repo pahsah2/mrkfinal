@@ -6,8 +6,8 @@ import Calendar from '../../assets/icon/calendar-bg.png';
 import { DatePicker, Space } from 'antd';
 import Select, { components } from 'react-select';
 import { Formik, FieldArray, Field } from 'formik';
-import Delete from '../../assets/icon/flat-style-circle-delete.png';
-import increate from '../../assets/icon/increase.png';
+import Delete from '../../assets/icon/delete.png';
+import increate from '../../assets/icon/add-staff.png';
 
 export default function JobAssign() {
   const onChange = () => {};
@@ -305,7 +305,7 @@ export default function JobAssign() {
                                   <Col xs={1} sm={1}>
                                     {values.rows.length !== 1 && (
                                       <Button
-                                        className="button-image"
+                                        className="button-package"
                                         onClick={() => remove(index)}
                                       >
                                         <img src={Delete} />

@@ -182,14 +182,14 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Management">
+      <Container fluid className="package-container Service Management bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Branch_manage} />
-                  การจัดการสาขา &gt; ดู
+                  <b>การจัดการสาขา &gt; ดู</b>
                 </h5>
                 <button
                   type="button"
@@ -213,7 +213,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Branch_manage} />
-                  การจัดการสาขา &gt; ดู
+                  <b>การจัดการสาขา &gt; ดู</b>
                 </h5>
               </div>
               <div className="modal-body">

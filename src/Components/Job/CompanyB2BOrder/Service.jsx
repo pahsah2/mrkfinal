@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Select from 'react-select';
-import Delete from '../../../assets/icon/flat-style-circle-delete.png';
+import Delete from '../../../assets/icon/delete.png';
 export default function Service() {
   const [isDisabled, setDisabled] = useState(false);
   const [isClearable, setClearable] = useState(true);
@@ -32,10 +32,8 @@ export default function Service() {
               placeholder="ค้นหาสินค้าด้วยรหัสบริการ, ชื่อบริการ"
               isDisabled={isDisabled}
               isLoading={isLoading}
-              
               isRtl={isRtl}
               isSearchable={isSearchable}
-              
               options={optionService}
               onChange={(data) => SetService(data)}
             />

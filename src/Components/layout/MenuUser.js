@@ -9,7 +9,7 @@ import {
   Modal,
 } from 'react-bootstrap';
 import '../../assets/scss/style-component.scss';
-import Search from '../../assets/icon/iconfinder-search.png';
+import Search from '../../assets/icon/search.png';
 import Return from '../../assets/icon/undo_icon.png';
 import Increase from '../../assets/icon/increase.png';
 import Select, { components } from 'react-select';
@@ -17,6 +17,9 @@ import Arrow from '../../assets/icon/arrow.png';
 import Document from '../../assets/icon/document.png';
 import PurchaseOrder from '../../assets/icon/order.png';
 import MenuSend from '../../assets/icon/send-file.png';
+import Add from '../../assets/icon/add-staff.png';
+import { Link } from 'react-router-dom';
+
 export default function MenuUser() {
   const [search, setSearch] = useState('');
   const [type, setType] = useState('');
@@ -72,7 +75,7 @@ export default function MenuUser() {
       </Col>
 
       <Col
-        xs={6}
+        xs={12}
         sm={6}
         md={4}
         lg={2}
@@ -80,8 +83,14 @@ export default function MenuUser() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu">
-          <img src={Search} />
-          <p>ค้นหา</p>
+          <Row className="justify-content-center align-items-center">
+            <Col className="p-0 d-flex justify-content-end">
+              <img src={Search} />
+            </Col>
+            <Col className="p-0 d-flex justify-content-start">
+              <p>ค้นหา</p>
+            </Col>
+          </Row>
         </Button>
       </Col>
       <Col
@@ -93,9 +102,29 @@ export default function MenuUser() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu" onClick={reset_value}>
-          <img src={Return} />
-          <p>คืนค่า</p>
+          <Row className="justify-content-center align-items-center">
+            <Col className="p-0 d-flex justify-content-end">
+              <img src={Return} />
+            </Col>
+            <Col className="p-0 d-flex justify-content-start">
+              <p>คืนค่า</p>
+            </Col>
+          </Row>
         </Button>
+      </Col>
+      <Col xs={6} className=" mt-2 mb-2 d-md-none">
+        <Link to="/user/add">
+          <Button className="button-menu">
+            <Row className="justify-content-center align-items-center">
+              <Col className="p-0 d-flex justify-content-end">
+                <img src={Add} />
+              </Col>
+              <Col className="p-0 d-flex justify-content-start">
+                <p>เพิ่มรายชื่อ</p>
+              </Col>
+            </Row>
+          </Button>
+        </Link>
       </Col>
     </Row>
   );

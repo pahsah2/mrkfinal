@@ -21,7 +21,7 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Staff Profile ">
+      <Container fluid className="package-container Staff Profile bg-mrk">
         {/* staff เอาไว้ใช้ style grid  , Profile เอาไว้ใช้ scss ส่วน profile เพิ่มเติม */}
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
@@ -29,7 +29,7 @@ export default function Index() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  โปรไฟล์
+                  <b>โปรไฟล์</b>
                 </h5>
                 <button
                   type="button"
@@ -53,7 +53,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  โปรไฟล์
+                  <b>โปรไฟล์</b>
                 </h5>
               </div>
               <div className="modal-body">

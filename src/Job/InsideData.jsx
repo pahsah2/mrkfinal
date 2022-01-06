@@ -79,7 +79,7 @@ export default function InsideData() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB &gt; ภายในร้าน
+                  <b>JOB &gt; ภายในร้าน</b>
                 </h5>
                 <button
                   type="button"
@@ -103,7 +103,7 @@ export default function InsideData() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB &gt; ภายในร้าน &gt;
+                  <b>JOB &gt; ภายในร้าน</b>
                 </h5>
               </div>
               <div className="modal-body">

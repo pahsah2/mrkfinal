@@ -30,7 +30,7 @@ import Note from '../assets/icon/address_book.png';
 import TriangleArrow from '../assets/icon/TriangleArrow.png';
 import TabsIconMember from '../Components/layout/TabsIconMember';
 import MenuMember from '../Components/layout/MenuMember';
-import view from '../assets/icon/view-id.png';
+import view from '../assets/icon/view-data.png';
 
 export default function Index() {
   const history = useHistory();
@@ -90,7 +90,7 @@ export default function Index() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  รายชื่อลูกค้า
+                  <b>รายชื่อลูกค้า</b>
                 </h5>
                 <button
                   type="button"
@@ -114,7 +114,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  รายชื่อลูกค้า
+                  <b>รายชื่อลูกค้า</b>
                 </h5>
               </div>
               <div className="modal-body">

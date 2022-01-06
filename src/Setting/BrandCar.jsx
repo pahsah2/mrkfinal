@@ -65,14 +65,14 @@ export default function BrandCar() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Stock Setting">
+      <Container fluid className="package-container Stock Setting bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่า &gt; ยี่ห้อรถ/รุ่นรถ
+                  <b>ตั้งค่า &gt; ยี่ห้อรถ/รุ่นรถ</b>
                 </h5>
                 <button
                   type="button"
@@ -96,7 +96,7 @@ export default function BrandCar() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่า &gt; ยี่ห้อรถ/รุ่นรถ
+                  <b>ตั้งค่า &gt; ยี่ห้อรถ/รุ่นรถ</b>s
                 </h5>
               </div>
               <div className="modal-body">
@@ -158,12 +158,10 @@ export default function BrandCar() {
                         lg={3}
                         className="mt-3 set-hidden-add"
                       >
-                        
-                          <Button type="" className="button">
-                            <img src={Add} />
-                            &nbsp; เพิ่มรายการ
-                          </Button>
-                        
+                        <Button type="" className="button">
+                          <img src={Add} />
+                          &nbsp; เพิ่มรายการ
+                        </Button>
                       </Col>
                     </Row>
                   </Col>

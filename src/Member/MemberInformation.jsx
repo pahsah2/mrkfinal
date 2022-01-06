@@ -46,7 +46,7 @@ export default function MemberInformation() {
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
                     <img className="logo pr-2" src={Service} />
-                    บุคคลธรรมดา &#62; ข้อมูลส่วนตัว
+                    <b> บุคคลธรรมดา &#62; ข้อมูลส่วนตัว</b>
                   </h5>
                   <button
                     type="button"
@@ -70,7 +70,7 @@ export default function MemberInformation() {
                   </button>
                   <h5 className="modal-title" id="exampleModalLabel">
                     <img className="logo pr-2" src={Service} />
-                    บุคคลธรรมดา &#62; ข้อมูลส่วนตัว
+                    <b> บุคคลธรรมดา &#62; ข้อมูลส่วนตัว</b>
                   </h5>
                 </div>
                 <div className="modal-body ">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 
-import Delete from '../../assets/icon/flat-style-circle-delete.png';
+import Delete from '../../assets/icon/delete.png';
 import MainComponent from './CompanyB2BPackage/Index';
 import WashPart from './CompanyB2BPackage/WashPart';
 import Lightfilter from './CompanyB2BPackage/Lightfilter';

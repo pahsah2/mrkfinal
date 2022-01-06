@@ -47,7 +47,7 @@ export default function TabsIconUser() {
         <Button>
           <img src={chart1_4} alt="" />
         </Button>
-        <Link to="/usercreate">
+        <Link to="/user/add">
           <Button className="button-icon">เพิ่มผู้ใช้งาน</Button>
         </Link>
       </Col>

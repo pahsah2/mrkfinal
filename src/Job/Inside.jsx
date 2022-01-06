@@ -68,10 +68,12 @@ export default function Inside() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB &gt; ภายในร้าน &gt; &nbsp;
-                  {product && !service && !Package ? 'ร้านค้า' : ''}
-                  {!product && service && !Package ? 'บริการ' : ''}
-                  {!product && !service && Package ? 'แพคเกจ' : ''}
+                  <b>
+                    JOB &gt; ภายในร้าน &gt; &nbsp;
+                    {product && !service && !Package ? 'ร้านค้า' : ''}
+                    {!product && service && !Package ? 'บริการ' : ''}
+                    {!product && !service && Package ? 'แพคเกจ' : ''}
+                  </b>
                 </h5>
                 <button
                   type="button"
@@ -95,10 +97,12 @@ export default function Inside() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  JOB &gt; ภายในร้าน &gt; &nbsp;
-                  {product && !service && !Package ? 'ร้านค้า' : ''}
-                  {!product && service && !Package ? 'บริการ' : ''}
-                  {!product && !service && Package ? 'แพคเกจ' : ''}
+                  <b>
+                    JOB &gt; ภายในร้าน &gt; &nbsp;
+                    {product && !service && !Package ? 'ร้านค้า' : ''}
+                    {!product && service && !Package ? 'บริการ' : ''}
+                    {!product && !service && Package ? 'แพคเกจ' : ''}
+                  </b>
                 </h5>
               </div>
               <div className="modal-body">

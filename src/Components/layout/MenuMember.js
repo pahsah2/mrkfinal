@@ -9,7 +9,7 @@ import {
   Modal,
 } from 'react-bootstrap';
 import '../../assets/scss/style-component.scss';
-import Search from '../../assets/icon/iconfinder-search.png';
+import Search from '../../assets/icon/search.png';
 import Return from '../../assets/icon/undo_icon.png';
 import Increase from '../../assets/icon/add_menu.png';
 import Select, { components } from 'react-select';
@@ -121,11 +121,7 @@ export default function MenuMember() {
       </Col>
 
       <Col xs={12} className="mt-2 mb-2 d-sm-none">
-        <Button
-          className="button-menu "
-          style={{ padding: 0, margin: 0 }}
-          onClick={() => onSearch()}
-        >
+        <Button className="button-menu ">
           <img src={Increase} alt="" /> &nbsp; เพิ่มรายชื่อ
         </Button>
       </Col>

@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Button, Pagination, Form } from 'react-bootstrap';
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Pagination,
+  Form,
+  Table,
+} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Note from '../../assets/icon/note-car.png';
-import View from '../../assets/icon/iconfinder-eye-4341288_120560 2.png';
+import View from '../../assets/icon/view-data.png';
 import Select, { components } from 'react-select';
 
 export default function Property() {
@@ -22,9 +30,9 @@ export default function Property() {
   ]);
   return (
     <>
-      <Row className="g-0 justify-content-center">
-        <Row className=" mt-3" style={{ overflow: 'scroll', height: '500px' }}>
-          <table className="table table-responsive table-wash-part ">
+      <Row className="g-0 justify-content-center ">
+        <Col className=" mt-3 " style={{ overflow: 'scroll', height: '500px' }}>
+          <Table className="table table-responsive table-wash-part ">
             <thead>
               <tr className="t-header-package">
                 <th>ชื่อทรัพย์สิน</th>
@@ -48,18 +56,18 @@ export default function Property() {
                 <td>11/04/2021 18:30</td>
                 <td classname="set-button-table-management">
                   <Link to="/property/data-property">
-                    <Button type="" className=" m-2">
+                    <Button type="" className=" button-image m-2">
                       <img src={View} />
                     </Button>
                   </Link>
                 </td>
               </tr>
             </tbody>
-          </table>
-        </Row>
+          </Table>
+        </Col>
       </Row>
       <Row className="g-0 mt-3 mb-3">
-        <Col lg={4} className=" set-page">
+        <Col lg={5} className=" set-page">
           <Row>
             <Col className="d-flex justify-content-center align-items-center">
               <p style={{ margin: 0 }}>แสดง</p>
@@ -85,10 +93,7 @@ export default function Property() {
               <Pagination.Item>{1}</Pagination.Item>
 
               <Pagination.Item>{2}</Pagination.Item>
-              <Pagination.Item>{3}</Pagination.Item>
-              <Pagination.Item active>{4}</Pagination.Item>
-              <Pagination.Item>{5}</Pagination.Item>
-              <Pagination.Item>{6}</Pagination.Item>
+              <Pagination.Item active>{3}</Pagination.Item>
 
               <Pagination.Ellipsis />
               <Pagination.Item>{10}</Pagination.Item>

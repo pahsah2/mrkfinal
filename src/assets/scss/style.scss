@@ -2237,7 +2237,7 @@
 .ant-picker {
   width: 240px;
   height: 56px;
-  border-radius: 10px !important;
+
   .ant-picker-input {
     border: none !important;
     background: none !important;
@@ -2850,6 +2850,7 @@
   }
   .ant-picker-input input {
     padding: 10px;
+    border-radius: 0 !important;
   }
 }
 .Management {

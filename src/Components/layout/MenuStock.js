@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Dropdown, Button } from 'react-bootstrap';
 import '../../assets/scss/style-component.scss';
-import Search from '../../assets/icon/iconfinder-search.png';
+import Search from '../../assets/icon/search.png';
+
 import Return from '../../assets/icon/undo_icon.png';
 import Increase from '../../assets/icon/increase.png';
 import Select, { components } from 'react-select';

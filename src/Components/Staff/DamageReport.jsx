@@ -17,7 +17,7 @@ import { Table, Label, Input, FormGroup } from 'reactstrap';
 import Select, { components } from 'react-select';
 import { DatePicker, Space } from 'antd';
 
-import Search from '../../assets/icon/iconfinder-search.png';
+import Search from '../../assets/icon/search.png';
 import Calendar from '../../assets/icon/calendar-bg.png';
 
 export default function DamageReport() {
@@ -37,12 +37,14 @@ export default function DamageReport() {
           <Col lg={6} className="justify-content-start">
             <Form>
               <Row>
-                <Col xs={12} lg={5} className="d-flex justify-content-start">
+                <Col xs={12} lg={5} className="">
                   <Select
-                    className="text-left select-style"
-                    aria-label="Default select example"
-                    placeholder="เลขที่ Job"
                     options={job_number}
+                    isClearable={false}
+                    isSearchable={false}
+                    placeholder="เลขที่ Job"
+                    // onChange={(data) => SetNumberPerPage(data)}
+                    className="select-list"
                   />
                 </Col>
 

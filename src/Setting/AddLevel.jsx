@@ -59,14 +59,14 @@ export default function TypeCars() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Stock Setting">
+      <Container fluid className="package-container Stock Setting bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่า &gt; ประเภทรถ
+                  <b>ตั้งค่า &gt; ประเภทรถ</b>
                 </h5>
                 <button
                   type="button"
@@ -90,7 +90,7 @@ export default function TypeCars() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่า &gt; ประเภทรถ
+                  <b>ตั้งค่า &gt; ประเภทรถ</b>
                 </h5>
               </div>
               <div className="modal-body">

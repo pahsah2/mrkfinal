@@ -24,8 +24,8 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container className="productmanage-container">
-        <div className="productmanage">
+      <Container fluid className="package-container Service Stock User bg-mrk">
+        <div className="package">
           <div>
             <div className="modal-dialog modal-xl" role="document">
               <div className="modal-content">

@@ -66,7 +66,7 @@ export default function Unit() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่า &gt; หน่วย
+                  <b> ตั้งค่า &gt; หน่วย</b>
                 </h5>
                 <button
                   type="button"
@@ -90,7 +90,7 @@ export default function Unit() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Setting} />
-                  ตั้งค่า &gt; หน่วย
+                  <b> ตั้งค่า &gt; หน่วย</b>
                 </h5>
               </div>
               <div className="modal-body ">

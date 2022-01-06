@@ -9,7 +9,7 @@ import {
   Modal,
 } from 'react-bootstrap';
 import '../../assets/scss/style-component.scss';
-import Search from '../../assets/icon/iconfinder-search.png';
+import Search from '../../assets/icon/search.png';
 import Return from '../../assets/icon/undo_icon.png';
 import Increase from '../../assets/icon/increase.png';
 import Select, { components } from 'react-select';
@@ -17,6 +17,8 @@ import Arrow from '../../assets/icon/arrow.png';
 import Document from '../../assets/icon/document.png';
 import PurchaseOrder from '../../assets/icon/order.png';
 import MenuSend from '../../assets/icon/send-file.png';
+import Add from '../../assets/icon/add-staff.png';
+
 export default function MenuJob() {
   const [search, setSearch] = useState('');
   const [type, setType] = useState('');
@@ -109,8 +111,14 @@ export default function MenuJob() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu" onClick={reset_value}>
-          <img src={Return} />
-          <p>คืนค่า</p>
+          <Row className="justify-content-center align-items-center">
+            <Col className="p-0 d-flex justify-content-end">
+              <img src={Return} />
+            </Col>
+            <Col className="p-0 d-flex justify-content-start">
+              <p>คืนค่า</p>
+            </Col>
+          </Row>
         </Button>
       </Col>
       <Col
@@ -120,8 +128,14 @@ export default function MenuJob() {
         className="d-flex justify-content-center mt-2 mb-2 d-sm-none"
       >
         <Button className="button-menu" onClick={reset_value}>
-          <img src={Increase} />
-          <p>สร้าง JOB</p>
+          <Row className="justify-content-center align-items-center">
+            <Col className="p-0 d-flex justify-content-end">
+              <img src={Add} />
+            </Col>
+            <Col className="p-0 d-flex justify-content-start">
+              <p>สร้าง JOB</p>
+            </Col>
+          </Row>
         </Button>
       </Col>
     </Row>

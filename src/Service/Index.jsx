@@ -16,7 +16,7 @@ import MenuInput from '../Components/layout/MenuInput';
 import Back from '../assets/icon/back.png';
 import Staff from '../assets/icon/staff.png';
 import Service from '../assets/icon/management.png';
-import Write from '../assets/icon/flat-style-circle-write.png';
+import View from '../assets/icon/view-data.png';
 export default function Index() {
   const history = useHistory();
 
@@ -36,7 +36,7 @@ export default function Index() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  บริการ
+                  <b>บริการ</b>
                 </h5>
                 <button
                   type="button"
@@ -60,7 +60,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  บริการ
+                  <b>บริการ</b>
                 </h5>
               </div>
               <div className="modal-body">
@@ -97,7 +97,7 @@ export default function Index() {
                           <td></td>
                           <td>
                             <Button type="" className="button-package">
-                              <img src={Write} />
+                              <img src={View} />
                             </Button>
                           </td>
                         </tr>
@@ -111,7 +111,7 @@ export default function Index() {
                           <td></td>
                           <td>
                             <Button type="" className="button-package">
-                              <img src={Write} />
+                              <img src={View} />
                             </Button>
                           </td>
                         </tr>
@@ -125,7 +125,7 @@ export default function Index() {
                           <td></td>
                           <td>
                             <Button type="" className="button-package">
-                              <img src={Write} />
+                              <img src={View} />
                             </Button>
                           </td>
                         </tr>
@@ -139,7 +139,7 @@ export default function Index() {
                           <td></td>
                           <td>
                             <Button type="" className="button-package">
-                              <img src={Write} />
+                              <img src={View} />
                             </Button>
                           </td>
                         </tr>
@@ -153,7 +153,7 @@ export default function Index() {
                           <td></td>
                           <td>
                             <Button type="" className="button-package">
-                              <img src={Write} />
+                              <img src={View} />
                             </Button>
                           </td>
                         </tr>
@@ -167,7 +167,7 @@ export default function Index() {
                           <td></td>
                           <td>
                             <Button type="" className="button-package">
-                              <img src={Write} />
+                              <img src={View} />
                             </Button>
                           </td>
                         </tr>
@@ -181,7 +181,7 @@ export default function Index() {
                           <td></td>
                           <td>
                             <Button type="" className="button-package">
-                              <img src={Write} />
+                              <img src={View} />
                             </Button>
                           </td>
                         </tr>
@@ -195,7 +195,7 @@ export default function Index() {
                           <td></td>
                           <td>
                             <Button type="" className="button-package">
-                              <img src={Write} />
+                              <img src={View} />
                             </Button>
                           </td>
                         </tr>

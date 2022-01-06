@@ -83,14 +83,17 @@ export default function Index({ match }) {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock User B2B">
+      <Container
+        fluid
+        className="package-container Service Stock User B2B bg-mrk"
+      >
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={B2B} />
-                  Company (B2B)
+                  <b>Company (B2B)</b>
                 </h5>
                 <button
                   type="button"
@@ -114,7 +117,7 @@ export default function Index({ match }) {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={B2B} />
-                  Company (B2B)
+                  <b>Company (B2B)</b>
                 </h5>
               </div>
               <div className="modal-body">
@@ -264,12 +267,12 @@ export default function Index({ match }) {
                 </Col>
                 <Col>
                   <Row className="g-0 mt-3 mb-3">
-                    <Col md={6} lg={6} className=" set-page">
+                    <Col lg={4} className=" set-page">
                       <Row>
                         <Col className="d-flex justify-content-center align-items-center">
                           <p style={{ margin: 0 }}>แสดง</p>
                         </Col>
-                        <Col md={6} lg={7} xl={6}>
+                        <Col lg={7}>
                           <Select
                             className="text-left select-style"
                             aria-label="Default select example"
