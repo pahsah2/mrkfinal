@@ -12,7 +12,7 @@ import MenuStock from '../../Components/layout/MenuStock';
 import Write from '../../assets/icon/flat-style-circle-write.png';
 import Arrow from '../../assets/icon/arrow.png';
 import Document from '../../assets/icon/document.png';
-import Search from '../../assets/icon/eyes-search.png';
+import Search from '../../assets/icon/view-data.png';
 import MenuStock_Request_Order from '../../Components/layout/MenuStock_Request_Order';
 export default function Index() {
   const history = useHistory();
@@ -31,14 +31,14 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock">
+      <Container fluid className="package-container Service Stock bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; คำร้องสั่งสินค้า
+                  <b>สต็อก &gt; คำร้องสั่งสินค้า</b>
                 </h5>
                 <button
                   type="button"
@@ -62,7 +62,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; คำร้องสั่งสินค้า
+                  <b>สต็อก &gt; คำร้องสั่งสินค้า</b>
                 </h5>
               </div>
               <div className="modal-body">
@@ -175,12 +175,12 @@ export default function Index() {
                   </Row>
                 </Row>
                 <Row className="g-0 mt-3 mb-3">
-                  <Col lg={4} xl={4} className=" set-page">
+                  <Col lg={5} className=" set-page">
                     <Row>
                       <Col className="d-flex justify-content-center align-items-center">
                         <p style={{ margin: 0 }}>แสดง</p>
                       </Col>
-                      <Col md={6} lg={6}>
+                      <Col lg={7}>
                         <Select
                           className="text-left select-style"
                           aria-label="Default select example"
@@ -194,20 +194,14 @@ export default function Index() {
                     </Row>
                   </Col>
 
-                  <Col
-                    md={8}
-                    className="d-flex justify-content-end set-paginate"
-                  >
+                  <Col className="d-flex justify-content-end set-paginate">
                     <div className="box-paginate">
                       <Pagination>
                         <Pagination.Prev />
                         <Pagination.Item>{1}</Pagination.Item>
 
                         <Pagination.Item>{2}</Pagination.Item>
-                        <Pagination.Item>{3}</Pagination.Item>
-                        <Pagination.Item active>{4}</Pagination.Item>
-                        <Pagination.Item>{5}</Pagination.Item>
-                        <Pagination.Item>{6}</Pagination.Item>
+                        <Pagination.Item active>{3}</Pagination.Item>
 
                         <Pagination.Ellipsis />
                         <Pagination.Item>{10}</Pagination.Item>

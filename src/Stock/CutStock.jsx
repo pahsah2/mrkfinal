@@ -13,10 +13,10 @@ import Write from '../assets/icon/flat-style-circle-write.png';
 import Arrow from '../assets/icon/arrow.png';
 import Document from '../assets/icon/document.png';
 import Search from '../assets/icon/eyes-search.png';
-import Delete from '../assets/icon/flat-style-circle-delete.png';
-import Increase from '../assets/icon/increase.png';
-import Save from '../assets/icon/flat-style-circle-save.png';
-import Return from '../assets/icon/flat-style-circle-turn-on.png';
+import Delete from '../assets/icon/delete.png';
+import Increase from '../assets/icon/add-staff.png';
+import Save from '../assets/icon/save.png';
+import Return from '../assets/icon/new-re-turn.png';
 import { DatePicker, Space } from 'antd';
 import Calendar from '../assets/icon/calendar-bg.png';
 
@@ -24,7 +24,9 @@ export default function CutStock() {
   const history = useHistory();
 
   const [statepage, setStatepage] = useState('');
-  const [products, setproducts] = useState('');
+  const [productName, setProductName] = useState([{ value: '', label: '' }]);
+  const [unit, setUnit] = useState([{ value: '', label: '' }]);
+  const [reason, setReason] = useState([{ value: '', label: '' }]);
   const handleSelectPage = (e) => setStatepage(e);
 
   function onChange(date, dateString) {
@@ -38,14 +40,17 @@ export default function CutStock() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock CutStock">
+      <Container
+        fluid
+        className="package-container Service Stock CutStock bg-mrk"
+      >
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; ตัดสต็อก
+                  <b>สต็อก &gt; ตัดสต็อก</b>
                 </h5>
                 <button
                   type="button"
@@ -69,7 +74,7 @@ export default function CutStock() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; ตัดสต็อก
+                  <b>สต็อก &gt; ตัดสต็อก</b>
                 </h5>
               </div>
               <div className="modal-body">
@@ -120,10 +125,13 @@ export default function CutStock() {
                             </Col>
                             <Col xs={9} lg={5}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={productName}
+                                // defaultValue={optionTable[0]}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={false}
+                                // onChange={(data) => SetNumberPerPage(data)}
+                                className="select-list"
                               />
                             </Col>
                             <Col
@@ -154,10 +162,13 @@ export default function CutStock() {
                             </Col>
                             <Col xs={9} lg={4}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={unit}
+                                // defaultValue={optionTable[0]}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={false}
+                                // onChange={(data) => SetNumberPerPage(data)}
+                                className="select-list"
                               />
                             </Col>
                           </Row>
@@ -185,10 +196,13 @@ export default function CutStock() {
                             </Col>
                             <Col xs={9} lg={4}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={reason}
+                                // defaultValue={optionTable[0]}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={false}
+                                // onChange={(data) => SetNumberPerPage(data)}
+                                className="select-list"
                               />
                             </Col>
                           </Row>
@@ -239,10 +253,13 @@ export default function CutStock() {
                             </Col>
                             <Col xs={9} lg={5}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={productName}
+                                // defaultValue={optionTable[0]}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={true}
+                                // onChange={(data) => SetNumberPerPage(data)}
+                                className="select-list"
                               />
                             </Col>
                             <Col
@@ -273,10 +290,13 @@ export default function CutStock() {
                             </Col>
                             <Col xs={9} lg={4}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={unit}
+                                // defaultValue={optionTable[0]}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={false}
+                                // onChange={(data) => SetNumberPerPage(data)}
+                                className="select-list"
                               />
                             </Col>
                           </Row>
@@ -304,10 +324,13 @@ export default function CutStock() {
                             </Col>
                             <Col xs={9} lg={4}>
                               <Select
-                                className="text-left select-style"
-                                aria-label="Default select example"
+                                options={reason}
+                                // defaultValue={optionTable[0]}
                                 placeholder=""
-                                options={products}
+                                isClearable={false}
+                                isSearchable={false}
+                                // onChange={(data) => SetNumberPerPage(data)}
+                                className="select-list"
                               />
                             </Col>
                           </Row>

@@ -31,14 +31,14 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container">
+      <Container fluid className="package-container Service Stock User bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Staff} />
-                  การจัดการแพ็กเกจ
+                  <b>การจัดการแพ็กเกจ</b>
                 </h5>
                 <button
                   type="button"
@@ -62,14 +62,14 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Staff} />
-                  การจัดการแพ็กเกจ
+                  <b>การจัดการแพ็กเกจ</b>
                 </h5>
               </div>
               <div className="modal-body ">
-                <Row className="tabsicon">
+                <Row className="tabsicon m-0">
                   <TabsIcon />
                 </Row>
-                <Row className="tabs-button">
+                <Row className="tabs-button g-0">
                   <Col>
                     <Tabs
                       defaultActiveKey="WashPart"

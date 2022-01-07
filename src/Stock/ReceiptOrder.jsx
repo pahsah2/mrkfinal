@@ -32,14 +32,14 @@ export default function ReceiptOrder() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock">
+      <Container fluid className="package-container Service Stock bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; รายการรับเข้า/สั่งซื้อ
+                  <b>สต็อก &gt; รายการรับเข้า/สั่งซื้อ</b>
                 </h5>
                 <button
                   type="button"
@@ -63,7 +63,7 @@ export default function ReceiptOrder() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; รายการรับเข้า/สั่งซื้อ
+                  <b>สต็อก &gt; รายการรับเข้า/สั่งซื้อ</b>
                 </h5>
               </div>
               <div className="modal-body">

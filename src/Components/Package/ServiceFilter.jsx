@@ -5,18 +5,46 @@ import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 import { Switch } from 'antd';
 import Search from '../../assets/icon/search.png';
 import Add_member from '../../assets/icon/add_menu.png';
+import Select, { components } from 'react-select';
+import Delete from '../../assets/icon/delete.png';
+import Write from '../../assets/icon/add-staff.png';
 export default function ServiceFilter() {
   const [service, setService] = useState('');
   const [allsearch, setAllsearch] = useState('');
 
   const handleSelectService = (e) => setService(e);
-  const handleSearch = (e) => {};
   const [statusService, setStatusService] = useState(false);
-  const checked = false;
 
   const statusServiceToggler = () => {
     statusService ? setStatusService(false) : setStatusService(true);
   };
+
+  function SetService(data) {
+    setService({ value: data.value, label: data.value });
+  }
+  const optionService = [
+    { value: 'Dupont AUTO PPF เต็มคัน', label: 'Dupont AUTO PPF เต็มคัน' },
+    {
+      value: 'Dupont AUTO PPF ช่วงหน้ารถ',
+      label: 'Dupont AUTO PPF ช่วงหน้ารถ',
+    },
+    {
+      value: 'Autozkin MODEL SLIM เต็มคัน',
+      label: 'Autozkin MODEL SLIM เต็มคัน',
+    },
+    {
+      value: 'Autozkin MODEL SLIM ช่วงหน้ารถ',
+      label: 'Autozkin MODEL SLIM ช่วงหน้ารถ',
+    },
+    {
+      value: 'Autozkin ORGINAL PPF เต็มคัน',
+      label: 'Autozkin ORGINAL PPF เต็มคัน',
+    },
+    {
+      value: 'Autozkin ORGINAL PPF ช่วงหน้ารถ',
+      label: 'Autozkin ORGINAL PPF ช่วงหน้ารถ',
+    },
+  ];
   return (
     <div className="div-tab-all ">
       <br />
@@ -24,46 +52,15 @@ export default function ServiceFilter() {
         <thead className="t-header-package">
           <tr>
             <th>
-              <div className="input-dropdown-package">
-                <Form.Control
-                  type="text"
-                  placeholder="บริการ"
-                  // defaultValue={statepage[0]}
-                  value={service}
-                  onChange={(e) => setService(e.target.value)}
-                  disabled
-                ></Form.Control>
-                <Col
-                  className="d-flex justify-content-end set-dropdown"
-                  style={{ padding: 0 }}
-                >
-                  <Dropdown onSelect={handleSelectService} className="dropdown">
-                    <Dropdown.Toggle variant="secondary " id="dropdown-basic">
-                      {/* {value} */}
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu style={{ backgroundColor: '#73a47' }}>
-                      <Dropdown.Item eventKey="Dupont AUTO PPF เต็มคัน">
-                        Dupont AUTO PPF เต็มคัน
-                      </Dropdown.Item>
-                      <Dropdown.Item eventKey="Dupont AUTO PPF ช่วงหน้ารถ">
-                        Dupont AUTO PPF ช่วงหน้ารถ
-                      </Dropdown.Item>
-                      <Dropdown.Item eventKey="Autozkin MODEL SLIM เต็มคัน">
-                        Autozkin MODEL SLIM เต็มคัน
-                      </Dropdown.Item>
-                      <Dropdown.Item eventKey="Autozkin MODEL SLIM ช่วงหน้ารถ">
-                        Autozkin MODEL SLIM ช่วงหน้ารถ
-                      </Dropdown.Item>
-                      <Dropdown.Item eventKey="Autozkin ORGINAL PPF เต็มคัน">
-                        Autozkin ORGINAL PPF เต็มคัน
-                      </Dropdown.Item>
-                      <Dropdown.Item eventKey="Autozkin ORGINAL PPF ช่วงหน้ารถ">
-                        Autozkin ORGINAL PPF ช่วงหน้ารถ
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                </Col>
-              </div>
+              <Select
+                options={optionService}
+                defaultValue={optionService[0]}
+                placeholder=""
+                isClearable={false}
+                isSearchable={false}
+                onChange={(data) => SetService(data)}
+                className="select-list"
+              />
             </th>
             <th>
               <div className="div-input-search">
@@ -128,38 +125,12 @@ export default function ServiceFilter() {
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src="icon/flat-style-circle-edit_icon-icons 13.png" />
+                <img src={Write} />
               </Button>
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src="icon/delete-button.png" />
-              </Button>
-            </td>
-          </tr>
-          <tr>
-            <td>ราคากลาง</td>
-            <td>3 ปี</td>
-            <td>180</td>
-            <td>200</td>
-            <td>200</td>
-            <td>200</td>
-            <td>250</td>
-            <td>250</td>
-            <td>300</td>
-            <td>550</td>
-            <td>
-              <Switch onClick={statusServiceToggler} />
-              {/* {statusService ? <span>well</span> : <span>Bad</span>} */}
-            </td>
-            <td>
-              <Button type="" className="button-package">
-                <img src="icon/flat-style-circle-edit_icon-icons 13.png" />
-              </Button>
-            </td>
-            <td>
-              <Button type="" className="button-package">
-                <img src="icon/delete-button.png" />
+                <img src={Delete} />
               </Button>
             </td>
           </tr>
@@ -180,38 +151,12 @@ export default function ServiceFilter() {
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src="icon/flat-style-circle-edit_icon-icons 13.png" />
+                <img src={Write} />
               </Button>
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src="icon/delete-button.png" />
-              </Button>
-            </td>
-          </tr>
-          <tr>
-            <td>ราคากลาง</td>
-            <td>3 ปี</td>
-            <td>180</td>
-            <td>200</td>
-            <td>200</td>
-            <td>200</td>
-            <td>250</td>
-            <td>250</td>
-            <td>300</td>
-            <td>550</td>
-            <td>
-              <Switch onClick={statusServiceToggler} />
-              {/* {statusService ? <span>well</span> : <span>Bad</span>} */}
-            </td>
-            <td>
-              <Button type="" className="button-package">
-                <img src="icon/flat-style-circle-edit_icon-icons 13.png" />
-              </Button>
-            </td>
-            <td>
-              <Button type="" className="button-package">
-                <img src="icon/delete-button.png" />
+                <img src={Delete} />
               </Button>
             </td>
           </tr>
@@ -232,12 +177,12 @@ export default function ServiceFilter() {
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src="icon/flat-style-circle-edit_icon-icons 13.png" />
+                <img src={Write} />
               </Button>
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src="icon/delete-button.png" />
+                <img src={Delete} />
               </Button>
             </td>
           </tr>
@@ -258,12 +203,64 @@ export default function ServiceFilter() {
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src="icon/flat-style-circle-edit_icon-icons 13.png" />
+                <img src={Write} />
               </Button>
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src="icon/delete-button.png" />
+                <img src={Delete} />
+              </Button>
+            </td>
+          </tr>
+          <tr>
+            <td>ราคากลาง</td>
+            <td>3 ปี</td>
+            <td>180</td>
+            <td>200</td>
+            <td>200</td>
+            <td>200</td>
+            <td>250</td>
+            <td>250</td>
+            <td>300</td>
+            <td>550</td>
+            <td>
+              <Switch onClick={statusServiceToggler} />
+              {/* {statusService ? <span>well</span> : <span>Bad</span>} */}
+            </td>
+            <td>
+              <Button type="" className="button-package">
+                <img src={Write} />
+              </Button>
+            </td>
+            <td>
+              <Button type="" className="button-package">
+                <img src={Delete} />
+              </Button>
+            </td>
+          </tr>
+          <tr>
+            <td>ราคากลาง</td>
+            <td>3 ปี</td>
+            <td>180</td>
+            <td>200</td>
+            <td>200</td>
+            <td>200</td>
+            <td>250</td>
+            <td>250</td>
+            <td>300</td>
+            <td>550</td>
+            <td>
+              <Switch onClick={statusServiceToggler} />
+              {/* {statusService ? <span>well</span> : <span>Bad</span>} */}
+            </td>
+            <td>
+              <Button type="" className="button-package">
+                <img src={Write} />
+              </Button>
+            </td>
+            <td>
+              <Button type="" className="button-package">
+                <img src={Delete} />
               </Button>
             </td>
           </tr>

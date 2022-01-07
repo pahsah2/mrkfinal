@@ -79,17 +79,16 @@ export default function MenuStockRequestOrder() {
           <p>สั่งซื้อ</p>
         </Button>
       </Col>
-      <Col
-        xs={6}
-        sm={6}
-        md={4}
-        lg={2}
-        xl={2}
-        className="d-flex justify-content-center mt-2 mb-2"
-      >
+      <Col xs={6} sm={6} md={4} lg={2} xl={2} className=" mt-2 mb-2">
         <Button className="button-menu">
-          <img src={Search} />
-          <p>ค้นหา</p>
+          <Row className="justify-content-center align-items-center">
+            <Col className="p-0 d-flex justify-content-end">
+              <img src={Search} />
+            </Col>
+            <Col className="p-0 d-flex justify-content-start">
+              <p>ค้นหา</p>
+            </Col>
+          </Row>
         </Button>
       </Col>
       <Col
@@ -101,8 +100,14 @@ export default function MenuStockRequestOrder() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu" onClick={reset_value}>
-          <img src={Return} />
-          <p>คืนค่า</p>
+          <Row className="justify-content-center align-items-center">
+            <Col className="p-0 d-flex justify-content-end">
+              <img src={Return} />
+            </Col>
+            <Col className="p-0 d-flex justify-content-start">
+              <p>คืนค่า</p>
+            </Col>
+          </Row>
         </Button>
       </Col>
     </Row>

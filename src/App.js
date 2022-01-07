@@ -11,6 +11,9 @@ import Dashbroad from './Dashbroad/Index';
 import Dashboard_data from './Dashbroad/Dashboard';
 import Package from './Package/Index';
 import ProductManage from './ProductManage/Index';
+import AddProduct from './ProductManage/AddProduct';
+import EditProduct from './ProductManage/EditProduct';
+
 import Member from './Member/Index';
 import MemberCreate from './Member/MemberCreate';
 import MemberInformation from './Member/MemberInformation';
@@ -121,7 +124,9 @@ function App() {
         <Route path="/dashboard" component={Dashboard_data} />
         <Route path="/test" component={TestImage} />
         <Route path="/package" component={Package} exact />
-        <Route path="/productmanage" component={ProductManage} />
+        <Route path="/product" component={ProductManage} exact />
+        <Route path="/product/add" component={AddProduct} />
+        <Route path="/product/edit" component={EditProduct} />
         <Route path="/member" component={Member} exact />
         <Route path="/user" component={User} exact />
         <Route path="/user/add" component={UserCreate} />

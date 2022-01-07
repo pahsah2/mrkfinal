@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, Table } from 'react-bootstrap';
 import Select, { components } from 'react-select';
 import Delete from '../../../assets/icon/delete.png';
 export default function Index() {
@@ -54,8 +54,8 @@ export default function Index() {
             </Col>
           </Row>
           <Row className="mt-5 mb-5 m-0">
-            <Col className="set-table-inside p-0">
-              <table className="table table-responsive table-wash-part ">
+            <Col className=" p-0">
+              <Table className="table table-responsive table-wash-part ">
                 <thead>
                   <tr className="t-header-package">
                     <th>ลำดับ</th>
@@ -93,7 +93,7 @@ export default function Index() {
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </Table>
             </Col>
           </Row>
           <Row className="mt-3 mb-5">

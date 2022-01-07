@@ -13,10 +13,10 @@ import Write from '../assets/icon/flat-style-circle-write.png';
 import Arrow from '../assets/icon/arrow.png';
 import Document from '../assets/icon/document.png';
 import Search from '../assets/icon/eyes-search.png';
-import Delete from '../assets/icon/flat-style-circle-delete.png';
-import Increase from '../assets/icon/increase.png';
-import Save from '../assets/icon/flat-style-circle-save.png';
-import Return from '../assets/icon/flat-style-circle-turn-on.png';
+import Delete from '../assets/icon/delete.png';
+import Increase from '../assets/icon/add-staff.png';
+import Save from '../assets/icon/save.png';
+import Return from '../assets/icon/new-re-turn.png';
 import { DatePicker, Space } from 'antd';
 import Calendar from '../assets/icon/calendar-bg.png';
 
@@ -39,14 +39,17 @@ export default function Adjust() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock CutStock">
+      <Container
+        fluid
+        className="package-container Service Stock CutStock bg-mrk"
+      >
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; ปรับสต็อก
+                  <b>สต็อก &gt; ปรับสต็อก</b>
                 </h5>
                 <button
                   type="button"
@@ -70,7 +73,7 @@ export default function Adjust() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; ปรับสต็อก
+                  <b>สต็อก &gt; ปรับสต็อก</b>
                 </h5>
               </div>
               <div className="modal-body">

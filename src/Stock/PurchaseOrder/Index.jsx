@@ -25,7 +25,7 @@ import Save from '../../assets/icon/new-save.png';
 import Getout from '../../assets/icon/getout.png';
 import Print from '../../assets/icon/print.png';
 import CanCel from '../../assets/icon/new-cancel.png';
-import Delete from '../../assets/icon/flat-style-circle-delete.png';
+import Delete from '../../assets/icon/delete.png';
 import Return from '../../assets/icon/new-re-turn.png';
 import { DatePicker, Space } from 'antd';
 import Calendar from '../../assets/icon/calendar-bg.png';
@@ -70,14 +70,14 @@ export default function PurchaseOrder() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock">
+      <Container fluid className="package-container Service Stock bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; ใบสั่งซื้อ
+                  <b>สต็อก &gt; ใบสั่งซื้อ</b>
                 </h5>
                 <button
                   type="button"
@@ -101,7 +101,7 @@ export default function PurchaseOrder() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  สต็อก &gt; ใบสั่งซื้อ
+                  <b>สต็อก &gt; ใบสั่งซื้อ</b>
                 </h5>
               </div>
               <div className="modal-body">
@@ -268,7 +268,7 @@ export default function PurchaseOrder() {
                             </td>
                             <td>50</td>
                             <th>
-                              <Button type="button" className="button-table">
+                              <Button type="button" className="button-package">
                                 <img src={Delete} />
                               </Button>
                             </th>
@@ -292,7 +292,7 @@ export default function PurchaseOrder() {
                         <Col>
                           <Form.Control
                             as="textarea"
-                            row={3}
+                            rows={3}
                             className=""
                           ></Form.Control>
                         </Col>

@@ -177,7 +177,7 @@ export default function Index() {
                   </Col>
                 </Row>
                 <Row className="g-0 mt-3 mb-3">
-                  <Col lg={4} className=" set-page">
+                  <Col lg={5} className=" set-page">
                     <Row>
                       <Col className="d-flex justify-content-center align-items-center">
                         <p style={{ margin: 0 }}>แสดง</p>

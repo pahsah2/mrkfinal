@@ -44,7 +44,7 @@ export default function MenuStockReceiptOrder() {
   };
   return (
     <Row className="g-0">
-      <Col lg={4} className="d-flex justify-content-center mt-2 mb-2">
+      <Col lg={4} className=" mt-2 mb-2">
         <Form.Control
           type="text"
           placeholder="ค้นหาด้วยรหัสสินค้า,ประเภท,หมวดหมู่"
@@ -62,30 +62,28 @@ export default function MenuStockReceiptOrder() {
           options={display}
         />
       </Col>
-      <Col
-        xs={6}
-        sm={6}
-        md={4}
-        lg={2}
-        xl={2}
-        className="d-flex justify-content-center mt-2 mb-2"
-      >
+      <Col xs={6} sm={6} md={4} lg={2} xl={2} className=" mt-2 mb-2">
         <Button className="button-menu">
-          <img src={PurchaseOrder} />
-          <p>ใบสั่งซื้อ</p>
+          <Row className="justify-content-center align-items-center">
+            <Col className="p-0 d-flex justify-content-end">
+              <img src={PurchaseOrder} />
+            </Col>
+            <Col className="p-0 d-flex justify-content-start">
+              <p>ใบสั่งซื้อ</p>
+            </Col>
+          </Row>
         </Button>
       </Col>
-      <Col
-        xs={6}
-        sm={6}
-        md={4}
-        lg={2}
-        xl={2}
-        className="d-flex justify-content-center mt-2 mb-2"
-      >
+      <Col xs={6} sm={6} md={4} lg={2} xl={2} className=" mt-2 mb-2">
         <Button className="button-menu">
-          <img src={Search} />
-          <p>ค้นหา</p>
+          <Row className="justify-content-center align-items-center">
+            <Col className="p-0 d-flex justify-content-end">
+              <img src={Search} />
+            </Col>
+            <Col className="p-0 d-flex justify-content-start">
+              <p>ค้นหา</p>
+            </Col>
+          </Row>
         </Button>
       </Col>
       <Col
@@ -97,8 +95,14 @@ export default function MenuStockReceiptOrder() {
         className="d-flex justify-content-center mt-2 mb-2"
       >
         <Button className="button-menu" onClick={reset_value}>
-          <img src={Return} />
-          <p>คืนค่า</p>
+          <Row className="justify-content-center align-items-center">
+            <Col className="p-0 d-flex justify-content-end">
+              <img src={Return} />
+            </Col>
+            <Col className="p-0 d-flex justify-content-start">
+              <p>คืนค่า</p>
+            </Col>
+          </Row>
         </Button>
       </Col>
     </Row>
