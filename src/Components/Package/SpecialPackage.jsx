@@ -111,37 +111,13 @@ export default function SpecialPackage() {
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src={Delete} />
+              <img src={Write} />
+               
               </Button>
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src={Write} />
-              </Button>
-            </td>
-          </tr>
-          <tr>
-            <td>ราคากลาง</td>
-            <td>180</td>
-            <td>200</td>
-            <td>200</td>
-            <td>200</td>
-            <td>250</td>
-            <td>250</td>
-            <td>300</td>
-            <td>550</td>
-            <td>
-              <Switch onClick={statusServiceToggler} />
-              {/* {statusService ? <span>well</span> : <span>Bad</span>} */}
-            </td>
-            <td>
-              <Button type="" className="button-package">
-                <img src={Delete} />
-              </Button>
-            </td>
-            <td>
-              <Button type="" className="button-package">
-                <img src={Write} />
+                 <img src={Delete} />
               </Button>
             </td>
           </tr>
@@ -161,37 +137,13 @@ export default function SpecialPackage() {
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src={Delete} />
+              <img src={Write} />
+               
               </Button>
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src={Write} />
-              </Button>
-            </td>
-          </tr>
-          <tr>
-            <td>ราคากลาง</td>
-            <td>180</td>
-            <td>200</td>
-            <td>200</td>
-            <td>200</td>
-            <td>250</td>
-            <td>250</td>
-            <td>300</td>
-            <td>550</td>
-            <td>
-              <Switch onClick={statusServiceToggler} />
-              {/* {statusService ? <span>well</span> : <span>Bad</span>} */}
-            </td>
-            <td>
-              <Button type="" className="button-package">
-                <img src={Delete} />
-              </Button>
-            </td>
-            <td>
-              <Button type="" className="button-package">
-                <img src={Write} />
+                 <img src={Delete} />
               </Button>
             </td>
           </tr>
@@ -211,12 +163,13 @@ export default function SpecialPackage() {
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src={Delete} />
+              <img src={Write} />
+               
               </Button>
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src={Write} />
+                 <img src={Delete} />
               </Button>
             </td>
           </tr>
@@ -236,12 +189,65 @@ export default function SpecialPackage() {
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src={Delete} />
+              <img src={Write} />
+               
               </Button>
             </td>
             <td>
               <Button type="" className="button-package">
-                <img src={Write} />
+                 <img src={Delete} />
+              </Button>
+            </td>
+          </tr>
+          <tr>
+            <td>ราคากลาง</td>
+            <td>180</td>
+            <td>200</td>
+            <td>200</td>
+            <td>200</td>
+            <td>250</td>
+            <td>250</td>
+            <td>300</td>
+            <td>550</td>
+            <td>
+              <Switch onClick={statusServiceToggler} />
+              {/* {statusService ? <span>well</span> : <span>Bad</span>} */}
+            </td>
+            <td>
+              <Button type="" className="button-package">
+              <img src={Write} />
+               
+              </Button>
+            </td>
+            <td>
+              <Button type="" className="button-package">
+                 <img src={Delete} />
+              </Button>
+            </td>
+          </tr>
+          <tr>
+            <td>ราคากลาง</td>
+            <td>180</td>
+            <td>200</td>
+            <td>200</td>
+            <td>200</td>
+            <td>250</td>
+            <td>250</td>
+            <td>300</td>
+            <td>550</td>
+            <td>
+              <Switch onClick={statusServiceToggler} />
+              {/* {statusService ? <span>well</span> : <span>Bad</span>} */}
+            </td>
+            <td>
+              <Button type="" className="button-package">
+              <img src={Write} />
+               
+              </Button>
+            </td>
+            <td>
+              <Button type="" className="button-package">
+                 <img src={Delete} />
               </Button>
             </td>
           </tr>

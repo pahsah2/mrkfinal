@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Dropdown, Button } from 'react-bootstrap';
 import Delete from '../../../assets/icon/delete.png';
-import Increase from '../../../assets/icon/increase.png';
+import Increase from '../../../assets/icon/add-staff.png';
 import { Switch } from 'antd';
-import Write from '../../../assets/icon/flat-style-circle-write.png';
-import DeleteWash from '../../../assets/icon/flat-style-circle-delete.png';
-import Save from '../../../assets/icon/flat-style-circle-save.png';
-import Turnoff from '../../../assets/icon/flat-style-circle-turn-on.png';
+import Write from '../../../assets/icon/add-staff.png';
+import DeleteWash from '../../../assets/icon/delete.png';
+import Save from '../../../assets/icon/new-save.png';
+import Turnoff from '../../../assets/icon/new-cancel.png';
+import Select, { components } from 'react-select';
 export default function AddProtectivePart() {
+  const [service, setService] = useState([{ value: '', label: '' }]);
   const [showroom, setShowRoom] = useState('');
   const [size_S, setSize_S] = useState('');
   const [size_M, setSize_M] = useState('');
@@ -22,6 +24,17 @@ export default function AddProtectivePart() {
     statusService ? setStatusService(false) : setStatusService(true);
   };
   const handleSelectShowRoom = (e) => setShowRoom(e);
+  const optionService = [
+    { value: 'เคลือบคริสตัล', label: ' เคลือบคริสตัล' },
+    {
+      value: 'เคลือบเซรามิก',
+      label: 'เคลือบเซรามิก',
+    },
+  ];
+
+function SetService(data) {
+    setService({ value: data.value, label: data.value });
+  }
   return (
     <>
       <Container fluid className="set-heght">
@@ -35,51 +48,15 @@ export default function AddProtectivePart() {
                     <Row>
                       <Col>โชว์รูม</Col>
                       <Col style={{ padding: 0 }}>
-                        <div className="input-dropdown-package-Add-wash-part">
-                          <Form.Control
-                            type="text"
-                            placeholder="บริการ"
-                            // defaultValue={statepage[0]}
-                            value={showroom}
-                            onChange={(e) => setShowRoom(e.target.value)}
-                            disabled
-                          ></Form.Control>
-                          <Col
-                            className="d-flex justify-content-end set-dropdown"
-                            style={{ padding: 0 }}
-                          >
-                            <Dropdown
-                              onSelect={handleSelectShowRoom}
-                              className="dropdown"
-                            >
-                              <Dropdown.Toggle
-                                variant="secondary "
-                                id="dropdown-basic"
-                              >
-                                {/* {value} */}
-                              </Dropdown.Toggle>
-                              <Dropdown.Menu
-                                style={{ backgroundColor: '#73a47' }}
-                              >
-                                <Dropdown.Item eventKey="บริการทำความสะอาดรถ">
-                                  บริการทำความสะอาดรถ
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="แพคเกจล้างรถ (ระยะเวลา 1 ปี)">
-                                  แพคเกจล้างรถ (ระยะเวลา 1 ปี)
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="เหมาบริการ + เคลือบ Wax">
-                                  เหมาบริการ + เคลือบ Wax
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="แพคเกจล้างรถ + เคลือบ Wax">
-                                  แพคเกจล้างรถ + เคลือบ Wax
-                                </Dropdown.Item>
-                                <Dropdown.Item eventKey="กล่องสุดคุ้ม น้ำยา Wax+PCS+SC">
-                                  กล่องสุดคุ้ม น้ำยา Wax+PCS+SC
-                                </Dropdown.Item>
-                              </Dropdown.Menu>
-                            </Dropdown>
-                          </Col>
-                        </div>
+                        <Select
+                          options={optionService}
+                          defaultValue={optionService[0]}
+                          placeholder=""
+                          isClearable={false}
+                          isSearchable={false}
+                          onChange={(data) => SetService(data)}
+                          className="select-list"
+                        />
                       </Col>
                     </Row>
                   </Col>

@@ -22,14 +22,14 @@ export default function AddWashPart() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container bg-mrk">
+      <Container fluid className="package-container Service Stock User bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Package_image} />
-                  การจัดการแพ็กเกจ &gt; บริการล้างและเคลือบแว๊กซ์
+                 <b>การจัดการแพ็กเกจ &gt; บริการล้างและเคลือบแว๊กซ์</b> 
                 </h5>
                 <button
                   type="button"
@@ -53,7 +53,7 @@ export default function AddWashPart() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Package_image} />
-                  การจัดการแพ็กเกจ &gt; บริการล้างและเคลือบแว๊กซ์
+                  <b>การจัดการแพ็กเกจ &gt; บริการล้างและเคลือบแว๊กซ์</b>
                 </h5>
               </div>
               <div className="modal-body ">

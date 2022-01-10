@@ -29,7 +29,7 @@ export default function AddCoatPart() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Package_image} />
-                  การจัดการแพ็กเกจ &gt; บริการเคลือบเหมา
+                  <b>การจัดการแพ็กเกจ &gt; บริการเคลือบเหมา</b>
                 </h5>
                 <button
                   type="button"
@@ -53,7 +53,7 @@ export default function AddCoatPart() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Package_image} />
-                  การจัดการแพ็กเกจ &gt; บริการเคลือบเหมา
+                  <b>การจัดการแพ็กเกจ &gt; บริการเคลือบเหมา</b>
                 </h5>
               </div>
               <div className="modal-body ">

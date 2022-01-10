@@ -80,7 +80,7 @@ export default function ServiceFilter() {
               </Button>
             </th>
             <th>
-              <Link to="/package/add-light-filter-part">
+              <Link to="/package/add-service-filter">
                 <Button type="button" className="button">
                   <img src={Add_member} className="icon-button" /> &nbsp;
                   เพิ่มรายการ

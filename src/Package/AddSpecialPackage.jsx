@@ -29,7 +29,7 @@ export default function AddServiceFilter() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Package_image} />
-                  การจัดการแพ็กเกจ &gt; แก้ไขแพคเกจพิเศษ
+                  <b>การจัดการแพ็กเกจ &gt; แก้ไขแพคเกจพิเศษ</b>
                 </h5>
                 <button
                   type="button"
@@ -53,7 +53,7 @@ export default function AddServiceFilter() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Package_image} />
-                  การจัดการแพ็กเกจ &gt; แก้ไขแพคเกจพิเศษ
+                  <b>การจัดการแพ็กเกจ &gt; แก้ไขแพคเกจพิเศษ</b>
                 </h5>
               </div>
               <div className="modal-body ">

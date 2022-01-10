@@ -6,6 +6,7 @@ import LogoutModal from './LogoutModal';
 import Mr1 from '../assets/icon/Mr1.png';
 import Setting from '../assets/icon/setting.png';
 import Staff from '../assets/icon/staff.png';
+import Logout from '../assets/icon/logout.png'
 export default function Footer() {
   const [show, setShow] = useState(false);
 
@@ -25,8 +26,8 @@ export default function Footer() {
           </Col>
           <Col col={6} sm={6} md={4} lg={4} xl={3} className="">
             <div className="set-button">
-              <div className="mr-2">
-                <LogoutModal />
+              <div className="start-button mr-2" onClick={handleShow}>
+              <img src={Mr1} />
               </div>
               <button type="button" className="button-profile ">
                 <img src={Setting} onClick={handleShow} />

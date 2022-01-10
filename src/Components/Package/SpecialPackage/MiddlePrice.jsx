@@ -10,15 +10,17 @@ import {
   FormControl,
 } from 'react-bootstrap';
 import Delete from '../../../assets/icon/deletes.png';
-import Increase from '../../../assets/icon/increase.png';
+import Increase from '../../../assets/icon/add-staff.png';
 import { Switch, DatePicker, Space } from 'antd';
 import 'antd/dist/antd.css';
 
-import Write from '../../../assets/icon/flat-style-circle-write.png';
-import DeleteWash from '../../../assets/icon/flat-style-circle-delete.png';
-import Save from '../../../assets/icon/flat-style-circle-save.png';
-import Turnoff from '../../../assets/icon/flat-style-circle-turn-on.png';
+import Write from '../../../assets/icon/add-staff.png';
+import DeleteWash from '../../../assets/icon/delete.png';
+import Save from '../../../assets/icon/new-save.png';
+import Turnoff from '../../../assets/icon/new-cancel.png';
 import DeleteProduct from '../../../assets/icon/delete.png';
+import Select, { components } from 'react-select';
+
 export default function MiddlePrice() {
   const [showroom, setShowRoom] = useState('');
   const [pass_package, setPass_package] = useState('');
@@ -47,6 +49,7 @@ export default function MiddlePrice() {
   const [time_car_van, setTime_car_van] = useState('');
   const [package_Name, setPackage_Name] = useState('');
   // วัสดุ/อุปกรณ์อ้างอิง
+  const [service, setService] = useState([{ value: '', label: '' }]);
   const [size_S, setSize_S] = useState('');
   const [size_M, setSize_M] = useState('');
   const [size_L, setSize_L] = useState('');
@@ -56,9 +59,9 @@ export default function MiddlePrice() {
   const [size_XL, setSize_XL] = useState('');
   const [van, setVan] = useState('');
   const [statusService, setStatusService] = useState(false);
-  const [check_product, setCheck_product] = useState(true);
+  const [check_product, setCheck_Product] = useState(true);
   const [check_service, setCheck_Service] = useState(false);
-  const [check_package, setCheck_Package] = useState(false);
+  const [check_Package, setCheck_Package] = useState(false);
   const [number_Coating, setNumber_Coating] = useState(0);
   const [number_Package_Wash, setNumber_Package_Wash] = useState('');
   const [price_all, setPrice_all] = useState('');
@@ -66,6 +69,22 @@ export default function MiddlePrice() {
   const [statusclose_price_all, setStatusclose_price_all] = useState({
     disabled: true,
   });
+
+  const handleProduct = () => {
+    setCheck_Product(true);
+    setCheck_Service(false);
+    setCheck_Package(false);
+  };
+  const handleService = () => {
+    setCheck_Product(false);
+    setCheck_Service(true);
+    setCheck_Package(false);
+  };
+  const handlePackage = () => {
+    setCheck_Product(false);
+    setCheck_Service(false);
+    setCheck_Package(true);
+  };
   const statusServiceToggler = () => {
     statusService ? setStatusService(false) : setStatusService(true);
   };
@@ -78,6 +97,24 @@ export default function MiddlePrice() {
     console.log(date, dateString);
   }
   const handleSelectShowRoom = (e) => setShowRoom(e);
+
+  const optionService = [
+    { value: ' บริการทำความสะอาดรถ', label: 'บริการทำความสะอาดรถ' },
+    {
+      value: 'แพคเกจล้างรถ (ระยะเวลา 1 ปี)',
+      label: 'แพคเกจล้างรถ (ระยะเวลา 1 ปี)',
+    },
+    { value: 'เหมาบริการ + เคลือบ Wax', label: 'เหมาบริการ + เคลือบ Wax' },
+    { value: 'แพคเกจล้างรถ + เคลือบ Wax', label: 'แพคเกจล้างรถ + เคลือบ Wax' },
+    {
+      value: 'กล่องสุดคุ้ม น้ำยา Wax+PCS+SC',
+      label: 'กล่องสุดคุ้ม น้ำยา Wax+PCS+SC',
+    },
+  ];
+  function SetService(data) {
+    setService({ value: data.value, label: data.value });
+  }
+
   return (
     <>
       <Container fluid className="set-heght">
@@ -143,77 +180,49 @@ export default function MiddlePrice() {
           <p className="form-title">รายละเอียดสินค้า</p>
           <Form.Group className="package-data" controlId="formbasicEmail">
             <Row className="d-flex justify-content">
-              <Col xs={3} md={2} className="set-checkbox-input">
-                <Form.Check
-                  type="radio"
-                  aria-label="radio 1"
-                  label="สินค้า"
-                  onChange={(e) => setCheck_product(e.target.value)}
-                  checked={check_product}
-                />
-              </Col>
-              <Col xs={3} md={2} className="set-checkbox-input">
-                <Form.Check
-                  type="radio"
-                  aria-label="radio 2"
-                  label="บริการ"
-                  onChange={(e) => setCheck_Service(e.target.value)}
-                  checked={check_service}
-                />
-              </Col>
-              <Col xs={4} md={2} className="set-checkbox-input">
-                <Form.Check
-                  type="radio"
-                  aria-label="radio 3"
-                  label="แพคเกจ"
-                  onChange={(e) => setCheck_Package(e.target.value)}
-                  checked={check_package}
-                />
-              </Col>
+              {['radio'].map((type) => (
+                          <div key={`inline-${type}`} className="mb-3">
+                            <Form.Check
+                              inline
+                              label="สินค้า"
+                              name="group1"
+                              type={type}
+                              id={`inline-${type}-1`}
+                              onChange={handleProduct}
+                              checked={check_product}
+                            />
+                            <Form.Check
+                              inline
+                              label="บริการ"
+                              name="group1"
+                              type={type}
+                              id={`inline-${type}-2`}
+                              onChange={handleService}
+                              checked={check_service}
+                            />
+                            <Form.Check
+                              inline
+                              label="แพคเกจ"
+                              name="group1"
+                              type={type}
+                              id={`inline-${type}-3`}
+                              onChange={handlePackage}
+                              checked={check_Package}
+                            />
+                          </div>
+                        ))}
             </Row>
             <Row className="g-0 mt-3 mb-3">
               <Col>
-                <div className="input-dropdown-Test">
-                  <Form.Control
-                    type="text"
-                    placeholder="ค้นหาสินค้าด้วยรหัสสินค้า, ชื่อสินค้า
-                    "
-                    // defaultValue={statepage[0]}
-                    value={showroom}
-                    onChange={(e) => setShowRoom(e.target.value)}
-                    disabled
-                  ></Form.Control>
-                  <Col
-                    className="d-flex justify-content-end set-dropdown"
-                    style={{ padding: 0 }}
-                  >
-                    <Dropdown
-                      onSelect={handleSelectShowRoom}
-                      className="dropdown w-100"
-                    >
-                      <Dropdown.Toggle variant="secondary " id="dropdown-basic">
-                        {/* {showroom} */}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu style={{ backgroundColor: '#73a47' }}>
-                        <Dropdown.Item eventKey="บริการทำความสะอาดรถ">
-                          บริการทำความสะอาดรถ
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="แพคเกจล้างรถ (ระยะเวลา 1 ปี)">
-                          แพคเกจล้างรถ (ระยะเวลา 1 ปี)
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="เหมาบริการ + เคลือบ Wax">
-                          เหมาบริการ + เคลือบ Wax
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="แพคเกจล้างรถ + เคลือบ Wax">
-                          แพคเกจล้างรถ + เคลือบ Wax
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="กล่องสุดคุ้ม น้ำยา Wax+PCS+SC">
-                          กล่องสุดคุ้ม น้ำยา Wax+PCS+SC
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Col>
-                </div>
+              <Select
+                options={optionService}
+                defaultValue={optionService[0]}
+                placeholder=""
+                isClearable={false}
+                isSearchable={false}
+                onChange={(data) => SetService(data)}
+                className="select-list"
+              />
               </Col>
             </Row>
             <Row
@@ -248,7 +257,7 @@ export default function MiddlePrice() {
                       <td>1,500.00</td>
                       <td>1,500.00</td>
                       <td>
-                        <Button type="button" className="button-delete">
+                        <Button type="button" className="button-package">
                           <img src={DeleteProduct} />
                         </Button>
                       </td>
@@ -271,7 +280,7 @@ export default function MiddlePrice() {
                       <td>600.00</td>
                       <td>600.00</td>
                       <td>
-                        <Button type="button" className="button-delete">
+                        <Button type="button" className="button-package">
                           <img src={DeleteProduct} />
                         </Button>
                       </td>

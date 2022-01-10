@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Dropdown, Button } from 'react-bootstrap';
 import Delete from '../../../assets/icon/delete.png';
-import Increase from '../../../assets/icon/increase.png';
+import Increase from '../../../assets/icon/add-staff.png';
 import { Switch, DatePicker, Space } from 'antd';
 import 'antd/dist/antd.css';
 
-import Write from '../../../assets/icon/flat-style-circle-write.png';
-import DeleteWash from '../../../assets/icon/flat-style-circle-delete.png';
-import Save from '../../../assets/icon/flat-style-circle-save.png';
-import Turnoff from '../../../assets/icon/flat-style-circle-turn-on.png';
+import Write from '../../../assets/icon/add-staff.png';
+import DeleteWash from '../../../assets/icon/delete.png';
+import Save from '../../../assets/icon/new-save.png';
+import Turnoff from '../../../assets/icon/new-cancel.png';
+import Select, { components } from 'react-select';
 
 export default function MiddlePrice() {
   const [showroom, setShowRoom] = useState('');
@@ -41,6 +42,7 @@ export default function MiddlePrice() {
   const [time_car_van, setTime_car_van] = useState('');
 
   // วัสดุ/อุปกรณ์อ้างอิง
+  const [service, setService] = useState([{ value: '', label: '' }]);
   const [size_S, setSize_S] = useState('');
   const [size_M, setSize_M] = useState('');
   const [size_L, setSize_L] = useState('');
@@ -58,6 +60,22 @@ export default function MiddlePrice() {
     console.log(date, dateString);
   }
   const handleSelectShowRoom = (e) => setShowRoom(e);
+  const optionService = [
+    { value: '3M MODEL FX', label: '3M MODEL FX' },
+    {
+      value: ' Lamina MODEL POP',
+      label: ' Lamina MODEL POP',
+    },
+    { value: 'Lamina MODEL APL/ARL/ANL', label: 'Lamina MODEL APL/ARL/ANL' },
+    { value: 'Ceramic MODEL CS', label: 'Ceramic MODEL CS' },
+    {
+      value: ' Ceramic MODEL CS VIP/UV400',
+      label: ' Ceramic MODEL CS VIP/UV400',
+    },
+  ];
+  function SetService(data) {
+    setService({ value: data.value, label: data.value });
+  }
   return (
     <>
       <Container fluid className="set-heght">
@@ -682,7 +700,8 @@ export default function MiddlePrice() {
             </Row>
           </Form.Group>
           <Row className="g-0" style={{ overflow: 'scroll', height: '200px' }}>
-            <table className="table table-responsive table-wash-part ">
+            <Col className="p-0">
+              <table className="table table-responsive table-wash-part ">
               <thead>
                 <tr className="t-header-package">
                   <th style={{ width: '20%' }}>รุ่น</th>
@@ -718,12 +737,14 @@ export default function MiddlePrice() {
                 </tr>
               </tbody>
             </table>
+            </Col>
           </Row>
 
           <Row
             className="g-0 "
             style={{ overflow: 'scroll', height: '400px', marginTop: '40px' }}
           >
+            <Col className="p-0">
             <table className="table table-responsive table-wash-part ">
               <thead>
                 <tr className="t-header-package">
@@ -760,59 +781,26 @@ export default function MiddlePrice() {
                 </tr>
               </tbody>
             </table>
+            </Col>
           </Row>
           {/* sssss */}
           <p className="form-title">วัสดุ/อุปกรณ์อ้างอิง</p>
 
           <Row>
             <Col lg={6}>
-              <Row>
-                <Col xs={8}>
-                  <div className="input-dropdown-middle-stock">
-                    <Form.Control
-                      type="text"
-                      placeholder="ค้นหาสต๊อก"
-                      // defaultValue={statepage[0]}
-                      value={showroom}
-                      onChange={(e) => setShowRoom(e.target.value)}
-                      disabled
-                    ></Form.Control>
-                    <Col
-                      className="d-flex justify-content-end set-dropdown"
-                      style={{ padding: 0 }}
-                    >
-                      <Dropdown
-                        onSelect={handleSelectShowRoom}
-                        className="dropdown"
-                      >
-                        <Dropdown.Toggle
-                          variant="secondary "
-                          id="dropdown-basic"
-                        >
-                          {/* {value} */}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu style={{ backgroundColor: '#73a47' }}>
-                          <Dropdown.Item eventKey="บริการทำความสะอาดรถ">
-                            บริการทำความสะอาดรถ
-                          </Dropdown.Item>
-                          <Dropdown.Item eventKey="แพคเกจล้างรถ (ระยะเวลา 1 ปี)">
-                            แพคเกจล้างรถ (ระยะเวลา 1 ปี)
-                          </Dropdown.Item>
-                          <Dropdown.Item eventKey="เหมาบริการ + เคลือบ Wax">
-                            เหมาบริการ + เคลือบ Wax
-                          </Dropdown.Item>
-                          <Dropdown.Item eventKey="แพคเกจล้างรถ + เคลือบ Wax">
-                            แพคเกจล้างรถ + เคลือบ Wax
-                          </Dropdown.Item>
-                          <Dropdown.Item eventKey="กล่องสุดคุ้ม น้ำยา Wax+PCS+SC">
-                            กล่องสุดคุ้ม น้ำยา Wax+PCS+SC
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </Col>
-                  </div>
+              <Row className="align-items-center">
+                <Col xs={8} className="mt-2 mb-2">
+                  <Select
+                    options={optionService}
+                    defaultValue={optionService[0]}
+                    placeholder=""
+                    isClearable={false}
+                    isSearchable={false}
+                    onChange={(data) => SetService(data)}
+                    className="select-list"
+                  />
                 </Col>
-                <Col className="text-title">
+                <Col className="text-title mt-2 mb-2">
                   <p>(มิลลิลิตร)</p>
                 </Col>
               </Row>

@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Dropdown, Button } from 'react-bootstrap';
 import Delete from '../../../assets/icon/delete.png';
-import Increase from '../../../assets/icon/increase.png';
+import Increase from '../../../assets/icon/add-staff.png';
 import { Switch } from 'antd';
-import Write from '../../../assets/icon/flat-style-circle-write.png';
-import DeleteWash from '../../../assets/icon/flat-style-circle-delete.png';
-import Save from '../../../assets/icon/flat-style-circle-save.png';
-import Turnoff from '../../../assets/icon/flat-style-circle-turn-on.png';
+import Write from '../../../assets/icon/add-staff.png';
+import DeleteWash from '../../../assets/icon/delete.png';
+import Save from '../../../assets/icon/new-save.png';
+import Turnoff from '../../../assets/icon/new-cancel.png';
+import Select, { components } from 'react-select';
+import Calendar from '../../../assets/icon/Calendar.png';
+
 export default function AddWashPart() {
+  const [service, setService] = useState([{ value: '', label: '' }]);
   const [showroom, setShowRoom] = useState('');
   const [size_S, setSize_S] = useState('');
   const [size_M, setSize_M] = useState('');
@@ -22,6 +26,23 @@ export default function AddWashPart() {
     statusService ? setStatusService(false) : setStatusService(true);
   };
   const handleSelectShowRoom = (e) => setShowRoom(e);
+
+  function SetService(data) {
+    setService({ value: data.value, label: data.value });
+  }
+  const optionService = [
+    { value: ' บริการทำความสะอาดรถ', label: 'บริการทำความสะอาดรถ' },
+    {
+      value: 'แพคเกจล้างรถ (ระยะเวลา 1 ปี)',
+      label: 'แพคเกจล้างรถ (ระยะเวลา 1 ปี)',
+    },
+    { value: 'เหมาบริการ + เคลือบ Wax', label: 'เหมาบริการ + เคลือบ Wax' },
+    { value: 'แพคเกจล้างรถ + เคลือบ Wax', label: 'แพคเกจล้างรถ + เคลือบ Wax' },
+    {
+      value: 'กล่องสุดคุ้ม น้ำยา Wax+PCS+SC',
+      label: 'กล่องสุดคุ้ม น้ำยา Wax+PCS+SC',
+    },
+  ];
   return (
     <>
       <Container fluid className="set-heght">
@@ -33,46 +54,15 @@ export default function AddWashPart() {
                 <p>โชว์รูม</p>
               </Col>
               <Col xs={10} md={6} lg={5}>
-                <div className="input-dropdown-package-Add-wash-part">
-                  <Form.Control
-                    type="text"
-                    placeholder="บริการ"
-                    // defaultValue={statepage[0]}
-                    value={showroom}
-                    onChange={(e) => setShowRoom(e.target.value)}
-                    disabled
-                  ></Form.Control>
-                  <Col
-                    className="d-flex justify-content-end set-dropdown"
-                    style={{ padding: 0 }}
-                  >
-                    <Dropdown
-                      onSelect={handleSelectShowRoom}
-                      className="dropdown"
-                    >
-                      <Dropdown.Toggle variant="secondary " id="dropdown-basic">
-                        {/* {value} */}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu style={{ backgroundColor: '#73a47' }}>
-                        <Dropdown.Item eventKey="บริการทำความสะอาดรถ">
-                          บริการทำความสะอาดรถ
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="แพคเกจล้างรถ (ระยะเวลา 1 ปี)">
-                          แพคเกจล้างรถ (ระยะเวลา 1 ปี)
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="เหมาบริการ + เคลือบ Wax">
-                          เหมาบริการ + เคลือบ Wax
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="แพคเกจล้างรถ + เคลือบ Wax">
-                          แพคเกจล้างรถ + เคลือบ Wax
-                        </Dropdown.Item>
-                        <Dropdown.Item eventKey="กล่องสุดคุ้ม น้ำยา Wax+PCS+SC">
-                          กล่องสุดคุ้ม น้ำยา Wax+PCS+SC
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Col>
-                </div>
+                <Select
+                options={optionService}
+                defaultValue={optionService[0]}
+                placeholder=""
+                isClearable={false}
+                isSearchable={false}
+                onChange={(data) => SetService(data)}
+                className="select-list"
+              />
               </Col>
               <Col className="set-col-button-delete">
                 <Button type="button" className="delete-package">
@@ -208,7 +198,7 @@ export default function AddWashPart() {
               <p>บาท</p>
             </Col>
           </Row>
-          <Row className="g-0" style={{ overflow: 'scroll' }}>
+          <Row className="g-0" >
             <Col xs={3} sm={3} md={3} lg={2} xl={2} className="text-title">
               <p>TRUCK 4 DOOR </p>
             </Col>
