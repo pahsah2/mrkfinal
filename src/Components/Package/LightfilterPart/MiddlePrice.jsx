@@ -78,7 +78,7 @@ export default function MiddlePrice() {
   }
   return (
     <>
-      <Container fluid className="set-heght">
+      <Container fluid className="package-container Service Stock User set-heght">
         <Form>
           <p className="form-title">ข้อมูลแพคเกจ</p>
           <Form.Group className="package-data" controlId="formBasicEmail">
@@ -200,7 +200,7 @@ export default function MiddlePrice() {
                     xl={1}
                     className="text-title"
                   >
-                    รุ่น
+                    <p>รุ่น</p>
                   </Col>
                   <Col>
                     <Form.Control

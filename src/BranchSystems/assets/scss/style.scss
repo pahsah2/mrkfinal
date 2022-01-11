@@ -278,7 +278,7 @@
       border: none;
 
       .nav-item {
-        width: 171px;
+        width: 200px;
         height: 42px;
         background: #c4c4c4;
         border: 1px solid rgba(229, 229, 229, 0.5);
@@ -290,7 +290,7 @@
         text-align: center;
         .nav-link {
           color: black;
-          width: 170px;
+          width: 200px;
           height: 42px;
           background: rgba(196, 196, 196, 0.5);
           border: 2px solid rgba(229, 229, 229, 0.5);
@@ -298,7 +298,7 @@
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
         .nav-link.active {
-          width: 170px;
+          width: 200px;
           height: 42px;
           margin: 0 !important;
           border-radius: 0px;
@@ -322,8 +322,16 @@
 
   .div-tab-all {
     height: 700px;
+    overflow: scroll;
     .set-table-width {
       overflow: scroll;
+      width: 992px;
+    }
+    .width-table{
+      @media only screen and(max-width:992px){
+        overflow: scroll;
+        width: 992px;
+      }
     }
     .menu-respon {
       max-width: 100%;
@@ -370,10 +378,11 @@
     }
     .div-input-search {
       .input-search {
-        width: 313px;
+        width: 100%;
         height: 48px;
       }
     }
+    
     .button {
       width: 100%;
       height: 45px;
@@ -5898,7 +5907,7 @@
   background: #c4c4c4;
   border: 1px solid black;
 }
-
+//  /////////////////////// Function - UX  //////////////////////////////
 h5{
   font-family: 'Prompt', sans-serif !important;
 }
@@ -5907,4 +5916,89 @@ font-family: 'Prompt', sans-serif !important;
 }
 .set-width-logout{
   width: 400px !important;
+}
+.text-green{
+  color: chartreuse;
+}
+.text-orange{
+  color: orange;
+}
+.link-edit-password{
+  text-decoration: underline;
+  color: black;
+}
+.set-height-edit-user{
+  height: 280px;
+}
+
+.Login-Page{
+  margin: auto;
+  background: #c4c4c4 ;
+  .border-login{
+    max-width: 100%;
+    width: 100%;
+    height: 640px;
+    .header-login{
+      height: 40px;
+        background: #682c80 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 8px !important;
+      padding-left: 8px !important;
+      color: #c4c4c4 !important;
+      border-bottom: 0px !important;
+      h5{
+        color: #c4c4c4;
+        
+      }
+      .btn-close {
+      transform: translate(-10px, 0);
+      padding: 0 !important;
+      width: 21px !important;
+      height: 21px !important;
+      background: #c4c4c4 !important;
+      border: 1px solid rgba(229, 229, 229, 1) !important;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+      opacity: 1 !important;
+      border-radius: 0 !important;
+      }
+    }
+    .body-login{
+      height: 100%;
+      background: #C4C4C4;
+      border: 1px solid rgba(122, 122, 122, 0.5);
+      box-sizing: border-box;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      .input-login{
+        max-width: 100%;
+        width: 80%;
+        margin: auto;
+        height: 40px;
+        background: #FFFFFF;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0;
+        margin-bottom: 30px;
+      }
+      .button-login{
+        max-width: 100%;
+        width: 80%;
+        height: 40px;
+        margin: auto;
+        border-radius: 0;
+        background: #C4C4C4;
+        border: 1px solid rgba(229, 229, 229, 0.5) !important;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: black;
+        font-size: 16px;
+      }
+    }
+    @media only screen and (min-width: 600px) {
+      width: 432px;
+      position: absolute;
+      margin: auto;
+      top: 0; left: 0; bottom: 0; right: 0;
+    }
+  }
 }

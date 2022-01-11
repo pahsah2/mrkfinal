@@ -33,6 +33,7 @@ export default function CoatPart() {
   return (
     <div className="div-tab-all ">
       <br />
+      <div className="width-table">
       <table className="table table-responsive">
         <thead className="t-header-package">
           <tr>
@@ -257,6 +258,7 @@ export default function CoatPart() {
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

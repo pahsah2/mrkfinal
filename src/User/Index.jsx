@@ -31,6 +31,7 @@ import TabsIconUser from '../Components/layout/TabsIconUser';
 
 export default function Index() {
   const history = useHistory();
+  const [status , setStatus] = useState('เปิด');
   const [showCutStock, setShowCutStock] = useState(false);
   const [admit, setAdmit] = useState(true);
   const [takeOut, setTakeOut] = useState(true);
@@ -144,7 +145,23 @@ export default function Index() {
                           <td>admin 1</td>
                           <td>11/04/2021 18:30</td>
                           <td>
-                            <span>เปิด</span> &nbsp; <img src={TriangleArrow} />
+                            <span className={(status === 'เปิด' ? 'text-green':'text-orange')}>{status}</span> &nbsp; <img src={TriangleArrow} />
+                          </td>
+
+                          <td>
+                            <Button>
+                              <img src={Note} />
+                            </Button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>อวิกา ศรีโพธิ์ทอง</td>
+                          <td>สวนดอก</td>
+                          <td>การเงิน</td>
+                          <td>admin 1</td>
+                          <td>11/04/2021 18:30</td>
+                          <td>
+                            <span className={(status === 'เปิด' ? 'text-green':'text-orange')}>{status}</span> &nbsp; <img src={TriangleArrow} />
                           </td>
 
                           <td>
@@ -158,7 +175,7 @@ export default function Index() {
                   </Col>
                 </Row>
                 <Row className="g-0 mt-3 mb-3">
-                  <Col md={6} lg={5} className=" set-page">
+                  <Col md={6} lg={5} xl={4} className=" set-page">
                     <Row>
                       <Col className="d-flex justify-content-center align-items-center">
                         <p style={{ margin: 0 }}>แสดง</p>

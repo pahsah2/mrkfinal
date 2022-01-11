@@ -66,7 +66,7 @@ export default function AppointmentByID({ match, history }) {
       <NavbarTop />
       <Container
         fluid
-        className="package-container Service Stock Job Appointment"
+        className="package-container Service Stock Job Appointment bg-mrk"
       >
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">

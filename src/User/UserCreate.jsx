@@ -32,6 +32,7 @@ import TriangleArrow from '../assets/icon/TriangleArrow.png';
 
 export default function UserCreate() {
   const history = useHistory();
+  const [statusEditpassword , setStatusEditpassword] = useState(false);
   const [hide, setHide] = useState(true);
   const [employee, setEmployee] = useState([{ value: '', label: ' ' }]);
   const [level, setLevel] = useState([{ value: '', label: ' ' }]);
@@ -40,6 +41,9 @@ export default function UserCreate() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const handlerEditpassword = () => {
+    setStatusEditpassword(true);
+  }
   function onChange(date, dateString) {
     console.log(date, dateString);
   }
@@ -179,6 +183,7 @@ export default function UserCreate() {
                           </Row>
                         </Col>
                       </Row>
+                      <div className="set-height-edit-user">
                       {statusService === false ? (
                         <Row>
                           <Col lg={2} xl={2}></Col>
@@ -227,6 +232,13 @@ export default function UserCreate() {
                                   onChange={(e) => setUsername(e.target.value)}
                                 ></Form.Control>
                               </Col>
+                              <Col
+                                xs={12}
+                                lg={3}
+                                className="mt-3 mb-3 text-left d-flex justify-content-center"
+                              >
+                                <Form.Label><a className="link-edit-password" className={(statusEditpassword === true ? 'd-none':'link-edit-password ')} onClick={handlerEditpassword}>แก้ไขรหัสผ่าน</a></Form.Label>
+                              </Col>
                             </Row>
                             <Row className="justify-content-start align-items-center">
                               <Col
@@ -245,6 +257,7 @@ export default function UserCreate() {
                                 <Form.Control
                                   value={password}
                                   onChange={(e) => setPassword(e.target.value)}
+                                  disabled={(statusEditpassword === false)} 
                                 ></Form.Control>
                               </Col>
                             </Row>
@@ -267,6 +280,7 @@ export default function UserCreate() {
                                   onChange={(e) =>
                                     setConfirmPassword(e.target.value)
                                   }
+                                  disabled={(statusEditpassword === false)} 
                                 ></Form.Control>
                               </Col>
                             </Row>
@@ -275,10 +289,11 @@ export default function UserCreate() {
                       ) : (
                         ''
                       )}
+                      </div>
                     </Col>
                   </Row>
                   <Row className="g-0 justify-content-center  mt-5 mb-5">
-                    <Col xs={6} lg={3}>
+                    <Col xs={6} lg={3} xl={2}>
                       <Button type="button" className="button">
                         <img src={New_Save} /> &nbsp; บันทึก
                       </Button>

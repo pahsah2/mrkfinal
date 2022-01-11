@@ -13,7 +13,7 @@ import Select, { components } from 'react-select';
 import Calendar from '../../../assets/icon/Calendar.png';
 
 export default function MiddlePrice() {
-  const [showroom, setShowRoom] = useState('');
+  const [namepackage, setNamePackage] = useState('');
   const [pass_package, setPass_package] = useState('');
   const [time_service, setTime_service] = useState('');
   const [calendar, setCalendar] = useState('');
@@ -57,7 +57,7 @@ export default function MiddlePrice() {
   function onChange(date, dateString) {
     console.log(date, dateString);
   }
-  const handleSelectShowRoom = (e) => setShowRoom(e);
+  
   const optionService = [
     { value: ' บริการทำความสะอาดรถ', label: 'บริการทำความสะอาดรถ' },
     {
@@ -77,21 +77,21 @@ function SetService(data) {
   }
   return (
     <>
-      <Container fluid className="set-heght">
+      <Container fluid className="package-container Service Stock User set-heght">
         <Form>
           <p className="form-title">ข้อมูลแพคเกจ</p>
           <Form.Group className="package-data" controlId="formBasicEmail">
             <Row className="g-0">
               <Col xs={2} sm={3} md={3} lg={2} xl={2} className="text-title">
-                <p>โชว์รูม</p>
+                <p>ชื่อแพคเกจ</p>
               </Col>
               <Col xs={10} md={6} lg={5} xl={4}>
                 <Form.Control
                   type="text"
                   placeholder=""
                   // defaultValue={statepage[0]}
-                  value={showroom}
-                  onChange={(e) => setShowRoom(e.target.value)}
+                  value={namepackage}
+                  onChange={(e) => setNamePackage(e.target.value)}
                   className="input-middle-price"
                 ></Form.Control>
               </Col>

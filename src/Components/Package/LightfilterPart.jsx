@@ -41,6 +41,7 @@ function SetService(data) {
   return (
     <div className="div-tab-all ">
       <br />
+      <div className="width-table">
       <table className="table table-responsive">
         <thead className="t-header-package">
           <tr>
@@ -264,6 +265,7 @@ function SetService(data) {
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

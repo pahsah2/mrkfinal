@@ -83,7 +83,7 @@ export default function Index({ match }) {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock User B2B">
+      <Container fluid className="package-container Service Stock User B2B bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">

@@ -382,7 +382,7 @@ export default function Dashboard() {
       <NavbarTop />
       <Container
         fluid
-        className="package-container Service Management Dashboard"
+        className="package-container Service Management Dashboard bg-mrk"
       >
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">

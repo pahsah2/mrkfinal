@@ -23,7 +23,6 @@ import Login from './Login/Index';
 import User from './User/Index';
 import UserCreate from './User/UserCreate';
 import EditUser from './User/EditUser';
-import login from './Login/Login';
 import B2BCompany from './B2B/Index';
 import DetailB2B from './B2B/DetailB2B';
 import AddCar from './Member/AddCar';
@@ -99,10 +98,14 @@ import Appointment_Branch from './BranchSystems/Appointment/Index';
 import Appointment_ID_Branch from './BranchSystems/Appointment/AppointmentByID';
 import User_Branch from './BranchSystems/User/Index';
 import UserCreate_Branch from './BranchSystems/User/UserCreate';
+import UserEdit_Branch from './BranchSystems/User/EditUser';
 import B2B_Branch from './BranchSystems/B2B/Index';
 import B2B_Detail_Branch from './BranchSystems/B2B/DetailB2B';
 import Member_branch from './BranchSystems/Member/Index';
 import Member_add_Branch from './BranchSystems/Member/MemberCreate';
+import Member_add_car_Branch from './BranchSystems/Member/AddCar';
+import Member_Information_Branch from './BranchSystems/Member/MemberInformation';
+import Member_JusticInformation_Branch from './BranchSystems/Member/JuristicPersonInformation';
 import Stock_Branch from './BranchSystems/Stock/Index';
 import Stock_History_Branch from './BranchSystems/Stock/History';
 import Stock_Adjust_Branch from './BranchSystems/Stock/Adjust';
@@ -113,14 +116,15 @@ import Stock_OrderToStock_branch from './BranchSystems/Stock/OrderToStock/Index'
 import Stock_OrderToStock_Data_Branch from './BranchSystems/Stock/OrderToStock/Data';
 import Stock_Admit_Branch from './BranchSystems/Stock/Admit/Index';
 import Stock_Admit_Data_Branch from './BranchSystems/Stock/Admit/Data';
+import Report_Branch from './BranchSystems/Report/Index';
+import Notification_Branch from './BranchSystems/Notification/Index'
 import Dashboard_Branch from './BranchSystems/Dashboard/Dashboard';
 
 function App() {
   return (
-    <HashRouter >
+    <HashRouter  basename="/">
       <Switch>
-        {/* <Route path="/" component={Login} /> */}
-        {/* <Route path="/" component={login} /> */}
+        <Route path="/login" component={Login} />
         <Route path="/" component={Dashbroad} exact />
         <Route path="/dashboard" component={Dashboard_data} />
         <Route path="/test" component={TestImage} />
@@ -247,10 +251,15 @@ function App() {
         />
         <Route path="/branch/user" component={User_Branch} exact />
         <Route path="/branch/user/add" component={UserCreate_Branch} />
+        <Route path="/branch/user/edit" component={UserEdit_Branch} />
         <Route path="/branch/b2b" component={B2B_Branch} exact />
         <Route path="/branch/b2b/detail" component={B2B_Detail_Branch} />
         <Route path="/branch/member" component={Member_branch} exact />
         <Route path="/branch/member/add" component={Member_add_Branch} />
+        <Route path="/branch/member/add-car" component={Member_add_car_Branch} />
+        <Route path="/branch/member/information" component={Member_Information_Branch} />
+        <Route path="/branch/member/justic-information" component={Member_JusticInformation_Branch} />
+        
         <Route path="/branch/stock" component={Stock_Branch} exact />
         <Route
           path="/branch/stock/receive"
@@ -285,6 +294,8 @@ function App() {
           component={Stock_OrderToStock_Data_Branch}
         />
         <Route path="/branch/stock/:id" component={Stock_History_Branch} />
+        <Route path="/branch/notification" component={Notification_Branch} />
+        <Route path="/branch/report" component={Report_Branch} />
         <Route path="/branch/dashboard" component={Dashboard_Branch} />
       </Switch>
     </HashRouter>

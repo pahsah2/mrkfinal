@@ -71,7 +71,7 @@ export default function MiddlePrice() {
   }
   return (
     <>
-      <Container fluid className="set-heght">
+      <Container fluid className="package-container Service Stock User set-heght">
         <Form>
           <p className="form-title">ข้อมูลแพคเกจ</p>
           <Form.Group className="package-data" controlId="formBasicEmail">
@@ -164,21 +164,7 @@ export default function MiddlePrice() {
                 </Row>
               </Col>
             </Row>
-            <Row className="g-0">
-              <Col xs={4} sm={3} md={3} lg={2} xl={2} className="text-title">
-                <p>จำนวนครั้งที่รับบริการ</p>
-              </Col>
-              <Col xs={8} md={8} lg={6} xl={4}>
-                <Form.Control
-                  type="text"
-                  placeholder=""
-                  // defaultValue={statepage[0]}
-                  value={number_Service}
-                  onChange={(e) => setNumber_Service(e.target.value)}
-                  className="input-middle-price"
-                ></Form.Control>
-              </Col>
-            </Row>
+            
             <Row className="g-0">
               <Col xs={4} sm={3} md={3} lg={2} xl={2} className="text-title">
                 <p>อัพโหลดโลโก้</p>

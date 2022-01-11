@@ -21,7 +21,7 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Staff Profile ">
+      <Container fluid className="package-container Staff Profile bg-mrk">
         {/* staff เอาไว้ใช้ style grid  , Profile เอาไว้ใช้ scss ส่วน profile เพิ่มเติม */}
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">

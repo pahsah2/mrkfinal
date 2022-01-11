@@ -1,271 +1,108 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../Actions/userActions';
+import { useHistory } from 'react-router-dom';
+import Footer from '../Components/Footer';
+import NavbarTop from '../Components/NavbarTop';
+import Service from '../assets/icon/management.png';
+import Mr_Kleane from '../assets/icon/Mr.Kleane.png'
+export default function Login({ location}) {
+  const history = useHistory();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-import axios from 'axios';
-import { FormGroup, Button } from 'react-bootstrap';
-import { Input, FormFeedback } from 'reactstrap';
-import Cookies from 'js-cookie';
-import '../assets/css2/css/login.css';
+  const dispatch = useDispatch();
 
-import $ from 'jquery';
-export default function Index({ location, history }) {
-  const [statenotFound, setStatenotFound] = useState({ notFound: false });
-  const [stateuserNotFound, setStateuserNotFound] = useState({
-    userNotFound: false,
-  });
-  const [statepasswordNotMatch, setStatepasswordNotMatch] = useState({
-    passwordNotMatch: false,
-  });
-  const [statebranchNotActive, setStatebranchNotActive] = useState({
-    branchNotActive: false,
-  });
-  const [statebranchNotOpen, setStatebranchNotOpen] = useState({
-    branchNotOpen: false,
-  });
-  const [statenotActive, setStatenotActive] = useState({ notActive: false });
-  const [stateresign, setStateresign] = useState({ resign: false });
-  const [statenotWorking, setStatenotWorking] = useState({ notWorking: false });
-  const [statepatternPass, setStatepatternPass] = useState('');
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   const redirect = location.search
     ? location.search.split('=')[1]
-    : '/dashboard';
-
-  const LogIn = async () => {
-    if ($('#_user').val() !== '') {
-      axios
-        .post('http://127.0.0.1:8000/api/permission/login', {
-          username: $('#_user').val(),
-          password: $('#_password').val(),
-          // ip: data.ip,
-        })
-        .then((res) => {
-          if (res.data.error) {
-            if (res.data.error === 'not working') {
-              setStatenotWorking({ notWorking: true });
-            } else {
-              setStatenotWorking({ notWorking: false });
-            }
-            if (res.data.error === 'resign') {
-              setStateresign({ resign: true });
-            } else {
-              setStateresign({ resign: false });
-            }
-            if (res.data.error === 'not found') {
-              setStateuserNotFound({ userNotFound: true });
-              $('#_user').addClass('is-invalid');
-            } else {
-              setStateuserNotFound({ userNotFound: false });
-              $('#_user').removeClass('is-invalid');
-            }
-            if (res.data.error === 'not active') {
-              setStatenotActive({ notActive: true });
-            } else {
-              setStatenotActive({ notActive: false });
-            }
-            if (res.data.error === 'branch not active') {
-              setStatebranchNotActive({ branchNotActive: true });
-            } else {
-              setStatebranchNotActive({ branchNotActive: false });
-            }
-            if (res.data.error === 'branch not open') {
-              setStatebranchNotOpen({ branchNotOpen: true });
-            } else {
-              setStatebranchNotOpen({ branchNotOpen: false });
-            }
-            if (res.data.error === 'password not match') {
-              $('#_password').addClass('is-invalid');
-            } else {
-              $('#_password').removeClass('is-invalid');
-            }
-          } else {
-            document.removeEventListener('keydown', (e) => {
-              HandleKeyDown(e);
-            });
-            Cookies.set('token', res.data.token, { expires: 1 });
-            window.location.href = '/dashboard';
-          }
-        });
-    } else {
-      $('#_user').addClass('is-invalid');
-    }
-  };
-
-  const HandleKeyDown = (e) => {
-    if (e.keyCode === 13) {
-      if ($('#_user').val() !== '') {
-        axios
-          .post('http://127.0.0.1:8000/api/permission/login', {
-            username: $('#_user').val(),
-            password: $('#_password').val(),
-            // ip: data.ip,
-          })
-          .then((res) => {
-            if (res.data.error) {
-              if (res.data.error === 'not working') {
-                setStatenotWorking({ notWorking: true });
-              } else {
-                setStatenotWorking({ notWorking: false });
-              }
-              if (res.data.error === 'resign') {
-                setStateresign({ resign: true });
-              } else {
-                setStateresign({ resign: false });
-              }
-              if (res.data.error === 'not found') {
-                setStateuserNotFound({ userNotFound: true });
-                $('#_user').addClass('is-invalid');
-              } else {
-                setStateuserNotFound({ userNotFound: false });
-                $('#_user').removeClass('is-invalid');
-              }
-              if (res.data.error === 'not active') {
-                setStatenotActive({ notActive: true });
-              } else {
-                setStatenotActive({ notActive: false });
-              }
-              if (res.data.error === 'branch not active') {
-                setStatebranchNotActive({ branchNotActive: true });
-              } else {
-                setStatebranchNotActive({ branchNotActive: false });
-              }
-              if (res.data.error === 'branch not open') {
-                setStatebranchNotOpen({ branchNotOpen: true });
-              } else {
-                setStatebranchNotOpen({ branchNotOpen: false });
-              }
-              if (res.data.error === 'password not match') {
-                $('#_password').addClass('is-invalid');
-              } else {
-                $('#_password').removeClass('is-invalid');
-              }
-            } else {
-              document.removeEventListener('keydown', (e) => {
-                HandleKeyDown(e);
-              });
-              Cookies.set('token', res.data.token, { expires: 1 });
-              window.location.href = '/dashboard';
-            }
-          });
-      } else {
-        $('#_user').addClass('is-invalid');
-      }
-    }
-  };
+    : '/dashbroad';
 
   useEffect(() => {
-    let token = Cookies.get('token');
-    if (token) {
+    if (userInfo) {
       history.push(redirect);
     }
-    document.addEventListener('keydown', (e) => {
-      HandleKeyDown(e);
-    });
-  }, []);
+  }, [history, userInfo, redirect]);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(login(username, password));
+  };
+    function close() {
+        let path = `/`;
+        history.push(path);
+      }
   return (
-    <div className="box-login">
-      <div className="card-content">
-        <div className="card-header">
-          <img className="logo pr-2" src="icon/management.png" alt="" /> Login
-        </div>
-
-        <div className="card-body text-center">
-          <form>
-            <div className="form-group">
-              <div className="my-4">
-                <img
-                  max-width="350px"
-                  width="100%"
-                  heigh="195px"
-                  src="icon/Mr.Kleane.png"
-                />
-              </div>
-              <FormGroup className="mb-3">
-                <Input
-                  type="user"
-                  id="_user"
-                  className=" data-input"
-                  placeholder="ชื่อผู้ใช้"
-                ></Input>
-                {stateuserNotFound ? (
-                  <div
-                    style={{ fontSize: 12 }}
-                    className="mt-1 text-right text-danger pr-3"
-                  >
-                    ไม่พบ username นี้
-                  </div>
-                ) : null}
-                {statenotActive ? (
-                  <div
-                    style={{ fontSize: 12 }}
-                    className="mt-1 text-right text-danger pr-3"
-                  >
-                    username นี้ไม่สามารถใช้งานได้
-                  </div>
-                ) : null}
-              </FormGroup>
-
-              <FormGroup className="mb-4">
-                <Input
-                  type="password"
-                  id="_password"
-                  className="data-input"
-                  placeholder="รหัสผ่าน"
-                  onChange={(e) =>
-                    setStatepatternPass({
-                      patternPass: e.target.value.replace(
-                        /[^a-zA-Z0-9\n\r!"#$%^&*()_+=\-?/.,<>:;@'{}|]+/g,
-                        ''
-                      ),
-                    })
-                  }
-                ></Input>
-                <FormFeedback
-                  style={{ fontSize: 12 }}
-                  className="text-right pr-3"
+    <>
+      <NavbarTop />
+      <Container fluid className="bg-mrk Login-Page p-0">
+      <div className="border-login">
+        <div className="header-login d-none d-sm-block">
+        <h5 className="modal-title" id="exampleModalLabel">
+                  <img className="logo pr-2" src={Service} />
+                  เข้าสู่ระบบ
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  aria-label="Close"
+                  onClick={close}
                 >
-                  รหัสผ่านไม่ถูกต้อง
-                </FormFeedback>
+                  <span aria-hidden="true">X</span>
+                </button>
+        </div>
+        <div className="body-login">
+        <Row className="align-items-center m-0">
+      <Col>
+        <Row className="align-items-center">
+        <Col xs={12} className="mt-3 mb-3">
+            <Row className="align-items-center">
+            <Col xs={12} className="d-flex justify-content-center">
+              <img src={Mr_Kleane} width="100%"/>
+            </Col>
+            </Row>
+        </Col>
+        <Col xs={12} className="mt-3 mb-3">
+        <Form onSubmit={submitHandler}>
+        <Form.Group controlId="email">
+          <Form.Control
+            type="username"
+            placeholder="ชื่อผู้ใช้"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="input-login"
+          ></Form.Control>
+        </Form.Group>
 
-                {statebranchNotActive ? (
-                  <div
-                    style={{ fontSize: 16 }}
-                    className="mt-2 text-center text-danger pr-3"
-                  >
-                    สาขานี้ยังไม่เปิดบริการ
-                  </div>
-                ) : null}
-                {statebranchNotOpen ? (
-                  <div
-                    style={{ fontSize: 16 }}
-                    className="mt-2 text-center text-danger pr-3"
-                  >
-                    สาขานี้ยังไม่ถึงเวลาเปิดทำการ
-                  </div>
-                ) : null}
-                {stateresign ? (
-                  <div
-                    style={{ fontSize: 16 }}
-                    className="mt-2 text-center text-danger pr-3"
-                  >
-                    username นี้อยู่ในสถานะลาออก
-                  </div>
-                ) : null}
-                {statenotWorking ? (
-                  <div
-                    style={{ fontSize: 16 }}
-                    className="mt-2 text-center text-danger pr-3"
-                  >
-                    username นี้ยังไม่เริ่มทำงาน
-                  </div>
-                ) : null}
-              </FormGroup>
-              <Button onClick={() => LogIn()} className="btn-submit">
-                เริ่มงาน
-              </Button>
-            </div>
-          </form>
+        <Form.Group controlId="password">
+          <Form.Control
+            type="password"
+            placeholder="รหัสผ่าน"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input-login"
+          ></Form.Control>
+        </Form.Group>
+
+        <center>
+        <Button type="submit" variant="primary" className="button-login">
+          เริ่มงาน
+        </Button>
+        </center>
+        </Form>
+        </Col>
+        </Row>
+      </Col>
+      </Row>
         </div>
       </div>
-    </div>
+      </Container>
+      <Footer />
+      
+    </>
   );
 }

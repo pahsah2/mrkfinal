@@ -13,7 +13,7 @@ import {
 import Select from 'react-select';
 import note_car from '../../assets/icon/note-car.png';
 import add_menu from '../../assets/icon/add_menu.png';
-import View from '../../assets/icon/eye.png';
+import View from '../../assets/icon/view-data.png';
 export default function MemberPackage() {
   const [allSerach, setAllSerach] = useState('');
 

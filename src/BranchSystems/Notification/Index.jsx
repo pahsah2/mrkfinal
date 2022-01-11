@@ -41,7 +41,7 @@ export default function Index() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock Job">
+      <Container fluid className="package-container Service Stock Job bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">

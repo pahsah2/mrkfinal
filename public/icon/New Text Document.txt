@@ -1,0 +1,108 @@
+import { DatePicker, Space } from 'antd';
+import Calendar from '../../assets/icon/calendar-bg.png';
+
+<DatePicker
+                  onChange={onChange}
+                  placeholder=""
+                  suffixIcon={<img src={Calendar} />}
+                />
+
+import { Switch } from 'antd';
+  const [statusService, setStatusService] = useState(false);
+
+
+
+
+import React, { Component } from 'react';
+import { Dropdown } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
+
+const options = [
+  { key: 'English', text: 'English', value: 'English' },
+  { key: 'French', text: 'French', value: 'French' },
+  { key: 'Spanish', text: 'Spanish', value: 'Spanish' },
+  { key: 'German', text: 'German', value: 'German' },
+  { key: 'Chinese', text: 'Chinese', value: 'Chinese' },
+];
+
+class DropdownExampleAllowAdditions extends Component {
+  state = { options };
+
+  handleAddition = (e, { value }) => {
+    this.setState((prevState) => ({
+      options: [{ text: value, value }, ...prevState.options],
+    }));
+  };
+
+  handleChange = (e, { value }) => this.setState({ currentValues: value });
+
+  render() {
+    const { currentValues } = this.state;
+
+    return (
+      <Dropdown
+        options={this.state.options}
+        placeholder="Choose Languages"
+        search
+        selection
+        fluid
+        multiple
+        allowAdditions
+        value={currentValues}
+        onAddItem={this.handleAddition}
+        onChange={this.handleChange}
+      />
+    );
+  }
+}
+
+export default DropdownExampleAllowAdditions;
+
+
+
+import { render } from 'react-dom';
+import './index.css';
+import * as React from 'react';
+import { MultiSelectComponent } from '@syncfusion/ej2-react-dropdowns';
+import { SampleBase } from './sample-base';
+
+export class CustomTag extends SampleBase {
+    constructor() {
+        super(...arguments);
+        // define the JSON of data
+        this.gameList = [
+            { Id: 'Game1', Game: 'American Football' },
+            { Id: 'Game2', Game: 'Badminton' },
+            { Id: 'Game3', Game: 'Basketball' },
+            { Id: 'Game4', Game: 'Cricket' },
+            { Id: 'Game5', Game: 'Football' },
+            { Id: 'Game6', Game: 'Golf' },
+            { Id: 'Game7', Game: 'Hockey' },
+            { Id: 'Game8', Game: 'Rugby' },
+            { Id: 'Game9', Game: 'Snooker' },
+            { Id: 'Game10', Game: 'Tennis' },
+        ];
+        // maps the appropriate column to fields property
+        this.fields = { text: "Game", value: "Id" };
+    }
+    render() {
+        return (<div className='control-pane'>
+        <div className='control-section'>
+            <div id='multidefault' className="control-styles">
+              <h4>Custom Values</h4>
+              <MultiSelectComponent id="customelement" dataSource={this.gameList} fields={this.fields} mode="Box" placeholder="Favorite sports" allowCustomValue={true}/>
+            </div>
+        </div>
+        
+      </div>);
+    }
+}
+
+render(<CustomTag />, document.getElementById('sample'));
+
+
+import Select, { components } from 'react-select';
+
+
+{[product.value === 's'] ? <p>sssssss</p> : ''}
+

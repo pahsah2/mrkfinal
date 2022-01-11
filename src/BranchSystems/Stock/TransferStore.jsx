@@ -50,7 +50,7 @@ export default function TransferStore() {
   return (
     <>
       <NavbarTop />
-      <Container fluid className="package-container Service Stock CutStock">
+      <Container fluid className="package-container Service Stock CutStock bg-mrk">
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">

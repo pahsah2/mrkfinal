@@ -45,15 +45,15 @@ export default function AddWashPart() {
   ];
   return (
     <>
-      <Container fluid className="set-heght">
+      <Container fluid className="package-container Service Stock User set-heght">
         <Form>
           <p className="form-title">ข้อมูลแพคเกจ</p>
           <Form.Group className="package-data" controlId="formBasicEmail">
-            <Row className="g-0">
-              <Col xs={2} sm={3} md={3} lg={2} xl={2} className="text-title">
+            <Row className="g-0 align-items-center">
+              <Col xs={2} sm={3} md={3} lg={4} xl={4} className="text-title">
                 <p>โชว์รูม</p>
               </Col>
-              <Col xs={10} md={6} lg={5}>
+              <Col style={{ padding: 0 }} className="mt-2 mb-2">
                 <Select
                 options={optionService}
                 defaultValue={optionService[0]}
@@ -61,7 +61,7 @@ export default function AddWashPart() {
                 isClearable={false}
                 isSearchable={false}
                 onChange={(data) => SetService(data)}
-                className="select-list"
+                className="select-list "
               />
               </Col>
               <Col className="set-col-button-delete">
@@ -72,42 +72,6 @@ export default function AddWashPart() {
             </Row>
           </Form.Group>
           <p className="form-title">ขนาดรถและราคา</p>
-          <Row className="g-0">
-            <Col xs={3} sm={3} md={3} lg={2} xl={2} className="text-title">
-              <p>S</p>
-            </Col>
-            <Col xs={7} sm={4} md={4} lg={3} xl={2}>
-              <Form.Control
-                type="text"
-                placeholder=""
-                // defaultValue={statepage[0]}
-                value={size_S}
-                onChange={(e) => setSize_S(e.target.value)}
-                className="input-search-add-wash-part"
-              ></Form.Control>
-            </Col>
-            <Col xs={2} className="text-bath">
-              <p>บาท</p>
-            </Col>
-          </Row>
-          <Row className="g-0">
-            <Col xs={3} sm={3} md={3} lg={2} xl={2} className="text-title">
-              <p>S</p>
-            </Col>
-            <Col xs={7} sm={4} md={4} lg={3} xl={2}>
-              <Form.Control
-                type="text"
-                placeholder=""
-                // defaultValue={statepage[0]}
-                value={size_S}
-                onChange={(e) => setSize_S(e.target.value)}
-                className="input-search-add-wash-part"
-              ></Form.Control>
-            </Col>
-            <Col xs={2} className="text-bath">
-              <p>บาท</p>
-            </Col>
-          </Row>
           <Row className="g-0">
             <Col xs={3} sm={3} md={3} lg={2} xl={2} className="text-title">
               <p>S</p>
