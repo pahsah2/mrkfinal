@@ -5,6 +5,7 @@ import {
   Route,
   Link,
   BrowserRouter,
+  HashRouter
 } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Dashbroad from './Dashbroad/Index';
@@ -116,7 +117,7 @@ import Dashboard_Branch from './BranchSystems/Dashboard/Dashboard';
 
 function App() {
   return (
-    <BrowserRouter basename="/mrklean/">
+    <HashRouter >
       <Switch>
         {/* <Route path="/" component={Login} /> */}
         {/* <Route path="/" component={login} /> */}
@@ -286,7 +287,7 @@ function App() {
         <Route path="/branch/stock/:id" component={Stock_History_Branch} />
         <Route path="/branch/dashboard" component={Dashboard_Branch} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

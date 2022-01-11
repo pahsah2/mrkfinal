@@ -38,7 +38,7 @@ export default function AddServiceFilter() {
                   aria-label="Close"
                   onClick={closeAddWashPart}
                 >
-                  <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">X</span>
                 </button>
               </div>
               <div className="modal-header-mobile">

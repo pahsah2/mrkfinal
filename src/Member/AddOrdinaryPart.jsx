@@ -383,7 +383,7 @@ export default function AddOrdinaryPart({ props }) {
             aria-label="Close"
             onClick={close}
           >
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">X</span>
           </button>
         </Modal.Header>
         <Modal.Body>

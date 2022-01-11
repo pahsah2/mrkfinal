@@ -1,9 +1,11 @@
 .nav-top-menu {
   background: #c4c4c4;
-  height: 40px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-top: 5px;
+  padding-bottom: 5px;
   .container-fluid {
     .menu1 {
       width: 291px;
@@ -14,11 +16,25 @@
       height: 33px;
     }
   }
+
+  @media only screen and (max-width: 576px) {
+    .container-fluid {
+    .menu1 {
+      width: 200px;
+      height: auto;
+    }
+    .menu2 {
+       width: 270px;
+      height: auto;
+    }
+  }
+  }
   @media only screen and (max-width: 419px) {
     display: none;
   }
 }
 .footer {
+  
   bottom: 0;
   max-width: 100%;
   width: 100%;
@@ -102,7 +118,8 @@
 
 .set-button {
   .button-profile {
-    width: 227px;
+    max-width: 100%;
+    width: 100%;
     height: 37px;
     margin-left: 10px;
     margin-right: 10px;
@@ -256,9 +273,7 @@
       border-radius: 20px;
       box-shadow: none;
     }
-    .tab-content {
-      overflow: scroll;
-    }
+
     .nav-tabs {
       border: none;
 
@@ -273,7 +288,6 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-
         .nav-link {
           color: black;
           width: 170px;
@@ -282,7 +296,6 @@
           border: 2px solid rgba(229, 229, 229, 0.5);
           box-sizing: border-box;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          padding: 0;
         }
         .nav-link.active {
           width: 170px;
@@ -295,7 +308,6 @@
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           color: black;
           font-weight: bold;
-          padding: 0;
         }
       }
       @media only screen and (max-width: 576px) {
@@ -309,11 +321,10 @@
   }
 
   .div-tab-all {
-    @media only screen and (max-width: 768px) {
-      width: 730px;
-    }
     height: 700px;
-    overflow: scroll;
+    .set-table-width {
+      overflow: scroll;
+    }
     .menu-respon {
       max-width: 100%;
       width: 100%;
@@ -337,9 +348,7 @@
         background: #ffffff;
         border: 1px solid #7a7a7a;
         box-sizing: border-box;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-          inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 0 !important;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
       .button {
         width: 170px;
@@ -361,19 +370,11 @@
     }
     .div-input-search {
       .input-search {
-        max-width: 100%;
-        width: 100%;
+        width: 313px;
         height: 48px;
-        border-radius: 0 !important;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-          inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-        background-image: url('../icon/search-bg.png');
-        background-repeat: no-repeat;
-        background-position: center right;
       }
     }
     .button {
-      max-width: 100%;
       width: 100%;
       height: 45px;
       color: black;
@@ -383,7 +384,7 @@
         width: 30px;
         height: 30px;
       }
-      @media only screen and (max-width: 768px) {
+       @media only screen and (max-width: 768px) {
         width: 160px;
       }
     }
@@ -2869,6 +2870,7 @@
   }
   .ant-picker-input input {
     padding: 10px;
+    border-radius: 0 !important;
   }
 }
 .Management {
@@ -4538,8 +4540,9 @@
     margin: 0;
   }
   .css-14el2xx-placeholder {
-    text-align: left;
-  }
+  text-align: left;
+  font-size: 14px;
+}
   .css-qc6sy-singleValue {
     text-align: left;
   }
@@ -5578,6 +5581,7 @@
 }
 .css-14el2xx-placeholder {
   text-align: left;
+  font-size: 14px;
 }
 .css-qc6sy-singleValue {
   text-align: left;
@@ -5789,5 +5793,118 @@
     font-size: 32px !important;
   }
 }
-.button {
+
+.modal-Login {
+  .modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+    .modal-content {
+      width: 700px;
+      height: 379px;
+
+      .modal-header-login {
+        padding: 0px;
+        border-radius: 0 !important;
+        height: 40px !important;
+        background: #682c80 !important;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: #c4c4c4 !important;
+        border-bottom: 0px !important;
+        .title-header{
+          font-size: 18px;
+        }
+        p {
+          margin: 0;
+        }
+        .btn-close {
+          transform: translate(-10px, 0);
+          padding: 0 !important;
+          width: 21px !important;
+          height: 21px !important;
+          background: #c4c4c4 !important;
+          border: 1px solid rgba(229, 229, 229, 1) !important;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+          opacity: 1 !important;
+          border-radius: 0 !important;
+        }
+      }
+      .modal-body {
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .set-row-search-box {
+          display: flex;
+          align-items: center;
+        }
+        .search-code {
+          background: #ffffff;
+          box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 0 !important;
+          height: 40px;
+        }
+        .button-modal-segment {
+          width: 143px !important;
+          height: 46px !important;
+          background: #c4c4c4;
+          border: 1px solid white !important;
+          border-radius: 0 !important;
+          box-sizing: border-box;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .set-box-value {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        .colum-value {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          align-content: flex-start;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .put-value-segment {
+        }
+        .button-logout{
+          border-radius: 0 !important;
+          border: 1px solid rgba(122, 122, 122, 1) !important;
+        }
+      }
+      .modal-footer {
+        display: none;
+      }
+      @media only screen and (max-width: 576px) {
+        width: 280px;
+      }
+    }
+  }
+}
+
+.button-logout{
+  color: black;
+  height: 40px;
+  max-width: 100%;
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #c4c4c4;
+  border: 1px solid black;
+}
+
+h5{
+  font-family: 'Prompt', sans-serif !important;
+}
+button{
+font-family: 'Prompt', sans-serif !important;
+}
+.set-width-logout{
+  width: 400px !important;
 }

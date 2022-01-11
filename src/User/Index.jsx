@@ -96,7 +96,7 @@ export default function Index() {
                   aria-label="Close"
                   onClick={closePackage}
                 >
-                  <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">X</span>
                 </button>
               </div>
               <div className="modal-header-mobile">
@@ -158,12 +158,12 @@ export default function Index() {
                   </Col>
                 </Row>
                 <Row className="g-0 mt-3 mb-3">
-                  <Col lg={4} className=" set-page">
+                  <Col md={6} lg={5} className=" set-page">
                     <Row>
                       <Col className="d-flex justify-content-center align-items-center">
                         <p style={{ margin: 0 }}>แสดง</p>
                       </Col>
-                      <Col lg={7}>
+                      <Col md={6} lg={7}>
                         <Select
                           className="text-left select-style"
                           aria-label="Default select example"

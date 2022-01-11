@@ -151,7 +151,7 @@ export default function Index() {
       <NavbarTop />
       <Container
         fluid
-        className="package-container Service Stock Job Appointment"
+        className="package-container Service Stock Job Appointment bg-mrk"
       >
         <div className="package">
           <div className="modal-dialog modal-xl" role="document">
@@ -159,7 +159,7 @@ export default function Index() {
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  การนัดหมาย
+                  <b>การนัดหมาย</b>
                 </h5>
                 <button
                   type="button"
@@ -168,7 +168,7 @@ export default function Index() {
                   aria-label="Close"
                   onClick={close}
                 >
-                  <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">X</span>
                 </button>
               </div>
               <div className="modal-header-mobile">
@@ -183,7 +183,7 @@ export default function Index() {
                 </button>
                 <h5 className="modal-title" id="exampleModalLabel">
                   <img className="logo pr-2" src={Service} />
-                  การนัดหมาย
+                  <b>การนัดหมาย</b>
                 </h5>
               </div>
               <div className="modal-body">

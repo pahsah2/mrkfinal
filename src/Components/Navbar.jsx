@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button  , Container ,Row ,Col} from 'react-bootstrap';
 import LogoutModal from './LogoutModal';
 import { Link } from 'react-router-dom';
 import '../assets/scss/style.scss';
-import { Container, Row, Col } from 'react-bootstrap';
 import Mr1 from '../assets/icon/Mr1.png';
 import Setting from '../assets/icon/setting.png';
 import Staff from '../assets/icon/staff.png';
@@ -16,6 +15,7 @@ export default function Navbar() {
     setShow(false);
   }
   return (
+    <Container fluid>
     <div>
       <nav className="navbar fixed-bottom navbar-expand-lg">
         <div className="navbar-nav d-none d-lg-block">
@@ -25,16 +25,9 @@ export default function Navbar() {
         </div>
         <div className="navbar-right d-flex align-items-center">
           <div className="d-none d-lg-flex">
-            {' '}
-            <LogoutModal />{' '}
+            <LogoutModal />
           </div>
-          {/* <NavbarProfile
-            myBranch={this.props.myBranch}
-            openTabsModal={(type) => this.navTextMenu(type)}
-            branch={this.props.branch}
-            name={this.props.name}
-          /> */}
-          <div className="set-button">
+          <div className="set-button mr-4">
             <button type="button" className="button-profile">
               <img src={Setting} onClick={handleShow} />
               <img src={Staff} />
@@ -61,7 +54,7 @@ export default function Navbar() {
             aria-label="Close"
             onClick={close}
           >
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">X</span>
           </button>
         </Modal.Header>
         <Modal.Body>
@@ -124,5 +117,6 @@ export default function Navbar() {
         </Modal.Body>
       </Modal>
     </div>
+    </Container>
   );
 }

@@ -1,7 +1,7 @@
 {
   "name": "mrkleane",
   "version": "0.1.0",
-  "homepage": "/mrklean/",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

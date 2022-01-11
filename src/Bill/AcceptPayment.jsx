@@ -156,7 +156,7 @@ export default function AcceptPayment() {
                   aria-label="Close"
                   onClick={close}
                 >
-                  <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">X</span>
                 </button>
               </div>
               <div className="modal-header-mobile">

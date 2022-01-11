@@ -90,7 +90,7 @@ export default function History() {
                   aria-label="Close"
                   onClick={closePackage}
                 >
-                  <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">X</span>
                 </button>
               </div>
               <div className="modal-header-mobile">

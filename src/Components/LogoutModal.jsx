@@ -65,7 +65,7 @@ export default function LogoutModal() {
             aria-label="Close"
             onClick={handleClose}
           >
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">X</span>
           </button>
         </Modal.Header>
         <Modal.Body className="custom-setting set-logout-modal">
@@ -77,7 +77,7 @@ export default function LogoutModal() {
               <Button onClick={() => Logout()}>ใช่</Button>
               </Col>
               <Col className="mt-2 mb-2">
-              <Button onClick={openLogoutModal.bind(this)}>ไม่ใช่</Button>
+              <Button onClick={handleClose}>ไม่ใช่</Button>
               </Col>
               </Row>
             </div>

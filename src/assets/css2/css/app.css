@@ -142,7 +142,12 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 }
-
+h5{
+  font-family: 'Prompt', sans-serif !important;
+}
+button{
+font-family: 'Prompt', sans-serif !important;
+}
 *,
 *::before,
 *::after {
