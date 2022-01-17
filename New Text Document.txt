@@ -31,3 +31,20 @@ const SetDistrict = (data) => {
 
   const OptionCity = [{ value: 'เชียงใหม่', label: 'เชียงใหม่' }];
   const OptionDistrict = [{ value: 'เมือง', label: 'เมือง' }];
+
+
+  const [bonnet, setBonnet] = useState('');
+  const [boot, setBoot] = useState('');
+  const [front_door, setFront_door] = useState('');
+  const [back_door, setBack_door] = useState('');
+  const [bumper, setBumper] = useState('');
+  const [roof, setRoof] = useState('');
+  const [cheek, setCheek] = useState('');
+
+  const [time_bonnet, setTime_bonnet] = useState('');
+  const [time_boot, setTime_boot] = useState('');
+  const [time_front_door, setTime_front_door] = useState('');
+  const [time_back_door, setTime_back_door] = useState('');
+  const [time_bumper, setTime_bumper] = useState('');
+  const [time_roof, setTime_roof] = useState('');
+  const [time_cheek, setTime_cheek] = useState('');
