@@ -38,7 +38,6 @@ export default function Login({ location}) {
       }
   return (
     <>
-      <NavbarTop />
       <Container fluid className="bg-mrk Login-Page p-0">
       <div className="border-login">
         <div className="header-login d-none d-sm-block">
@@ -101,7 +100,6 @@ export default function Login({ location}) {
         </div>
       </div>
       </Container>
-      <Footer />
       
     </>
   );

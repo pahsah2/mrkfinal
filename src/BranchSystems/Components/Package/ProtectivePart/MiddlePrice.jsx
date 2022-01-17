@@ -20,23 +20,21 @@ export default function MiddlePrice() {
   const [upload_image, setUpload_image] = useState('');
 
   // ขนาดรถและราคา
-  const [car_size_S, setCar_Size_S] = useState('');
-  const [car_size_M, setCar_Size_M] = useState('');
-  const [car_size_L, setCar_Size_L] = useState('');
-  const [car_truck_cab, setCar_Truck_Cab] = useState('');
-  const [car_suv, setCar_Suv] = useState('');
-  const [car_truck4Door, setCar_Truck4Door] = useState('');
-  const [car_size_XL, setCar_Size_XL] = useState('');
-  const [car_van, setCar_Van] = useState('');
+  const [bonnet, setBonnet] = useState('');
+  const [boot, setBoot] = useState('');
+  const [front_door, setFront_door] = useState('');
+  const [back_door, setBack_door] = useState('');
+  const [bumper, setBumper] = useState('');
+  const [roof, setRoof] = useState('');
+  const [cheek, setCheek] = useState('');
 
-  const [time_car_size_S, setTime_car_size_S] = useState('');
-  const [time_car_size_M, setTime_car_size_M] = useState('');
-  const [time_car_size_L, setTime_car_size_L] = useState('');
-  const [time_car_truck_cab, setTime_Car_Truck_Cab] = useState('');
-  const [time_car_suv, setTime_car_suv] = useState('');
-  const [time_car_truck4Door, setTime_car_truck4Door] = useState('');
-  const [time_car_size_XL, setTime_car_size_XL] = useState('');
-  const [time_car_van, setTime_car_van] = useState('');
+  const [time_bonnet, setTime_bonnet] = useState('');
+  const [time_boot, setTime_boot] = useState('');
+  const [time_front_door, setTime_front_door] = useState('');
+  const [time_back_door, setTime_back_door] = useState('');
+  const [time_bumper, setTime_bumper] = useState('');
+  const [time_roof, setTime_roof] = useState('');
+  const [time_cheek, setTime_cheek] = useState('');
 
   // วัสดุ/อุปกรณ์อ้างอิง
   const [size_S, setSize_S] = useState('');
@@ -189,7 +187,7 @@ export default function MiddlePrice() {
             </Row>
           </Form.Group>
           <p className="form-title">ขนาดรถและราคา</p>
-          <Form.Group className="package-data " controlId="formBasicEmail">
+           <Form.Group className="package-data " controlId="formBasicEmail">
             <Row>
               <Col lg={6}>
                 <Row>
@@ -201,15 +199,15 @@ export default function MiddlePrice() {
                     xl={4}
                     className="text-title"
                   >
-                    <p>S</p>
+                    <p>กระโปรงหน้า</p>
                   </Col>
                   <Col xs={7} sm={4} md={4} lg={6} xl={4}>
                     <Form.Control
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={car_size_S}
-                      onChange={(e) => setCar_Size_S(e.target.value)}
+                      value={bonnet}
+                      onChange={(e) => setBonnet(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -235,8 +233,8 @@ export default function MiddlePrice() {
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={time_car_size_S}
-                      onChange={(e) => setTime_car_size_S(e.target.value)}
+                      value={time_bonnet}
+                      onChange={(e) => setTime_bonnet(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -257,15 +255,15 @@ export default function MiddlePrice() {
                     xl={4}
                     className="text-title"
                   >
-                    <p>M</p>
+                    <p>กระโปรงหลัง</p>
                   </Col>
                   <Col xs={7} sm={4} md={4} lg={6} xl={4}>
                     <Form.Control
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={car_size_M}
-                      onChange={(e) => setCar_Size_M(e.target.value)}
+                      value={boot}
+                      onChange={(e) => setBoot(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -291,8 +289,8 @@ export default function MiddlePrice() {
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={time_car_size_M}
-                      onChange={(e) => setTime_car_size_M(e.target.value)}
+                      value={time_boot}
+                      onChange={(e) => setTime_boot(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -313,15 +311,15 @@ export default function MiddlePrice() {
                     xl={4}
                     className="text-title"
                   >
-                    <p>L</p>
+                    <p>ประตูหน้า</p>
                   </Col>
                   <Col xs={7} sm={4} md={4} lg={6} xl={4}>
                     <Form.Control
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={car_size_L}
-                      onChange={(e) => setCar_Size_L(e.target.value)}
+                      value={front_door}
+                      onChange={(e) => setFront_door(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -347,8 +345,8 @@ export default function MiddlePrice() {
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={time_car_size_L}
-                      onChange={(e) => setTime_car_size_L(e.target.value)}
+                      value={time_front_door}
+                      onChange={(e) => setTime_front_door(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -369,15 +367,15 @@ export default function MiddlePrice() {
                     xl={4}
                     className="text-title"
                   >
-                    <p>TRUCK CAB</p>
+                    <p>ประตูหลัง</p>
                   </Col>
                   <Col xs={7} sm={4} md={4} lg={6} xl={4}>
                     <Form.Control
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={car_truck_cab}
-                      onChange={(e) => setCar_Truck_Cab(e.target.value)}
+                      value={back_door}
+                      onChange={(e) => setBack_door(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -403,8 +401,8 @@ export default function MiddlePrice() {
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={time_car_truck_cab}
-                      onChange={(e) => setTime_Car_Truck_Cab(e.target.value)}
+                      value={time_back_door}
+                      onChange={(e) => setTime_back_door(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -425,15 +423,15 @@ export default function MiddlePrice() {
                     xl={4}
                     className="text-title"
                   >
-                    <p>SUV</p>
+                    <p>กันชน</p>
                   </Col>
                   <Col xs={7} sm={4} md={4} lg={6} xl={4}>
                     <Form.Control
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={car_suv}
-                      onChange={(e) => setCar_Suv(e.target.value)}
+                      value={bumper}
+                      onChange={(e) => setBumper(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -459,8 +457,8 @@ export default function MiddlePrice() {
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={time_car_suv}
-                      onChange={(e) => setTime_car_suv(e.target.value)}
+                      value={time_bumper}
+                      onChange={(e) => setTime_bumper(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -481,15 +479,15 @@ export default function MiddlePrice() {
                     xl={4}
                     className="text-title"
                   >
-                    <p>TRUCK 4 DOOR </p>
+                    <p>หลังคา</p>
                   </Col>
                   <Col xs={7} sm={4} md={4} lg={6} xl={4}>
                     <Form.Control
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={car_truck4Door}
-                      onChange={(e) => setCar_Truck4Door(e.target.value)}
+                      value={roof}
+                      onChange={(e) => setRoof(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -515,8 +513,8 @@ export default function MiddlePrice() {
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={time_car_truck4Door}
-                      onChange={(e) => setTime_car_truck4Door(e.target.value)}
+                      value={time_roof}
+                      onChange={(e) => setTime_roof(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -537,15 +535,15 @@ export default function MiddlePrice() {
                     xl={4}
                     className="text-title"
                   >
-                    <p>XL</p>
+                    <p>แก้ม</p>
                   </Col>
                   <Col xs={7} sm={4} md={4} lg={6} xl={4}>
                     <Form.Control
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={setCar_Size_XL}
-                      onChange={(e) => setCar_Size_XL(e.target.value)}
+                      value={cheek}
+                      onChange={(e) => setCheek(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -571,8 +569,8 @@ export default function MiddlePrice() {
                       type="text"
                       placeholder=""
                       // defaultValue={statepage[0]}
-                      value={time_car_size_XL}
-                      onChange={(e) => setTime_car_size_XL(e.target.value)}
+                      value={time_cheek}
+                      onChange={(e) => setTime_cheek(e.target.value)}
                       className="input-search-add-wash-part"
                     ></Form.Control>
                   </Col>
@@ -582,62 +580,7 @@ export default function MiddlePrice() {
                 </Row>
               </Col>
             </Row>
-            <Row>
-              <Col lg={6}>
-                <Row>
-                  <Col
-                    xs={4}
-                    sm={3}
-                    md={3}
-                    lg={4}
-                    xl={4}
-                    className="text-title"
-                  >
-                    <p>VAN</p>
-                  </Col>
-                  <Col xs={7} sm={4} md={4} lg={6} xl={4}>
-                    <Form.Control
-                      type="text"
-                      placeholder=""
-                      // defaultValue={statepage[0]}
-                      value={setCar_Van}
-                      onChange={(e) => setCar_Van(e.target.value)}
-                      className="input-search-add-wash-part"
-                    ></Form.Control>
-                  </Col>
-                  <Col xs={1} sm={2} className="text-bath">
-                    <p>บาท</p>
-                  </Col>
-                </Row>
-              </Col>
-              <Col lg={6}>
-                <Row>
-                  <Col
-                    xs={4}
-                    sm={3}
-                    md={3}
-                    lg={3}
-                    xl={3}
-                    className="text-title"
-                  >
-                    <p>เวลาดำเนินการ</p>
-                  </Col>
-                  <Col xs={7} sm={4} md={4} lg={6} xl={4}>
-                    <Form.Control
-                      type="text"
-                      placeholder=""
-                      // defaultValue={statepage[0]}
-                      value={time_car_van}
-                      onChange={(e) => setTime_car_van(e.target.value)}
-                      className="input-search-add-wash-part"
-                    ></Form.Control>
-                  </Col>
-                  <Col xs={1} className="text-bath">
-                    <p>นาที</p>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
+            
           </Form.Group>
           {/* sssss */}
           <p className="form-title">วัสดุ/อุปกรณ์อ้างอิง</p>
